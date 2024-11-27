@@ -65,11 +65,35 @@ public class TicketingSystem {
         TicketPool ticketPool = new TicketPool(configuration.getMaxTicketCapacity());
 
         // Implement vendor and customer threads
-        Vendor vendor1 = new Vendor(ticketPool, "Chamod", 5, configuration.getTicketReleaseRate());
-        Vendor vendor2 = new Vendor(ticketPool, "Karunathilake", 10, configuration.getTicketReleaseRate());
+        Vendor vendor1 = new Vendor(ticketPool, "12", 5, configuration.getTicketReleaseRate());
+        Vendor vendor2 = new Vendor(ticketPool, "23", 10, configuration.getTicketReleaseRate());
 
-        Customer customer1 = new Customer(ticketPool, "Hemantha", configuration.getCustomerRetrievalRate());
-        Customer customer2 = new Customer(ticketPool, "Randima", configuration.getCustomerRetrievalRate());
+        Customer customer1 = new Customer(ticketPool, "34", configuration.getCustomerRetrievalRate());
+        Customer customer2 = new Customer(ticketPool, "65", configuration.getCustomerRetrievalRate());
+
+        Thread vendor1Thread = new Thread(vendor1);
+        Thread vendor2Thread = new Thread(vendor2);
+
+        Thread customer1Thread = new Thread(customer1);
+        Thread customer2Thread = new Thread(customer2);
+
+        vendor1Thread.start();
+        vendor2Thread.start();
+
+        customer1Thread.start();
+        customer2Thread.start();
+
+        try {
+            vendor1Thread.join();
+            vendor2Thread.join();
+            customer1Thread.join();
+            customer2Thread.join();
+
+        } catch (InterruptedException e) {
+            System.out.println("Interrupted: "+e.getMessage());
+        }
+
+        System.out.println("Ticket pool is empty. Shutting down...");
     }
 
 }

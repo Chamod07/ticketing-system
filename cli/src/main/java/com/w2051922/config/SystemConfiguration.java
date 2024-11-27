@@ -1,5 +1,8 @@
 package com.w2051922.config;
 
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.logging.Logger;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -11,6 +14,7 @@ public class SystemConfiguration {
     private int maxTicketCapacity;
 
     private static final Logger logger = Logger.getLogger(SystemConfiguration.class.getName());
+    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     public SystemConfiguration(int totalTickets, int ticketReleaseRate, int customerRetrievalRate, int maxTicketCapacity) {
         this.totalTickets = totalTickets;
@@ -19,9 +23,30 @@ public class SystemConfiguration {
         this.maxTicketCapacity = maxTicketCapacity;
     }
 
+    public void saveConfiguration(String configFile) throws IOException {
+        try (FileWriter writer = new FileWriter(configFile)) {
+            gson.toJson(this, writer);
+        }
+    }
+
+    public static SystemConfiguration loadConfiguration(String configFile) throws IOException {
+        try (FileReader reader = new FileReader(configFile)) {
+            return gson.fromJson(reader, SystemConfiguration.class);
+        }
+    }
+
     // Getters and Setters
     public int getTotalTickets() {
         return totalTickets;
+    }
+    public int getTicketReleaseRate() {
+        return ticketReleaseRate;
+    }
+    public int getCustomerRetrievalRate() {
+        return customerRetrievalRate;
+    }
+    public int getMaxTicketCapacity() {
+        return maxTicketCapacity;
     }
 
     public void setTotalTickets(int totalTickets) {
@@ -33,10 +58,6 @@ public class SystemConfiguration {
         logger.info("Total tickets value was set to: "+totalTickets);
     }
 
-    public int getTicketReleaseRate() {
-        return ticketReleaseRate;
-    }
-
     public void setTicketReleaseRate(int ticketReleaseRate) {
         if (ticketReleaseRate <= 0) {
             logger.warning("Ticket release rate value is invalid: "+ticketReleaseRate);
@@ -46,10 +67,6 @@ public class SystemConfiguration {
         logger.info("Ticket release rate value was set to: "+ticketReleaseRate);
     }
 
-    public int getCustomerRetrievalRate() {
-        return customerRetrievalRate;
-    }
-
     public void setCustomerRetrievalRate(int customerRetrievalRate) {
         if (customerRetrievalRate <= 0) {
             logger.warning("Customer retrieval rate value is invalid: "+customerRetrievalRate);
@@ -57,10 +74,6 @@ public class SystemConfiguration {
         }
         this.customerRetrievalRate = customerRetrievalRate;
         logger.info("Customer retrieval rate value was set to: "+customerRetrievalRate);
-    }
-
-    public int getMaxTicketCapacity() {
-        return maxTicketCapacity;
     }
 
     public void setMaxTicketCapacity(int maxTicketCapacity) {

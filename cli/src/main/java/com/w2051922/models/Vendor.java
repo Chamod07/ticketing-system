@@ -1,5 +1,7 @@
 package com.w2051922.models;
 
+import com.w2051922.config.SystemConfiguration;
+
 public class Vendor implements Runnable {
     private final TicketPool ticketPool;
     private String vendorID;
@@ -33,11 +35,6 @@ public class Vendor implements Runnable {
     }
 
     @Override
-    public String toString() {
-        return vendorID + "\t" + ticketsPerRelease + "\t" + releaseInterval;
-    }
-
-    @Override
     public void run() {
         try {
             while (true) {
@@ -47,5 +44,10 @@ public class Vendor implements Runnable {
         } catch (InterruptedException e) {
             System.out.println("Vendor interrupted.");
         }
+    }
+
+    @Override
+    public String toString() {
+        return vendorID + "\t" + ticketsPerRelease + "\t" + releaseInterval;
     }
 }

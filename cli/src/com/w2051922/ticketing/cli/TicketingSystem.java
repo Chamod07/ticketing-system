@@ -15,24 +15,39 @@ public class TicketingSystem {
 
         // Total tickets
         System.out.print("Enter total number of tickets: ");
-        int totalTickets = scanner.nextInt();
+        int totalTickets = getValidInput(scanner);
 
         // Ticket release rate
         System.out.print("Enter ticket release rate (tickets per minute): ");
-        int ticketReleaseRate = scanner.nextInt();
+        int ticketReleaseRate = getValidInput(scanner);
 
         // Ticket retrieval rate
         System.out.print("Enter customer retrieval rate (tickets per minute): ");
-        int ticketRetrievalRate = scanner.nextInt();
+        int ticketRetrievalRate = getValidInput(scanner);
 
         // Max ticket capacity
         System.out.print("Enter maximum ticket capacity: ");
-        int maxTicketCapacity = scanner.nextInt();
+        int maxTicketCapacity = getValidInput(scanner);
 
         // create configuration
         SystemConfiguration configuration = new SystemConfiguration(totalTickets, ticketReleaseRate, ticketRetrievalRate, maxTicketCapacity);
+
+        logger.info("System configured with: "+ configuration);
     }
 
+    private int getValidInput(Scanner scanner) {
+        while (true) {
+            try {
+                int input = Integer.parseInt(scanner.nextLine());
+                if (input > 0) {
+                    return input;
+                }
+                System.out.print("Please enter a number greater than 0: ");
+            } catch (NumberFormatException ex) {
+                System.out.print("Invalid input. Please enter a valid number: ");
+            }
+        }
+    }
 
 
 

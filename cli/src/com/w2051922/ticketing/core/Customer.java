@@ -12,6 +12,7 @@ public class Customer implements Runnable {
         this.customerId = customerId;
         this.retrievalInterval = retrievalInterval;
     }
+
     public String getCustomerId() {
         return customerId;
     }

@@ -1,4 +1,4 @@
-package com.w2051922.ticketing.core;
+package com.w2051922.ticketing.models;
 
 public class Vendor implements Runnable {
     private final TicketPool ticketPool;

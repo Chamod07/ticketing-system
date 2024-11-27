@@ -1,6 +1,4 @@
-package com.w2051922.ticketing.core;
-
-import com.w2051922.ticketing.config.SystemConfiguration;
+package com.w2051922.ticketing.models;
 
 public class Customer implements Runnable {
     private final TicketPool ticketPool;

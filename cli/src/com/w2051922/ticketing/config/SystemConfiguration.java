@@ -10,7 +10,12 @@ public class SystemConfiguration {
 
     private static final Logger logger = Logger.getLogger(SystemConfiguration.class.getName());
 
-//    private SystemConfiguration() {}
+    public SystemConfiguration(int totalTickets, int ticketReleaseRate, int customerRetrievalRate, int maxTicketCapacity) {
+        this.totalTickets = totalTickets;
+        this.ticketReleaseRate = ticketReleaseRate;
+        this.customerRetrievalRate = customerRetrievalRate;
+        this.maxTicketCapacity = maxTicketCapacity;
+    }
 
     // Getters and Setters
     public int getTotalTickets() {

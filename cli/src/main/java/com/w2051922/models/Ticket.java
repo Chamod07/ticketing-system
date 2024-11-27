@@ -1,12 +1,12 @@
 package com.w2051922.models;
 
-import java.util.UUID;
+//import java.util.UUID;
 
 public class Ticket {
     private final int id;
 
-    public Ticket() {
-        this.id = Integer.parseInt(UUID.randomUUID().toString());;
+    public Ticket(int id) {
+        this.id = id;
     }
 
     public int getId() {

@@ -23,9 +23,10 @@ public class SystemConfiguration {
         this.maxTicketCapacity = maxTicketCapacity;
     }
 
-    public void saveConfiguration(String configFile) throws IOException {
-        try (FileWriter writer = new FileWriter(configFile)) {
+    public void saveConfiguration() throws IOException {
+        try (FileWriter writer = new FileWriter("systemConfiguration.json")) {
             gson.toJson(this, writer);
+            System.out.println("Configuration saved to 'systemConfiguration.json'.");
         }
     }
 

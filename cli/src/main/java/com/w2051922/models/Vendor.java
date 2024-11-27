@@ -1,7 +1,5 @@
 package com.w2051922.models;
 
-import com.w2051922.config.SystemConfiguration;
-
 public class Vendor implements Runnable {
     private final TicketPool ticketPool;
     private String vendorID;
@@ -38,8 +36,8 @@ public class Vendor implements Runnable {
     public void run() {
         try {
             while (true) {
-                ticketPool.add(5); // Add 5 tickets
-                Thread.sleep(releaseInterval * 1000L); // Wait for the release rate
+                ticketPool.add(ticketsPerRelease); // Add tickets
+                Thread.sleep(releaseInterval * 1000); // Wait for the release rate
             }
         } catch (InterruptedException e) {
             System.out.println("Vendor interrupted.");

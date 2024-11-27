@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class TicketPool {
@@ -23,45 +22,46 @@ public class TicketPool {
         this.notEmpty = lock.newCondition();
     }
 
-    public void add(int count) throws InterruptedException {
-        if (count <= 0) {
-            throw new IllegalArgumentException("Cannot add negative number of tickets");
-        }
+    /**
+     * Add tickets to the ticket pool
+     * @param ticketCount number of tickets to buy
+     * @exception InterruptedException if ticket addition is interrupted
+     *
+     * **/
+    public void add(int ticketCount) throws InterruptedException {
         lock.lock();
         try {
-            while (tickets.size() + count > maxCapacity) {
-                logger.warning("Waiting to add tickets. Current size: " + tickets.size() + ", Attempting to add: " + count + ", Max capacity: " + maxCapacity);
+            while (tickets.size() + ticketCount > maxCapacity) {
+                logger.warning("Waiting to add tickets. Current size: " + tickets.size() + ", Attempting to add: " + ticketCount + ", Max capacity: " + maxCapacity);
                 notFull.await();
             }
-            for (int i = 0; i < count; i++) {
-                tickets.add(new Ticket()); // Add a ticket
+            for (int i = 1; i <= ticketCount; i++) {
+                tickets.add(new Ticket(i)); // Add a ticket
             }
-            System.out.println(count + " tickets added. Current capacity: " + tickets.size());
+            System.out.println(ticketCount + " tickets added. Current capacity: " + tickets.size());
             notEmpty.signalAll(); // Notify consumers
         } catch (InterruptedException e) {
-            logger.log(Level.SEVERE, "Ticket addition interrupted", e);
-            Thread.currentThread().interrupt(); // Restore interrupt status
-            throw e;
+            logger.warning("Ticket addition interrupted" + e);
         } finally {
             lock.unlock();
         }
     }
 
-    public void remove() throws InterruptedException {
+    public void remove(int ticketCount) {
         lock.lock();
         try {
             while (tickets.isEmpty()) {
                 logger.warning("Waiting for tickets to become available");
                 notEmpty.await();
             }
-            tickets.removeFirst(); // Remove a ticket
-            System.out.println("Ticket purchased. Current pool size: " + tickets.size());
+            for (int i = 0; i < ticketCount; i++) {
+                tickets.removeFirst();
+            }
+            System.out.println(ticketCount + " ticket(s) purchased. Current pool size: " + tickets.size());
             logger.info("Ticket purchased. Current pool size: " + tickets.size());
             notFull.signalAll(); // Notify producers
         } catch (InterruptedException e) {
-            logger.log(Level.SEVERE, "Ticket removal interrupted", e);
-            Thread.currentThread().interrupt(); // Restore interrupt status
-            throw e;
+            logger.warning("Ticket removal interrupted"+ e);
         } finally {
             lock.unlock();
         }

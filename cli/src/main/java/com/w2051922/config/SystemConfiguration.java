@@ -1,6 +1,8 @@
-package com.w2051922.ticketing.config;
+package com.w2051922.config;
 
 import java.util.logging.Logger;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class SystemConfiguration {
     private int totalTickets;

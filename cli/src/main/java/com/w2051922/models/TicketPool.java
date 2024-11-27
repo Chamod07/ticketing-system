@@ -1,4 +1,4 @@
-package com.w2051922.ticketing.models;
+package com.w2051922.models;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.locks.Condition;

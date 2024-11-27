@@ -1,4 +1,4 @@
-package com.w2051922.ticketing.models;
+package com.w2051922.models;
 
 public class Ticket {
     private final int id;

@@ -1,4 +1,4 @@
-package com.w2051922.ticketing.models;
+package com.w2051922.models;
 
 public class Vendor implements Runnable {
     private final TicketPool ticketPool;
@@ -11,10 +11,6 @@ public class Vendor implements Runnable {
         this.vendorID = vendorID;
         this.ticketsPerRelease = ticketsPerRelease;
         this.releaseInterval = releaseInterval;
-    }
-
-    public Vendor(TicketPool ticketPool) {
-        this.ticketPool = ticketPool;
     }
 
     public String getVendorID() {

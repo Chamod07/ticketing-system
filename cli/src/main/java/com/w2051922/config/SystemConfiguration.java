@@ -3,9 +3,10 @@ package com.w2051922.config;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Logger;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class SystemConfiguration {
     private int totalTickets;
@@ -13,7 +14,7 @@ public class SystemConfiguration {
     private int customerRetrievalRate;
     private int maxTicketCapacity;
 
-    private static final Logger logger = Logger.getLogger(SystemConfiguration.class.getName());
+    private static final Logger logger = LogManager.getLogger(SystemConfiguration.class.getName());
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     public SystemConfiguration(int totalTickets, int ticketReleaseRate, int customerRetrievalRate, int maxTicketCapacity) {
@@ -26,7 +27,7 @@ public class SystemConfiguration {
     public void saveConfiguration() throws IOException {
         try (FileWriter writer = new FileWriter("systemConfiguration.json")) {
             gson.toJson(this, writer);
-            System.out.println("Configuration saved to 'systemConfiguration.json'.");
+            logger.info("Configuration saved to 'systemConfiguration.json'.");
         }
     }
 
@@ -52,7 +53,7 @@ public class SystemConfiguration {
 
     public void setTotalTickets(int totalTickets) {
         if (totalTickets <= 0) {
-            logger.warning("Total tickets value is invalid: "+totalTickets);
+            logger.warn("Total tickets value is invalid: "+totalTickets);
             throw new IllegalArgumentException("Total tickets must be greater than 0");
         }
         this.totalTickets = totalTickets;
@@ -61,7 +62,7 @@ public class SystemConfiguration {
 
     public void setTicketReleaseRate(int ticketReleaseRate) {
         if (ticketReleaseRate <= 0) {
-            logger.warning("Ticket release rate value is invalid: "+ticketReleaseRate);
+            logger.warn("Ticket release rate value is invalid: "+ticketReleaseRate);
             throw new IllegalArgumentException("Ticket release rate must be greater than 0");
         }
         this.ticketReleaseRate = ticketReleaseRate;
@@ -70,7 +71,7 @@ public class SystemConfiguration {
 
     public void setCustomerRetrievalRate(int customerRetrievalRate) {
         if (customerRetrievalRate <= 0) {
-            logger.warning("Customer retrieval rate value is invalid: "+customerRetrievalRate);
+            logger.warn("Customer retrieval rate value is invalid: "+customerRetrievalRate);
             throw new IllegalArgumentException("Customer retrieval rate must be greater than 0");
         }
         this.customerRetrievalRate = customerRetrievalRate;
@@ -79,7 +80,7 @@ public class SystemConfiguration {
 
     public void setMaxTicketCapacity(int maxTicketCapacity) {
         if (maxTicketCapacity <= 0) {
-            logger.warning("Max ticket capacity value is invalid: "+maxTicketCapacity);
+            logger.warn("Max ticket capacity value is invalid: "+maxTicketCapacity);
             throw new IllegalArgumentException("Max ticket capacity must be greater than 0");
         }
         this.maxTicketCapacity = maxTicketCapacity;

@@ -13,7 +13,7 @@ public class TicketPool {
     private List<Ticket> tickets;
     private int maxCapacity;
     private int totalTickets;
-    private final ReentrantLock lock = new ReentrantLock();
+    private final ReentrantLock lock = new ReentrantLock(true);
     private final Condition notFull;
     private final Condition notEmpty;
     private static final Logger logger = LogManager.getLogger(TicketPool.class);
@@ -27,7 +27,7 @@ public class TicketPool {
 
         // initialise ticket pool with a set of tickets
         for (int i = 0; i < totalTickets; i++) {
-            tickets.add(new Ticket(i));
+            tickets.add(new Ticket());
         }
     }
 
@@ -43,15 +43,15 @@ public class TicketPool {
             int ticketsToAdd = Math.min(ticketCount, availableSpace);
 
             if (ticketsToAdd > 0) {
-                for (int i = 1; i <= ticketsToAdd; i++) {
-                    tickets.add(new Ticket(i));
+                for (int i = 0; i < ticketsToAdd; i++) {
+                    tickets.add(new Ticket());
                 }
-                totalTickets = tickets.size();
+                totalTickets = tickets.size(); // Assign the current size of ticket pool to totalTickets
                 logger.info("Added {} tickets. Current pool size: {}", ticketsToAdd, totalTickets);
                 notEmpty.signalAll(); // Notify customers
             } else {
                 logger.warn("Cannot add tickets. Pool is at max capacity.");
-                notFull.await();
+                notFull.await(); // Hold threads until tickets are available
             }
         } catch (InterruptedException e) {
             logger.error("Ticket addition interrupted.");
@@ -74,9 +74,8 @@ public class TicketPool {
             }
             // To make sure not to remove more tickets than available
             int ticketsToRemove = Math.min(ticketCount, tickets.size());
-
             for (int i = 0; i < ticketsToRemove; i++) {
-                tickets.removeFirst();
+                tickets.remove(0);
             }
 
             totalTickets = tickets.size();

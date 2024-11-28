@@ -64,10 +64,10 @@ public class TicketingSystem {
 
     public static void main(String[] args) {
         TicketingSystem ticketingSystem = new TicketingSystem();
-        ticketingSystem.systemConfig();
         if (configuration == null) {
-            System.out.println("System configuration not available");
-            return;
+            ticketingSystem.systemConfig();
+        } else {
+//            configuration= SystemConfiguration.loadConfiguration();
         }
 
         // Initialize ticket pool

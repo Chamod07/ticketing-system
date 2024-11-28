@@ -1,10 +1,15 @@
 package com.w2051922.models;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Vendor implements Runnable {
     private final TicketPool ticketPool;
     private String vendorID;
     private int ticketsPerRelease;
     private int releaseInterval;
+    private volatile boolean running = true;
+    private static final Logger logger = LogManager.getLogger(Vendor.class.getName());
 
     public Vendor(TicketPool ticketPool, String vendorID, int ticketsPerRelease, int releaseInterval) {
         this.ticketPool = ticketPool;
@@ -35,13 +40,17 @@ public class Vendor implements Runnable {
     @Override
     public void run() {
         try {
-            while (true) {
+            while (running) {
                 ticketPool.addTicket(ticketsPerRelease); // Add tickets
-                Thread.sleep(releaseInterval * 1000); // Wait for the release rate
+                Thread.sleep(releaseInterval * 1000L); // Wait for the release rate
             }
         } catch (InterruptedException e) {
-            System.out.println("Vendor interrupted.");
+            logger.error("Vendor interrupted", e);
         }
+    }
+
+    public void stop() {
+        running = false;
     }
 
     @Override

@@ -8,12 +8,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e6a3414-441c-4a23-8f32-a5f4bfc4b261" name="Changes" comment="Save and load configurations from JSON file">
+    <list default="true" id="3e6a3414-441c-4a23-8f32-a5f4bfc4b261" name="Changes" comment="Add log4j logging, totalTickets seeds initial tickets">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/cli/TicketingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/cli/TicketingSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/config/SystemConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/config/SystemConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/TicketPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/TicketPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Vendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Vendor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/systemConfiguration.json" beforeDir="false" afterPath="$PROJECT_DIR$/systemConfiguration.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/cli/TicketingSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/cli/TicketingSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/config/SystemConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/config/SystemConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/models/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/models/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/models/Ticket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/models/Ticket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/models/TicketPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/models/TicketPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/models/Vendor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/models/Vendor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j2.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/log4j2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/resources/log4j2.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732591606187</updated>
       <workItem from="1732591607251" duration="900000" />
-      <workItem from="1732635593168" duration="75815000" />
+      <workItem from="1732635593168" duration="86065000" />
     </task>
     <task id="LOCAL-00001" summary="Modified main application to configure system">
       <option name="closed" value="true" />
@@ -141,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732782174255</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add log4j logging, totalTickets seeds initial tickets">
+      <option name="closed" value="true" />
+      <created>1732813837528</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732813837528</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +185,7 @@
     <MESSAGE value="Modified SystemConfiguration to save as JSON file, changed TicketPool list type to synchronisedList" />
     <MESSAGE value="Changed ticket retrieval and release rates definitions" />
     <MESSAGE value="Save and load configurations from JSON file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Save and load configurations from JSON file" />
+    <MESSAGE value="Add log4j logging, totalTickets seeds initial tickets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add log4j logging, totalTickets seeds initial tickets" />
   </component>
 </project>

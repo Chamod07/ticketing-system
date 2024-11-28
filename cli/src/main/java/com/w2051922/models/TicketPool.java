@@ -8,8 +8,8 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Logger;
 
 public class TicketPool {
-    private final List<Ticket> tickets;
-    private final int maxCapacity;
+    private List<Ticket> tickets;
+    private int maxCapacity;
     private final ReentrantLock lock = new ReentrantLock();
     private final Condition notFull;
     private final Condition notEmpty;
@@ -24,11 +24,9 @@ public class TicketPool {
 
     /**
      * Add tickets to the ticket pool
-     * @param ticketCount number of tickets to buy
-     * @exception InterruptedException if ticket addition is interrupted
-     *
+     * @param ticketCount number of tickets to sell
      * **/
-    public void add(int ticketCount) throws InterruptedException {
+    public void addTicket(int ticketCount) {
         lock.lock();
         try {
             while (tickets.size() + ticketCount > maxCapacity) {
@@ -41,13 +39,17 @@ public class TicketPool {
             System.out.println(ticketCount + " tickets added. Current capacity: " + tickets.size());
             notEmpty.signalAll(); // Notify consumers
         } catch (InterruptedException e) {
-            logger.warning("Ticket addition interrupted" + e);
+            logger.warning("Ticket addition interrupted " + e);
         } finally {
             lock.unlock();
         }
     }
 
-    public void remove(int ticketCount) {
+    /**
+     * Remove tickets from ticket pool
+     * @param ticketCount number of tickets to buy
+     * **/
+    public void removeTicket(int ticketCount) {
         lock.lock();
         try {
             while (tickets.isEmpty()) {
@@ -61,7 +63,7 @@ public class TicketPool {
             logger.info("Ticket purchased. Current pool size: " + tickets.size());
             notFull.signalAll(); // Notify producers
         } catch (InterruptedException e) {
-            logger.warning("Ticket removal interrupted"+ e);
+            logger.warning("Ticket removal interrupted "+ e);
         } finally {
             lock.unlock();
         }

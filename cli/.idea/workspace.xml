@@ -8,12 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e6a3414-441c-4a23-8f32-a5f4bfc4b261" name="Changes" comment="Modified SystemConfiguration to save as JSON file, changed TicketPool list type to synchronisedList">
+    <list default="true" id="3e6a3414-441c-4a23-8f32-a5f4bfc4b261" name="Changes" comment="Changed ticket retrieval and release rates definitions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/cli/TicketingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/cli/TicketingSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/config/SystemConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/config/SystemConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/TicketPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/TicketPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Vendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Vendor.java" afterDir="false" />
     </list>
@@ -93,7 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732591606187</updated>
       <workItem from="1732591607251" duration="900000" />
-      <workItem from="1732635593168" duration="49703000" />
+      <workItem from="1732635593168" duration="58505000" />
     </task>
     <task id="LOCAL-00001" summary="Modified main application to configure system">
       <option name="closed" value="true" />
@@ -127,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732712127340</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Changed ticket retrieval and release rates definitions">
+      <option name="closed" value="true" />
+      <created>1732739441531</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732739441531</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +156,7 @@
     <MESSAGE value="Used a logging framework and validate inputs" />
     <MESSAGE value="Project structure rebuilt using Maven to add dependencies" />
     <MESSAGE value="Modified SystemConfiguration to save as JSON file, changed TicketPool list type to synchronisedList" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified SystemConfiguration to save as JSON file, changed TicketPool list type to synchronisedList" />
+    <MESSAGE value="Changed ticket retrieval and release rates definitions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed ticket retrieval and release rates definitions" />
   </component>
 </project>

@@ -88,11 +88,11 @@ public class SystemConfiguration {
 
     @Override
     public String toString() {
-        return "SystemConfiguration{" +
-                "totalTickets=" + totalTickets +
-                ", ticketReleaseRate=" + ticketReleaseRate +
-                ", customerRetrievalRate=" + customerRetrievalRate +
-                ", maxTicketCapacity=" + maxTicketCapacity +
-                '}';
+        return "[" +
+                "totalTickets = " + totalTickets +
+                ", ticketReleaseRate = " + ticketReleaseRate +
+                ", customerRetrievalRate = " + customerRetrievalRate +
+                ", maxTicketCapacity = " + maxTicketCapacity +
+                "]";
     }
 }

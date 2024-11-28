@@ -5,6 +5,7 @@ import com.w2051922.models.Customer;
 import com.w2051922.models.TicketPool;
 import com.w2051922.models.Vendor;
 
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -36,7 +37,14 @@ public class TicketingSystem {
         // create configuration
         configuration = new SystemConfiguration(totalTickets, ticketReleaseRate, ticketRetrievalRate, maxTicketCapacity);
 
+        try {
+            configuration.saveConfiguration();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         logger.info("System configured with: "+ configuration);
+
     }
 
     private int getValidInput(Scanner scanner) {
@@ -69,7 +77,7 @@ public class TicketingSystem {
         Vendor vendor2 = new Vendor(ticketPool, "23", 2, configuration.getTicketReleaseRate());
 
         Customer customer1 = new Customer(ticketPool, "34", 1, configuration.getCustomerRetrievalRate());
-        Customer customer2 = new Customer(ticketPool, "65", 2, configuration.getCustomerRetrievalRate());
+        Customer customer2 = new Customer(ticketPool, "56", 2, configuration.getCustomerRetrievalRate());
 
         Thread vendor1Thread = new Thread(vendor1);
         Thread vendor2Thread = new Thread(vendor2);

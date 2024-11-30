@@ -34,10 +34,11 @@ public class Vendor implements Runnable {
         try {
             while (running) {
                 ticketPool.addTicket(releaseRate, vendorID); // Add tickets
-                Thread.sleep(1000); // Wait for the release rate
+                Thread.sleep(1000); // Wait for 1 second
             }
         } catch (InterruptedException e) {
             logger.error("Vendor interrupted", e);
+            Thread.currentThread().interrupt();
         }
     }
 

@@ -21,16 +21,20 @@ public class TicketPool {
         this.notFull = lock.newCondition();
         this.notEmpty = lock.newCondition();
 
-        // initialise ticket pool with a set of tickets
+        // Initialise ticket pool with a set of tickets
         for (int i = 0; i < totalTickets; i++) {
             tickets.add(new Ticket());
         }
     }
 
     /**
-     * Add tickets to the ticket pool
-     * @param ticketCount number of tickets to sell
-     * **/
+     * Adds a specified number of tickets to the ticket pool for a given vendor.
+     * <p>This method will block if adding the specified number of tickets exceeds
+     * the maximum capacity, waiting until there is enough space to add the tickets.</p>
+     *
+     * @param ticketCount the number of tickets to be added to the ticket pool
+     * @param vendorId the ID of the vendor adding the tickets
+     */
     public void addTicket(int ticketCount, String vendorId) {
         lock.lock();
         try {
@@ -54,9 +58,13 @@ public class TicketPool {
     }
 
     /**
-     * Remove tickets from ticket pool
-     * @param ticketCount number of tickets to buy
-     * **/
+     * Removes a specified number of tickets from the ticket pool for a given customer.
+     * <p>This method will block if the number of available tickets is less than the requested number,
+     * waiting until the requested number of tickets can be removed.</p>
+     *
+     * @param ticketCount the number of tickets to be removed from the ticket pool
+     * @param customerId the ID of the customer requesting the tickets
+     */
     public void removeTicket(int ticketCount, String customerId) {
         lock.lock();
         try {

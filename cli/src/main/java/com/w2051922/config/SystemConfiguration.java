@@ -25,6 +25,18 @@ public class SystemConfiguration {
 
     public SystemConfiguration() {}
 
+    /**
+     * <p>Save the current system configuration to a JSON file.</p>
+     *
+     * <p>This method uses the {@link Gson} library to serialize the current state
+     * of the {@linkplain SystemConfiguration} object and writes it to a file.</p>
+     *
+     * <p>A successful save operation will log an informational message indicating
+     * the name of the file to which the configuration has been saved.</p>
+     *
+     * <p>If an {@link IOException} occurs during the file writing process, a warning
+     * message will be logged with details about the failure.</p>
+     */
     public void saveConfiguration() {
         try (FileWriter writer = new FileWriter(configFile)) {
             gson.toJson(this, writer);
@@ -34,6 +46,17 @@ public class SystemConfiguration {
         }
     }
 
+    /**
+     * <p>Load the system configuration from a JSON file.</p>
+     *
+     * <p>This method attempts to read a configuration file specified by the {@code configFile} field
+     * and deserialize it into a {@linkplain SystemConfiguration} object using the {@link Gson} library.
+     * If the file is not found, an error message is logged. In case of an {@link IOException}
+     * during the reading process, a warning message is logged.</p>
+     *
+     * @return the deserialized {@linkplain SystemConfiguration} object if successful;
+     *         otherwise, returns {@code null} if the configuration file was not found or an error occurred.
+     */
     public SystemConfiguration loadConfiguration() {
         try (FileReader reader = new FileReader(configFile)) {
             logger.info("Loading configuration from {}.", configFile);

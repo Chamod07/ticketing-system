@@ -57,9 +57,25 @@ public class TicketingSystem {
 
     private void setNewConfig() {
         System.out.println("No previous configuration loaded. Proceeding to new configuration.");
-        // Total tickets
-        System.out.print("Enter total number of tickets: ");
-        int totalTickets = getValidInput(scanner);
+
+        int totalTickets;
+        int maxTicketCapacity;
+
+        while (true) {
+            // Total tickets
+            System.out.print("Enter total number of tickets: ");
+            totalTickets = getValidInput(scanner);
+
+            // Max ticket capacity
+            System.out.print("Enter maximum ticket capacity: ");
+            maxTicketCapacity = getValidInput(scanner);
+
+            if (maxTicketCapacity > totalTickets) {
+                break;
+            } else {
+                System.out.println("Maximum ticket capacity must be greater than total tickets. Please try again.");
+            }
+        }
 
         // Ticket release rate
         System.out.print("Enter ticket release rate (in seconds): ");
@@ -69,11 +85,7 @@ public class TicketingSystem {
         System.out.print("Enter customer retrieval rate (in seconds): ");
         int ticketRetrievalRate = getValidInput(scanner);
 
-        // Max ticket capacity
-        System.out.print("Enter maximum ticket capacity: ");
-        int maxTicketCapacity = getValidInput(scanner);
-
-        // create configuration
+        // create new configuration
         configuration = new SystemConfiguration(totalTickets, ticketReleaseRate, ticketRetrievalRate, maxTicketCapacity);
 
         // save configuration to a JSON file

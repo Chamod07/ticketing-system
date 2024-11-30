@@ -8,13 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e6a3414-441c-4a23-8f32-a5f4bfc4b261" name="Changes" comment="Improved logging clarity with user IDs, changed to LinkedList from ArrayList">
+    <list default="true" id="3e6a3414-441c-4a23-8f32-a5f4bfc4b261" name="Changes" comment="Update previous/new configurations and start/stop functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/cli/TicketingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/cli/TicketingSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/config/SystemConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/config/SystemConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/systemConfiguration.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/cli/TicketingSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/cli/TicketingSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/config/SystemConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/config/SystemConfiguration.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +93,7 @@
       <workItem from="1732857855154" duration="1409000" />
       <workItem from="1732865668452" duration="1187000" />
       <workItem from="1732895185475" duration="11640000" />
-      <workItem from="1732962568998" duration="9679000" />
+      <workItem from="1732962568998" duration="11154000" />
     </task>
     <task id="LOCAL-00001" summary="Modified main application to configure system">
       <option name="closed" value="true" />
@@ -170,7 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732969970404</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Update previous/new configurations and start/stop functionality">
+      <option name="closed" value="true" />
+      <created>1732972673679</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732972673679</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +202,7 @@
     <MESSAGE value="Add log4j logging, totalTickets seeds initial tickets" />
     <MESSAGE value="Saved logging to log file, graceful shutdown for threads" />
     <MESSAGE value="Improved logging clarity with user IDs, changed to LinkedList from ArrayList" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved logging clarity with user IDs, changed to LinkedList from ArrayList" />
+    <MESSAGE value="Update previous/new configurations and start/stop functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update previous/new configurations and start/stop functionality" />
   </component>
 </project>

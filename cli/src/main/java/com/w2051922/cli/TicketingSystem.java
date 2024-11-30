@@ -13,39 +13,52 @@ import java.util.Scanner;
 public class TicketingSystem {
     private static final Logger logger = LogManager.getLogger(TicketingSystem.class.getName());
     private static SystemConfiguration configuration;
+    private final Scanner scanner = new Scanner(System.in);
 
     public void systemConfig() {
-        Scanner scanner = new Scanner(System.in);
 
         System.out.println("***** Event Ticketing System Configuration *****");
-
-        // Total tickets
-        System.out.print("Enter total number of tickets: ");
-        int totalTickets = getValidInput(scanner);
-
-        // Ticket release rate
-        System.out.print("Enter ticket release rate (in seconds): ");
-        int ticketReleaseRate = getValidInput(scanner);
-
-        // Ticket retrieval rate
-        System.out.print("Enter customer retrieval rate (in seconds): ");
-        int ticketRetrievalRate = getValidInput(scanner);
-
-        // Max ticket capacity
-        System.out.print("Enter maximum ticket capacity: ");
-        int maxTicketCapacity = getValidInput(scanner);
-
-        // create configuration
-        configuration = new SystemConfiguration(totalTickets, ticketReleaseRate, ticketRetrievalRate, maxTicketCapacity);
-
-        try {
-            configuration.saveConfiguration();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        initializeConfig();
 
         logger.info("System configured with: {}", configuration);
 
+        System.out.println("Type 'start' to begin: ");
+    }
+
+    public void initializeConfig() {
+        System.out.print("Load previous system configuration? (yes/no): ");
+        String loadConfig = scanner.nextLine().toLowerCase().trim();
+        if (loadConfig.equals("yes")) {
+            configuration = new SystemConfiguration();
+            configuration = configuration.loadConfiguration();
+            System.out.println("Loaded previous system configuration.");
+        } else {
+            System.out.println("No previous configuration loaded. Proceeding to new configuration.");
+            // Total tickets
+            System.out.print("Enter total number of tickets: ");
+            int totalTickets = getValidInput(scanner);
+
+            // Ticket release rate
+            System.out.print("Enter ticket release rate (in seconds): ");
+            int ticketReleaseRate = getValidInput(scanner);
+
+            // Ticket retrieval rate
+            System.out.print("Enter customer retrieval rate (in seconds): ");
+            int ticketRetrievalRate = getValidInput(scanner);
+
+            // Max ticket capacity
+            System.out.print("Enter maximum ticket capacity: ");
+            int maxTicketCapacity = getValidInput(scanner);
+
+            // create configuration
+            configuration = new SystemConfiguration(totalTickets, ticketReleaseRate, ticketRetrievalRate, maxTicketCapacity);
+
+            try {
+                configuration.saveConfiguration();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     private int getValidInput(Scanner scanner) {
@@ -64,21 +77,17 @@ public class TicketingSystem {
 
     public static void main(String[] args) {
         TicketingSystem ticketingSystem = new TicketingSystem();
-        if (configuration == null) {
-            ticketingSystem.systemConfig();
-        } else {
-//            configuration= SystemConfiguration.loadConfiguration();
-        }
+        ticketingSystem.systemConfig();
 
         // Initialize ticket pool
         TicketPool ticketPool = new TicketPool(configuration.getMaxTicketCapacity(), configuration.getTotalTickets());
 
         // Implement vendor and customer threads
-        Vendor vendor1 = new Vendor(ticketPool, "12", 1, configuration.getTicketReleaseRate());
-        Vendor vendor2 = new Vendor(ticketPool, "23", 2, configuration.getTicketReleaseRate());
+        Vendor vendor1 = new Vendor(ticketPool, "1", 1, configuration.getTicketReleaseRate());
+        Vendor vendor2 = new Vendor(ticketPool, "2", 1, configuration.getTicketReleaseRate());
 
-        Customer customer1 = new Customer(ticketPool, "34", 1, configuration.getCustomerRetrievalRate());
-        Customer customer2 = new Customer(ticketPool, "56 ", 2, configuration.getCustomerRetrievalRate());
+        Customer customer1 = new Customer(ticketPool, "1", 1, configuration.getCustomerRetrievalRate());
+        Customer customer2 = new Customer(ticketPool, "2", 1, configuration.getCustomerRetrievalRate());
 
         Thread vendor1Thread = new Thread(vendor1);
         Thread vendor2Thread = new Thread(vendor2);

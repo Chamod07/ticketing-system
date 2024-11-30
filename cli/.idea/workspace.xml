@@ -8,24 +8,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e6a3414-441c-4a23-8f32-a5f4bfc4b261" name="Changes" comment="Add log4j logging, totalTickets seeds initial tickets">
+    <list default="true" id="3e6a3414-441c-4a23-8f32-a5f4bfc4b261" name="Changes" comment="Saved logging to log file, graceful shutdown for threads">
+      <change afterPath="$PROJECT_DIR$/../backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/ticketing-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/ticketing-system.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/cli/TicketingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/cli/TicketingSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/config/SystemConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/config/SystemConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/TicketPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/TicketPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Vendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Vendor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/systemConfiguration.json" beforeDir="false" afterPath="$PROJECT_DIR$/systemConfiguration.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/cli/TicketingSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/cli/TicketingSystem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/config/SystemConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/config/SystemConfiguration.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/models/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/models/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/models/Ticket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/models/Ticket.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/models/TicketPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/models/TicketPool.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/models/Vendor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/models/Vendor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j2.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/log4j2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/resources/log4j2.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,27 +62,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.TicketingSystem.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/chamo/OneDrive/Desktop/ticketing-system/cli",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.XPath",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.TicketingSystem.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/chamo/OneDrive/Desktop/ticketing-system/cli&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.XPath&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -103,7 +100,11 @@
       <option name="presentableId" value="Default" />
       <updated>1732591606187</updated>
       <workItem from="1732591607251" duration="900000" />
-      <workItem from="1732635593168" duration="86065000" />
+      <workItem from="1732635593168" duration="86355000" />
+      <workItem from="1732857855154" duration="1409000" />
+      <workItem from="1732865668452" duration="1187000" />
+      <workItem from="1732895185475" duration="11640000" />
+      <workItem from="1732962568998" duration="7257000" />
     </task>
     <task id="LOCAL-00001" summary="Modified main application to configure system">
       <option name="closed" value="true" />
@@ -161,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732813837528</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Saved logging to log file, graceful shutdown for threads">
+      <option name="closed" value="true" />
+      <created>1732824084478</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732824084478</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +195,7 @@
     <MESSAGE value="Changed ticket retrieval and release rates definitions" />
     <MESSAGE value="Save and load configurations from JSON file" />
     <MESSAGE value="Add log4j logging, totalTickets seeds initial tickets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add log4j logging, totalTickets seeds initial tickets" />
+    <MESSAGE value="Saved logging to log file, graceful shutdown for threads" />
+    <option name="LAST_COMMIT_MESSAGE" value="Saved logging to log file, graceful shutdown for threads" />
   </component>
 </project>

@@ -12,7 +12,7 @@ public class SystemConfiguration {
     private int ticketReleaseRate;
     private int customerRetrievalRate;
     private int maxTicketCapacity;
-    private static final String CONFIG_FILE = "systemConfiguration.json";
+    private static final String configFile = "systemConfiguration.json";
     private static final Logger logger = LogManager.getLogger(SystemConfiguration.class.getName());
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
@@ -23,25 +23,24 @@ public class SystemConfiguration {
         this.maxTicketCapacity = maxTicketCapacity;
     }
 
+    public SystemConfiguration() {}
+
     public void saveConfiguration() throws IOException {
-        try (FileWriter writer = new FileWriter(CONFIG_FILE)) {
+        try (FileWriter writer = new FileWriter(configFile)) {
             gson.toJson(this, writer);
-            logger.info("Configuration saved to {}.", CONFIG_FILE);
-        } catch (IOException e) {
-            logger.error(e);
+            logger.info("Configuration saved to {}.", configFile);
         }
     }
 
-    public SystemConfiguration loadConfiguration() throws IOException {
-        try (FileReader reader = new FileReader(CONFIG_FILE)) {
+    public SystemConfiguration loadConfiguration() {
+        try (FileReader reader = new FileReader(configFile)) {
             return gson.fromJson(reader, SystemConfiguration.class);
         } catch (FileNotFoundException e) {
-            logger.error("Failed to load configuration from {}", CONFIG_FILE, e);
-            return null;
+            logger.error("Failed to load configuration from {}", configFile, e);
         } catch (IOException e) {
-            logger.error(e);
-            return null;
+
         }
+        return null;
     }
 
     // Getters and Setters
@@ -66,7 +65,6 @@ public class SystemConfiguration {
         this.totalTickets = totalTickets;
         logger.info("Total tickets value was set to: {}", totalTickets);
     }
-
     public void setTicketReleaseRate(int ticketReleaseRate) {
         if (ticketReleaseRate <= 0) {
             logger.warn("Ticket release rate value is invalid: {}", ticketReleaseRate);
@@ -75,7 +73,6 @@ public class SystemConfiguration {
         this.ticketReleaseRate = ticketReleaseRate;
         logger.info("Ticket release rate value was set to: {}", ticketReleaseRate);
     }
-
     public void setCustomerRetrievalRate(int customerRetrievalRate) {
         if (customerRetrievalRate <= 0) {
             logger.warn("Customer retrieval rate value is invalid: {}", customerRetrievalRate);
@@ -84,7 +81,6 @@ public class SystemConfiguration {
         this.customerRetrievalRate = customerRetrievalRate;
         logger.info("Customer retrieval rate value was set to: {}", customerRetrievalRate);
     }
-
     public void setMaxTicketCapacity(int maxTicketCapacity) {
         if (maxTicketCapacity <= 0) {
             logger.warn("Max ticket capacity value is invalid: {}", maxTicketCapacity);

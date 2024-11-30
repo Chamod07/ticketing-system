@@ -3,16 +3,13 @@ package com.w2051922.models;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class TicketPool {
-    private List<Ticket> tickets;
-    private int maxCapacity;
-    private int totalTickets;
+    private final List<Ticket> tickets;
+    private final int maxCapacity;
     private final ReentrantLock lock = new ReentrantLock(true);
     private final Condition notFull;
     private final Condition notEmpty;
@@ -20,8 +17,7 @@ public class TicketPool {
 
     public TicketPool(int maxCapacity, int totalTickets) {
         this.maxCapacity = maxCapacity;
-        this.totalTickets = totalTickets;
-        this.tickets = Collections.synchronizedList(new ArrayList<>());
+        this.tickets = Collections.synchronizedList(new LinkedList<>());
         this.notFull = lock.newCondition();
         this.notEmpty = lock.newCondition();
 
@@ -35,26 +31,22 @@ public class TicketPool {
      * Add tickets to the ticket pool
      * @param ticketCount number of tickets to sell
      * **/
-    public void addTicket(int ticketCount) {
+    public void addTicket(int ticketCount, String vendorId) {
         lock.lock();
         try {
             // Make sure not to go beyond max capacity
-            int availableSpace = maxCapacity - tickets.size();
-            int ticketsToAdd = Math.min(ticketCount, availableSpace);
-
-            if (ticketsToAdd > 0) {
-                for (int i = 0; i < ticketsToAdd; i++) {
-                    tickets.add(new Ticket());
-                }
-                totalTickets = tickets.size(); // Assign the current size of ticket pool to totalTickets
-                logger.info("Added {} tickets. Current pool size: {}", ticketsToAdd, totalTickets);
-                notEmpty.signalAll(); // Notify customers
-            } else {
-                logger.warn("Cannot add tickets. Pool is at max capacity.");
+            while (tickets.size() + ticketCount > maxCapacity) {
+                logger.warn("[Vendor-{}] Cannot add tickets. Not enough space.", vendorId);
                 notFull.await(); // Hold threads until tickets are available
             }
+            for (int i = 0; i < ticketCount; i++) {
+                tickets.add(new Ticket());
+            }
+
+            logger.info("[Vendor-{}] Added {} tickets. (Pool size: {})", vendorId, ticketCount, tickets.size());
+            notEmpty.signalAll(); // Notify customers that tickets are available
         } catch (InterruptedException e) {
-            logger.error("Ticket addition interrupted.");
+            logger.error("[Vendor-{}] Ticket addition interrupted.", vendorId, e);
             Thread.currentThread().interrupt();
         } finally {
             lock.unlock();
@@ -65,25 +57,24 @@ public class TicketPool {
      * Remove tickets from ticket pool
      * @param ticketCount number of tickets to buy
      * **/
-    public void removeTicket(int ticketCount) {
+    public void removeTicket(int ticketCount, String customerId) {
         lock.lock();
         try {
-            while (tickets.isEmpty()) {
-                logger.warn("No tickets available. Waiting for tickets to be added.");
-                notEmpty.await();
+            while (tickets.size() < ticketCount) {
+                logger.warn("[Customer-{}] Not enough tickets available. Waiting for tickets to be added.", customerId);
+                notEmpty.await(); // Wait until more tickets become available
             }
-            // To make sure not to remove more tickets than available
-            int ticketsToRemove = Math.min(ticketCount, tickets.size());
-            for (int i = 0; i < ticketsToRemove; i++) {
+
+            // Make sure not to remove more tickets than available
+            for (int i = 0; i < ticketCount; i++) {
                 tickets.remove(0);
             }
 
-            totalTickets = tickets.size();
-            logger.info("Purchased {} tickets. Remaining pool size: {}", ticketsToRemove, totalTickets);
-            notFull.signalAll(); // Notify vendors
+            logger.info("[Customer-{}] Purchased {} tickets. (Pool size: {})", customerId, ticketCount, tickets.size());
+            notFull.signalAll(); // Notify vendors waiting to add more tickets
         } catch (InterruptedException e) {
-            logger.error("Ticket removal interrupted.");
             Thread.currentThread().interrupt();
+            logger.error("[Customer-{}] Ticket removal interrupted.", customerId, e);
         } finally {
             lock.unlock();
         }

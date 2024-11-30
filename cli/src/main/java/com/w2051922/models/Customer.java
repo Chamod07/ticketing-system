@@ -41,7 +41,7 @@ public class Customer implements Runnable {
     public void run() {
         try {
             while (running) {
-                ticketPool.removeTicket(ticketsPerRetrieval); // Purchase ticket
+                ticketPool.removeTicket(ticketsPerRetrieval, customerId); // Purchase ticket
                 Thread.sleep(retrievalInterval * 1000L); // Wait for the retrieval rate
             }
         } catch (InterruptedException e) {

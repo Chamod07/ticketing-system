@@ -7,7 +7,6 @@ import com.w2051922.models.Vendor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class TicketingSystem {
@@ -16,69 +15,72 @@ public class TicketingSystem {
     private final Scanner scanner = new Scanner(System.in);
 
     public void systemConfig() {
-
         System.out.println("***** Event Ticketing System Configuration *****");
         initializeConfig();
 
         logger.info("System configured with: {}", configuration);
 
-        System.out.println("Type 'start' to begin: ");
+        while (true) {
+            System.out.print("Do you want to start the system? (start/stop): ");
+            String start = scanner.nextLine().toLowerCase().trim();
+            if (start.equals("start")) {
+                logger.info("System started.");
+                startSystem();
+                break;
+            } if (start.equals("stop")) {
+                logger.info("System stopped. Exiting...");
+                break;
+            } else {
+                System.out.println("Invalid input. Please type 'start' or 'stop'.");
+            }
+        }
     }
 
     public void initializeConfig() {
         System.out.print("Load previous system configuration? (yes/no): ");
-        String loadConfig = scanner.nextLine().toLowerCase().trim();
-        if (loadConfig.equals("yes")) {
-            configuration = new SystemConfiguration();
-            configuration = configuration.loadConfiguration();
-            System.out.println("Loaded previous system configuration.");
-        } else {
-            System.out.println("No previous configuration loaded. Proceeding to new configuration.");
-            // Total tickets
-            System.out.print("Enter total number of tickets: ");
-            int totalTickets = getValidInput(scanner);
-
-            // Ticket release rate
-            System.out.print("Enter ticket release rate (in seconds): ");
-            int ticketReleaseRate = getValidInput(scanner);
-
-            // Ticket retrieval rate
-            System.out.print("Enter customer retrieval rate (in seconds): ");
-            int ticketRetrievalRate = getValidInput(scanner);
-
-            // Max ticket capacity
-            System.out.print("Enter maximum ticket capacity: ");
-            int maxTicketCapacity = getValidInput(scanner);
-
-            // create configuration
-            configuration = new SystemConfiguration(totalTickets, ticketReleaseRate, ticketRetrievalRate, maxTicketCapacity);
-
-            try {
-                configuration.saveConfiguration();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
-
-    private int getValidInput(Scanner scanner) {
         while (true) {
-            try {
-                int input = Integer.parseInt(scanner.nextLine());
-                if (input > 0) {
-                    return input;
+            String loadConfig = scanner.nextLine().toLowerCase().trim();
+            if (loadConfig.equals("yes")) {
+                configuration = new SystemConfiguration();
+                configuration = configuration.loadConfiguration();
+                if (configuration == null) {
+                    setNewConfig();
                 }
-                System.out.print("Please enter a number greater than 0: ");
-            } catch (NumberFormatException e) {
-                System.out.print("Invalid input. Please enter a valid number: ");
+                break;
             }
+            if (loadConfig.equals("no")) {
+                setNewConfig();
+                break;
+            } else System.out.print("Invalid input. Please type 'yes' or 'no': ");
         }
     }
 
-    public static void main(String[] args) {
-        TicketingSystem ticketingSystem = new TicketingSystem();
-        ticketingSystem.systemConfig();
+    private void setNewConfig() {
+        System.out.println("No previous configuration loaded. Proceeding to new configuration.");
+        // Total tickets
+        System.out.print("Enter total number of tickets: ");
+        int totalTickets = getValidInput(scanner);
 
+        // Ticket release rate
+        System.out.print("Enter ticket release rate (in seconds): ");
+        int ticketReleaseRate = getValidInput(scanner);
+
+        // Ticket retrieval rate
+        System.out.print("Enter customer retrieval rate (in seconds): ");
+        int ticketRetrievalRate = getValidInput(scanner);
+
+        // Max ticket capacity
+        System.out.print("Enter maximum ticket capacity: ");
+        int maxTicketCapacity = getValidInput(scanner);
+
+        // create configuration
+        configuration = new SystemConfiguration(totalTickets, ticketReleaseRate, ticketRetrievalRate, maxTicketCapacity);
+
+        // save configuration to a JSON file
+        configuration.saveConfiguration();
+    }
+
+    private void startSystem() {
         // Initialize ticket pool
         TicketPool ticketPool = new TicketPool(configuration.getMaxTicketCapacity(), configuration.getTotalTickets());
 
@@ -100,7 +102,24 @@ public class TicketingSystem {
 
         customer1Thread.start();
         customer2Thread.start();
-
     }
 
+    private int getValidInput(Scanner scanner) {
+        while (true) {
+            try {
+                int input = Integer.parseInt(scanner.nextLine());
+                if (input > 0) {
+                    return input;
+                }
+                System.out.print("Please enter a number greater than 0: ");
+            } catch (NumberFormatException e) {
+                System.out.print("Invalid input. Please enter a valid number: ");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        TicketingSystem ticketingSystem = new TicketingSystem();
+        ticketingSystem.systemConfig();
+    }
 }

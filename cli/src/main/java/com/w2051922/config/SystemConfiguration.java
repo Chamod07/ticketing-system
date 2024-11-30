@@ -25,20 +25,23 @@ public class SystemConfiguration {
 
     public SystemConfiguration() {}
 
-    public void saveConfiguration() throws IOException {
+    public void saveConfiguration() {
         try (FileWriter writer = new FileWriter(configFile)) {
             gson.toJson(this, writer);
             logger.info("Configuration saved to {}.", configFile);
+        } catch (IOException e) {
+            logger.warn("Failed to save configuration to {}", configFile);
         }
     }
 
     public SystemConfiguration loadConfiguration() {
         try (FileReader reader = new FileReader(configFile)) {
+            logger.info("Loading configuration from {}.", configFile);
             return gson.fromJson(reader, SystemConfiguration.class);
         } catch (FileNotFoundException e) {
-            logger.error("Failed to load configuration from {}", configFile, e);
+            logger.error("Configuration file named {} not found.", configFile);
         } catch (IOException e) {
-
+            logger.warn("Failed to load configuration from {}", configFile);
         }
         return null;
     }
@@ -93,10 +96,10 @@ public class SystemConfiguration {
     @Override
     public String toString() {
         return "[" +
-                "totalTickets = " + totalTickets +
-                ", ticketReleaseRate = " + ticketReleaseRate +
-                ", customerRetrievalRate = " + customerRetrievalRate +
-                ", maxTicketCapacity = " + maxTicketCapacity +
+                "Total Tickets = " + totalTickets +
+                ", Ticket Release Rate = " + ticketReleaseRate +
+                ", Customer Retrieval Rate = " + customerRetrievalRate +
+                ", Maximum Ticket Capacity = " + maxTicketCapacity +
                 "]";
     }
 }

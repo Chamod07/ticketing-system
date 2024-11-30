@@ -4,10 +4,11 @@ import com.w2051922.config.SystemConfiguration;
 import com.w2051922.models.Customer;
 import com.w2051922.models.TicketPool;
 import com.w2051922.models.Vendor;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class TicketingSystem {
     private static final Logger logger = LogManager.getLogger(TicketingSystem.class.getName());
@@ -78,11 +79,11 @@ public class TicketingSystem {
         }
 
         // Ticket release rate
-        System.out.print("Enter ticket release rate (in seconds): ");
+        System.out.print("Enter ticket release rate (tickets per second): ");
         int ticketReleaseRate = getValidInput(scanner);
 
         // Ticket retrieval rate
-        System.out.print("Enter customer retrieval rate (in seconds): ");
+        System.out.print("Enter customer retrieval rate (tickets per seconds): ");
         int ticketRetrievalRate = getValidInput(scanner);
 
         // create new configuration
@@ -93,27 +94,38 @@ public class TicketingSystem {
     }
 
     private void startSystem() {
+        System.out.print("Enter the number of vendors to simulate: ");
+        int numberOfVendors = getValidInput(scanner);
+
+        System.out.print("Enter the number of customers to simulate: ");
+        int numberOfCustomers = getValidInput(scanner);
+
+        logger.info("Simulating {} vendors and {} customers.", numberOfVendors, numberOfCustomers);
+
         // Initialize ticket pool
         TicketPool ticketPool = new TicketPool(configuration.getMaxTicketCapacity(), configuration.getTotalTickets());
 
-        // Implement vendor and customer threads
-        Vendor vendor1 = new Vendor(ticketPool, "1", 1, configuration.getTicketReleaseRate());
-        Vendor vendor2 = new Vendor(ticketPool, "2", 1, configuration.getTicketReleaseRate());
+        // Create vendor threads and store in an array
+        List<Thread> vendorThreads = new ArrayList<>();
+        for (int i = 1; i <= numberOfVendors; i++) {
+            vendorThreads.add(new Thread(new Vendor(ticketPool, String.valueOf(i), configuration.getTicketReleaseRate())));
+        }
 
-        Customer customer1 = new Customer(ticketPool, "1", 1, configuration.getCustomerRetrievalRate());
-        Customer customer2 = new Customer(ticketPool, "2", 1, configuration.getCustomerRetrievalRate());
+        // Create customer threads and store in an array
+        List<Thread> customerThreads = new ArrayList<>();
+        for (int i = 1; i <= numberOfCustomers; i++) {
+            customerThreads.add(new Thread(new Customer(ticketPool, String.valueOf(i), configuration.getCustomerRetrievalRate())));
+        }
 
-        Thread vendor1Thread = new Thread(vendor1);
-        Thread vendor2Thread = new Thread(vendor2);
+        // Start vendor threads
+        for (Thread thread : vendorThreads) {
+            thread.start();
+        }
 
-        Thread customer1Thread = new Thread(customer1);
-        Thread customer2Thread = new Thread(customer2);
-
-        vendor1Thread.start();
-        vendor2Thread.start();
-
-        customer1Thread.start();
-        customer2Thread.start();
+        // Start customer threads
+        for (Thread thread : customerThreads) {
+            thread.start();
+        }
     }
 
     private int getValidInput(Scanner scanner) {

@@ -6,16 +6,14 @@ import org.apache.logging.log4j.Logger;
 public class Customer implements Runnable {
     private final TicketPool ticketPool;
     private String customerId;
-    private int ticketsPerRetrieval;
-    private int retrievalInterval;
+    private int retrievalRate;
     private volatile boolean running = true;
     private static final Logger logger = LogManager.getLogger(Customer.class.getName());
 
-    public Customer(TicketPool ticketPool, String customerId, int ticketsPerRetrieval, int retrievalInterval) {
+    public Customer(TicketPool ticketPool, String customerId, int retrievalRate) {
         this.ticketPool = ticketPool;
         this.customerId = customerId;
-        this.ticketsPerRetrieval = ticketsPerRetrieval;
-        this.retrievalInterval = retrievalInterval;
+        this.retrievalRate = retrievalRate;
     }
 
     public String getCustomerId() {
@@ -24,25 +22,19 @@ public class Customer implements Runnable {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
-    public int getRetrievalInterval() {
-        return retrievalInterval;
+    public int getRetrievalRate() {
+        return retrievalRate;
     }
-    public void setRetrievalInterval(int retrievalInterval) {
-        this.retrievalInterval = retrievalInterval;
-    }
-    public int getTicketsPerRetrieval() {
-        return ticketsPerRetrieval;
-    }
-    public void setTicketsPerRetrieval(int ticketsPerRetrieval) {
-        this.ticketsPerRetrieval = ticketsPerRetrieval;
+    public void setRetrievalRate(int retrievalRate) {
+        this.retrievalRate = retrievalRate;
     }
 
     @Override
     public void run() {
         try {
             while (running) {
-                ticketPool.removeTicket(ticketsPerRetrieval, customerId); // Purchase ticket
-                Thread.sleep(retrievalInterval * 1000L); // Wait for the retrieval rate
+                ticketPool.removeTicket(retrievalRate, customerId); // Purchase ticket
+                Thread.sleep(1000); // Wait for the retrieval rate
             }
         } catch (InterruptedException e) {
             logger.error("Customer interrupted", e);
@@ -55,6 +47,6 @@ public class Customer implements Runnable {
 
     @Override
     public String toString() {
-        return customerId + "\t" + ticketsPerRetrieval + "\t" + retrievalInterval;
+        return customerId + "\t" + retrievalRate;
     }
 }

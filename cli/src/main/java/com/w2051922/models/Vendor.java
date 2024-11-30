@@ -6,16 +6,14 @@ import org.apache.logging.log4j.Logger;
 public class Vendor implements Runnable {
     private final TicketPool ticketPool;
     private String vendorID;
-    private int ticketsPerRelease;
-    private int releaseInterval;
+    private int releaseRate;
     private volatile boolean running = true;
     private static final Logger logger = LogManager.getLogger(Vendor.class.getName());
 
-    public Vendor(TicketPool ticketPool, String vendorID, int ticketsPerRelease, int releaseInterval) {
+    public Vendor(TicketPool ticketPool, String vendorID, int releaseRate) {
         this.ticketPool = ticketPool;
         this.vendorID = vendorID;
-        this.ticketsPerRelease = ticketsPerRelease;
-        this.releaseInterval = releaseInterval;
+        this.releaseRate = releaseRate;
     }
 
     public String getVendorID() {
@@ -24,25 +22,19 @@ public class Vendor implements Runnable {
     public void setVendorID(String vendorID) {
         this.vendorID = vendorID;
     }
-    public int getTicketsPerRelease() {
-        return ticketsPerRelease;
+    public int getReleaseRate() {
+        return releaseRate;
     }
-    public void setTicketsPerRelease(int ticketsPerRelease) {
-        this.ticketsPerRelease = ticketsPerRelease;
-    }
-    public int getReleaseInterval() {
-        return releaseInterval;
-    }
-    public void setReleaseInterval(int releaseInterval) {
-        this.releaseInterval = releaseInterval;
+    public void setReleaseRate(int releaseRate) {
+        this.releaseRate = releaseRate;
     }
 
     @Override
     public void run() {
         try {
             while (running) {
-                ticketPool.addTicket(ticketsPerRelease, vendorID); // Add tickets
-                Thread.sleep(releaseInterval * 1000L); // Wait for the release rate
+                ticketPool.addTicket(releaseRate, vendorID); // Add tickets
+                Thread.sleep(1000); // Wait for the release rate
             }
         } catch (InterruptedException e) {
             logger.error("Vendor interrupted", e);
@@ -55,6 +47,6 @@ public class Vendor implements Runnable {
 
     @Override
     public String toString() {
-        return vendorID + "\t" + ticketsPerRelease + "\t" + releaseInterval;
+        return vendorID + "\t" + releaseRate;
     }
 }

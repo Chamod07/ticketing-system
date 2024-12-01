@@ -8,15 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e6a3414-441c-4a23-8f32-a5f4bfc4b261" name="Changes" comment="Add documentation to methods">
+    <list default="true" id="3e6a3414-441c-4a23-8f32-a5f4bfc4b261" name="Changes" comment="Improved logging for initialising and starting threads">
       <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/chamod/ticketingsystembackend/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/chamod/ticketingsystembackend/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/cli/TicketingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/cli/TicketingSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Vendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Vendor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/cli/TicketingSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/cli/TicketingSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/models/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/models/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/models/Vendor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/models/Vendor.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +105,7 @@
       <workItem from="1733027988911" duration="17000" />
       <workItem from="1733030072111" duration="150000" />
       <workItem from="1733043771287" duration="1264000" />
-      <workItem from="1733067378872" duration="746000" />
+      <workItem from="1733067378872" duration="796000" />
     </task>
     <task id="LOCAL-00001" summary="Modified main application to configure system">
       <option name="closed" value="true" />
@@ -218,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732984099174</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Improved logging for initialising and starting threads">
+      <option name="closed" value="true" />
+      <created>1733068167551</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1733068167551</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +250,7 @@
     <MESSAGE value="Validate maxTicketCapacity&gt;totalTicket" />
     <MESSAGE value="Dynamically create customer and vendor threads" />
     <MESSAGE value="Add documentation to methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add documentation to methods" />
+    <MESSAGE value="Improved logging for initialising and starting threads" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved logging for initialising and starting threads" />
   </component>
 </project>

@@ -31,7 +31,6 @@ public class CustomerServiceImpl implements CustomerService {
     public String updateCustomer(CustomerSaveRequestDTO customerSaveRequestDTO) {
 
         if (customerRepository.existsById(customerSaveRequestDTO.getCustomerId())) {
-
             Customer customer = customerRepository.getReferenceById(customerSaveRequestDTO.getCustomerId());
 
             customer.setRetrievalRate(customerSaveRequestDTO.getRetrievalRate());
@@ -43,5 +42,6 @@ public class CustomerServiceImpl implements CustomerService {
         } else {
             return "Customer not found.";
         }
+
     }
 }

@@ -26,4 +26,22 @@ public class CustomerServiceImpl implements CustomerService {
 
         return "Customer saved successfully";
     }
+
+    @Override
+    public String updateCustomer(CustomerSaveRequestDTO customerSaveRequestDTO) {
+
+        if (customerRepository.existsById(customerSaveRequestDTO.getCustomerId())) {
+
+            Customer customer = customerRepository.getReferenceById(customerSaveRequestDTO.getCustomerId());
+
+            customer.setRetrievalRate(customerSaveRequestDTO.getRetrievalRate());
+            customer.setRetrievalInterval(customerSaveRequestDTO.getRetrievalInterval());
+
+            customerRepository.save(customer);
+
+            return "Customer: " + customerSaveRequestDTO.getCustomerId() + " updated successfully.";
+        } else {
+            return "Customer not found.";
+        }
+    }
 }

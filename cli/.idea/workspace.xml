@@ -8,14 +8,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e6a3414-441c-4a23-8f32-a5f4bfc4b261" name="Changes" comment="Validate maxTicketCapacity&gt;totalTicket">
+    <list default="true" id="3e6a3414-441c-4a23-8f32-a5f4bfc4b261" name="Changes" comment="Add documentation to methods">
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/cli/TicketingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/cli/TicketingSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Vendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w2051922/models/Vendor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/cli/TicketingSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/cli/TicketingSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/models/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/models/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/w2051922/models/Vendor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/w2051922/models/Vendor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/Components/configuration/configuration.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/Components/configuration/configuration.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/Components/configuration/configuration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/Components/configuration/configuration.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/Components/ticket-display/ticket-display.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/Components/ticket-display/ticket-display.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/Components/ticket-display/ticket-display.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/Components/ticket-display/ticket-display.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +66,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/chamo/OneDrive/Desktop/ticketing-system/cli&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/chamo/OneDrive/Desktop/ticketing-system&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -76,6 +80,15 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="TicketingSystem" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.w2051922.cli.TicketingSystem" />
+      <module name="cli" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -97,7 +110,11 @@
       <workItem from="1732857855154" duration="1409000" />
       <workItem from="1732865668452" duration="1187000" />
       <workItem from="1732895185475" duration="11640000" />
-      <workItem from="1732962568998" duration="12885000" />
+      <workItem from="1732962568998" duration="21431000" />
+      <workItem from="1732987249054" duration="13000" />
+      <workItem from="1733027988911" duration="17000" />
+      <workItem from="1733030072111" duration="150000" />
+      <workItem from="1733043771287" duration="1264000" />
     </task>
     <task id="LOCAL-00001" summary="Modified main application to configure system">
       <option name="closed" value="true" />
@@ -187,7 +204,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732973859009</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Dynamically create customer and vendor threads">
+      <option name="closed" value="true" />
+      <created>1732975893830</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732975893830</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add documentation to methods">
+      <option name="closed" value="true" />
+      <created>1732984099174</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1732984099174</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +249,8 @@
     <MESSAGE value="Improved logging clarity with user IDs, changed to LinkedList from ArrayList" />
     <MESSAGE value="Update previous/new configurations and start/stop functionality" />
     <MESSAGE value="Validate maxTicketCapacity&gt;totalTicket" />
-    <option name="LAST_COMMIT_MESSAGE" value="Validate maxTicketCapacity&gt;totalTicket" />
+    <MESSAGE value="Dynamically create customer and vendor threads" />
+    <MESSAGE value="Add documentation to methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add documentation to methods" />
   </component>
 </project>

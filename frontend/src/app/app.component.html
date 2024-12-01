@@ -117,7 +117,6 @@
     border-radius: 2.75rem;
     border: 0;
     transition: background 0.3s ease;
-    font-family: var(--inter-font);
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
@@ -230,6 +229,10 @@
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
+      <app-configuration></app-configuration>
+      <app-control-panel></app-control-panel>
+      <app-ticket-display></app-ticket-display>
+      <app-log-display></app-log-display>
       <div class="pill-group">
         @for (item of [
           { title: 'Explore the Docs', link: 'https://angular.dev' },

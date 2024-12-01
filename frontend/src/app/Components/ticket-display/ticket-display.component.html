@@ -1,1 +1,21 @@
-<p>ticket-display works!</p>
+<div class="ticket-display">
+  <h2>Available Tickets</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Ticket ID</th>
+      <th>Vendor ID</th>
+      <th>Price</th>
+      <th>Timestamp</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let ticket of tickets">
+      <td>{{ ticket.id }}</td>
+      <td>{{ ticket.vendorId }}</td>
+      <td>{{ ticket.price | currency }}</td>
+      <td>{{ ticket.timestamp | date:'medium' }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

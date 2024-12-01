@@ -1,1 +1,22 @@
-<p>configuration works!</p>
+<div class="configuration-container">
+  <h2>System Configuration</h2>
+  <form [formGroup]="(<FormGroup<any>>configForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="totalTickets">Total Tickets</label>
+      <input type="number" id="totalTickets" formControlName="totalTickets">
+    </div>
+    <div class="form-group">
+      <label for="ticketReleaseRate">Ticket Release Rate</label>
+      <input type="number" id="ticketReleaseRate" formControlName="ticketReleaseRate">
+    </div>
+    <div class="form-group">
+      <label for="customerRetrievalRate">Customer Retrieval Rate</label>
+      <input type="number" id="customerRetrievalRate" formControlName="customerRetrievalRate">
+    </div>
+    <div class="form-group">
+      <label for="maxTicketCapacity">Maximum Ticket Capacity</label>
+      <input type="number" id="maxTicketCapacity" formControlName="maxTicketCapacity">
+    </div>
+    <button type="submit" [disabled]="configForm?.invalid">Save Configuration</button>
+  </form>
+</div>

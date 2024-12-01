@@ -33,12 +33,14 @@ public class Customer implements Runnable {
     public void run() {
         try {
             while (running) {
-                ticketPool.removeTicket(retrievalRate, customerId); // Purchase ticket
                 Thread.sleep(1000); // Wait for 1 second
+                ticketPool.removeTicket(retrievalRate, customerId); // Purchase ticket
             }
         } catch (InterruptedException e) {
             logger.error("Customer interrupted", e);
             Thread.currentThread().interrupt();
+        } finally {
+            stop();
         }
     }
 

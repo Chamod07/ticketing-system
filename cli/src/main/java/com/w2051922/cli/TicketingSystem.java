@@ -35,7 +35,6 @@ public class TicketingSystem {
             System.out.print("Do you want to start the system? (start/stop): ");
             String start = scanner.nextLine().toLowerCase().trim();
             if (start.equals("start")) {
-                logger.info("System started.");
                 startSystem();
                 break;
             } if (start.equals("stop")) {
@@ -92,7 +91,7 @@ public class TicketingSystem {
      * This method enters an interactive loop to ensure the maximum ticket capacity
      * is greater than the total number of tickets. The user is prompted to enter
      * valid values until the condition is satisfied. Once valid values are obtained,
-     * a new {@link SystemConfiguration} object is created and subsequently saved to a JSON file.
+     * a new {@link SystemConfiguration} object is created and saved to a JSON file.
      * </p>
      * <p>
      * Intended for internal use within the initialization process of a ticketing
@@ -154,7 +153,7 @@ public class TicketingSystem {
         System.out.print("Enter the number of customers to simulate: ");
         int numberOfCustomers = getValidInput(scanner);
 
-        logger.info("Simulating {} vendors and {} customers.", numberOfVendors, numberOfCustomers);
+        logger.info("System started with {} vendors and {} customers.", numberOfVendors, numberOfCustomers);
 
         // Initialize ticket pool
         TicketPool ticketPool = new TicketPool(configuration.getMaxTicketCapacity(), configuration.getTotalTickets());
@@ -163,22 +162,28 @@ public class TicketingSystem {
         List<Thread> vendorThreads = new ArrayList<>();
         for (int i = 1; i <= numberOfVendors; i++) {
             vendorThreads.add(new Thread(new Vendor(ticketPool, String.valueOf(i), configuration.getTicketReleaseRate())));
+            logger.info("[Vendor-{}] Thread initialised.", i);
         }
 
         // Create customer threads and store in an array
         List<Thread> customerThreads = new ArrayList<>();
         for (int i = 1; i <= numberOfCustomers; i++) {
             customerThreads.add(new Thread(new Customer(ticketPool, String.valueOf(i), configuration.getCustomerRetrievalRate())));
+            logger.info("[Customer-{}] Thread initialised.", i);
         }
 
         // Start vendor threads
-        for (Thread thread : vendorThreads) {
+        for (int i = 0; i < vendorThreads.size(); i++) {
+            Thread thread = vendorThreads.get(i);
             thread.start();
+            logger.info("[Vendor-{}] Thread started.", (i+1));
         }
 
         // Start customer threads
-        for (Thread thread : customerThreads) {
+        for (int i = 0; i < customerThreads.size(); i++) {
+            Thread thread = customerThreads.get(i);
             thread.start();
+            logger.info("[Customer-{}] Thread started.", (i+1));
         }
     }
 

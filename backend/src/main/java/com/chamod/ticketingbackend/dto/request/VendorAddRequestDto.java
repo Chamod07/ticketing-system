@@ -1,4 +1,4 @@
-package com.chamod.ticketingsystembackend.dto.request;
+package com.chamod.ticketingbackend.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,9 +7,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class VendorSaveRequestDto {
+public class VendorAddRequestDto {
 
-    private int vendorId;
+    private Long id;
     private int retrievalRate;
     private int retrievalInterval;
+    private Integer ticketsReleased;
 }

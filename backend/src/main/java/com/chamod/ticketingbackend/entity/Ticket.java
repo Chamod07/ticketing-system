@@ -1,4 +1,4 @@
-package com.chamod.ticketingsystembackend.entity;
+package com.chamod.ticketingbackend.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -15,15 +15,13 @@ import lombok.Setter;
 public class Ticket {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "event_name")
-    private String eventName;
-
-    @Column(name = "seat_number")
-    private String seatNumber;
+    @Column(name = "type")
+    private String type;
 
     @Column(name = "price")
-    private double price;
+    private Double price;
 }

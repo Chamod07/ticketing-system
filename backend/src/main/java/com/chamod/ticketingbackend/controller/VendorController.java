@@ -1,7 +1,7 @@
-package com.chamod.ticketingsystembackend.controller;
+package com.chamod.ticketingbackend.controller;
 
-import com.chamod.ticketingsystembackend.dto.request.VendorSaveRequestDto;
-import com.chamod.ticketingsystembackend.service.VendorService;
+import com.chamod.ticketingbackend.dto.request.VendorAddRequestDto;
+import com.chamod.ticketingbackend.service.VendorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +14,7 @@ public class VendorController {
     private VendorService vendorService;
 
     @PostMapping(path = "/vendor-save")
-    public String saveVendor(@RequestBody VendorSaveRequestDto vendorSaveRequestDto) {
-        return vendorService.save(vendorSaveRequestDto);
+    public String saveVendor(@RequestBody VendorAddRequestDto vendorAddRequestDto) {
+        return vendorService.save(vendorAddRequestDto);
     }
 }

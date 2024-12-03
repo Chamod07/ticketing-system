@@ -1,6 +1,6 @@
-package com.chamod.ticketingsystembackend.repository;
+package com.chamod.ticketingbackend.repository;
 
-import com.chamod.ticketingsystembackend.entity.Vendor;
+import com.chamod.ticketingbackend.entity.Vendor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;

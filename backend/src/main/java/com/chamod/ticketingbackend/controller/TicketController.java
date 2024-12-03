@@ -1,4 +1,4 @@
-package com.chamod.ticketingsystembackend.controller;
+package com.chamod.ticketingbackend.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

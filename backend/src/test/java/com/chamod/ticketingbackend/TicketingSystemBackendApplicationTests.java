@@ -1,4 +1,4 @@
-package com.chamod.ticketingsystembackend;
+package com.chamod.ticketingbackend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

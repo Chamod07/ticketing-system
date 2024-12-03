@@ -1,4 +1,4 @@
-package com.chamod.ticketingsystembackend;
+package com.chamod.ticketingbackend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -9,7 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e6a3414-441c-4a23-8f32-a5f4bfc4b261" name="Changes" comment="Improved logging for initialising and starting threads">
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/chamod/ticketingsystembackend/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/chamod/ticketingsystembackend/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +106,8 @@
       <workItem from="1733030072111" duration="150000" />
       <workItem from="1733043771287" duration="1264000" />
       <workItem from="1733067378872" duration="796000" />
+      <workItem from="1733087597021" duration="315000" />
+      <workItem from="1733143792145" duration="10000" />
     </task>
     <task id="LOCAL-00001" summary="Modified main application to configure system">
       <option name="closed" value="true" />

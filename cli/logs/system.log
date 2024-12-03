@@ -1,0 +1,3 @@
+2024-12-02 20:09:01 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-02 20:09:01 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 2, Customer Retrieval Rate = 3, Maximum Ticket Capacity = 100]
+2024-12-02 20:09:07 INFO  - System stopped. Exiting...

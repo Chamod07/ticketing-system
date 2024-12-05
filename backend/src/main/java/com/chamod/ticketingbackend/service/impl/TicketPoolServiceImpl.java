@@ -1,6 +1,6 @@
 package com.chamod.ticketingbackend.service.impl;
 
-import com.chamod.ticketingbackend.entity.Ticket;
+import com.chamod.ticketingbackend.model.Ticket;
 import com.chamod.ticketingbackend.service.TicketPoolService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

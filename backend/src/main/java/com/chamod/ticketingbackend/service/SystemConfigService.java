@@ -1,6 +1,6 @@
 package com.chamod.ticketingbackend.service;
 
-import com.chamod.ticketingbackend.entity.SystemConfiguration;
+import com.chamod.ticketingbackend.model.SystemConfiguration;
 
 public interface SystemConfigService {
     SystemConfiguration getConfiguration();

@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class VendorAddRequestDto {
 
-    private Long id;
-    private int retrievalRate;
-    private int retrievalInterval;
-    private Integer ticketsReleased;
+    private Long vendorId;
+    private int ticketsPerRelease;
+    private int releaseInterval;
 }

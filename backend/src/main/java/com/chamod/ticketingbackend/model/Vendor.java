@@ -1,4 +1,4 @@
-package com.chamod.ticketingbackend.entity;
+package com.chamod.ticketingbackend.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -13,14 +13,11 @@ public class Vendor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "vendor_id")
-    private Long id;
+    private Long vendorId;
 
-    @Column(name = "release_rate")
-    private int releaseRate;
+    @Column(name = "tickets_per_release")
+    private int ticketsPerRelease;
 
     @Column(name = "release_interval")
     private int releaseInterval;
-
-    @Column(name = "tickets_released")
-    private Integer ticketsReleased = 0;
 }

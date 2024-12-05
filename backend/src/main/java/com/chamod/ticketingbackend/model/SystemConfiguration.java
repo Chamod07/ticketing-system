@@ -1,11 +1,9 @@
-package com.chamod.ticketingbackend.entity;
+package com.chamod.ticketingbackend.model;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.File;
 import java.io.FileReader;
@@ -25,16 +23,16 @@ public class SystemConfiguration {
     private Long id;
 
     @Column(name = "total_tickets")
-    private int totalTicket;
+    private int totalTickets;
 
     @Column(name = "release_rate")
-    private int releaseRate;
+    private int ticketReleaseRate;
 
     @Column(name = "release_interval")
-    private int retrievalRate;
+    private int customerRetrievalRate;
 
     @Column(name = "max_capacity")
-    private int maxCapacity;
+    private int maxTicketCapacity;
 
     private static final String configFile = "systemConfiguration.json";
 
@@ -45,16 +43,20 @@ public class SystemConfiguration {
             throw new IOException("Configuration file doesn't exist!");
         }
         try (FileReader reader = new FileReader(file)) {
-            Gson gson = new Gson();
-            return gson.fromJson(reader, SystemConfiguration.class);
+            synchronized (SystemConfiguration.class) {
+                Gson gson = new Gson();
+                return gson.fromJson(reader, SystemConfiguration.class);
+            }
         }
     }
 
     // Save configuration to JSON file
     public void saveToFile() throws IOException{
-        try (FileWriter writer = new FileWriter(configFile)) {
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            gson.toJson(this, writer);
+        synchronized (SystemConfiguration.class) {
+            try (FileWriter writer = new FileWriter(configFile)) {
+                Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                gson.toJson(this, writer);
+            }
         }
     }
 

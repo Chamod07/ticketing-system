@@ -1426,3 +1426,159 @@
 2024-12-05 11:32:45 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
 2024-12-05 11:32:45 WARN  - [Customer-7] Not enough tickets available. Waiting for tickets to be added.
 2024-12-05 11:32:45 WARN  - [Customer-9] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 13:27:16 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 13:27:16 INFO  - System configured with: [Total Tickets = 0, Ticket Release Rate = 0, Customer Retrieval Rate = 0, Maximum Ticket Capacity = 0]
+2024-12-05 13:27:32 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 13:27:32 INFO  - System configured with: [Total Tickets = 0, Ticket Release Rate = 0, Customer Retrieval Rate = 0, Maximum Ticket Capacity = 0]
+2024-12-05 13:28:10 INFO  - System stopped. Exiting...
+2024-12-05 13:28:16 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 13:28:16 INFO  - System configured with: [Total Tickets = 0, Ticket Release Rate = 0, Customer Retrieval Rate = 0, Maximum Ticket Capacity = 0]
+2024-12-05 16:07:09 INFO  - Configuration saved to systemConfiguration.json.
+2024-12-05 16:07:09 INFO  - System configured with: [Total Tickets = 5, Ticket Release Rate = 5, Customer Retrieval Rate = 5, Maximum Ticket Capacity = 500]
+2024-12-05 16:07:11 INFO  - System stopped. Exiting...
+2024-12-05 16:07:25 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 16:07:25 INFO  - System configured with: [Total Tickets = 5, Ticket Release Rate = 5, Customer Retrieval Rate = 5, Maximum Ticket Capacity = 500]
+2024-12-05 16:07:59 INFO  - System stopped. Exiting...
+2024-12-05 16:10:36 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 16:10:36 INFO  - System configured with: [Total Tickets = 0, Ticket Release Rate = 0, Customer Retrieval Rate = 0, Maximum Ticket Capacity = 0]
+2024-12-05 16:12:23 INFO  - System stopped. Exiting...
+2024-12-05 16:13:16 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 16:13:16 INFO  - System configured with: [Total Tickets = 0, Ticket Release Rate = 0, Customer Retrieval Rate = 0, Maximum Ticket Capacity = 0]
+2024-12-05 16:13:23 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 16:13:23 INFO  - System configured with: [Total Tickets = 0, Ticket Release Rate = 0, Customer Retrieval Rate = 0, Maximum Ticket Capacity = 0]
+2024-12-05 16:13:32 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 16:13:32 INFO  - System configured with: [Total Tickets = 0, Ticket Release Rate = 0, Customer Retrieval Rate = 0, Maximum Ticket Capacity = 0]
+2024-12-05 16:13:54 INFO  - System stopped. Exiting...
+2024-12-05 16:14:18 INFO  - Configuration saved to systemConfiguration.json.
+2024-12-05 16:14:18 INFO  - System configured with: [Total Tickets = 100, Ticket Release Rate = 2, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 1000]
+2024-12-05 16:14:22 INFO  - System stopped. Exiting...
+2024-12-05 17:04:25 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 17:04:25 INFO  - System configured with: [Total Tickets = 100, Ticket Release Rate = 2, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 1000]
+2024-12-05 17:04:28 INFO  - System stopped. Exiting...
+2024-12-05 17:07:38 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 17:07:38 INFO  - System configured with: [Total Tickets = 1, Ticket Release Rate = 1, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 100]
+2024-12-05 17:07:45 INFO  - System started with 2 vendors and 3 customers.
+2024-12-05 17:07:45 INFO  - [Vendor-1] Thread initialised.
+2024-12-05 17:07:45 INFO  - [Vendor-2] Thread initialised.
+2024-12-05 17:07:45 INFO  - [Customer-1] Thread initialised.
+2024-12-05 17:07:45 INFO  - [Customer-2] Thread initialised.
+2024-12-05 17:07:45 INFO  - [Customer-3] Thread initialised.
+2024-12-05 17:07:45 INFO  - [Vendor-1] Thread started.
+2024-12-05 17:07:45 INFO  - [Vendor-2] Thread started.
+2024-12-05 17:07:45 INFO  - [Customer-1] Thread started.
+2024-12-05 17:07:45 INFO  - [Customer-2] Thread started.
+2024-12-05 17:07:45 INFO  - [Customer-3] Thread started.
+2024-12-05 17:07:46 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 2)
+2024-12-05 17:07:46 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 3)
+2024-12-05 17:07:46 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 2)
+2024-12-05 17:07:46 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 17:07:46 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:07:47 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:07:47 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 17:07:47 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 17:07:47 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:07:47 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:48 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:07:48 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 17:07:48 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 17:07:48 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:07:48 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:49 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:07:49 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 17:07:49 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 17:07:49 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:07:49 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:50 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:07:50 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 17:07:50 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 17:07:50 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:07:50 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:51 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:07:51 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 17:07:51 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 17:07:51 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:07:51 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:52 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:52 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:07:52 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 2)
+2024-12-05 17:07:52 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 17:07:52 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:07:52 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:53 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:07:53 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 2)
+2024-12-05 17:07:53 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 17:07:53 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:07:53 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:54 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:54 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:54 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:07:54 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 17:07:54 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 17:07:54 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:07:54 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:55 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:55 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:55 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:07:55 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 17:07:55 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 17:07:55 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:07:55 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:56 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:07:56 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 17:07:56 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 17:07:56 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:07:56 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:57 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:07:57 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 17:07:57 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 17:07:57 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:07:57 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:58 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:07:58 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 17:07:58 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 17:07:58 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:07:58 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:59 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:07:59 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:07:59 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 17:07:59 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 17:07:59 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:07:59 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:08:00 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:08:00 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:08:00 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:08:00 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:08:00 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:08:01 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:08:01 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:08:01 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:08:01 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:08:01 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 17:08:30 INFO  - Configuration saved to systemConfiguration.json.
+2024-12-05 17:08:30 INFO  - System configured with: [Total Tickets = 23, Ticket Release Rate = 12, Customer Retrieval Rate = 34, Maximum Ticket Capacity = 35]
+2024-12-05 17:08:34 INFO  - System stopped. Exiting...
+2024-12-05 17:08:37 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 17:08:37 INFO  - System configured with: [Total Tickets = 23, Ticket Release Rate = 12, Customer Retrieval Rate = 34, Maximum Ticket Capacity = 35]
+2024-12-05 17:09:26 INFO  - System stopped. Exiting...
+2024-12-05 17:09:34 INFO  - Configuration saved to systemConfiguration.json.
+2024-12-05 17:09:34 INFO  - System configured with: [Total Tickets = 11, Ticket Release Rate = 11, Customer Retrieval Rate = 11, Maximum Ticket Capacity = 123]
+2024-12-05 17:09:36 INFO  - System stopped. Exiting...
+2024-12-05 17:20:21 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 17:20:21 INFO  - System configured with: [Total Tickets = 11, Ticket Release Rate = 11, Customer Retrieval Rate = 11, Maximum Ticket Capacity = 123]
+2024-12-05 17:20:26 INFO  - System stopped. Exiting...
+2024-12-05 17:20:35 INFO  - Configuration saved to systemConfiguration.json.
+2024-12-05 17:20:35 INFO  - System configured with: [Total Tickets = 9, Ticket Release Rate = 9, Customer Retrieval Rate = 9, Maximum Ticket Capacity = 90]
+2024-12-05 17:22:31 INFO  - System stopped. Exiting...
+2024-12-05 17:22:35 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 17:22:35 INFO  - System configured with: [Total Tickets = 1, Ticket Release Rate = 1, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 100]
+2024-12-05 17:22:45 INFO  - System started with 1 vendors and 1 customers.
+2024-12-05 17:22:45 INFO  - [Vendor-1] Thread initialised.
+2024-12-05 17:22:45 INFO  - [Customer-1] Thread initialised.
+2024-12-05 17:22:45 INFO  - [Vendor-1] Thread started.
+2024-12-05 17:22:45 INFO  - [Customer-1] Thread started.
+2024-12-05 17:22:46 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:22:46 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 17:22:47 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 2)
+2024-12-05 17:22:47 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 17:22:48 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 17:22:48 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)

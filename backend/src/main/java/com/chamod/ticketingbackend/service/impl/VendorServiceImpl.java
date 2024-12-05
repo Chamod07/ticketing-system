@@ -1,7 +1,7 @@
 package com.chamod.ticketingbackend.service.impl;
 
 import com.chamod.ticketingbackend.dto.request.VendorAddRequestDto;
-import com.chamod.ticketingbackend.entity.Vendor;
+import com.chamod.ticketingbackend.model.Vendor;
 import com.chamod.ticketingbackend.repository.VendorRepository;
 import com.chamod.ticketingbackend.service.TicketPoolService;
 import com.chamod.ticketingbackend.service.VendorService;
@@ -16,28 +16,21 @@ public class VendorServiceImpl implements VendorService {
     @Autowired
     private TicketPoolService ticketPoolService;
 
-//    @Autowired
-//    private ModelMapper modelMapper;
-
     @Override
     public String save(VendorAddRequestDto vendorAddRequestDto) {
 
         Vendor vendor = new Vendor(
-                vendorAddRequestDto.getId(),
-                vendorAddRequestDto.getRetrievalRate(),
-                vendorAddRequestDto.getRetrievalInterval(),
-                vendorAddRequestDto.getTicketsReleased()
+                vendorAddRequestDto.getVendorId(),
+                vendorAddRequestDto.getTicketsPerRelease(),
+                vendorAddRequestDto.getReleaseInterval()
         );
 
-        if (!vendorRepository.existsById(Math.toIntExact(vendor.getId()))) {
+        if (!vendorRepository.existsById(Math.toIntExact(vendor.getVendorId()))) {
             vendorRepository.save(vendor);
             return "Vendor saved successfully";
         } else {
             return "Vendor already exists";
         }
-
-//        Vendor vendor = modelMapper.map(vendorSaveRequestDto, Vendor.class);
-//        vendorRepository.save(vendor);
     }
 
     @Override

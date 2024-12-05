@@ -2,7 +2,7 @@ package com.chamod.ticketingbackend.service.impl;
 
 import com.chamod.ticketingbackend.dto.request.CustomerAddRequestDTO;
 import com.chamod.ticketingbackend.dto.response.CustomerResponseDTO;
-import com.chamod.ticketingbackend.entity.Customer;
+import com.chamod.ticketingbackend.model.Customer;
 import com.chamod.ticketingbackend.repository.CustomerRepository;
 import com.chamod.ticketingbackend.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;

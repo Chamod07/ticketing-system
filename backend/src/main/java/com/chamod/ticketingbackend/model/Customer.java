@@ -1,4 +1,4 @@
-package com.chamod.ticketingbackend.entity;
+package com.chamod.ticketingbackend.model;
 
 import jakarta.persistence.*;
 import lombok.*;

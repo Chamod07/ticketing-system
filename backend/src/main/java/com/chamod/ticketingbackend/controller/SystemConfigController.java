@@ -1,6 +1,6 @@
 package com.chamod.ticketingbackend.controller;
 
-import com.chamod.ticketingbackend.entity.SystemConfiguration;
+import com.chamod.ticketingbackend.model.SystemConfiguration;
 import com.chamod.ticketingbackend.service.SystemConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

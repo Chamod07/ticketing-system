@@ -1,6 +1,8 @@
 package com.w2051922.config;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -12,7 +14,7 @@ public class SystemConfiguration {
     private int ticketReleaseRate;
     private int customerRetrievalRate;
     private int maxTicketCapacity;
-    private static final String configFile = "systemConfiguration.json";
+    private static final String configFile = "config/systemConfiguration.json";
     private static final Logger logger = LogManager.getLogger(SystemConfiguration.class.getName());
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
@@ -38,9 +40,13 @@ public class SystemConfiguration {
      * message will be logged with details about the failure.</p>
      */
     public void saveConfiguration() {
-        try (FileWriter writer = new FileWriter(configFile)) {
-            gson.toJson(this, writer);
-            logger.info("Configuration saved to {}.", configFile);
+        try {
+            Files.createDirectories(Paths.get("config"));
+
+            try (FileWriter writer = new FileWriter(configFile)) {
+                gson.toJson(this, writer);
+                logger.info("Configuration saved to {}.", configFile);
+            }
         } catch (IOException e) {
             logger.warn("Failed to save configuration to {}", configFile);
         }
@@ -58,9 +64,13 @@ public class SystemConfiguration {
      *         otherwise, returns {@code null} if the configuration file was not found or an error occurred.
      */
     public SystemConfiguration loadConfiguration() {
-        try (FileReader reader = new FileReader(configFile)) {
-            logger.info("Loading configuration from {}.", configFile);
-            return gson.fromJson(reader, SystemConfiguration.class);
+        try {
+            Files.createDirectories(Paths.get("config"));
+
+            try (FileReader reader = new FileReader(configFile)) {
+                logger.info("Loading configuration from {}.", configFile);
+                return gson.fromJson(reader, SystemConfiguration.class);
+            }
         } catch (FileNotFoundException e) {
             logger.error("Configuration file named {} not found.", configFile);
         } catch (IOException e) {

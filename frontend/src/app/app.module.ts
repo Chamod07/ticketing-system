@@ -1,21 +1,23 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {ReactiveFormsModule} from '@angular/forms';
 
-import { AppComponent } from './app.component';
-import { ConfigurationComponent } from './Components/configuration/configuration.component';
-import { TicketDisplayComponent } from './Components/ticket-display/ticket-display.component';
+import {AppComponent} from './app.component';
+import {AppLayoutModule} from './layout/app.layout.module';
+
 // Import other components...
 
 @NgModule({
-  declarations: [],
+  declarations: [
+
+  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    ConfigurationComponent,
-    TicketDisplayComponent
+    AppLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

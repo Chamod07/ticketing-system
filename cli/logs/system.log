@@ -1,3 +1,1428 @@
 2024-12-02 20:09:01 INFO  - Loading configuration from systemConfiguration.json.
 2024-12-02 20:09:01 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 2, Customer Retrieval Rate = 3, Maximum Ticket Capacity = 100]
 2024-12-02 20:09:07 INFO  - System stopped. Exiting...
+2024-12-04 13:28:03 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-04 13:28:03 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 2, Customer Retrieval Rate = 3, Maximum Ticket Capacity = 100]
+2024-12-04 13:28:10 INFO  - System stopped. Exiting...
+2024-12-04 13:28:18 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-04 13:28:18 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 2, Customer Retrieval Rate = 3, Maximum Ticket Capacity = 100]
+2024-12-04 13:28:25 INFO  - System started with 3 vendors and 5 customers.
+2024-12-04 13:28:25 INFO  - [Vendor-1] Thread initialised.
+2024-12-04 13:28:25 INFO  - [Vendor-2] Thread initialised.
+2024-12-04 13:28:25 INFO  - [Vendor-3] Thread initialised.
+2024-12-04 13:28:25 INFO  - [Customer-1] Thread initialised.
+2024-12-04 13:28:25 INFO  - [Customer-2] Thread initialised.
+2024-12-04 13:28:25 INFO  - [Customer-3] Thread initialised.
+2024-12-04 13:28:25 INFO  - [Customer-4] Thread initialised.
+2024-12-04 13:28:25 INFO  - [Customer-5] Thread initialised.
+2024-12-04 13:28:25 INFO  - [Vendor-1] Thread started.
+2024-12-04 13:28:25 INFO  - [Vendor-2] Thread started.
+2024-12-04 13:28:25 INFO  - [Vendor-3] Thread started.
+2024-12-04 13:28:25 INFO  - [Customer-1] Thread started.
+2024-12-04 13:28:25 INFO  - [Customer-2] Thread started.
+2024-12-04 13:28:25 INFO  - [Customer-3] Thread started.
+2024-12-04 13:28:25 INFO  - [Customer-4] Thread started.
+2024-12-04 13:28:25 INFO  - [Customer-5] Thread started.
+2024-12-04 13:28:26 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 12)
+2024-12-04 13:28:26 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 14)
+2024-12-04 13:28:26 INFO  - [Vendor-3] Added 2 tickets. (Pool size: 16)
+2024-12-04 13:28:26 INFO  - [Customer-1] Purchased 3 tickets. (Pool size: 13)
+2024-12-04 13:28:26 INFO  - [Customer-2] Purchased 3 tickets. (Pool size: 10)
+2024-12-04 13:28:26 INFO  - [Customer-3] Purchased 3 tickets. (Pool size: 7)
+2024-12-04 13:28:26 INFO  - [Customer-4] Purchased 3 tickets. (Pool size: 4)
+2024-12-04 13:28:26 INFO  - [Customer-5] Purchased 3 tickets. (Pool size: 1)
+2024-12-04 13:28:27 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 3)
+2024-12-04 13:28:27 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 5)
+2024-12-04 13:28:27 INFO  - [Customer-5] Purchased 3 tickets. (Pool size: 2)
+2024-12-04 13:28:27 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:27 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:27 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:27 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:27 INFO  - [Vendor-3] Added 2 tickets. (Pool size: 4)
+2024-12-04 13:28:27 INFO  - [Customer-4] Purchased 3 tickets. (Pool size: 1)
+2024-12-04 13:28:27 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:27 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:27 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:28 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 3)
+2024-12-04 13:28:28 INFO  - [Customer-3] Purchased 3 tickets. (Pool size: 0)
+2024-12-04 13:28:28 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:28 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:28 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:28:28 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:28 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:28 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:28 INFO  - [Vendor-3] Added 2 tickets. (Pool size: 4)
+2024-12-04 13:28:28 INFO  - [Customer-4] Purchased 3 tickets. (Pool size: 1)
+2024-12-04 13:28:28 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:28 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:28 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:29 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 3)
+2024-12-04 13:28:29 INFO  - [Customer-2] Purchased 3 tickets. (Pool size: 0)
+2024-12-04 13:28:29 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:29 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:29 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:29 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:28:29 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:29 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:29 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:29 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:29 INFO  - [Vendor-3] Added 2 tickets. (Pool size: 4)
+2024-12-04 13:28:29 INFO  - [Customer-1] Purchased 3 tickets. (Pool size: 1)
+2024-12-04 13:28:29 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:29 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:29 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:30 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 3)
+2024-12-04 13:28:30 INFO  - [Customer-5] Purchased 3 tickets. (Pool size: 0)
+2024-12-04 13:28:30 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:30 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:30 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:30 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:28:30 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:30 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:30 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:30 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:30 INFO  - [Vendor-3] Added 2 tickets. (Pool size: 4)
+2024-12-04 13:28:30 INFO  - [Customer-3] Purchased 3 tickets. (Pool size: 1)
+2024-12-04 13:28:30 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:30 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:30 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:31 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 3)
+2024-12-04 13:28:31 INFO  - [Customer-4] Purchased 3 tickets. (Pool size: 0)
+2024-12-04 13:28:31 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:31 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:31 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:31 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:28:31 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:31 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:31 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:31 INFO  - [Vendor-3] Added 2 tickets. (Pool size: 4)
+2024-12-04 13:28:31 INFO  - [Customer-2] Purchased 3 tickets. (Pool size: 1)
+2024-12-04 13:28:31 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:31 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:31 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:32 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:32 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 3)
+2024-12-04 13:28:32 INFO  - [Customer-1] Purchased 3 tickets. (Pool size: 0)
+2024-12-04 13:28:32 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:32 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:32 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:32 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:28:32 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:32 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:32 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:32 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:32 INFO  - [Vendor-3] Added 2 tickets. (Pool size: 4)
+2024-12-04 13:28:32 INFO  - [Customer-5] Purchased 3 tickets. (Pool size: 1)
+2024-12-04 13:28:32 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:32 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:32 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:33 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 3)
+2024-12-04 13:28:33 INFO  - [Customer-1] Purchased 3 tickets. (Pool size: 0)
+2024-12-04 13:28:33 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:28:33 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:33 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:33 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:33 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:33 INFO  - [Vendor-3] Added 2 tickets. (Pool size: 4)
+2024-12-04 13:28:33 INFO  - [Customer-3] Purchased 3 tickets. (Pool size: 1)
+2024-12-04 13:28:33 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:33 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:33 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:34 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:34 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 3)
+2024-12-04 13:28:34 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 5)
+2024-12-04 13:28:34 INFO  - [Customer-4] Purchased 3 tickets. (Pool size: 2)
+2024-12-04 13:28:34 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:34 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:34 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:34 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:34 INFO  - [Vendor-3] Added 2 tickets. (Pool size: 4)
+2024-12-04 13:28:34 INFO  - [Customer-2] Purchased 3 tickets. (Pool size: 1)
+2024-12-04 13:28:34 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:34 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:34 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:35 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 3)
+2024-12-04 13:28:35 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 5)
+2024-12-04 13:28:35 INFO  - [Customer-5] Purchased 3 tickets. (Pool size: 2)
+2024-12-04 13:28:35 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:35 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:35 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:35 INFO  - [Vendor-3] Added 2 tickets. (Pool size: 4)
+2024-12-04 13:28:35 INFO  - [Customer-4] Purchased 3 tickets. (Pool size: 1)
+2024-12-04 13:28:35 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:35 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:35 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:28:53 INFO  - Configuration saved to systemConfiguration.json.
+2024-12-04 13:28:53 INFO  - System configured with: [Total Tickets = 12, Ticket Release Rate = 2, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 20]
+2024-12-04 13:28:57 INFO  - System started with 2 vendors and 5 customers.
+2024-12-04 13:28:57 INFO  - [Vendor-1] Thread initialised.
+2024-12-04 13:28:57 INFO  - [Vendor-2] Thread initialised.
+2024-12-04 13:28:57 INFO  - [Customer-1] Thread initialised.
+2024-12-04 13:28:57 INFO  - [Customer-2] Thread initialised.
+2024-12-04 13:28:57 INFO  - [Customer-3] Thread initialised.
+2024-12-04 13:28:57 INFO  - [Customer-4] Thread initialised.
+2024-12-04 13:28:57 INFO  - [Customer-5] Thread initialised.
+2024-12-04 13:28:57 INFO  - [Vendor-1] Thread started.
+2024-12-04 13:28:57 INFO  - [Vendor-2] Thread started.
+2024-12-04 13:28:57 INFO  - [Customer-1] Thread started.
+2024-12-04 13:28:57 INFO  - [Customer-2] Thread started.
+2024-12-04 13:28:57 INFO  - [Customer-3] Thread started.
+2024-12-04 13:28:57 INFO  - [Customer-4] Thread started.
+2024-12-04 13:28:57 INFO  - [Customer-5] Thread started.
+2024-12-04 13:28:58 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 14)
+2024-12-04 13:28:58 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 16)
+2024-12-04 13:28:58 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 15)
+2024-12-04 13:28:58 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 14)
+2024-12-04 13:28:58 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 13)
+2024-12-04 13:28:58 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 12)
+2024-12-04 13:28:58 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 11)
+2024-12-04 13:28:59 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 10)
+2024-12-04 13:28:59 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 9)
+2024-12-04 13:28:59 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 8)
+2024-12-04 13:28:59 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 7)
+2024-12-04 13:28:59 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 6)
+2024-12-04 13:28:59 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 8)
+2024-12-04 13:28:59 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 10)
+2024-12-04 13:29:00 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 12)
+2024-12-04 13:29:00 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 14)
+2024-12-04 13:29:00 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 13)
+2024-12-04 13:29:00 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 12)
+2024-12-04 13:29:00 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 11)
+2024-12-04 13:29:00 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 10)
+2024-12-04 13:29:00 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 9)
+2024-12-04 13:29:01 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 8)
+2024-12-04 13:29:01 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 7)
+2024-12-04 13:29:01 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 6)
+2024-12-04 13:29:01 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 5)
+2024-12-04 13:29:01 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 4)
+2024-12-04 13:29:01 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 6)
+2024-12-04 13:29:01 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 8)
+2024-12-04 13:29:02 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 10)
+2024-12-04 13:29:02 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 12)
+2024-12-04 13:29:02 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 11)
+2024-12-04 13:29:02 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 10)
+2024-12-04 13:29:02 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 9)
+2024-12-04 13:29:02 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 8)
+2024-12-04 13:29:02 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 7)
+2024-12-04 13:29:03 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 9)
+2024-12-04 13:29:03 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 11)
+2024-12-04 13:29:03 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 10)
+2024-12-04 13:29:03 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 9)
+2024-12-04 13:29:03 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 8)
+2024-12-04 13:29:03 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 7)
+2024-12-04 13:29:03 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 6)
+2024-12-04 13:29:04 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 5)
+2024-12-04 13:29:04 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 4)
+2024-12-04 13:29:04 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 6)
+2024-12-04 13:29:04 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 8)
+2024-12-04 13:29:04 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 7)
+2024-12-04 13:29:04 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 6)
+2024-12-04 13:29:04 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 5)
+2024-12-04 13:29:05 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 7)
+2024-12-04 13:29:05 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 9)
+2024-12-04 13:29:05 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 8)
+2024-12-04 13:29:05 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 7)
+2024-12-04 13:29:05 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 6)
+2024-12-04 13:29:05 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 5)
+2024-12-04 13:29:05 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 4)
+2024-12-04 13:29:06 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 6)
+2024-12-04 13:29:06 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 8)
+2024-12-04 13:29:06 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 7)
+2024-12-04 13:29:06 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 6)
+2024-12-04 13:29:06 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 5)
+2024-12-04 13:29:06 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 4)
+2024-12-04 13:29:06 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 3)
+2024-12-04 13:29:07 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 5)
+2024-12-04 13:29:07 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 4)
+2024-12-04 13:29:07 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 3)
+2024-12-04 13:29:07 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 5)
+2024-12-04 13:29:07 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 4)
+2024-12-04 13:29:07 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 3)
+2024-12-04 13:29:07 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 2)
+2024-12-04 13:29:08 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:08 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 3)
+2024-12-04 13:29:08 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 5)
+2024-12-04 13:29:08 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 4)
+2024-12-04 13:29:08 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 3)
+2024-12-04 13:29:08 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 2)
+2024-12-04 13:29:08 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:09 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:09 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:09 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 4)
+2024-12-04 13:29:09 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 3)
+2024-12-04 13:29:09 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 2)
+2024-12-04 13:29:09 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:09 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:10 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:10 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:10 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:10 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 3)
+2024-12-04 13:29:10 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 2)
+2024-12-04 13:29:10 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:10 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:10 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:11 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:11 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:11 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:11 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:11 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:11 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:11 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:12 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:12 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:12 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:12 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:12 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:12 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:12 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:12 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:12 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:12 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:12 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:13 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:13 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:13 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:13 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:13 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:13 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:13 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:13 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:14 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:14 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:14 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:14 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:14 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:14 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:14 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:14 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:14 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:15 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:15 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:15 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:15 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:15 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:15 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:15 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:15 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:15 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:15 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:16 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:16 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:16 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:16 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:16 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:16 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:16 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:16 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:17 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:17 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:17 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:17 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:17 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:17 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:17 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:17 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:17 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:17 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:18 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:18 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:18 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:18 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:18 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:18 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:18 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:18 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:18 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:18 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:18 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:19 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:19 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:19 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:19 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:19 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:19 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:19 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:20 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:20 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:20 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:20 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:20 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:20 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:20 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:20 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:20 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:29:21 INFO  - [Vendor-2] Added 2 tickets. (Pool size: 2)
+2024-12-04 13:29:21 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:21 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 3)
+2024-12-04 13:29:21 INFO  - [Customer-5] Purchased 1 tickets. (Pool size: 2)
+2024-12-04 13:29:21 INFO  - [Customer-3] Purchased 1 tickets. (Pool size: 1)
+2024-12-04 13:29:21 INFO  - [Customer-4] Purchased 1 tickets. (Pool size: 0)
+2024-12-04 13:29:21 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-04 13:31:28 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-04 13:31:28 INFO  - System configured with: [Total Tickets = 12, Ticket Release Rate = 2, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 20]
+2024-12-04 13:31:49 INFO  - Configuration saved to systemConfiguration.json.
+2024-12-04 13:31:49 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 4, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 20]
+2024-12-04 13:31:56 INFO  - System started with 3 vendors and 1 customers.
+2024-12-04 13:31:56 INFO  - [Vendor-1] Thread initialised.
+2024-12-04 13:31:56 INFO  - [Vendor-2] Thread initialised.
+2024-12-04 13:31:56 INFO  - [Vendor-3] Thread initialised.
+2024-12-04 13:31:56 INFO  - [Customer-1] Thread initialised.
+2024-12-04 13:31:56 INFO  - [Vendor-1] Thread started.
+2024-12-04 13:31:56 INFO  - [Vendor-2] Thread started.
+2024-12-04 13:31:56 INFO  - [Vendor-3] Thread started.
+2024-12-04 13:31:56 INFO  - [Customer-1] Thread started.
+2024-12-04 13:31:57 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 14)
+2024-12-04 13:31:57 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 18)
+2024-12-04 13:31:57 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:31:57 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 13:31:57 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:31:58 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 13:31:58 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 13:31:58 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:31:58 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:31:59 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 13:31:59 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:31:59 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:31:59 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:00 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 13:32:00 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:00 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:00 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:01 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 13:32:01 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:01 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:01 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:02 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 13:32:02 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 13:32:02 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:02 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:03 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:03 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 13:32:03 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:03 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:03 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:04 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 13:32:04 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:04 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:04 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:05 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 13:32:05 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:05 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:05 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:06 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 13:32:06 INFO  - [Vendor-3] Added 4 tickets. (Pool size: 20)
+2024-12-04 13:32:06 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:06 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:07 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:07 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 13:32:07 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:07 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:07 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:08 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 13:32:08 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:08 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:08 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:09 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 13:32:09 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:09 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:09 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:10 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 13:32:10 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 13:32:10 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:10 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:11 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:11 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 13:32:11 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:11 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:11 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:12 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 13:32:12 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:12 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:12 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:13 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 13:32:13 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:13 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:13 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:14 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 13:32:14 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 13:32:14 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:14 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:15 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 13:32:15 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:15 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:16 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:17 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 13:32:17 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:17 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:17 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:18 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 13:32:18 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:18 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:18 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:19 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 13:32:19 INFO  - [Vendor-3] Added 4 tickets. (Pool size: 20)
+2024-12-04 13:32:19 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:19 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:20 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 13:32:20 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:20 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:20 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:21 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 13:32:21 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:21 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:21 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 13:32:22 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 13:32:22 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 13:32:22 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 13:32:22 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:01 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-04 14:55:01 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 4, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 20]
+2024-12-04 14:55:03 INFO  - System started with 3 vendors and 2 customers.
+2024-12-04 14:55:03 INFO  - [Vendor-1] Thread initialised.
+2024-12-04 14:55:03 INFO  - [Vendor-2] Thread initialised.
+2024-12-04 14:55:03 INFO  - [Vendor-3] Thread initialised.
+2024-12-04 14:55:03 INFO  - [Customer-1] Thread initialised.
+2024-12-04 14:55:03 INFO  - [Customer-2] Thread initialised.
+2024-12-04 14:55:03 INFO  - [Vendor-1] Thread started.
+2024-12-04 14:55:03 INFO  - [Vendor-2] Thread started.
+2024-12-04 14:55:03 INFO  - [Vendor-3] Thread started.
+2024-12-04 14:55:03 INFO  - [Customer-1] Thread started.
+2024-12-04 14:55:03 INFO  - [Customer-2] Thread started.
+2024-12-04 14:55:04 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 9)
+2024-12-04 14:55:04 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 8)
+2024-12-04 14:55:04 INFO  - [Vendor-3] Added 4 tickets. (Pool size: 12)
+2024-12-04 14:55:04 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 16)
+2024-12-04 14:55:04 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:05 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:05 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:05 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:05 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:05 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:05 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:05 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:05 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:06 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:06 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:06 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:06 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:06 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:06 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:06 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:06 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:07 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:07 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:07 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:07 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:07 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:07 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:07 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:07 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:08 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:08 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:08 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:08 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:08 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:08 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:08 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:08 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:09 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:09 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:09 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:09 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:09 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:09 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:09 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:09 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:10 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:10 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:10 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:10 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:10 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:10 INFO  - [Vendor-3] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:10 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:10 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:11 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:11 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:11 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:11 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:11 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:11 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:11 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:11 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:12 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:12 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:12 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:12 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:12 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:12 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:12 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:12 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:13 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:13 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:13 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:13 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:13 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:13 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:13 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:13 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:14 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:14 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:14 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:14 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:14 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:14 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:14 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:14 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:15 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:15 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:15 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:15 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:15 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:15 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:15 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:16 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:16 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:16 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:16 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:16 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:16 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:16 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:16 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:17 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:17 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:17 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:17 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:17 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:17 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:17 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:18 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:18 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:18 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:18 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:18 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:18 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:18 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:18 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:19 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:19 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:19 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:19 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:19 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:19 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:19 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:19 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:20 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:20 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:20 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:20 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:20 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:20 INFO  - [Vendor-3] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:20 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:20 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:21 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:21 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:21 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:21 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:21 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:21 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:21 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:22 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:22 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:22 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:22 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:22 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:22 INFO  - [Vendor-3] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:22 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:22 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:23 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:23 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:23 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:23 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:23 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:23 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:23 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:24 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:24 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:24 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:24 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:24 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:24 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:24 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:24 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:25 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:25 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:25 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:25 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:25 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:25 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:25 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:25 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:26 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:26 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:26 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:26 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:26 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:26 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:26 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:26 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:27 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:27 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:27 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:27 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:27 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:27 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:27 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:28 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:28 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:28 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:28 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:28 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:28 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:28 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:28 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:29 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:29 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:29 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:29 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:29 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:29 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:29 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:30 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:30 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:30 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:30 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:30 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:30 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:30 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:30 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:31 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:31 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:31 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:31 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:31 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:31 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:31 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:32 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:32 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:32 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:32 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:32 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:32 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:32 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:32 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:33 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:33 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:33 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:33 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:33 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:33 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:33 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:34 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:34 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:34 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:34 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:35 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:35 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:35 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:35 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:35 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:35 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:35 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:36 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:36 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:36 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:36 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:36 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:36 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:36 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:36 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:37 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:37 INFO  - [Vendor-3] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:37 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:37 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:37 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:37 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:37 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:38 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:38 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:38 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:38 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:38 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:38 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:38 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:38 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:39 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:39 INFO  - [Vendor-3] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:39 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:39 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:39 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:39 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:39 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:40 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:40 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:40 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:40 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:40 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:40 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:40 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:40 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:40 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:41 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:41 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:41 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:41 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:41 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 14:55:41 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:41 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:42 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 14:55:42 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:42 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:42 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:42 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 14:55:42 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 14:55:42 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:42 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 14:55:43 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 14:55:43 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 14:55:43 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 14:55:43 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:43:08 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-04 15:43:08 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 4, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 20]
+2024-12-04 15:43:35 INFO  - System started with 3 vendors and 2 customers.
+2024-12-04 15:43:35 INFO  - [Vendor-1] Thread initialised.
+2024-12-04 15:43:35 INFO  - [Vendor-2] Thread initialised.
+2024-12-04 15:43:35 INFO  - [Vendor-3] Thread initialised.
+2024-12-04 15:43:35 INFO  - [Customer-1] Thread initialised.
+2024-12-04 15:43:35 INFO  - [Customer-2] Thread initialised.
+2024-12-04 15:43:35 INFO  - [Vendor-1] Thread started.
+2024-12-04 15:43:35 INFO  - [Vendor-2] Thread started.
+2024-12-04 15:43:35 INFO  - [Vendor-3] Thread started.
+2024-12-04 15:43:35 INFO  - [Customer-1] Thread started.
+2024-12-04 15:43:35 INFO  - [Customer-2] Thread started.
+2024-12-04 15:43:36 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 9)
+2024-12-04 15:43:36 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 8)
+2024-12-04 15:43:36 INFO  - [Vendor-3] Added 4 tickets. (Pool size: 12)
+2024-12-04 15:43:36 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 16)
+2024-12-04 15:43:36 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 15:43:37 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:43:37 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:43:37 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 15:43:37 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 15:43:37 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 15:43:37 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:43:37 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:43:37 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 15:43:38 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 15:43:38 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:43:38 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:43:38 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 15:43:38 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 15:43:38 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 15:43:38 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:43:38 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 15:43:39 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 15:43:39 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:43:39 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 15:43:39 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:43:39 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 15:43:39 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:43:39 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 15:43:39 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:43:40 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 15:43:40 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:43:40 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 15:43:40 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:43:40 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 15:43:40 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 15:43:40 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 15:43:40 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:43:41 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 15:43:41 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 15:43:41 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:43:41 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:43:41 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 15:43:41 WARN  - [Vendor-3] Cannot add tickets. Not enough space.
+2024-12-04 15:43:41 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:43:41 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:07 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-04 15:49:08 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 4, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 20]
+2024-12-04 15:49:11 INFO  - System started with 2 vendors and 2 customers.
+2024-12-04 15:49:11 INFO  - [Vendor-1] Thread initialised.
+2024-12-04 15:49:11 INFO  - [Vendor-2] Thread initialised.
+2024-12-04 15:49:11 INFO  - [Customer-1] Thread initialised.
+2024-12-04 15:49:11 INFO  - [Customer-2] Thread initialised.
+2024-12-04 15:49:11 INFO  - [Vendor-1] Thread started.
+2024-12-04 15:49:11 INFO  - [Vendor-2] Thread started.
+2024-12-04 15:49:11 INFO  - [Customer-1] Thread started.
+2024-12-04 15:49:11 INFO  - [Customer-2] Thread started.
+2024-12-04 15:49:12 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 14)
+2024-12-04 15:49:12 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 18)
+2024-12-04 15:49:12 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 15:49:12 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 15:49:13 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 15:49:13 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 15:49:13 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:13 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 15:49:13 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:14 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:14 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 15:49:14 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:14 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:14 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 15:49:14 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 15:49:14 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:15 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 15:49:15 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:15 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 15:49:15 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:15 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:16 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 15:49:16 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:16 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:16 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 15:49:16 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 15:49:16 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:17 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 15:49:17 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:17 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 15:49:17 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:17 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:18 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 15:49:18 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:18 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:18 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 15:49:18 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 15:49:18 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:19 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 15:49:19 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:19 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 15:49:19 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:19 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:20 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 15:49:20 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:20 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:20 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 15:49:20 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 15:49:20 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:21 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 15:49:21 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:21 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 15:49:21 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:21 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:22 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 15:49:22 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:22 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:22 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 15:49:22 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 15:49:22 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:23 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 15:49:23 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:23 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:23 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 15:49:23 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:23 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:24 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 15:49:24 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:24 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:24 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 15:49:24 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 15:49:24 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:25 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 15:49:25 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:25 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:25 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 15:49:25 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:25 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:26 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 15:49:26 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:26 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:26 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 15:49:26 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 15:49:26 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:27 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 15:49:27 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:27 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 15:49:27 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:27 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:28 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 15:49:28 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:28 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:28 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 15:49:28 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 15:49:28 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:29 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 15:49:29 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:29 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 15:49:29 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:29 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:30 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 15:49:30 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:30 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:30 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 15:49:30 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-04 15:49:30 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:31 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-04 15:49:31 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:31 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:31 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-04 15:49:31 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:31 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:32 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-04 15:49:32 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-04 15:49:32 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-04 15:49:32 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-04 15:49:32 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-04 15:49:32 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:17 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 02:06:17 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 4, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 20]
+2024-12-05 02:06:23 INFO  - System started with 2 vendors and 1 customers.
+2024-12-05 02:06:23 INFO  - [Vendor-1] Thread initialised.
+2024-12-05 02:06:23 INFO  - [Vendor-2] Thread initialised.
+2024-12-05 02:06:23 INFO  - [Customer-1] Thread initialised.
+2024-12-05 02:06:23 INFO  - [Vendor-1] Thread started.
+2024-12-05 02:06:23 INFO  - [Vendor-2] Thread started.
+2024-12-05 02:06:23 INFO  - [Customer-1] Thread started.
+2024-12-05 02:06:24 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 9)
+2024-12-05 02:06:24 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 13)
+2024-12-05 02:06:24 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 17)
+2024-12-05 02:06:25 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:06:25 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:06:25 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:26 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:06:26 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:26 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:27 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:06:27 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:27 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:28 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:06:28 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:28 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:29 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:06:29 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:06:29 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:30 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:06:30 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:30 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:31 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:06:31 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:31 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:32 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:06:32 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:32 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:33 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:06:33 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:06:33 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:34 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:34 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:06:34 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:34 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:35 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:06:35 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:35 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:36 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:06:36 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:36 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:37 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:06:37 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:06:37 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:38 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:38 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:06:38 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:38 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:39 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:06:39 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:39 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:40 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:06:40 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:40 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:41 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:06:41 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:06:41 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:42 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:06:42 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:42 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:43 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:06:43 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:43 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:44 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:06:44 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:44 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:45 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:06:45 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:06:45 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:46 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:06:46 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:46 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:47 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:06:47 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:47 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:48 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:06:48 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:48 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:49 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:06:49 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:06:49 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:50 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:50 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:06:50 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:50 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:51 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:06:51 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:51 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:52 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:06:52 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:52 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:53 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:06:53 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:06:53 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:54 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:06:54 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:54 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:55 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:06:55 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:55 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:56 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:06:56 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:56 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:57 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:06:57 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:06:57 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:58 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:06:58 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:58 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:06:59 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:06:59 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:06:59 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:00 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:07:00 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:00 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:01 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:07:01 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:07:01 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:02 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:07:02 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:02 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:03 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:07:03 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:03 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:04 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:07:04 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:04 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:05 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:07:05 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:07:05 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:06 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:06 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:07:06 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:06 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:07 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:07:07 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:07 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:08 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:07:08 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:08 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:09 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:07:09 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:07:09 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:10 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:10 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:07:10 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:10 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:11 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:07:11 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:11 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:12 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:07:12 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:12 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:13 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:07:13 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:07:13 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:14 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:07:14 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:14 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:15 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:07:15 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:15 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:16 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:07:16 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:16 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:17 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:07:17 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:07:17 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:18 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:18 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:07:18 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:18 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:19 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:07:19 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:19 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:20 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:07:20 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:20 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:21 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:07:21 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:07:21 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:22 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:07:22 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:22 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:23 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:07:23 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:23 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:24 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:07:24 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:24 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:25 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:07:25 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:07:25 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:07:26 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:07:26 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:07:26 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:08:28 INFO  - Configuration saved to systemConfiguration.json.
+2024-12-05 02:08:28 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 4, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 20]
+2024-12-05 02:08:44 INFO  - System started with 2 vendors and 2 customers.
+2024-12-05 02:08:44 INFO  - [Vendor-1] Thread initialised.
+2024-12-05 02:08:44 INFO  - [Vendor-2] Thread initialised.
+2024-12-05 02:08:44 INFO  - [Customer-1] Thread initialised.
+2024-12-05 02:08:44 INFO  - [Customer-2] Thread initialised.
+2024-12-05 02:08:44 INFO  - [Vendor-1] Thread started.
+2024-12-05 02:08:44 INFO  - [Vendor-2] Thread started.
+2024-12-05 02:08:44 INFO  - [Customer-1] Thread started.
+2024-12-05 02:08:44 INFO  - [Customer-2] Thread started.
+2024-12-05 02:08:45 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 9)
+2024-12-05 02:08:45 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 13)
+2024-12-05 02:08:45 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 17)
+2024-12-05 02:08:45 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:08:46 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:08:46 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:08:46 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:08:46 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:08:46 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:08:47 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:08:47 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:08:47 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:08:47 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:08:49 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:08:49 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:08:49 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:08:49 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:08:50 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:08:50 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:08:50 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:08:50 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:08:51 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:08:51 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:08:51 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:08:51 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:08:52 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:08:52 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:08:52 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:08:52 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:08:53 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:08:53 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:08:53 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:08:53 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:08:53 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:08:54 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:08:54 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:08:54 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:08:54 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:08:55 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:08:55 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:08:55 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:08:55 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:08:56 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:08:56 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:08:56 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:08:56 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:08:57 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:08:57 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:08:57 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:08:57 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:08:58 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:08:58 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:08:58 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:08:58 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:08:59 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:08:59 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:08:59 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:08:59 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:08:59 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:09:00 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:09:00 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:09:00 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:09:00 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:09:01 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:09:01 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:09:01 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:09:01 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:09:01 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:09:02 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:09:02 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:09:02 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:09:02 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:09:03 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:09:03 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:09:03 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:09:03 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:09:03 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:09:03 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:09:04 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:09:04 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:09:04 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:09:04 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:09:04 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:09:04 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:09:05 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:09:05 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:09:05 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:09:05 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:09:05 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:09:06 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:09:06 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:09:06 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:09:06 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:09:06 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:09:06 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:09:07 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 19)
+2024-12-05 02:09:07 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:09:07 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:09:07 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 18)
+2024-12-05 02:09:07 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:09:07 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:09:08 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 17)
+2024-12-05 02:09:08 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-05 02:09:08 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 02:09:08 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 16)
+2024-12-05 02:09:08 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-05 02:09:08 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-05 11:24:59 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 11:24:59 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 4, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 20]
+2024-12-05 11:25:42 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 11:25:42 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 4, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 20]
+2024-12-05 11:25:46 INFO  - System stopped. Exiting...
+2024-12-05 11:25:56 INFO  - Configuration saved to systemConfiguration.json.
+2024-12-05 11:25:56 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 1, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 110]
+2024-12-05 11:25:59 INFO  - System stopped. Exiting...
+2024-12-05 11:26:03 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-05 11:26:03 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 1, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 110]
+2024-12-05 11:27:30 WARN  - Failed to save configuration to config/systemConfiguration.json
+2024-12-05 11:27:30 INFO  - System configured with: [Total Tickets = 1, Ticket Release Rate = 2, Customer Retrieval Rate = 2, Maximum Ticket Capacity = 10]
+2024-12-05 11:27:37 INFO  - System stopped. Exiting...
+2024-12-05 11:28:11 ERROR - Configuration file named config/systemConfiguration.json not found.
+2024-12-05 11:30:36 INFO  - Configuration saved to config/systemConfiguration.json.
+2024-12-05 11:30:36 INFO  - System configured with: [Total Tickets = 1, Ticket Release Rate = 1, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 12]
+2024-12-05 11:31:34 INFO  - System stopped. Exiting...
+2024-12-05 11:31:40 INFO  - Loading configuration from config/systemConfiguration.json.
+2024-12-05 11:31:40 INFO  - System configured with: [Total Tickets = 1, Ticket Release Rate = 1, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 12]
+2024-12-05 11:32:02 INFO  - System started with 2 vendors and 2 customers.
+2024-12-05 11:32:02 INFO  - [Vendor-1] Thread initialised.
+2024-12-05 11:32:02 INFO  - [Vendor-2] Thread initialised.
+2024-12-05 11:32:02 INFO  - [Customer-1] Thread initialised.
+2024-12-05 11:32:02 INFO  - [Customer-2] Thread initialised.
+2024-12-05 11:32:02 INFO  - [Vendor-1] Thread started.
+2024-12-05 11:32:02 INFO  - [Vendor-2] Thread started.
+2024-12-05 11:32:02 INFO  - [Customer-1] Thread started.
+2024-12-05 11:32:02 INFO  - [Customer-2] Thread started.
+2024-12-05 11:32:03 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 11:32:03 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 3)
+2024-12-05 11:32:03 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 2)
+2024-12-05 11:32:03 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 11:32:04 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 11:32:04 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 11:32:04 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 11:32:04 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 11:32:05 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 11:32:05 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 11:32:05 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 0)
+2024-12-05 11:32:05 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-05 11:32:06 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 11:32:06 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 11:32:06 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 2)
+2024-12-05 11:32:06 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 11:32:07 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 11:32:07 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 11:32:07 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 2)
+2024-12-05 11:32:07 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 11:32:08 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 2)
+2024-12-05 11:32:08 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 3)
+2024-12-05 11:32:08 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 2)
+2024-12-05 11:32:08 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 1)
+2024-12-05 11:32:21 INFO  - Configuration saved to config/systemConfiguration.json.
+2024-12-05 11:32:21 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 2, Customer Retrieval Rate = 5, Maximum Ticket Capacity = 200]
+2024-12-05 11:32:42 INFO  - System started with 1 vendors and 12 customers.
+2024-12-05 11:32:42 INFO  - [Vendor-1] Thread initialised.
+2024-12-05 11:32:42 INFO  - [Customer-1] Thread initialised.
+2024-12-05 11:32:42 INFO  - [Customer-2] Thread initialised.
+2024-12-05 11:32:42 INFO  - [Customer-3] Thread initialised.
+2024-12-05 11:32:42 INFO  - [Customer-4] Thread initialised.
+2024-12-05 11:32:42 INFO  - [Customer-5] Thread initialised.
+2024-12-05 11:32:42 INFO  - [Customer-6] Thread initialised.
+2024-12-05 11:32:42 INFO  - [Customer-7] Thread initialised.
+2024-12-05 11:32:42 INFO  - [Customer-8] Thread initialised.
+2024-12-05 11:32:42 INFO  - [Customer-9] Thread initialised.
+2024-12-05 11:32:42 INFO  - [Customer-10] Thread initialised.
+2024-12-05 11:32:42 INFO  - [Customer-11] Thread initialised.
+2024-12-05 11:32:42 INFO  - [Customer-12] Thread initialised.
+2024-12-05 11:32:42 INFO  - [Vendor-1] Thread started.
+2024-12-05 11:32:42 INFO  - [Customer-1] Thread started.
+2024-12-05 11:32:42 INFO  - [Customer-2] Thread started.
+2024-12-05 11:32:42 INFO  - [Customer-3] Thread started.
+2024-12-05 11:32:42 INFO  - [Customer-4] Thread started.
+2024-12-05 11:32:42 INFO  - [Customer-5] Thread started.
+2024-12-05 11:32:42 INFO  - [Customer-6] Thread started.
+2024-12-05 11:32:42 INFO  - [Customer-7] Thread started.
+2024-12-05 11:32:42 INFO  - [Customer-8] Thread started.
+2024-12-05 11:32:42 INFO  - [Customer-9] Thread started.
+2024-12-05 11:32:42 INFO  - [Customer-10] Thread started.
+2024-12-05 11:32:42 INFO  - [Customer-11] Thread started.
+2024-12-05 11:32:42 INFO  - [Customer-12] Thread started.
+2024-12-05 11:32:43 INFO  - [Customer-9] Purchased 5 tickets. (Pool size: 5)
+2024-12-05 11:32:43 INFO  - [Customer-11] Purchased 5 tickets. (Pool size: 0)
+2024-12-05 11:32:43 WARN  - [Customer-12] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-8] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-10] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-6] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-7] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 2)
+2024-12-05 11:32:43 WARN  - [Customer-12] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-8] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-10] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-6] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:43 WARN  - [Customer-7] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:44 WARN  - [Customer-9] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:44 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 4)
+2024-12-05 11:32:44 WARN  - [Customer-11] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:44 WARN  - [Customer-12] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:44 WARN  - [Customer-8] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:44 WARN  - [Customer-10] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:44 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:44 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:44 WARN  - [Customer-6] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:44 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:44 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:44 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:44 WARN  - [Customer-7] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:44 WARN  - [Customer-9] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:45 INFO  - [Vendor-1] Added 2 tickets. (Pool size: 6)
+2024-12-05 11:32:45 INFO  - [Customer-11] Purchased 5 tickets. (Pool size: 1)
+2024-12-05 11:32:45 WARN  - [Customer-12] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:45 WARN  - [Customer-8] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:45 WARN  - [Customer-10] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:45 WARN  - [Customer-2] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:45 WARN  - [Customer-1] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:45 WARN  - [Customer-6] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:45 WARN  - [Customer-3] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:45 WARN  - [Customer-5] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:45 WARN  - [Customer-4] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:45 WARN  - [Customer-7] Not enough tickets available. Waiting for tickets to be added.
+2024-12-05 11:32:45 WARN  - [Customer-9] Not enough tickets available. Waiting for tickets to be added.

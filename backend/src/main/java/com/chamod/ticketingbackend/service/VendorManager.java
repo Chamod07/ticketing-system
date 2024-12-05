@@ -17,8 +17,8 @@ public class VendorManager {
     private final List<Vendor> vendors = new ArrayList<>();
 
     public void registerVendor(Long vendorId, int retrievalRate, int retrievalInterval) {
-        VendorThread vendorThread = new VendorThread();
-        vendors.add(vendorThread);
+        VendorRunner vendorRunner = new VendorRunner();
+        vendors.add(vendorRunner);
     }
 
     public void startVendors() {
@@ -30,7 +30,7 @@ public class VendorManager {
     }
 
     public void stopVendors() {
-        for (VendorThread vendor : vendors) {
+        for (VendorRunner vendor : vendors) {
             vendor.stop(); // Signal vendors to stop
         }
         for (Thread thread : vendorThreads) {

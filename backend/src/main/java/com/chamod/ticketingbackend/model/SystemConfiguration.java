@@ -28,7 +28,7 @@ public class SystemConfiguration {
     @Column(name = "release_rate")
     private int ticketReleaseRate;
 
-    @Column(name = "release_interval")
+    @Column(name = "retrieval_rate")
     private int customerRetrievalRate;
 
     @Column(name = "max_capacity")
@@ -60,4 +60,13 @@ public class SystemConfiguration {
         }
     }
 
+    @Override
+    public String toString() {
+        return "[" +
+                "total tickets:" + totalTickets +
+                ", ticket release rate:" + ticketReleaseRate +
+                ", customer retrieval rate:" + customerRetrievalRate +
+                ", max ticket capacity=" + maxTicketCapacity +
+                ']';
+    }
 }

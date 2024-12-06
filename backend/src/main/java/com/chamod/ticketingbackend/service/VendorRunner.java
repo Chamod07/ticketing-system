@@ -1,20 +1,19 @@
 package com.chamod.ticketingbackend.service;
 
-import com.chamod.ticketingbackend.model.TicketPool;
-
 import com.chamod.ticketingbackend.model.Vendor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class VendorRunner implements Runnable{
     private final Vendor vendor;
-    private final TicketPool ticketPool;
+    private final TicketPoolService ticketPool;
+
     private volatile boolean running = true;
     private volatile boolean paused = false;
 
     private static final Logger logger = LogManager.getLogger(VendorRunner.class);
 
-    public VendorRunner(Vendor vendor, TicketPool ticketPool) {
+    public VendorRunner(Vendor vendor, TicketPoolService ticketPool) {
         this.vendor = vendor;
         this.ticketPool = ticketPool;
     }
@@ -27,13 +26,6 @@ public class VendorRunner implements Runnable{
         this.paused = true;
     }
 
-    public void resume() {
-        this.paused = false;
-        synchronized (this) {
-            notify();
-        }
-    }
-
     @Override
     public void run() {
         try {
@@ -43,8 +35,9 @@ public class VendorRunner implements Runnable{
                         wait();
                     }
                 }
+
                 ticketPool.addTickets(vendor.getTicketsPerRelease(), vendor.getVendorId());
-                Thread.sleep(vendor.getReleaseInterval() * 1000L);
+                Thread.sleep(vendor.getReleaseInterval()*1000L);
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

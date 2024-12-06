@@ -18,12 +18,17 @@ public class VendorRunner implements Runnable{
         this.ticketPool = ticketPool;
     }
 
-    public void stop() {
+    public synchronized void stop() {
         this.running = false;
     }
 
-    public void pause() {
+    public synchronized void pause() {
         this.paused = true;
+    }
+
+    public synchronized void resume() {
+        paused = false;
+        notifyAll();
     }
 
     @Override
@@ -35,7 +40,6 @@ public class VendorRunner implements Runnable{
                         wait();
                     }
                 }
-
                 ticketPool.addTickets(vendor.getTicketsPerRelease(), vendor.getVendorId());
                 Thread.sleep(vendor.getReleaseInterval()*1000L);
             }

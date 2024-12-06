@@ -29,7 +29,6 @@ public class VendorServiceImpl implements VendorService {
 
     private final List<Thread> vendorThreads = new ArrayList<>();
     private final List<Vendor> vendors = new ArrayList<>();
-    private boolean running = false;
     private final Logger logger = LogManager.getLogger(VendorServiceImpl.class);
 
     @PostConstruct
@@ -48,11 +47,19 @@ public class VendorServiceImpl implements VendorService {
         vendorRepository.save(vendor);
 
         vendors.add(vendor);
+        // Test added vendors
+        for (Vendor v : vendors) {
+            System.out.println("Vendor " + v.getVendorId());
+        }
 
         Thread vendorThread = new Thread(new VendorRunner(vendor, ticketPoolService));
         vendorThreads.add(vendorThread);
+        // Test vendor threads
+        for (Thread t : vendorThreads) {
+            System.out.println("Vendor" + t.getName());
+        }
 
-        logger.info("Vendor-{} added but thread not started.", vendor.getVendorId());
+        logger.info("Vendor-{} added.", vendor.getVendorId());
     }
 
     @Override
@@ -88,46 +95,36 @@ public class VendorServiceImpl implements VendorService {
         logger.info("Synchronized vendors with database. Total vendors: {}", vendors.size());
     }
 
-//    public void startVendors() {
-//        if (running) {
-//            logger.warn("Vendors are already running.");
-//            return;
-//        }
-//        running = true;
-//        for (VendorRunner runner : vendors) {
-//            Thread thread = new Thread(runner);
-//            vendorThreads.add(thread);
-//            thread.start();
-//        }
-//        logger.info("Vendors started.");
-//    }
-//
-//    public void pauseVendors() {
-//        if (!running) {
-//            logger.warn("Vendors are not running.");
-//            return;
-//        }
-//        for (VendorRunner runner : vendors) {
-//            runner.pause();
-//        }
-//        running = false;
-//        logger.info("Vendors paused.");
-//    }
-//
-//    public void stopVendors() {
-//        for (VendorRunner runner : vendors) {
-//            runner.stop();
-//        }
-//        for (Thread thread : vendorThreads) {
-//            try {
-//                thread.join();
-//            } catch (InterruptedException e) {
-//                Thread.currentThread().interrupt();
-//                logger.error("Error stopping vendor thread");
-//            }
-//        }
-//        vendorThreads.clear();
-//        running = false;
-//        logger.info("Vendors stopped.");
-//    }
+    @Override
+    public void startVendors() {
+        if (vendorThreads.isEmpty()) {
+            logger.warn("No vendors to start.");
+            return;
+        }
+        for (int i = 0; i < vendorThreads.size(); i++) {
+            Thread vendorThread = vendorThreads.get(i);
+            VendorRunner vendorRunner = new VendorRunner(vendors.get(i), ticketPoolService);
+
+            if (!vendorThread.isAlive()) {
+                vendorThread = new Thread(vendorRunner);
+                vendorThreads.set(i, vendorThread);
+                vendorThread.start();
+                logger.info("Vendor-{} started.", vendors.get(i).getVendorId());
+            } else {
+                logger.warn("Vendor-{} already started.", vendors.get(i).getVendorId());
+            }
+        }
+    }
+
+    @Override
+    public void pauseVendors() {
+    }
+
+    @Override
+    public void stopVendors() {
+    }
+
+    @Override
+    public void resumeVendors() {
+    }
 }

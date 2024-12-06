@@ -3,7 +3,6 @@ package com.chamod.ticketingbackend.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Entity

@@ -13,5 +13,4 @@ public class CustomerAddRequestDTO {
     private int retrievalRate;
     private int retrievalInterval;
     private Boolean priority;
-    private Integer ticketsPurchased;
 }

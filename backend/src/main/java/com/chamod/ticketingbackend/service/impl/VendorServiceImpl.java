@@ -5,7 +5,7 @@ import com.chamod.ticketingbackend.model.Vendor;
 import com.chamod.ticketingbackend.repository.VendorRepository;
 import com.chamod.ticketingbackend.service.ConfigService;
 import com.chamod.ticketingbackend.service.TicketPoolService;
-import com.chamod.ticketingbackend.service.VendorRunner;
+import com.chamod.ticketingbackend.service.VendorRunnable;
 import com.chamod.ticketingbackend.service.VendorService;
 //import jakarta.annotation.PostConstruct;
 import org.apache.logging.log4j.LogManager;
@@ -30,7 +30,7 @@ public class VendorServiceImpl implements VendorService {
 
     private final List<Thread> vendorThreads = new ArrayList<>();
     private final List<Vendor> vendors = new ArrayList<>();
-    private final List<VendorRunner> vendorRunners = new ArrayList<>();
+    private final List<VendorRunnable> vendorRunnables = new ArrayList<>();
     private final Logger logger = LogManager.getLogger(VendorServiceImpl.class);
 
 //    @PostConstruct
@@ -53,12 +53,12 @@ public class VendorServiceImpl implements VendorService {
         // add vendor to list
         vendors.add(vendor);
 
-        VendorRunner vendorRunner = new VendorRunner(vendor, ticketPoolService);
-        Thread vendorThread = new Thread(vendorRunner);
+        VendorRunnable vendorRunnable = new VendorRunnable(vendor, ticketPoolService);
+        Thread vendorThread = new Thread(vendorRunnable);
         vendorThreads.add(vendorThread);
-        vendorRunners.add(vendorRunner);
+        vendorRunnables.add(vendorRunnable);
 
-        logger.info("Vendor-{} added.", vendorRunner.getVendorId());
+        logger.info("Vendor-{} added.", vendorRunnable.getVendorId());
     }
 
     @Override
@@ -73,13 +73,13 @@ public class VendorServiceImpl implements VendorService {
             threadToRemove.interrupt(); // Interrupt the thread
 
             vendorThreads.remove(threadToRemove);
-            vendorRunners.remove(vendorRunners.get(lastIndex));
+            vendorRunnables.remove(vendorRunnables.get(lastIndex));
 
             // Remove vendor from database
             Vendor vendorToRemove = vendors.get(lastIndex);
             vendorRepository.delete(vendorToRemove);
             vendors.remove(vendorToRemove);
-            VendorRunner.removeVendorCount();
+            VendorRunnable.removeVendorCount();
 
             logger.info("Vendor-{} removed.", vendors.size()+1);
         } else {
@@ -105,15 +105,15 @@ public class VendorServiceImpl implements VendorService {
         }
         for (int i = 0; i < vendorThreads.size(); i++) {
             Thread vendorThread = vendorThreads.get(i);
-            VendorRunner vendorRunner = vendorRunners.get(i);
+            VendorRunnable vendorRunnable = vendorRunnables.get(i);
 
             if (!vendorThread.isAlive()) {
-                vendorThread = new Thread(vendorRunner);
+                vendorThread = new Thread(vendorRunnable);
                 vendorThreads.set(i, vendorThread);
                 vendorThread.start();
-                logger.info("Vendor-{} started.", vendorRunner.getVendorId());
+                logger.info("Vendor-{} started.", vendorRunnable.getVendorId());
             } else {
-                logger.warn("Vendor-{} already started.", vendorRunner.getVendorId());
+                logger.warn("Vendor-{} already started.", vendorRunnable.getVendorId());
             }
         }
     }
@@ -125,9 +125,9 @@ public class VendorServiceImpl implements VendorService {
             return;
         }
 
-        for (VendorRunner vendorRunner : vendorRunners) {
-            vendorRunner.pause();
-            logger.info("Vendor-{} paused.", vendorRunner.getVendorId());
+        for (VendorRunnable vendorRunnable : vendorRunnables) {
+            vendorRunnable.pause();
+            logger.info("Vendor-{} paused.", vendorRunnable.getVendorId());
         }
     }
 
@@ -138,15 +138,15 @@ public class VendorServiceImpl implements VendorService {
             return;
         }
         for (int i = 0; i < vendorThreads.size(); i++) {
-            VendorRunner vendorRunner = new VendorRunner(vendors.get(i), ticketPoolService);
-            vendorRunner.stop();
+            VendorRunnable vendorRunnable = new VendorRunnable(vendors.get(i), ticketPoolService);
+            vendorRunnable.stop();
             Thread vendorThread = vendorThreads.get(i);
             vendorThread.interrupt();
         }
         vendors.clear();
         vendorThreads.clear();
-        vendorRunners.clear();
-        VendorRunner.resetVendorCount();
+        vendorRunnables.clear();
+        VendorRunnable.resetVendorCount();
         configService.loadConfiguration();
         logger.info("All vendors stopped.");
     }
@@ -158,9 +158,9 @@ public class VendorServiceImpl implements VendorService {
             return;
         }
 
-        for (VendorRunner vendorRunner : vendorRunners) {
-            vendorRunner.resume();
-            logger.info("Vendor-{} resumed.", vendorRunner.getVendorId());
+        for (VendorRunnable vendorRunnable : vendorRunnables) {
+            vendorRunnable.resume();
+            logger.info("Vendor-{} resumed.", vendorRunnable.getVendorId());
         }
     }
 }

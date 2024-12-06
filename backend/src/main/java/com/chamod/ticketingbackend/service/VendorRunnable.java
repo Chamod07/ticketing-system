@@ -5,7 +5,7 @@ import lombok.Getter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class VendorRunner implements Runnable{
+public class VendorRunnable implements Runnable{
     @Getter
     private final Vendor vendor;
     @Getter
@@ -14,9 +14,9 @@ public class VendorRunner implements Runnable{
     private final TicketPoolService ticketPool;
     private volatile boolean paused = false;
 
-    private static final Logger logger = LogManager.getLogger(VendorRunner.class);
+    private static final Logger logger = LogManager.getLogger(VendorRunnable.class);
 
-    public VendorRunner(Vendor vendor, TicketPoolService ticketPool) {
+    public VendorRunnable(Vendor vendor, TicketPoolService ticketPool) {
         this.vendor = vendor;
         this.ticketPool = ticketPool;
         this.vendorId = vendorCount++;

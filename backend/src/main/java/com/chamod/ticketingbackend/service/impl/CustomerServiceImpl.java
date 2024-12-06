@@ -36,7 +36,7 @@ public class CustomerServiceImpl implements CustomerService {
         if (customerRepository.existsById(String.valueOf(customerAddRequestDTO.getId()))) {
             Customer customer = customerRepository.getReferenceById(String.valueOf(customerAddRequestDTO.getId()));
 
-            customer.setRetrievalRate(customerAddRequestDTO.getRetrievalRate());
+            customer.setTicketsPerRetrieval(customerAddRequestDTO.getRetrievalRate());
             customer.setRetrievalInterval(customerAddRequestDTO.getRetrievalInterval());
 
             customerRepository.save(customer);
@@ -56,7 +56,7 @@ public class CustomerServiceImpl implements CustomerService {
             Customer customer = customerRepository.getReferenceById(String.valueOf(customerId));
 
             return new CustomerResponseDTO(
-                    customer.getRetrievalRate(),
+                    customer.getTicketsPerRetrieval(),
                     customer.getRetrievalInterval(),
                     customer.getPriority(),
                     customer.getTicketsPurchased()

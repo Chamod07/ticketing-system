@@ -3,27 +3,29 @@ package com.chamod.ticketingbackend.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Entity
 @Table(name = "customer")
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
-    private Long id;
+    private Long customerId;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 
     @Column(name = "priority")
     private Boolean priority;
 
-    @Column(name = "retrieval_rate")
-    private int retrievalRate;
+    @Column(name = "tickets_per_retrieval")
+    private int ticketsPerRetrieval;
 
     @Column(name = "retrieval_interval")
     private int retrievalInterval;
-
-    @Column(name = "tickets_purchased")
-    private Integer ticketsPurchased = 0;
 }

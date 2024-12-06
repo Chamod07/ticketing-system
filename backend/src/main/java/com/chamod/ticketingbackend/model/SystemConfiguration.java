@@ -48,6 +48,7 @@ public class SystemConfiguration {
                 return gson.fromJson(reader, SystemConfiguration.class);
             }
         }
+
     }
 
     // Save configuration to JSON file
@@ -63,10 +64,10 @@ public class SystemConfiguration {
     @Override
     public String toString() {
         return "[" +
-                "total tickets:" + totalTickets +
-                ", ticket release rate:" + ticketReleaseRate +
-                ", customer retrieval rate:" + customerRetrievalRate +
-                ", max ticket capacity=" + maxTicketCapacity +
+                "totalTickets:" + totalTickets +
+                ", ticketReleaseRate:" + ticketReleaseRate +
+                ", customerRetrievalRate:" + customerRetrievalRate +
+                ", maxTicketCapacity=" + maxTicketCapacity +
                 ']';
     }
 }

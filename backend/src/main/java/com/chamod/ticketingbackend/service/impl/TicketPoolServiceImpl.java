@@ -2,6 +2,7 @@ package com.chamod.ticketingbackend.service.impl;
 
 import com.chamod.ticketingbackend.model.Ticket;
 import com.chamod.ticketingbackend.service.TicketPoolService;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 
@@ -18,26 +19,25 @@ public class TicketPoolServiceImpl implements TicketPoolService {
     private final Condition notFull = lock.newCondition();
     private final Condition notEmpty = lock.newCondition();
 
-    private final Logger logger = org.apache.logging.log4j.LogManager.getLogger(TicketPoolServiceImpl.class);
+    private final Logger logger = LogManager.getLogger(TicketPoolServiceImpl.class);
 
     @Override
     public void configure(int maxCapacity, int totalTickets) {
         this.maxCapacity = maxCapacity;
 
-        lock.lock();
         try {
             tickets.clear();
             for (int i = 0; i < totalTickets; i++) {
                 tickets.add(new Ticket()); // Initialize the tickets
             }
-            logger.info("Ticket pool configured with max capacity-{} and total tickets-{} (Pool size: {})", maxCapacity, totalTickets, tickets.size());
-        } finally {
-            lock.unlock();
+            logger.info("Ticket pool configured with max capacity-{} and total tickets-{}", maxCapacity, totalTickets);
+        } catch (Exception e) {
+            logger.error("Error configuring ticket pool.", e);
         }
     }
 
     @Override
-    public void addTickets(int ticketCount, Long vendorId) {
+    public void addTickets(int ticketCount, int vendorId) {
         lock.lock();
         try {
             while (tickets.size() + ticketCount > maxCapacity) {
@@ -53,7 +53,7 @@ public class TicketPoolServiceImpl implements TicketPoolService {
             notFull.signalAll();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            logger.error("[Vendor-{}] Ticket addition interrupted.", vendorId, e);
+            logger.error("[Vendor-{}] Ticket addition interrupted.", vendorId);
         } finally {
             lock.unlock();
         }

@@ -23,4 +23,28 @@ public class VendorController {
         vendorService.removeVendor();
         return "Vendor removed successfully.";
     }
+
+    @PostMapping(path = "/start")
+    public String startVendors() {
+        vendorService.startVendors();
+        return "Vendors started successfully.";
+    }
+
+    @PostMapping(path = "/pause")
+    public String pauseVendors() {
+        vendorService.pauseVendors();
+        return "Vendors paused successfully.";
+    }
+
+    @PostMapping(path = "/stop")
+    public String stopVendors() {
+        vendorService.stopVendors();
+        return "Vendors stopped successfully.";
+    }
+
+    @PostMapping(path = "/resume")
+    public String resumeVendors() {
+        vendorService.resumeVendors();
+        return "Vendors resumed successfully.";
+    }
 }

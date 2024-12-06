@@ -1582,3 +1582,6 @@
 2024-12-05 17:22:47 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 1)
 2024-12-05 17:22:48 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 0)
 2024-12-05 17:22:48 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 1)
+2024-12-07 00:58:50 INFO  - Configuration saved to systemConfiguration.json.
+2024-12-07 00:58:50 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 5, Customer Retrieval Rate = 4, Maximum Ticket Capacity = 100]
+2024-12-07 00:58:58 INFO  - System stopped. Exiting...

@@ -15,7 +15,7 @@ public class ConfigController {
 
     @GetMapping
     public SystemConfiguration getSystemConfig() {
-        return configService.getConfiguration();
+        return configService.loadConfiguration();
     }
 
     @PostMapping

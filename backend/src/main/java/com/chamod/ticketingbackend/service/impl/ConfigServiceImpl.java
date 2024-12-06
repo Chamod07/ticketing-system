@@ -3,6 +3,7 @@ package com.chamod.ticketingbackend.service.impl;
 import com.chamod.ticketingbackend.model.SystemConfiguration;
 import com.chamod.ticketingbackend.repository.SystemConfigRepository;
 import com.chamod.ticketingbackend.service.ConfigService;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,41 +25,40 @@ public class ConfigServiceImpl implements ConfigService {
 
     private static final Logger logger = LogManager.getLogger(ConfigServiceImpl.class);
 
-    public ConfigServiceImpl() {
+    @PostConstruct
+    public void initializeConfiguration() {
         systemConfiguration = loadConfiguration();
     }
 
-    private SystemConfiguration loadConfiguration() {
-        SystemConfiguration systemConfig = null;
+    @Override
+    public SystemConfiguration loadConfiguration() {
         // try to load from file first
         try {
-            systemConfig = SystemConfiguration.loadFromFile();
-            logger.info("Configuration loaded from file.");
+            systemConfiguration = SystemConfiguration.loadFromFile();
+            logger.info("Configuration-{} loaded from file.", systemConfiguration);
+            configureTicketPool();
+
         } catch (Exception e) {
             logger.error("Error loading configuration from file.", e);
         }
 
-        // else load from database if config not found
-        if (systemConfig == null && systemConfigRepository != null) {
-            systemConfig = systemConfigRepository.findFirstByOrderByIdDesc();
-            if (systemConfig != null) {
+        // else load from database if config file not found
+        if (systemConfiguration == null && systemConfigRepository != null) {
+            systemConfiguration = systemConfigRepository.findFirstByOrderByIdDesc();
+            configureTicketPool();
+
+            if (systemConfiguration != null) {
                 logger.info("Configuration loaded from database.");
             } else {
                 logger.error("Error loading configuration from database.");
             }
         }
-
-        return systemConfig;
-    }
-
-    @Override
-    public SystemConfiguration getConfiguration() {
         return systemConfiguration;
     }
 
     @Override
     public void updateConfiguration(SystemConfiguration newConfig) {
-        this.systemConfiguration = newConfig;
+        systemConfiguration = newConfig;
         try {
             systemConfiguration.saveToFile();
             logger.info("Configuration-{} saved to file.", systemConfiguration.toString());
@@ -74,7 +74,14 @@ public class ConfigServiceImpl implements ConfigService {
     }
 
     private void configureTicketPool() {
-        ticketPoolServiceImpl.configure(systemConfiguration.getMaxTicketCapacity(), systemConfiguration.getTotalTickets());
-        logger.info("Ticket pool reconfigured with new system configuration.");
+        ticketPoolServiceImpl.configure(
+                systemConfiguration.getMaxTicketCapacity(),
+                systemConfiguration.getTotalTickets()
+        );
+    }
+
+    @Override
+    public SystemConfiguration getConfiguration() {
+        return systemConfiguration;
     }
 }

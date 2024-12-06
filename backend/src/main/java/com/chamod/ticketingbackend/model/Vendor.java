@@ -3,6 +3,9 @@ package com.chamod.ticketingbackend.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,6 +17,9 @@ public class Vendor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "vendor_id")
     private Long vendorId;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 
     @Column(name = "tickets_per_release")
     private int ticketsPerRelease;

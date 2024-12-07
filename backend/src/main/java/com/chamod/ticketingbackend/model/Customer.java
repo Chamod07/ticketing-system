@@ -21,7 +21,7 @@ public class Customer {
     private LocalDateTime createdAt;
 
     @Column(name = "priority")
-    private Boolean priority;
+    private boolean priority;
 
     @Column(name = "tickets_per_retrieval")
     private int ticketsPerRetrieval;

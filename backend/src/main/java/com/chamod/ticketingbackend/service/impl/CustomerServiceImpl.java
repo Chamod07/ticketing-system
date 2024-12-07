@@ -41,6 +41,7 @@ public class CustomerServiceImpl implements CustomerService {
         Customer customer = new Customer();
         customer.setTicketsPerRetrieval(systemConfiguration.getCustomerRetrievalRate());
         customer.setRetrievalInterval(1);
+        customer.setPriority(false);
         customer.setCreatedAt(LocalDateTime.now());
 
         customerRepository.save(customer);
@@ -84,16 +85,16 @@ public class CustomerServiceImpl implements CustomerService {
             return;
         }
         for (int i = 0; i < customerThreads.size(); i++) {
-            Thread thread = customerThreads.get(i);
+            Thread customerThread = customerThreads.get(i);
             CustomerRunnable customerRunnable = customerRunnables.get(i);
 
-            if (thread.isAlive()) {
-                thread = new Thread(customerRunnable);
-                customerThreads.add(thread);
-                thread.start();
-                logger.info("Customer-{} successfully started.", customerRunnable.getCustomerId());
+            if (!customerThread.isAlive()) {
+                customerThread = new Thread(customerRunnable);
+                customerThreads.set(i, customerThread);
+                customerThread.start();
+                logger.info("Customer-{} started.", customerRunnable.getCustomerId());
             } else {
-                logger.warn("Customer-{} has already started.", customerRunnable.getCustomerId());
+                logger.warn("Customer-{} already started.", customerRunnable.getCustomerId());
             }
         }
     }

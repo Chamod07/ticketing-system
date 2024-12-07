@@ -105,16 +105,16 @@ public class VendorServiceImpl implements VendorService {
             return;
         }
         for (int i = 0; i < vendorThreads.size(); i++) {
-            Thread thread = vendorThreads.get(i);
+            Thread vendorThread = vendorThreads.get(i);
             VendorRunnable vendorRunnable = vendorRunnables.get(i);
 
-            if (!thread.isAlive()) {
-                thread = new Thread(vendorRunnable);
-                vendorThreads.add(thread);
-                thread.start();
-                logger.info("Vendor-{} successfully started.", vendorRunnable.getVendorId());
+            if (!vendorThread.isAlive()) {
+                vendorThread = new Thread(vendorRunnable);
+                vendorThreads.set(i, vendorThread);
+                vendorThread.start();
+                logger.info("Vendor-{} started.", vendorRunnable.getVendorId());
             } else {
-                logger.warn("Vendor-{} has already started.", vendorRunnable.getVendorId());
+                logger.warn("Vendor-{} already started.", vendorRunnable.getVendorId());
             }
         }
     }

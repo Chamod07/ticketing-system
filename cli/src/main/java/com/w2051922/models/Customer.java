@@ -37,10 +37,10 @@ public class Customer implements Runnable {
                 ticketPool.removeTicket(retrievalRate, customerId); // Purchase ticket
             }
         } catch (InterruptedException e) {
-            logger.error("Customer interrupted", e);
+            logger.error("[Customer-{}] Interrupted.", customerId);
             Thread.currentThread().interrupt();
         } finally {
-            stop();
+            logger.info("[Customer-{}] Customer has been terminated.", customerId);
         }
     }
 

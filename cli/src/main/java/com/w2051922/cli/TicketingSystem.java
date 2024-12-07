@@ -14,6 +14,8 @@ public class TicketingSystem {
     private static final Logger logger = LogManager.getLogger(TicketingSystem.class.getName());
     private static SystemConfiguration configuration;
     private final Scanner scanner = new Scanner(System.in);
+    private List<Thread> customerThreads;
+    private List<Thread> vendorThreads;
 
     /**
      * Configures and initiates the startup process for the ticketing system.
@@ -22,26 +24,33 @@ public class TicketingSystem {
      * <ol>
      * <li>Initializes of the configuration settings.</li>
      * <li>Logs the loaded configuration details.</li>
-     * <li>Prompt the user to <code>start</code> or <code>stop</code> the system</li>
+     * <li>Prompt the user to <code>start</code> or <code>reset</code> the system</li>
      * </ol>
      */
     public void systemConfig() {
-        System.out.println("***** Event Ticketing System Configuration *****");
+
         initializeConfig();
 
         logger.info("System configured with: {}", configuration);
 
+        System.out.print("Enter the number of vendors to simulate: ");
+        int numberOfVendors = getValidInput(scanner);
+
+        System.out.print("Enter the number of customers to simulate: ");
+        int numberOfCustomers = getValidInput(scanner);
+
+        System.out.print("Do you want to start or reset the system? (start/reset): ");
         while (true) {
-            System.out.print("Do you want to start the system? (start/stop): ");
             String start = scanner.nextLine().toLowerCase().trim();
             if (start.equals("start")) {
-                startSystem();
+                startSystem(numberOfVendors, numberOfCustomers);
                 break;
-            } if (start.equals("stop")) {
-                logger.info("System stopped. Exiting...");
+            } if (start.equals("reset")) {
+                logger.info("Request for system configuration reset.");
+                systemConfig();
                 break;
             } else {
-                System.out.println("Invalid input. Please type 'start' or 'stop'.");
+                System.out.print("Invalid input. Please type 'start' or 'reset': ");
             }
         }
     }
@@ -145,29 +154,38 @@ public class TicketingSystem {
      * <li>Creates and starts {@code threads} for the specified number of customers, where each customer has its own ticket retrieval rate.</li>
      * </ol>
      * <p>The method uses the {@link TicketPool} instance to manage the tickets distributed and retrieved by the vendor and customer threads.</p>
+     * @param numOfVendors the number of vendors to simulate
+     * @param numOfCustomers the number of customers to simulate
      */
-    private void startSystem() {
-        System.out.print("Enter the number of vendors to simulate: ");
-        int numberOfVendors = getValidInput(scanner);
-
-        System.out.print("Enter the number of customers to simulate: ");
-        int numberOfCustomers = getValidInput(scanner);
-
-        logger.info("System started with {} vendors and {} customers.", numberOfVendors, numberOfCustomers);
+    private void startSystem(int numOfVendors, int numOfCustomers) {
+        logger.info("System started with {} vendors and {} customers.", numOfVendors, numOfCustomers);
 
         // Initialize ticket pool
         TicketPool ticketPool = new TicketPool(configuration.getMaxTicketCapacity(), configuration.getTotalTickets());
 
+        // Display "Press 'Enter' to stop" message with a delay
+        System.out.print("\nPress 'Enter' to stop the system");
+        try {
+            for (int i = 0; i < 3; i++) {
+                System.out.print(".");
+                Thread.sleep(1000);
+            }
+            System.out.println();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        System.out.println();
+
         // Create vendor threads and store in an array
-        List<Thread> vendorThreads = new ArrayList<>();
-        for (int i = 1; i <= numberOfVendors; i++) {
+        vendorThreads = new ArrayList<>();
+        for (int i = 1; i <= numOfVendors; i++) {
             vendorThreads.add(new Thread(new Vendor(ticketPool, String.valueOf(i), configuration.getTicketReleaseRate())));
             logger.info("[Vendor-{}] Thread initialised.", i);
         }
 
         // Create customer threads and store in an array
-        List<Thread> customerThreads = new ArrayList<>();
-        for (int i = 1; i <= numberOfCustomers; i++) {
+        customerThreads = new ArrayList<>();
+        for (int i = 1; i <= numOfCustomers; i++) {
             customerThreads.add(new Thread(new Customer(ticketPool, String.valueOf(i), configuration.getCustomerRetrievalRate())));
             logger.info("[Customer-{}] Thread initialised.", i);
         }
@@ -184,6 +202,69 @@ public class TicketingSystem {
             Thread thread = customerThreads.get(i);
             thread.start();
             logger.info("[Customer-{}] Thread started.", (i+1));
+        }
+
+        // Wait for user input to stop
+        scanner.nextLine(); // Wait for Enter key
+
+        // Stop all threads
+        stopAllThreads();
+
+        // Ask if user wants to simulate another event
+        simulateAnotherEvent();
+    }
+
+    /**
+     * Stops all vendor and customer threads
+     */
+    private void stopAllThreads() {
+        logger.info("Stopping all threads.");
+        for (Thread thread : vendorThreads) {
+            thread.interrupt();
+        }
+
+        for (Thread thread : customerThreads) {
+            thread.interrupt();
+        }
+
+        for (Thread thread : vendorThreads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        for (Thread thread : customerThreads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        logger.info("All threads stopped.");
+    }
+
+    /**
+     * Asks user if they want to simulate another event
+     */
+    private void simulateAnotherEvent() {
+        System.out.println();
+        System.out.print("Do you want to simulate another event? (yes/no): ");
+
+        while (true) {
+            String response = scanner.nextLine().toLowerCase().trim();
+            if (response.equals("yes")) {
+                logger.info("Simulating another event.");
+                systemConfig();
+                break;
+            } else if (response.equals("no")) {
+                logger.info("System stopped. Exiting...");
+                break;
+            } else {
+                System.out.print("Invalid input. Please type 'yes' or 'no': ");
+            }
         }
     }
 
@@ -210,6 +291,11 @@ public class TicketingSystem {
 
     public static void main(String[] args) {
         TicketingSystem ticketingSystem = new TicketingSystem();
+
+        System.out.println();
+        System.out.println("====== \t Event Ticketing System Configuration \t ======");
+        System.out.println();
+
         ticketingSystem.systemConfig();
     }
 }

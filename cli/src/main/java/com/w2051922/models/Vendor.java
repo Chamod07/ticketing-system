@@ -37,10 +37,10 @@ public class Vendor implements Runnable {
                 ticketPool.addTicket(releaseRate, vendorID); // Add tickets
             }
         } catch (InterruptedException e) {
-            logger.error("Vendor interrupted", e);
+            logger.error("[Vendor-{}] Interrupted.", vendorID);
             Thread.currentThread().interrupt();
         } finally {
-            stop();
+            logger.info("[Vendor-{}] Vendor has been terminated.", vendorID);
         }
     }
 

@@ -1,6 +1,7 @@
-package com.chamod.ticketingbackend.service;
+package com.chamod.ticketingbackend.service.runnable;
 
 import com.chamod.ticketingbackend.model.Vendor;
+import com.chamod.ticketingbackend.service.TicketPoolService;
 import lombok.Getter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

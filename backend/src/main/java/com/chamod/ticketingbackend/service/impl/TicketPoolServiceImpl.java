@@ -50,10 +50,33 @@ public class TicketPoolServiceImpl implements TicketPoolService {
             }
 
             logger.info("[Vendor-{}] Added {} tickets. (Pool size-{})", vendorId, ticketCount, tickets.size());
-            notFull.signalAll();
+            notEmpty.signalAll();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             logger.error("[Vendor-{}] Ticket addition interrupted.", vendorId);
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    @Override
+    public void removeTickets(int ticketCount, int customerId) {
+        lock.lock();
+        try {
+            while (tickets.size() < ticketCount) {
+                logger.warn("[Customer-{}] Not enough tickets available. Waiting to purchase tickets (Pool size-{}).", customerId, tickets.size());
+                notEmpty.await();
+            }
+
+            for (int i = 0; i < ticketCount; i++) {
+                tickets.remove(0);
+            }
+
+            logger.info("[Customer-{}] Purchased {} tickets. (Pool size-{})", customerId, ticketCount, tickets.size());
+            notFull.signalAll();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            logger.error("[Customer-{}] Ticket purchase interrupted.", customerId);
         } finally {
             lock.unlock();
         }

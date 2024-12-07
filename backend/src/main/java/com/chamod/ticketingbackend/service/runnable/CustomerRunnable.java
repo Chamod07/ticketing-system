@@ -1,6 +1,7 @@
-package com.chamod.ticketingbackend.service;
+package com.chamod.ticketingbackend.service.runnable;
 
 import com.chamod.ticketingbackend.model.Customer;
+import com.chamod.ticketingbackend.service.TicketPoolService;
 import lombok.Getter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -59,7 +60,7 @@ public class CustomerRunnable implements Runnable{
                     logger.info("[Customer-{}] Thread interrupted.", customerId);
                     return;
                 }
-                ticketPool.addTickets(customer.getTicketsPerRetrieval(), customerId);
+                ticketPool.removeTickets(customer.getTicketsPerRetrieval(), customerId);
                 Thread.sleep(customer.getRetrievalInterval()*1000L);
             }
         } catch (InterruptedException e) {

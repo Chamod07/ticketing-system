@@ -5,7 +5,7 @@ import com.chamod.ticketingbackend.model.Vendor;
 import com.chamod.ticketingbackend.repository.VendorRepository;
 import com.chamod.ticketingbackend.service.ConfigService;
 import com.chamod.ticketingbackend.service.TicketPoolService;
-import com.chamod.ticketingbackend.service.VendorRunnable;
+import com.chamod.ticketingbackend.service.runnable.VendorRunnable;
 import com.chamod.ticketingbackend.service.VendorService;
 //import jakarta.annotation.PostConstruct;
 import org.apache.logging.log4j.LogManager;

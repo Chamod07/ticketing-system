@@ -7,6 +7,7 @@ import com.chamod.ticketingbackend.service.ConfigService;
 import com.chamod.ticketingbackend.service.TicketPoolService;
 import com.chamod.ticketingbackend.service.runnable.VendorRunnable;
 import com.chamod.ticketingbackend.service.VendorService;
+
 //import jakarta.annotation.PostConstruct;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -104,16 +105,16 @@ public class VendorServiceImpl implements VendorService {
             return;
         }
         for (int i = 0; i < vendorThreads.size(); i++) {
-            Thread vendorThread = vendorThreads.get(i);
+            Thread thread = vendorThreads.get(i);
             VendorRunnable vendorRunnable = vendorRunnables.get(i);
 
-            if (!vendorThread.isAlive()) {
-                vendorThread = new Thread(vendorRunnable);
-                vendorThreads.set(i, vendorThread);
-                vendorThread.start();
-                logger.info("Vendor-{} started.", vendorRunnable.getVendorId());
+            if (!thread.isAlive()) {
+                thread = new Thread(vendorRunnable);
+                vendorThreads.add(thread);
+                thread.start();
+                logger.info("Vendor-{} successfully started.", vendorRunnable.getVendorId());
             } else {
-                logger.warn("Vendor-{} already started.", vendorRunnable.getVendorId());
+                logger.warn("Vendor-{} has already started.", vendorRunnable.getVendorId());
             }
         }
     }

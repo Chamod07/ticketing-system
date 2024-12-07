@@ -1,13 +1,16 @@
 package com.chamod.ticketingbackend.service;
 
-import com.chamod.ticketingbackend.dto.request.CustomerAddRequestDTO;
-import com.chamod.ticketingbackend.dto.response.CustomerResponseDTO;
-
 public interface CustomerService {
 
-    String saveCustomer(CustomerAddRequestDTO customerAddRequestDTO);
+    void addCustomer();
 
-    String updateCustomer(CustomerAddRequestDTO customerAddRequestDTO);
+    void removeCustomer();
 
-    CustomerResponseDTO getCustomer(int customerId);
+    void startCustomers();
+
+    void pauseCustomers();
+
+    void resumeCustomers();
+
+    void stopCustomers();
 }

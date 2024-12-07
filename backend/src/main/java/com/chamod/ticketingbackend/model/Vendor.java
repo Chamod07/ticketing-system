@@ -17,8 +17,8 @@ public class Vendor {
     @Column(name = "vendor_id")
     private Long vendorId;
 
-    @Column(name = "created_at")
-    private LocalDateTime createdAt;
+    @Column(name = "timestamp")
+    private LocalDateTime timestamp;
 
     @Column(name = "tickets_per_release")
     private int ticketsPerRelease;

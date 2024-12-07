@@ -17,8 +17,8 @@ public class Customer {
     @Column(name = "customer_id")
     private Long customerId;
 
-    @Column(name = "created_at")
-    private LocalDateTime createdAt;
+    @Column(name = "timestamp")
+    private LocalDateTime timestamp;
 
     @Column(name = "priority")
     private boolean priority;

@@ -52,7 +52,7 @@ public class VendorServiceImpl implements VendorService {
         Vendor vendor = new Vendor();
         vendor.setTicketsPerRelease(systemConfiguration.getTicketReleaseRate());
         vendor.setReleaseInterval(1); // Default interval of 1 second
-        vendor.setCreatedAt(LocalDateTime.now());
+        vendor.setTimestamp(LocalDateTime.now());
 
         // save vendor to database
         vendorRepository.save(vendor);
@@ -62,15 +62,16 @@ public class VendorServiceImpl implements VendorService {
 
         VendorRunnable vendorRunnable = new VendorRunnable(vendor, ticketPoolService);
         Thread vendorThread = new Thread(vendorRunnable);
+
         vendorThreads.add(vendorThread);
         vendorRunnables.add(vendorRunnable);
 
-        logger.info("Vendor-{} added.", vendorRunnable.getVendorId());
-
+        // start thread if system is running
         if (systemService.isRunning()) {
             vendorThread.start();
-            logger.info("Vendor-{} started immediately as the system is running.", vendorRunnable.getVendorId());
+            logger.info("Vendor-{} added and started as the system is running.", vendorRunnable.getVendorId());
         }
+        else logger.info("Vendor-{} added.", vendorRunnable.getVendorId());
     }
 
     @Override
@@ -90,6 +91,7 @@ public class VendorServiceImpl implements VendorService {
             // Remove vendor from database
             Vendor vendorToRemove = vendors.get(lastIndex);
             vendorRepository.delete(vendorToRemove);
+
             vendors.remove(vendorToRemove);
             VendorRunnable.removeVendorCount();
 
@@ -149,6 +151,7 @@ public class VendorServiceImpl implements VendorService {
             logger.warn("No vendors to stop.");
             return;
         }
+
         for (int i = 0; i < vendorThreads.size(); i++) {
             VendorRunnable vendorRunnable = new VendorRunnable(vendors.get(i), ticketPoolService);
             vendorRunnable.stop();
@@ -173,6 +176,15 @@ public class VendorServiceImpl implements VendorService {
         for (VendorRunnable vendorRunnable : vendorRunnables) {
             vendorRunnable.resume();
             logger.info("Vendor-{} resumed.", vendorRunnable.getVendorId());
+        }
+
+        // start vendors added while paused
+        for (int i = 0; i < vendorThreads.size(); i++) {
+            Thread vendorThread = vendorThreads.get(i);
+            if (!vendorThread.isAlive()) {
+                vendorThread.start();
+                logger.info("Vendor-{} started during system resume.", vendorRunnables.get(i).getVendorId());
+            }
         }
     }
 }

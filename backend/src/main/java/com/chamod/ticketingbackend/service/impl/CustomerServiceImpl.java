@@ -48,7 +48,7 @@ public class CustomerServiceImpl implements CustomerService {
         customer.setTicketsPerRetrieval(systemConfiguration.getCustomerRetrievalRate());
         customer.setRetrievalInterval(1);
         customer.setPriority(false);
-        customer.setCreatedAt(LocalDateTime.now());
+        customer.setTimestamp(LocalDateTime.now());
 
         customerRepository.save(customer);
 
@@ -56,16 +56,16 @@ public class CustomerServiceImpl implements CustomerService {
 
         CustomerRunnable customerRunnable = new CustomerRunnable(customer, ticketPoolService);
         Thread customerThread = new Thread(customerRunnable);
+
         customerThreads.add(customerThread);
         customerRunnables.add(customerRunnable);
-
-        logger.info("Customer-{} added.", customerRunnable.getCustomerId());
 
         // start thread if system is running
         if (systemService.isRunning()) {
             customerThread.start();
             logger.info("Customer-{} started immediately as the system is running.", customerRunnable.getCustomerId());
         }
+        else logger.info("Customer-{} added.", customerRunnable.getCustomerId());
     }
 
     @Override
@@ -135,6 +135,15 @@ public class CustomerServiceImpl implements CustomerService {
             customerRunnable.resume();
             logger.info("Customer-{} resumed.", customerRunnable.getCustomerId());
         }
+
+        // start vendors added while paused
+        for (int i = 0; i < customerThreads.size(); i++) {
+            Thread vendorThread = customerThreads.get(i);
+            if (!vendorThread.isAlive()) {
+                vendorThread.start();
+                logger.info("Vendor-{} started during system resume.", customerRunnables.get(i).getCustomerId());
+            }
+        }
     }
 
     @Override
@@ -143,6 +152,7 @@ public class CustomerServiceImpl implements CustomerService {
             logger.warn("No customers to stop.");
             return;
         }
+
         for (int i = 0; i < customerThreads.size(); i++) {
             new CustomerRunnable(customers.get(i), ticketPoolService).stop();
             customerThreads.get(i).interrupt();

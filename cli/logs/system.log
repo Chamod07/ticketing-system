@@ -1585,3 +1585,74 @@
 2024-12-07 00:58:50 INFO  - Configuration saved to systemConfiguration.json.
 2024-12-07 00:58:50 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 5, Customer Retrieval Rate = 4, Maximum Ticket Capacity = 100]
 2024-12-07 00:58:58 INFO  - System stopped. Exiting...
+2024-12-07 19:35:26 INFO  - Configuration saved to systemConfiguration.json.
+2024-12-07 19:35:26 INFO  - System configured with: [Total Tickets = 20, Ticket Release Rate = 5, Customer Retrieval Rate = 4, Maximum Ticket Capacity = 100]
+2024-12-07 19:35:33 INFO  - System started with 2 vendors and 2 customers.
+2024-12-07 19:35:33 INFO  - [Vendor-1] Thread initialised.
+2024-12-07 19:35:33 INFO  - [Vendor-2] Thread initialised.
+2024-12-07 19:35:33 INFO  - [Customer-1] Thread initialised.
+2024-12-07 19:35:33 INFO  - [Customer-2] Thread initialised.
+2024-12-07 19:35:33 INFO  - [Vendor-1] Thread started.
+2024-12-07 19:35:33 INFO  - [Vendor-2] Thread started.
+2024-12-07 19:35:33 INFO  - [Customer-1] Thread started.
+2024-12-07 19:35:33 INFO  - [Customer-2] Thread started.
+2024-12-07 19:35:34 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 16)
+2024-12-07 19:35:34 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 21)
+2024-12-07 19:35:34 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 17)
+2024-12-07 19:35:34 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 22)
+2024-12-07 19:35:35 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 18)
+2024-12-07 19:35:35 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 14)
+2024-12-07 19:35:35 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 19)
+2024-12-07 19:35:35 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 24)
+2024-12-07 19:35:36 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 29)
+2024-12-07 19:35:36 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 25)
+2024-12-07 19:35:36 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 21)
+2024-12-07 19:35:36 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 26)
+2024-12-07 19:35:37 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 31)
+2024-12-07 19:35:37 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 36)
+2024-12-07 19:35:37 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 32)
+2024-12-07 19:35:37 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 28)
+2024-12-07 19:35:38 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 24)
+2024-12-07 19:35:38 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 29)
+2024-12-07 19:35:38 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 25)
+2024-12-07 19:35:38 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 30)
+2024-12-07 19:35:39 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 35)
+2024-12-07 19:35:39 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 31)
+2024-12-07 19:35:39 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 27)
+2024-12-07 19:35:39 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 32)
+2024-12-07 19:35:40 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 28)
+2024-12-07 19:35:40 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 24)
+2024-12-07 19:35:40 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 29)
+2024-12-07 19:35:40 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 34)
+2024-12-07 19:35:41 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 30)
+2024-12-07 19:35:41 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 35)
+2024-12-07 19:35:41 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 31)
+2024-12-07 19:35:41 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 36)
+2024-12-07 19:35:42 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 32)
+2024-12-07 19:35:42 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 37)
+2024-12-07 19:35:42 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 42)
+2024-12-07 19:35:42 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 38)
+2024-12-07 19:35:43 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 34)
+2024-12-07 19:35:43 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 39)
+2024-12-07 19:35:43 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 44)
+2024-12-07 19:35:43 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 40)
+2024-12-07 19:35:45 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 36)
+2024-12-07 19:35:45 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 41)
+2024-12-07 19:35:45 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 46)
+2024-12-07 19:35:45 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 42)
+2024-12-07 19:35:46 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 47)
+2024-12-07 19:35:46 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 52)
+2024-12-07 19:35:46 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 48)
+2024-12-07 19:35:46 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 44)
+2024-12-07 19:35:47 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 49)
+2024-12-07 19:35:47 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 54)
+2024-12-07 19:35:47 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 50)
+2024-12-07 19:35:47 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 46)
+2024-12-07 19:35:48 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 42)
+2024-12-07 19:35:48 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 38)
+2024-12-07 19:35:48 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 43)
+2024-12-07 19:35:48 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 48)
+2024-12-07 19:35:49 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 44)
+2024-12-07 19:35:49 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 49)
+2024-12-07 19:35:49 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 54)
+2024-12-07 19:35:49 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 50)

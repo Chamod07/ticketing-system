@@ -8,8 +8,6 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.concurrent.locks.ReentrantLock;
-
 @Service
 public class SystemServiceImpl implements SystemService {
 
@@ -34,7 +32,7 @@ public class SystemServiceImpl implements SystemService {
         customerService.startCustomers();
         running = true;
 
-        logger.info("System started.");
+//        logger.info("System started.");
     }
 
     @Override
@@ -48,7 +46,7 @@ public class SystemServiceImpl implements SystemService {
         customerService.pauseCustomers();
         running = false;
 
-        logger.info("System paused.");
+//        logger.info("System paused.");
     }
 
     @Override
@@ -62,7 +60,7 @@ public class SystemServiceImpl implements SystemService {
         customerService.resumeCustomers();
         running = true;
 
-        logger.info("System resumed.");
+//        logger.info("System resumed.");
     }
 
     @Override
@@ -76,7 +74,7 @@ public class SystemServiceImpl implements SystemService {
         customerService.stopCustomers();
         running = false;
 
-        logger.info("System stopped.");
+//        logger.info("System stopped.");
     }
 
     @Override

@@ -1,6 +1,6 @@
 package com.chamod.ticketingbackend.controller;
 
-import com.chamod.ticketingbackend.service.VendorService;
+import com.chamod.ticketingbackend.service.SystemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,23 +13,29 @@ import org.springframework.web.bind.annotation.RestController;
 public class SystemController {
 
     @Autowired
-    private VendorService vendorService;
+    private SystemService systemService;
 
-//    @PostMapping(path = "/start")
-//    public String startSystem() {
-//        vendorService.startVendors();
-//        return "Successfully started system.";
-//    }
-//
-//    @PostMapping(path = "/pause")
-//    public String pauseSystem() {
-//        vendorService.pauseVendors();
-//        return "Successfully paused system.";
-//    }
-//
-//    @PostMapping(path = "/resume")
-//    public String resumeSystem() {
-//        vendorService.pauseVendors();
-//        return "Successfully resumed system.";
-//    }
+    @PostMapping(path = "/start")
+    public String startSystem() {
+        systemService.startSystem();
+        return "System started successfully.";
+    }
+
+    @PostMapping(path = "/pause")
+    public String pauseSystem() {
+        systemService.pauseSystem();
+        return "System paused successfully.";
+    }
+
+    @PostMapping(path = "/stop")
+    public String stopSystem() {
+        systemService.stopSystem();
+        return "System stopped successfully.";
+    }
+
+    @PostMapping(path = "/resume")
+    public String resumeSystem() {
+        systemService.resumeSystem();
+        return "System resumed successfully.";
+    }
 }

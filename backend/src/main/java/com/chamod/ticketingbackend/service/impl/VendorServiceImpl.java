@@ -4,6 +4,7 @@ import com.chamod.ticketingbackend.model.SystemConfiguration;
 import com.chamod.ticketingbackend.model.Vendor;
 import com.chamod.ticketingbackend.repository.VendorRepository;
 import com.chamod.ticketingbackend.service.ConfigService;
+import com.chamod.ticketingbackend.service.SystemService;
 import com.chamod.ticketingbackend.service.TicketPoolService;
 import com.chamod.ticketingbackend.service.runnable.VendorRunnable;
 import com.chamod.ticketingbackend.service.VendorService;
@@ -12,6 +13,7 @@ import com.chamod.ticketingbackend.service.VendorService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -28,6 +30,10 @@ public class VendorServiceImpl implements VendorService {
 
     @Autowired
     private ConfigService configService;
+
+    @Lazy
+    @Autowired
+    private SystemService systemService;
 
     private final List<Thread> vendorThreads = new ArrayList<>();
     private final List<Vendor> vendors = new ArrayList<>();
@@ -60,6 +66,11 @@ public class VendorServiceImpl implements VendorService {
         vendorRunnables.add(vendorRunnable);
 
         logger.info("Vendor-{} added.", vendorRunnable.getVendorId());
+
+        if (systemService.isRunning()) {
+            vendorThread.start();
+            logger.info("Vendor-{} started immediately as the system is running.", vendorRunnable.getVendorId());
+        }
     }
 
     @Override

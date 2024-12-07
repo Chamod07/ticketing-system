@@ -5,12 +5,14 @@ import com.chamod.ticketingbackend.model.SystemConfiguration;
 import com.chamod.ticketingbackend.repository.CustomerRepository;
 import com.chamod.ticketingbackend.service.ConfigService;
 import com.chamod.ticketingbackend.service.CustomerService;
+import com.chamod.ticketingbackend.service.SystemService;
 import com.chamod.ticketingbackend.service.TicketPoolService;
 import com.chamod.ticketingbackend.service.runnable.CustomerRunnable;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -28,6 +30,10 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
     private ConfigService configService;
+
+    @Lazy
+    @Autowired
+    private SystemService systemService;
 
     private final List<Thread> customerThreads = new ArrayList<>();
     private final List<Customer> customers = new ArrayList<>();
@@ -49,11 +55,17 @@ public class CustomerServiceImpl implements CustomerService {
         customers.add(customer);
 
         CustomerRunnable customerRunnable = new CustomerRunnable(customer, ticketPoolService);
-        Thread thread = new Thread(customerRunnable);
-        customerThreads.add(thread);
+        Thread customerThread = new Thread(customerRunnable);
+        customerThreads.add(customerThread);
         customerRunnables.add(customerRunnable);
 
         logger.info("Customer-{} added.", customerRunnable.getCustomerId());
+
+        // start thread if system is running
+        if (systemService.isRunning()) {
+            customerThread.start();
+            logger.info("Customer-{} started immediately as the system is running.", customerRunnable.getCustomerId());
+        }
     }
 
     @Override
@@ -74,14 +86,14 @@ public class CustomerServiceImpl implements CustomerService {
 
             logger.info("Customer-{} removed", customers.size()+1);
         } else {
-            logger.error("No customers to remove.");
+            logger.warn("No customers to remove.");
         }
     }
 
     @Override
     public void startCustomers() {
         if (customerThreads.isEmpty()) {
-            logger.error("No customers to start.");
+            logger.warn("No customers to start.");
             return;
         }
         for (int i = 0; i < customerThreads.size(); i++) {

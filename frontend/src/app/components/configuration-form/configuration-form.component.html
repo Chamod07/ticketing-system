@@ -1,41 +1,70 @@
+<p-toast></p-toast>
 <p-card header="System Configuration" >
   <form [formGroup]="configForm" (ngSubmit)="saveConfiguration()">
     <div class="grid">
       <div class="col-12 field h-6rem">
-        <label for="totalSystemTickets" class="font-bold">Total Tickets</label>
-        <input pInputText id="totalSystemTickets" type="number"
-               formControlName="totalSystemTickets" class="w-full"/>
-        <small class="text-muted">The total number of tickets available</small>
+        <label for="totalTickets" class="font-bold">Total Tickets</label>
+        <input pInputText id="totalTickets" type="number"
+               formControlName="totalTickets" class="w-full"/>
+        <small *ngIf="!configForm.get('totalTickets')?.touched || !configForm.get('totalTickets')?.invalid"
+               class="text-muted">The total number of tickets available</small>
+        <small *ngIf="configForm.get('totalTickets')?.errors?.['required'] && configForm.get('totalTickets')?.touched"
+               class="p-error block">Total Tickets is required</small>
+        <small *ngIf="configForm.get('totalTickets')?.errors?.['min'] && configForm.get('totalTickets')?.touched"
+               class="p-error block">Total Tickets must be at least 1</small>
       </div>
 
       <div class="col-12 field h-6rem">
         <label for="ticketReleaseRate" class="font-bold">Ticket Release Rate</label>
         <input pInputText id="ticketReleaseRate" type="number"
                formControlName="ticketReleaseRate" class="w-full"/>
-        <small class="text-muted">Number of tickets each vendor releases per transaction</small>
+        <small *ngIf="!configForm.get('ticketReleaseRate')?.touched || !configForm.get('ticketReleaseRate')?.invalid"
+               class="text-muted">Number of tickets each vendor releases per transaction</small>
+        <small *ngIf="configForm.get('ticketReleaseRate')?.errors?.['required'] && configForm.get('ticketReleaseRate')?.touched"
+               class="p-error block">Ticket Release Rate is required</small>
+        <small *ngIf="configForm.get('ticketReleaseRate')?.errors?.['min'] && configForm.get('ticketReleaseRate')?.touched"
+               class="p-error block">Ticket Release Rate must be at least 1</small>
       </div>
 
       <div class="col-12 field h-6rem">
         <label for="customerRetrievalRate" class="font-bold">Customer Retrieval Rate</label>
         <input pInputText id="customerRetrievalRate" type="number"
                formControlName="customerRetrievalRate" class="w-full"/>
-        <small class="text-muted">Number of tickets each customer purchases per transaction</small>
+        <small *ngIf="!configForm.get('customerRetrievalRate')?.touched || !configForm.get('customerRetrievalRate')?.invalid"
+               class="text-muted">
+          Number of tickets each customer purchases per transaction
+        </small>
+        <small *ngIf="configForm.get('customerRetrievalRate')?.errors?.['required'] && configForm.get('customerRetrievalRate')?.touched"
+               class="p-error block">Customer Retrieval Rate is required</small>
+        <small *ngIf="configForm.get('customerRetrievalRate')?.errors?.['min'] && configForm.get('customerRetrievalRate')?.touched"
+               class="p-error block">Customer Retrieval Rate must be at least 1</small>
       </div>
 
       <div class="col-12 field h-6rem">
         <label for="maxCapacity" class="font-bold">Max Capacity</label>
         <input pInputText id="maxCapacity" type="number"
                formControlName="maxCapacity" class="w-full"/>
-        <small class="text-muted">Maximum number of tickets that can be in the pool</small>
+        <small *ngIf="!configForm.get('maxCapacity')?.touched || !configForm.get('maxCapacity')?.invalid"
+               class="text-muted">
+          Maximum number of tickets that can be in the pool
+        </small>
+        <small *ngIf="configForm.get('maxCapacity')?.errors?.['required'] && configForm.get('maxCapacity')?.touched"
+               class="p-error block">Max Capacity is required</small>
+        <small *ngIf="configForm.get('maxCapacity')?.errors?.['min'] && configForm.get('maxCapacity')?.touched"
+               class="p-error block">Max Capacity must be at least 1</small>
+        <small *ngIf="configForm.get('maxCapacity')?.errors?.['maxCapacityTooLow'] && configForm.get('maxCapacity')?.touched"
+               class="p-error block">Max Capacity must be greater than Total Tickets</small>
       </div>
 
-      <div class="flex button-container gap-3">
+      <div class="button-container" style="display: flex; gap: 1rem; justify-content: flex-start; margin-top: 1.5rem">
         <div class="col-7">
           <p-button label="Save Configuration" type="submit"
                     [disabled]="!configForm.valid" styleClass="w-full"></p-button>
         </div>
         <div class="col-7">
-          <p-button label="Load Configuration" type="button" styleClass="p-button-secondary w-full"></p-button>
+          <p-button label="Load Configuration" type="button"
+                    (click)="loadConfiguration()"
+                    styleClass="p-button-contrast w-full"></p-button>
         </div>
       </div>
     </div>

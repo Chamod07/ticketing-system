@@ -4,6 +4,7 @@ import {RouterOutlet} from '@angular/router';
 import {ConfigurationFormComponent} from './components/configuration-form/configuration-form.component';
 import {TicketAvailabilityComponent} from './components/ticket-availability/ticket-availability.component';
 import {ControlPanelComponent} from './components/control-panel/control-panel.component';
+import {ToastModule} from 'primeng/toast';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import {ControlPanelComponent} from './components/control-panel/control-panel.co
     ConfigurationFormComponent,
     CountDisplayComponent,
     TicketAvailabilityComponent,
-    ControlPanelComponent
+    ControlPanelComponent,
+    ToastModule
   ],
   templateUrl: './app.component.html',
   standalone: true,

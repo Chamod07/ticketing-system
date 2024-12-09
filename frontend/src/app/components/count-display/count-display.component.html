@@ -5,9 +5,9 @@
     <h2>{{metrics.activeVendors}}</h2>
     <span>Active Vendors</span>
     <div class="flex gap-2 mt-2">
-      <p-button icon="pi pi-minus" (onClick)="updateMetric('vendors', false)"
+      <p-button icon="pi pi-minus" [raised]="true" (onClick)="updateMetric('vendors', false)"
                 [disabled]="metrics.activeVendors <= 0"></p-button>
-      <p-button icon="pi pi-plus" (onClick)="updateMetric('vendors', true)"></p-button>
+      <p-button icon="pi pi-plus" [raised]="true" (onClick)="updateMetric('vendors', true)"></p-button>
     </div>
   </div>
 </p-card>
@@ -18,9 +18,9 @@
     <h2>{{metrics.activeCustomers}}</h2>
     <span>Active Customers</span>
     <div class="flex gap-2 mt-2">
-      <p-button icon="pi pi-minus" (onClick)="updateMetric('customers', false)"
+      <p-button icon="pi pi-minus" [raised]="true" (onClick)="updateMetric('customers', false)"
                 [disabled]="metrics.activeCustomers <= 0"></p-button>
-      <p-button icon="pi pi-plus" (onClick)="updateMetric('customers', true)"></p-button>
+      <p-button icon="pi pi-plus" [raised]="true" (onClick)="updateMetric('customers', true)"></p-button>
     </div>
   </div>
 </p-card>
@@ -31,9 +31,9 @@
     <h2>{{metrics.vipCustomers}}</h2>
     <span>VIP Customers</span>
     <div class="flex gap-2 mt-2">
-      <p-button icon="pi pi-minus" (onClick)="updateMetric('vip', false)"
+      <p-button icon="pi pi-minus" [raised]="true" (onClick)="updateMetric('vip', false)"
                 [disabled]="metrics.vipCustomers <= 0"></p-button>
-      <p-button icon="pi pi-plus" (onClick)="updateMetric('vip', true)"></p-button>
+      <p-button icon="pi pi-plus" [raised]="true" (onClick)="updateMetric('vip', true)"></p-button>
     </div>
   </div>
 </p-card>

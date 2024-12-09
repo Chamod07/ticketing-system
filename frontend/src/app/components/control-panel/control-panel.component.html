@@ -1,3 +1,4 @@
+
 <div class="layout-topbar" style="
     justify-content: space-between;
     padding: 2rem;
@@ -9,6 +10,7 @@
   <div class="layout-topbar-left" style="display: inline-flex">
     <i class="pi pi-ticket"  style="font-size: 2rem; padding: 2rem"></i>
     <h1>Event Ticketing System</h1>
+    <p-toast position="top-right"></p-toast>
   </div>
   <div class="layout-topbar-right" style="display: flex;
     align-items: center;
@@ -19,12 +21,16 @@
       offLabel="Pause"
       onIcon="pi pi-play"
       offIcon="pi pi-pause"
-      styleClass="w-9rem"/>
+      styleClass="w-9rem"
+    />
 
     <p-button
       [(ngModel)]="stop"
       label="Stop"
       icon="pi pi-stop"
-      styleClass="w-9rem"/>
+      styleClass="w-9rem p-button-danger"
+      [raised]="true"
+      (click)="show()"
+    />
   </div>
 </div>

@@ -1,0 +1,44 @@
+<div class="col-6 md:col-4">
+  <p-card>
+    <div class="flex flex-column align-items-center">
+      <i class="pi pi-shop text-2xl mb-2"></i>
+      <h2>{{metrics.activeVendors}}</h2>
+      <span>Active Vendors</span>
+      <div class="flex gap-2 mt-2">
+        <p-button icon="pi pi-minus" (onClick)="updateMetric('vendors', false)"
+                  [disabled]="metrics.activeVendors <= 0"></p-button>
+        <p-button icon="pi pi-plus" (onClick)="updateMetric('vendors', true)"></p-button>
+      </div>
+    </div>
+  </p-card>
+</div>
+
+<div class="col-6 md:col-4">
+  <p-card>
+    <div class="flex flex-column align-items-center">
+      <i class="pi pi-users text-2xl mb-2"></i>
+      <h2>{{metrics.activeCustomers}}</h2>
+      <span>Active Customers</span>
+      <div class="flex gap-2 mt-2">
+        <p-button icon="pi pi-minus" (onClick)="updateMetric('customers', false)"
+                  [disabled]="metrics.activeCustomers <= 0"></p-button>
+        <p-button icon="pi pi-plus" (onClick)="updateMetric('customers', true)"></p-button>
+      </div>
+    </div>
+  </p-card>
+</div>
+
+<div class="col-6 md:col-4">
+  <p-card>
+    <div class="flex flex-column align-items-center">
+      <i class="pi pi-star text-2xl mb-2"></i>
+      <h2>{{metrics.vipCustomers}}</h2>
+      <span>VIP Customers</span>
+      <div class="flex gap-2 mt-2">
+        <p-button icon="pi pi-minus" (onClick)="updateMetric('vip', false)"
+                  [disabled]="metrics.vipCustomers <= 0"></p-button>
+        <p-button icon="pi pi-plus" (onClick)="updateMetric('vip', true)"></p-button>
+      </div>
+    </div>
+  </p-card>
+</div>

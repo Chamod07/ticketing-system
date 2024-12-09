@@ -1,101 +1,43 @@
-<div class="grid">
-  <!-- Metrics Cards -->
-  <div class="col-6 md:col-4">
-    <p-card>
-      <div class="flex flex-column align-items-center">
-        <i class="pi pi-shop text-2xl mb-2"></i>
-        <h2>{{metrics.activeVendors}}</h2>
-        <span>Active Vendors</span>
-        <div class="flex gap-2 mt-2">
-          <p-button icon="pi pi-minus" (onClick)="updateMetric('vendors', false)"
-                    [disabled]="metrics.activeVendors <= 0"></p-button>
-          <p-button icon="pi pi-plus" (onClick)="updateMetric('vendors', true)"></p-button>
+<p-card header="System Configuration" >
+  <form [formGroup]="configForm" (ngSubmit)="saveConfiguration()">
+    <div class="grid">
+      <div class="col-12 field h-6rem">
+        <label for="totalSystemTickets" class="font-bold">Total Tickets</label>
+        <input pInputText id="totalSystemTickets" type="number"
+               formControlName="totalSystemTickets" class="w-full"/>
+        <small class="text-muted">The total number of tickets available</small>
+      </div>
+
+      <div class="col-12 field h-6rem">
+        <label for="ticketReleaseRate" class="font-bold">Ticket Release Rate</label>
+        <input pInputText id="ticketReleaseRate" type="number"
+               formControlName="ticketReleaseRate" class="w-full"/>
+        <small class="text-muted">Number of tickets each vendor releases per transaction</small>
+      </div>
+
+      <div class="col-12 field h-6rem">
+        <label for="customerRetrievalRate" class="font-bold">Customer Retrieval Rate</label>
+        <input pInputText id="customerRetrievalRate" type="number"
+               formControlName="customerRetrievalRate" class="w-full"/>
+        <small class="text-muted">Number of tickets each customer purchases per transaction</small>
+      </div>
+
+      <div class="col-12 field h-6rem">
+        <label for="maxCapacity" class="font-bold">Max Capacity</label>
+        <input pInputText id="maxCapacity" type="number"
+               formControlName="maxCapacity" class="w-full"/>
+        <small class="text-muted">Maximum number of tickets that can be in the pool</small>
+      </div>
+
+      <div class="flex button-container gap-3">
+        <div class="col-7">
+          <p-button label="Save Configuration" type="submit"
+                    [disabled]="!configForm.valid" styleClass="w-full"></p-button>
+        </div>
+        <div class="col-7">
+          <p-button label="Load Configuration" type="button" styleClass="p-button-secondary w-full"></p-button>
         </div>
       </div>
-    </p-card>
-  </div>
-
-  <div class="col-6 md:col-4">
-    <p-card>
-      <div class="flex flex-column align-items-center">
-        <i class="pi pi-users text-2xl mb-2"></i>
-        <h2>{{metrics.activeCustomers}}</h2>
-        <span>Active Customers</span>
-        <div class="flex gap-2 mt-2">
-          <p-button icon="pi pi-minus" (onClick)="updateMetric('customers', false)"
-                    [disabled]="metrics.activeCustomers <= 0"></p-button>
-          <p-button icon="pi pi-plus" (onClick)="updateMetric('customers', true)"></p-button>
-        </div>
-      </div>
-    </p-card>
-  </div>
-
-  <div class="col-6 md:col-4">
-    <p-card>
-      <div class="flex flex-column align-items-center">
-        <i class="pi pi-star text-2xl mb-2"></i>
-        <h2>{{metrics.vipCustomers}}</h2>
-        <span>VIP Customers</span>
-        <div class="flex gap-2 mt-2">
-          <p-button icon="pi pi-minus" (onClick)="updateMetric('vip', false)"
-                    [disabled]="metrics.vipCustomers <= 0"></p-button>
-          <p-button icon="pi pi-plus" (onClick)="updateMetric('vip', true)"></p-button>
-        </div>
-      </div>
-    </p-card>
-  </div>
-
-  <!-- Available Tickets -->
-  <div class="col-8">
-    <p-card>
-      <h3>Available Tickets</h3>
-      <h2>{{availableTickets.current}} / {{availableTickets.total}}</h2>
-      <p-progressBar [value]="(availableTickets.current / availableTickets.total) * 100"></p-progressBar>
-      <small>Total Released: {{availableTickets.current}} / {{availableTickets.total}}</small>
-    </p-card>
-  </div>
-
-  <!-- Configuration Form -->
-  <div class="col-8 md:col-6">
-    <p-card header="System Configuration">
-      <form [formGroup]="configForm" (ngSubmit)="saveConfiguration()">
-        <div class="grid">
-          <div class="col-12 field">
-            <label for="totalTickets">Total Tickets</label>
-            <input pInputText id="totalTickets" type="number"
-                   formControlName="totalTickets" class="w-full"/>
-            <small class="text-muted">The total number of tickets available</small>
-          </div>
-
-          <div class="col-12 field">
-            <label for="ticketReleaseRate">Ticket Release Rate</label>
-            <input pInputText id="ticketReleaseRate" type="number"
-                   formControlName="ticketReleaseRate" class="w-full"/>
-            <small class="text-muted">Number of tickets each vendor releases per transaction</small>
-          </div>
-
-          <div class="col-12 field">
-            <label for="customerRetrievalRate">Customer Retrieval Rate</label>
-            <input pInputText id="customerRetrievalRate" type="number"
-                   formControlName="customerRetrievalRate" class="w-full"/>
-            <small class="text-muted">Number of tickets each customer purchases per transaction</small>
-          </div>
-
-          <div class="col-12 field">
-            <label for="maxCapacity">Max Capacity</label>
-            <input pInputText id="maxCapacity" type="number"
-                   formControlName="maxCapacity" class="w-full"/>
-            <small class="text-muted">Maximum number of tickets that can be in the pool at once</small>
-          </div>
-
-          <div class="col-12">
-            <p-button label="Save Configuration" type="submit"
-                      [disabled]="!configForm.valid" styleClass="w-full"></p-button>
-          </div>
-        </div>
-      </form>
-    </p-card>
-  </div>
-</div>
-
-<p-toast></p-toast>
+    </div>
+  </form>
+</p-card>

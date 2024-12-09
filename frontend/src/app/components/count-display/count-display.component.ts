@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
-import {NgStyle} from '@angular/common';
 import {Button} from 'primeng/button';
 import {CardModule} from 'primeng/card';
 
 @Component({
   selector: 'app-count-display',
+  templateUrl: './count-display.component.html',
   standalone: true,
   imports: [
-    NgStyle,
     Button,
     CardModule
   ],
-  templateUrl: './count-display.component.html',
-  styleUrl: './count-display.component.css'
+  styleUrls: ['./count-display.component.css']
 })
 export class CountDisplayComponent {
   metrics = {
@@ -21,7 +19,7 @@ export class CountDisplayComponent {
     vipCustomers: 1
   };
 
-  updateMetric(customers: string, b: boolean) {
-
+  updateMetric(metric: string, increment: boolean) {
+    // Implement the logic to update the corresponding metric
   }
 }

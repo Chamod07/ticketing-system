@@ -1,0 +1,31 @@
+:host ::ng-deep {
+  .layout-topbar {
+    background-color: #0e1a35;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .layout-topbar-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .layout-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .p-button.p-button-text.p-button-rounded {
+    color: #ffffff;
+    border-radius: 50%;
+  }
+}

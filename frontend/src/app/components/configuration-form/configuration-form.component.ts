@@ -1,39 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
-import {ToastModule} from 'primeng/toast';
-import {Button} from 'primeng/button';
 import {CardModule} from 'primeng/card';
-import {ProgressBarModule} from 'primeng/progressbar';
+import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 
 @Component({
-  selector: 'app-system-config',
+  selector: 'app-configuration-form',
   templateUrl: './configuration-form.component.html',
   styleUrls: ['./configuration-form.component.css'],
   standalone: true,
   imports: [
-    ToastModule,
-    Button,
     ReactiveFormsModule,
+    ButtonModule,
     CardModule,
-    ProgressBarModule,
     InputTextModule
   ],
   providers: [MessageService]
 })
-
 export class ConfigurationFormComponent implements OnInit {
   configForm: FormGroup | any;
-  metrics = {
-    activeVendors: 1,
-    activeCustomers: 1,
-    vipCustomers: 1
-  };
-  availableTickets = {
-    current: 120,
-    total: 500
-  };
 
   constructor(
     private fb: FormBuilder,
@@ -42,10 +28,10 @@ export class ConfigurationFormComponent implements OnInit {
 
   ngOnInit() {
     this.configForm = this.fb.group({
-      totalSystemTickets: [500, [Validators.required, Validators.min(1)]],
-      ticketReleaseRate: [40, [Validators.required, Validators.min(1)]],
-      customerRetrievalRate: [30, [Validators.required, Validators.min(1)]],
-      maxCapacity: [100, [Validators.required, Validators.min(1)]]
+      totalSystemTickets: [0, [Validators.required, Validators.min(1)]],
+      ticketReleaseRate: [0, [Validators.required, Validators.min(1)]],
+      customerRetrievalRate: [0, [Validators.required, Validators.min(1)]],
+      maxCapacity: [0, [Validators.required, Validators.min(1)]]
     });
   }
 
@@ -59,9 +45,5 @@ export class ConfigurationFormComponent implements OnInit {
         detail: 'System configuration has been updated'
       });
     }
-  }
-
-  updateMetric(vendors: string, b: boolean) {
-
   }
 }

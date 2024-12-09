@@ -1,23 +1,30 @@
-<div class="grid">
-<p-toggleButton
-  [(ngModel)]="play"
-  onLabel="Play"
-  offLabel="Pause"
-  onIcon="pi pi-check"
-  offIcon="pi pi-times"
-  onIcon="pi pi-play"
-  offIcon="pi pi-pause"
-  styleClass="w-9rem"
-  ariaLabel="Do you confirm" />
+<div class="layout-topbar" style="
+    justify-content: space-between;
+    padding: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;">
+  <div class="layout-topbar-left" style="display: inline-flex">
+    <i class="pi pi-ticket"  style="font-size: 2rem; padding: 2rem"></i>
+    <h1>Event Ticketing System</h1>
+  </div>
+  <div class="layout-topbar-right" style="display: flex;
+    align-items: center;
+    gap: 2rem;">
+    <p-toggleButton
+      [(ngModel)]="play"
+      onLabel="Start"
+      offLabel="Pause"
+      onIcon="pi pi-play"
+      offIcon="pi pi-pause"
+      styleClass="w-9rem"/>
 
-<p-toggleButton
-  [(ngModel)]="stop"
-  onLabel="Play"
-  offLabel="Pause"
-  onIcon="pi pi-check"
-  offIcon="pi pi-times"
-  onIcon="pi pi-play"
-  offIcon="pi pi-pause"
-  styleClass="w-9rem"
-  ariaLabel="Do you confirm" />
+    <p-button
+      [(ngModel)]="stop"
+      label="Stop"
+      icon="pi pi-stop"
+      styleClass="w-9rem"/>
+  </div>
 </div>

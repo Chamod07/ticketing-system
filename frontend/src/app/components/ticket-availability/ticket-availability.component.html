@@ -1,1 +1,6 @@
-<p>ticket-availability works!</p>
+<p-card>
+  <h3>Available Tickets</h3>
+  <h2>{{availableTickets.current}} / {{availableTickets.total}}</h2>
+  <p-progressBar [value]="(availableTickets.current / availableTickets.total) * 100"></p-progressBar>
+  <small>Total Released: {{availableTickets.current}} / {{availableTickets.total}}</small>
+</p-card>

@@ -1,5 +1,16 @@
+<app-control-panel></app-control-panel>
 <div class="layout-main-container">
-  <app-system-config/>
+  <div class="grid">
+    <div class="col-8">
+      <app-count-display></app-count-display>
+      <div>
+        <app-ticket-availability></app-ticket-availability>
+      </div>
+    </div>
+    <div class="col-4">
+      <app-configuration-form></app-configuration-form>
+    </div>
+  </div>
 </div>
 
-<router-outlet/>
+<router-outlet></router-outlet>

@@ -13,37 +13,42 @@ public class CustomerController {
     private CustomerService customerService;
 
     @PostMapping(path = "/add")
-    public String saveVendor() {
+    public int addCustomer() {
         customerService.addCustomer();
-        return "Customer added successfully.";
+        return customerService.getCustomerCount();
     }
 
     @DeleteMapping(path = "/remove")
-    public String removeVendor() {
+    public String removeCustomer() {
         customerService.removeCustomer();
         return "Customer removed successfully.";
     }
 
+    @GetMapping(path = "/count")
+    public int getCustomerCount() {
+        return customerService.getCustomerCount();
+    }
+
     @PostMapping(path = "/start")
-    public String startVendors() {
+    public String startCustomer() {
         customerService.startCustomers();
         return "Customer started successfully.";
     }
 
     @PostMapping(path = "/pause")
-    public String pauseVendors() {
+    public String pauseCustomer() {
         customerService.pauseCustomers();
         return "Customer paused successfully.";
     }
 
     @PostMapping(path = "/stop")
-    public String stopVendors() {
+    public String stopCustomer() {
         customerService.stopCustomers();
         return "Customer stopped successfully.";
     }
 
     @PostMapping(path = "/resume")
-    public String resumeVendors() {
+    public String resumeCustomer() {
         customerService.resumeCustomers();
         return "Customer resumed successfully.";
     }

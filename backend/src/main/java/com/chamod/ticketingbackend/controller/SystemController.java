@@ -17,25 +17,21 @@ public class SystemController {
 
     @PostMapping(path = "/start")
     public String startSystem() {
-        systemService.startSystem();
-        return "System started successfully.";
+        return systemService.startSystem();
     }
 
     @PostMapping(path = "/pause")
     public String pauseSystem() {
-        systemService.pauseSystem();
-        return "System paused successfully.";
+        return systemService.pauseSystem();
     }
 
     @PostMapping(path = "/stop")
     public String stopSystem() {
-        systemService.stopSystem();
-        return "System stopped successfully.";
+        return systemService.stopSystem();
     }
 
     @PostMapping(path = "/resume")
     public String resumeSystem() {
-        systemService.resumeSystem();
-        return "System resumed successfully.";
+        return systemService.resumeSystem();
     }
 }

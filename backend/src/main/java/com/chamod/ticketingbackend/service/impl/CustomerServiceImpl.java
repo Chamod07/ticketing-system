@@ -164,4 +164,9 @@ public class CustomerServiceImpl implements CustomerService {
         configService.loadConfiguration();
         logger.info("All customers stopped.");
     }
+
+    @Override
+    public int getCustomerCount() {
+        return customers.size();
+    }
 }

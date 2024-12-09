@@ -3,11 +3,8 @@ package com.chamod.ticketingbackend.service.impl;
 import com.chamod.ticketingbackend.model.SystemConfiguration;
 import com.chamod.ticketingbackend.model.Vendor;
 import com.chamod.ticketingbackend.repository.VendorRepository;
-import com.chamod.ticketingbackend.service.ConfigService;
-import com.chamod.ticketingbackend.service.SystemService;
-import com.chamod.ticketingbackend.service.TicketPoolService;
+import com.chamod.ticketingbackend.service.*;
 import com.chamod.ticketingbackend.service.runnable.VendorRunnable;
-import com.chamod.ticketingbackend.service.VendorService;
 
 //import jakarta.annotation.PostConstruct;
 import org.apache.logging.log4j.LogManager;
@@ -71,7 +68,9 @@ public class VendorServiceImpl implements VendorService {
             vendorThread.start();
             logger.info("Vendor-{} added and started as the system is running.", vendorRunnable.getVendorId());
         }
-        else logger.info("Vendor-{} added.", vendorRunnable.getVendorId());
+        else {
+            logger.info("Vendor-{} added.", vendorRunnable.getVendorId());
+        }
     }
 
     @Override
@@ -186,5 +185,10 @@ public class VendorServiceImpl implements VendorService {
                 logger.info("Vendor-{} started during system resume.", vendorRunnables.get(i).getVendorId());
             }
         }
+    }
+
+    @Override
+    public int vendorCount() {
+        return vendors.size();
     }
 }

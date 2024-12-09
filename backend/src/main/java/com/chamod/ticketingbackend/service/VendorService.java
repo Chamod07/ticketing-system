@@ -13,4 +13,6 @@ public interface VendorService {
     void stopVendors();
 
     void resumeVendors();
+
+    int vendorCount();
 }

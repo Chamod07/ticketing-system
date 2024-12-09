@@ -22,57 +22,61 @@ public class SystemServiceImpl implements SystemService {
     private static final Logger logger = LogManager.getLogger(SystemServiceImpl.class);
 
     @Override
-    public synchronized void startSystem() {
+    public synchronized String startSystem() {
         if (running) {
             logger.warn("System is already running.");
-            return;
+            return "System is already running.";
         }
 
         vendorService.startVendors();
         customerService.startCustomers();
         running = true;
+        return "System started.";
 
 //        logger.info("System started.");
     }
 
     @Override
-    public synchronized void pauseSystem() {
+    public synchronized String pauseSystem() {
         if (!running) {
             logger.warn("System is not running. Cannot pause system.");
-            return;
+            return "System is not running. Cannot pause system.";
         }
 
         vendorService.pauseVendors();
         customerService.pauseCustomers();
         running = false;
+        return "System paused.";
 
 //        logger.info("System paused.");
     }
 
     @Override
-    public synchronized void resumeSystem() {
+    public synchronized String resumeSystem() {
         if (running) {
             logger.warn("System is already running. Cannot resume system.");
-            return;
+            return "System is already running. Cannot resume system.";
         }
 
         vendorService.resumeVendors();
         customerService.resumeCustomers();
         running = true;
+        return "System resumed.";
 
 //        logger.info("System resumed.");
     }
 
     @Override
-    public synchronized void stopSystem() {
+    public synchronized String stopSystem() {
         if (!running) {
             logger.warn("System is not running. Cannot stop system.");
-            return;
+            return "System is not running. Cannot stop system.";
         }
 
         vendorService.stopVendors();
         customerService.stopCustomers();
         running = false;
+        return "System stopped.";
 
 //        logger.info("System stopped.");
     }

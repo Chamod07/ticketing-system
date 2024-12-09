@@ -13,4 +13,6 @@ public interface CustomerService {
     void resumeCustomers();
 
     void stopCustomers();
+
+    int getCustomerCount();
 }

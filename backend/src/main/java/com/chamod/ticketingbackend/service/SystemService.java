@@ -2,13 +2,13 @@ package com.chamod.ticketingbackend.service;
 
 public interface SystemService {
 
-    void startSystem();
+    String startSystem();
 
-    void pauseSystem();
+    String pauseSystem();
 
-    void resumeSystem();
+    String resumeSystem();
 
-    void stopSystem();
+    String stopSystem();
 
     boolean isRunning();
 }

@@ -1,9 +1,11 @@
 package com.chamod.ticketingbackend.service.impl;
 
 import com.chamod.ticketingbackend.model.Ticket;
+import com.chamod.ticketingbackend.service.TicketLogHandler;
 import com.chamod.ticketingbackend.service.TicketPoolService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -12,6 +14,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 @Service
 public class TicketPoolServiceImpl implements TicketPoolService {
+
+    private TicketLogHandler ticketLogHandler;
 
     private final LinkedList<Ticket> tickets = new LinkedList<>();
     private int maxCapacity;
@@ -49,6 +53,8 @@ public class TicketPoolServiceImpl implements TicketPoolService {
                 tickets.add(new Ticket());
             }
 
+//            String logMessage = "[Vendor-"+vendorId+"] Added "+ticketCount+" tickets. (Pool size-"+tickets.size()+")";
+//            ticketLogHandler.sendLog(logMessage);
             logger.info("[Vendor-{}] Added {} tickets. (Pool size-{})", vendorId, ticketCount, tickets.size());
             notEmpty.signalAll();
         } catch (InterruptedException e) {
@@ -72,6 +78,8 @@ public class TicketPoolServiceImpl implements TicketPoolService {
                 tickets.remove(0);
             }
 
+//            String logMessage = "[Customer-"+customerId+"] Purchased "+ticketCount+" tickets. (Pool size-"+tickets.size()+")";
+//            ticketLogHandler.sendLog(logMessage);
             logger.info("[Customer-{}] Purchased {} tickets. (Pool size-{})", customerId, ticketCount, tickets.size());
             notFull.signalAll();
         } catch (InterruptedException e) {

@@ -24,6 +24,11 @@ public class VendorController {
         return "Vendor removed successfully.";
     }
 
+    @GetMapping(path = "/count")
+    public int countVendor() {
+        return vendorService.vendorCount();
+    }
+
     @PostMapping(path = "/start")
     public String startVendors() {
         vendorService.startVendors();

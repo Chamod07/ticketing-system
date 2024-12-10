@@ -14,13 +14,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { HttpClient } from '@angular/common/http';
-
-export interface Configuration {
-  totalTickets: number;
-  ticketReleaseRate: number;
-  customerRetrievalRate: number;
-  maxTicketCapacity: number;
-}
+import {Configuration} from '../../models/configuration';
 
 // Custom validator to ensure maxCapacity is greater than totalTickets
 export function maxCapacityValidator(): ValidatorFn {
@@ -62,6 +56,7 @@ export class ConfigurationFormComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.loadConfiguration();
     this.configForm = this.fb.group({
       totalTickets: [0, [
         Validators.required,

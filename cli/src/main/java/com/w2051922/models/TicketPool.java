@@ -50,7 +50,7 @@ public class TicketPool {
             logger.info("[Vendor-{}] Added {} tickets. (Pool size: {})", vendorId, ticketCount, tickets.size());
             notEmpty.signalAll(); // Notify customers that tickets are available
         } catch (InterruptedException e) {
-            logger.error("[Vendor-{}] Ticket addition interrupted.", vendorId, e);
+            logger.error("[Vendor-{}] Ticket addition interrupted.", vendorId);
             Thread.currentThread().interrupt();
         } finally {
             lock.unlock();
@@ -82,7 +82,7 @@ public class TicketPool {
             notFull.signalAll(); // Notify vendors waiting to add more tickets
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            logger.error("[Customer-{}] Ticket removal interrupted.", customerId, e);
+            logger.error("[Customer-{}] Ticket removal interrupted.", customerId);
         } finally {
             lock.unlock();
         }

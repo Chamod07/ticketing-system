@@ -13,15 +13,15 @@ public class VendorController {
     private VendorService vendorService;
 
     @PostMapping(path = "/add")
-    public String saveVendor() {
+    public int addVendor() {
         vendorService.addVendor();
-        return "Vendor added successfully.";
+        return vendorService.vendorCount();
     }
 
     @DeleteMapping(path = "/remove")
-    public String removeVendor() {
+    public int removeVendor() {
         vendorService.removeVendor();
-        return "Vendor removed successfully.";
+        return vendorService.vendorCount();
     }
 
     @GetMapping(path = "/count")

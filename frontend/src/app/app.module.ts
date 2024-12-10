@@ -5,6 +5,9 @@ import {ReactiveFormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
 import { ButtonModule } from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
+import {MessageService} from 'primeng/api';
+
 
 @NgModule({
   declarations: [],
@@ -12,10 +15,11 @@ import { ButtonModule } from 'primeng/button';
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    AppComponent,
+    ToastModule,
     ButtonModule,
+    AppComponent,
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

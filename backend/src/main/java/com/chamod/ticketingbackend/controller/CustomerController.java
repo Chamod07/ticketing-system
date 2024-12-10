@@ -19,9 +19,9 @@ public class CustomerController {
     }
 
     @DeleteMapping(path = "/remove")
-    public String removeCustomer() {
+    public int removeCustomer() {
         customerService.removeCustomer();
-        return "Customer removed successfully.";
+        return customerService.getCustomerCount();
     }
 
     @GetMapping(path = "/count")

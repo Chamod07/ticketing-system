@@ -18,6 +18,7 @@ public class SystemServiceImpl implements SystemService {
     private CustomerService customerService;
 
     private boolean running = false;
+    private boolean paused = false;
 
     private static final Logger logger = LogManager.getLogger(SystemServiceImpl.class);
 
@@ -28,12 +29,15 @@ public class SystemServiceImpl implements SystemService {
             return "System is already running.";
         }
 
-        vendorService.startVendors();
-        customerService.startCustomers();
-        running = true;
-        return "System started.";
-
-//        logger.info("System started.");
+        if (vendorService.vendorCount() > 0 || customerService.getCustomerCount() > 0) {
+            vendorService.startVendors();
+            customerService.startCustomers();
+            running = true;
+            logger.info("System started.");
+            return "System started.";
+        }
+        logger.warn("Not enough vendors or customers to start system.");
+        return "System not started.";
     }
 
     @Override
@@ -45,6 +49,7 @@ public class SystemServiceImpl implements SystemService {
 
         vendorService.pauseVendors();
         customerService.pauseCustomers();
+        paused = true;
         running = false;
         return "System paused.";
 
@@ -53,16 +58,15 @@ public class SystemServiceImpl implements SystemService {
 
     @Override
     public synchronized String resumeSystem() {
-        if (running) {
-            logger.warn("System is already running. Cannot resume system.");
-            return "System is already running. Cannot resume system.";
+        if (!paused) {
+            logger.warn("System is not paused. Cannot resume system.");
+            return "System is not paused. Cannot resume system.";
         }
 
         vendorService.resumeVendors();
         customerService.resumeCustomers();
         running = true;
         return "System resumed.";
-
 //        logger.info("System resumed.");
     }
 
@@ -75,6 +79,7 @@ public class SystemServiceImpl implements SystemService {
 
         vendorService.stopVendors();
         customerService.stopCustomers();
+        paused = false;
         running = false;
         return "System stopped.";
 
@@ -82,7 +87,13 @@ public class SystemServiceImpl implements SystemService {
     }
 
     @Override
-    public synchronized boolean isRunning() {
-        return running;
+    public synchronized String getState() {
+        if (running) {
+            return "Running";
+        }
+        if (paused) {
+            return "Paused";
+        }
+        return "Stopped";
     }
 }

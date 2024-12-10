@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class VendorServiceImpl implements VendorService {
@@ -46,30 +47,33 @@ public class VendorServiceImpl implements VendorService {
     public void addVendor() {
         SystemConfiguration systemConfiguration = configService.getConfiguration();
 
-        Vendor vendor = new Vendor();
-        vendor.setTicketsPerRelease(systemConfiguration.getTicketReleaseRate());
-        vendor.setReleaseInterval(1); // Default interval of 1 second
-        vendor.setTimestamp(LocalDateTime.now());
+        if (systemConfiguration == null) {
+            logger.warn("System configuration is not initialized. Cannot add new vendor.");
+        } else {
+            Vendor vendor = new Vendor();
+            vendor.setTicketsPerRelease(systemConfiguration.getTicketReleaseRate());
+            vendor.setReleaseInterval(1); // Default interval of 1 second
+            vendor.setTimestamp(LocalDateTime.now());
 
-        // save vendor to database
-        vendorRepository.save(vendor);
+            // save vendor to database
+            vendorRepository.save(vendor);
 
-        // add vendor to list
-        vendors.add(vendor);
+            // add vendor to list
+            vendors.add(vendor);
 
-        VendorRunnable vendorRunnable = new VendorRunnable(vendor, ticketPoolService);
-        Thread vendorThread = new Thread(vendorRunnable);
+            VendorRunnable vendorRunnable = new VendorRunnable(vendor, ticketPoolService);
+            Thread vendorThread = new Thread(vendorRunnable);
 
-        vendorThreads.add(vendorThread);
-        vendorRunnables.add(vendorRunnable);
+            vendorThreads.add(vendorThread);
+            vendorRunnables.add(vendorRunnable);
 
-        // start thread if system is running
-        if (systemService.isRunning()) {
-            vendorThread.start();
-            logger.info("Vendor-{} added and started as the system is running.", vendorRunnable.getVendorId());
-        }
-        else {
-            logger.info("Vendor-{} added.", vendorRunnable.getVendorId());
+            // start thread if system is running
+            if (Objects.equals(systemService.getState(), "Running")) {
+                vendorThread.start();
+                logger.info("Vendor-{} added and started as the system is running.", vendorRunnable.getVendorId());
+            } else {
+                logger.info("Vendor-{} added.", vendorRunnable.getVendorId());
+            }
         }
     }
 

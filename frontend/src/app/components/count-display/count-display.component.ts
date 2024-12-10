@@ -25,12 +25,16 @@ export class CountDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.loadCounts();
+    this.metricsService.metrics$.subscribe((updatedMetrics) => {
+      this.metrics = updatedMetrics;
+    });
   }
 
   loadCounts() {
     this.metricsService.getCustomerCount().subscribe({
       next: (count) => {
         this.metrics.activeCustomers = count;
+        this.updateServiceMetrics();
       },
       error: (err) => {
         console.error('Error fetching customer count', err);
@@ -40,6 +44,7 @@ export class CountDisplayComponent implements OnInit {
     this.metricsService.getVendorCount().subscribe({
       next: (count) => {
         this.metrics.activeVendors = count;
+        this.updateServiceMetrics();
       },
       error: (err) => {
         console.error('Error fetching vendor count', err);
@@ -101,5 +106,10 @@ export class CountDisplayComponent implements OnInit {
         }
         break;
     }
+    this.updateServiceMetrics();
+  }
+
+  private updateServiceMetrics() {
+    this.metricsService.updateMetrics(this.metrics);
   }
 }

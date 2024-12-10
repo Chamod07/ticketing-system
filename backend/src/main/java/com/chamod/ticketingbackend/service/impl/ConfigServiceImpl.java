@@ -25,6 +25,7 @@ public class ConfigServiceImpl implements ConfigService {
 
     private static final Logger logger = LogManager.getLogger(ConfigServiceImpl.class);
 
+    // load the configuration on app launch
     @PostConstruct
     public void initializeConfiguration() {
         systemConfiguration = loadConfiguration();
@@ -33,24 +34,21 @@ public class ConfigServiceImpl implements ConfigService {
     @Override
     public SystemConfiguration loadConfiguration() {
         // try to load from file first
-        try {
-            systemConfiguration = SystemConfiguration.loadFromFile();
+        systemConfiguration = SystemConfiguration.loadFromFile();
+        if (systemConfiguration != null) {
             logger.info("Configuration-{} loaded from file.", systemConfiguration);
             configureTicketPool();
+        } else {
+            // else load from database if config file not found
+            if (systemConfigRepository != null) {
+                systemConfiguration = systemConfigRepository.findFirstByOrderByIdDesc();
 
-        } catch (Exception e) {
-            logger.error("Error loading configuration from file.", e);
-        }
-
-        // else load from database if config file not found
-        if (systemConfiguration == null && systemConfigRepository != null) {
-            systemConfiguration = systemConfigRepository.findFirstByOrderByIdDesc();
-            configureTicketPool();
-
-            if (systemConfiguration != null) {
-                logger.info("Configuration loaded from database.");
-            } else {
-                logger.error("Error loading configuration from database.");
+                if (systemConfiguration != null) {
+                    logger.info("Configuration-{} loaded from database.", systemConfiguration);
+                    configureTicketPool();
+                } else {
+                    logger.error("Error loading configuration from both file and database.");
+                }
             }
         }
         return systemConfiguration;

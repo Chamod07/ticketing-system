@@ -1,11 +1,9 @@
 package com.chamod.ticketingbackend.controller;
 
 import com.chamod.ticketingbackend.service.SystemService;
+import com.chamod.ticketingbackend.service.TicketPoolService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
@@ -14,6 +12,9 @@ public class SystemController {
 
     @Autowired
     private SystemService systemService;
+
+    @Autowired
+    private TicketPoolService ticketPoolService;
 
     @PostMapping(path = "/start")
     public String startSystem() {
@@ -33,5 +34,15 @@ public class SystemController {
     @PostMapping(path = "/resume")
     public String resumeSystem() {
         return systemService.resumeSystem();
+    }
+
+    @GetMapping(path = "/state")
+    public String systemState() {
+        return systemService.getState();
+    }
+
+    @GetMapping(path = "/available-tickets")
+    public int availableTickets() {
+        return ticketPoolService.getAvailableTickets();
     }
 }

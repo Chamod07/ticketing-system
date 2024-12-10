@@ -8,7 +8,6 @@ import { ButtonModule } from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
 import {MessageService} from 'primeng/api';
 
-
 @NgModule({
   declarations: [],
   imports: [

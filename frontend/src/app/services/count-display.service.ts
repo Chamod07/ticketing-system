@@ -1,11 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CountDisplayService {
+  private countDisplay = new BehaviorSubject({
+    activeVendors: 0,
+    activeCustomers: 0,
+    vipCustomers: 0,
+  });
+
+  metrics$ = this.countDisplay.asObservable();
+
+  updateMetrics(metrics: { activeVendors: number; activeCustomers: number; vipCustomers: number }) {
+    this.countDisplay.next(metrics);
+  }
+
   private baseUrl = 'http://localhost:8081/api/v1';
 
   constructor(private http: HttpClient) {}

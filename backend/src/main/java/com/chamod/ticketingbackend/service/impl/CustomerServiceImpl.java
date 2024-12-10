@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -44,28 +45,31 @@ public class CustomerServiceImpl implements CustomerService {
     public void addCustomer() {
         SystemConfiguration systemConfiguration = configService.getConfiguration();
 
-        Customer customer = new Customer();
-        customer.setTicketsPerRetrieval(systemConfiguration.getCustomerRetrievalRate());
-        customer.setRetrievalInterval(1);
-        customer.setPriority(false);
-        customer.setTimestamp(LocalDateTime.now());
+        if (systemConfiguration == null) {
+            logger.warn("System configuration is not initialized. Cannot add new customer.");
+        } else {
+            Customer customer = new Customer();
+            customer.setTicketsPerRetrieval(systemConfiguration.getCustomerRetrievalRate());
+            customer.setRetrievalInterval(1);
+            customer.setPriority(false);
+            customer.setTimestamp(LocalDateTime.now());
 
-        customerRepository.save(customer);
+            customerRepository.save(customer);
 
-        customers.add(customer);
+            customers.add(customer);
 
-        CustomerRunnable customerRunnable = new CustomerRunnable(customer, ticketPoolService);
-        Thread customerThread = new Thread(customerRunnable);
+            CustomerRunnable customerRunnable = new CustomerRunnable(customer, ticketPoolService);
+            Thread customerThread = new Thread(customerRunnable);
 
-        customerThreads.add(customerThread);
-        customerRunnables.add(customerRunnable);
+            customerThreads.add(customerThread);
+            customerRunnables.add(customerRunnable);
 
-        // start thread if system is running
-        if (systemService.isRunning()) {
-            customerThread.start();
-            logger.info("Customer-{} started immediately as the system is running.", customerRunnable.getCustomerId());
+            // start thread if system is running
+            if (Objects.equals(systemService.getState(), "Running")) {
+                customerThread.start();
+                logger.info("Customer-{} started immediately as the system is running.", customerRunnable.getCustomerId());
+            } else logger.info("Customer-{} added.", customerRunnable.getCustomerId());
         }
-        else logger.info("Customer-{} added.", customerRunnable.getCustomerId());
     }
 
     @Override
@@ -136,12 +140,12 @@ public class CustomerServiceImpl implements CustomerService {
             logger.info("Customer-{} resumed.", customerRunnable.getCustomerId());
         }
 
-        // start vendors added while paused
+        // start customers added while paused
         for (int i = 0; i < customerThreads.size(); i++) {
-            Thread vendorThread = customerThreads.get(i);
-            if (!vendorThread.isAlive()) {
-                vendorThread.start();
-                logger.info("Vendor-{} started during system resume.", customerRunnables.get(i).getCustomerId());
+            Thread customerThread = customerThreads.get(i);
+            if (!customerThread.isAlive()) {
+                customerThread.start();
+                logger.info("Customer-{} started during system resume.", customerRunnables.get(i).getCustomerId());
             }
         }
     }

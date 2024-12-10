@@ -56,7 +56,7 @@ export class ConfigurationFormComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.loadConfiguration();
+    // this.loadConfiguration();
     this.configForm = this.fb.group({
       totalTickets: [0, [
         Validators.required,

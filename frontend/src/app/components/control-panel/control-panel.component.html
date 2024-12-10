@@ -1,4 +1,3 @@
-
 <div class="layout-topbar" style="
     justify-content: space-between;
     padding: 2rem;
@@ -8,29 +7,33 @@
     right: 0;
     z-index: 1000;">
   <div class="layout-topbar-left" style="display: inline-flex">
-    <i class="pi pi-ticket"  style="font-size: 2rem; padding: 2rem"></i>
+    <i class="pi pi-ticket" style="font-size: 2rem; padding: 2rem"></i>
     <h1>Event Ticketing System</h1>
-    <p-toast position="top-right"></p-toast>
+    <p-toast position="bottom-right"></p-toast>
   </div>
-  <div class="layout-topbar-right" style="display: flex;
-    align-items: center;
-    gap: 2rem;">
-    <p-toggleButton
-      [(ngModel)]="play"
-      onLabel="Start"
-      offLabel="Pause"
-      onIcon="pi pi-play"
-      offIcon="pi pi-pause"
-      styleClass="w-9rem"
-    />
+  <div class="layout-topbar-right" style="display: flex; align-items: center; gap: 2rem; padding-right: 6rem">
+    <p-chip>
+      ● {{ systemStatus }}
+    </p-chip>
 
-    <p-button
-      [(ngModel)]="stop"
-      label="Stop"
-      icon="pi pi-stop"
-      styleClass="w-9rem p-button-danger"
-      [raised]="true"
-      (click)="show()"
-    />
+    <!-- Start Button -->
+    <button *ngIf="systemStatus === 'Stopped'" class="p-button p-component "  (click)="startSystem()">
+      Start
+    </button>
+
+    <!-- Pause and Stop Buttons -->
+    <ng-container *ngIf="systemStatus === 'Running'">
+      <button class="p-button p-component p-button-warning" (click)="pauseSystem()">
+        Pause
+      </button>
+      <button class="p-button p-component p-button-danger" (click)="stopSystem()">
+        Stop
+      </button>
+    </ng-container>
+
+    <!-- Resume Button -->
+    <button *ngIf="systemStatus === 'Paused'" class="p-button p-component p-button-secondary" (click)="resumeSystem()">
+      Resume
+    </button>
   </div>
 </div>

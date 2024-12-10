@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import jakarta.persistence.*;
 import lombok.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.FileReader;
@@ -35,20 +37,24 @@ public class SystemConfiguration {
     private int maxTicketCapacity;
 
     private static final String configFile = "systemConfiguration.json";
+    private static final Logger logger = LogManager.getLogger();
 
     // Load configuration from JSON file
-    public static SystemConfiguration loadFromFile() throws IOException{
+    public static SystemConfiguration loadFromFile() {
         File file = new File(configFile);
         if (!file.exists()) {
-            throw new IOException("Configuration file doesn't exist!");
+            logger.warn("System configuration file does not exist");
+            return null;
         }
         try (FileReader reader = new FileReader(file)) {
             synchronized (SystemConfiguration.class) {
                 Gson gson = new Gson();
                 return gson.fromJson(reader, SystemConfiguration.class);
             }
+        } catch (IOException e) {
+            logger.error("Error while reading configuration file.");
+            return null;
         }
-
     }
 
     // Save configuration to JSON file

@@ -77,3 +77,35 @@
 2024-12-07 20:14:36 INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-12-07 20:14:36 INFO  - HikariPool-1 - Shutdown initiated...
 2024-12-07 20:14:36 INFO  - HikariPool-1 - Shutdown completed.
+2024-12-10 17:00:20 INFO  - Starting TicketingSystemBackendApplication using Java 23.0.1 with PID 22316 (C:\Users\chamo\OneDrive\Desktop\ticketing-system\backend\target\classes started by chamo in C:\Users\chamo\OneDrive\Desktop\ticketing-system)
+2024-12-10 17:00:20 DEBUG - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-10 17:00:20 INFO  - No active profile set, falling back to 1 default profile: "default"
+2024-12-10 17:00:20 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-10 17:00:20 INFO  - Finished Spring Data repository scanning in 28 ms. Found 4 JPA repository interfaces.
+2024-12-10 17:00:21 INFO  - Tomcat initialized with port 8081 (http)
+2024-12-10 17:00:21 INFO  - Initializing ProtocolHandler ["http-nio-8081"]
+2024-12-10 17:00:21 INFO  - Starting service [Tomcat]
+2024-12-10 17:00:21 INFO  - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-12-10 17:00:21 INFO  - Initializing Spring embedded WebApplicationContext
+2024-12-10 17:00:21 INFO  - Root WebApplicationContext: initialization completed in 860 ms
+2024-12-10 17:00:21 INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-10 17:00:21 INFO  - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-10 17:00:21 INFO  - HHH000026: Second-level cache disabled
+2024-12-10 17:00:21 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-10 17:00:21 INFO  - HikariPool-1 - Starting...
+2024-12-10 17:00:21 INFO  - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d70dbeb
+2024-12-10 17:00:21 INFO  - HikariPool-1 - Start completed.
+2024-12-10 17:00:22 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-10 17:00:22 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-10 17:00:22 INFO  - Configuration-[totalTickets:40, ticketReleaseRate:5, customerRetrievalRate:4, maxTicketCapacity=150] loaded from file.
+2024-12-10 17:00:22 INFO  - Ticket pool configured with max capacity-150 and total tickets-40
+2024-12-10 17:00:22 INFO  - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-10 17:00:22 INFO  - Starting ProtocolHandler ["http-nio-8081"]
+2024-12-10 17:00:22 INFO  - Tomcat started on port 8081 (http) with context path '/'
+2024-12-10 17:00:22 INFO  - Started TicketingSystemBackendApplication in 2.855 seconds (process running for 3.436)
+2024-12-10 17:00:23 INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-10 17:00:23 INFO  - Initializing Servlet 'dispatcherServlet'
+2024-12-10 17:00:23 INFO  - Completed initialization in 1 ms
+2024-12-10 17:01:14 INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-10 17:01:14 INFO  - HikariPool-1 - Shutdown initiated...
+2024-12-10 17:01:14 INFO  - HikariPool-1 - Shutdown completed.

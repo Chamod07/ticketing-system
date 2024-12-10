@@ -10,5 +10,5 @@ public interface SystemService {
 
     String stopSystem();
 
-    boolean isRunning();
+    String getState();
 }

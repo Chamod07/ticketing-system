@@ -5,6 +5,7 @@ import {ConfigurationFormComponent} from './components/configuration-form/config
 import {TicketAvailabilityComponent} from './components/ticket-availability/ticket-availability.component';
 import {ControlPanelComponent} from './components/control-panel/control-panel.component';
 import {ToastModule} from 'primeng/toast';
+import {LineChartComponent} from './components/line-chart/line-chart.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import {ToastModule} from 'primeng/toast';
     CountDisplayComponent,
     TicketAvailabilityComponent,
     ControlPanelComponent,
-    ToastModule
+    ToastModule,
+    LineChartComponent
   ],
   templateUrl: './app.component.html',
   standalone: true,

@@ -56,7 +56,7 @@ export class ConfigurationFormComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // this.loadConfiguration();
+    this.loadConfiguration();
     this.configForm = this.fb.group({
       totalTickets: [0, [
         Validators.required,
@@ -94,7 +94,6 @@ export class ConfigurationFormComponent implements OnInit {
           maxCapacity: config.maxTicketCapacity
         });
 
-        // Show success message
         this.messageService.add({
           severity: 'success',
           summary: 'Configuration Loaded',
@@ -102,7 +101,6 @@ export class ConfigurationFormComponent implements OnInit {
         });
       },
       error: (err) => {
-        // Handle API error
         this.messageService.add({
           severity: 'error',
           summary: 'Load Error',
@@ -115,7 +113,6 @@ export class ConfigurationFormComponent implements OnInit {
 
   saveConfiguration() {
     if (this.configForm.valid) {
-      // Prepare configuration object for API call
       const configToSave: Configuration = {
         totalTickets: this.configForm.get('totalTickets')?.value,
         ticketReleaseRate: this.configForm.get('ticketReleaseRate')?.value,
@@ -123,7 +120,6 @@ export class ConfigurationFormComponent implements OnInit {
         maxTicketCapacity: this.configForm.get('maxCapacity')?.value
       };
 
-      // Make POST request to save configuration
       this.http.post<Configuration>("http://localhost:8081/api/v1/system-config", configToSave)
         .subscribe({
           next: () => {
@@ -143,7 +139,6 @@ export class ConfigurationFormComponent implements OnInit {
           }
         });
     } else {
-      // Show validation error message
       this.messageService.add({
         severity: 'error',
         summary: 'Validation Error',

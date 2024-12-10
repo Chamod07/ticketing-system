@@ -12,9 +12,9 @@
     <p-toast position="bottom-right"></p-toast>
   </div>
   <div class="layout-topbar-right" style="display: flex; align-items: center; gap: 2rem; padding-right: 6rem">
-    <p-chip>
-      ● {{ systemStatus }}
-    </p-chip>
+    <p-tag severity="secondary" value="● {{ systemStatus }}" [rounded]="false">
+
+    </p-tag>
 
     <!-- Start Button -->
     <button *ngIf="systemStatus === 'Stopped'" class="p-button p-component "  (click)="startSystem()">

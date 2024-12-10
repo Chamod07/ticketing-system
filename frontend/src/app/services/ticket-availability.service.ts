@@ -8,11 +8,11 @@ import { switchMap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class TicketAvailabilityService {
-  private baseUrl = 'http://localhost:8081/api/v1/system/available-tickets';
+  private baseUrl = 'http://localhost:8081/api/v1/tickets/availability';
 
   constructor(private http: HttpClient) {}
 
-  // Polling every second
+  // Polling every half second
   getAvailableTickets(): Observable<number> {
     return interval(500).pipe( // Polling interval
       switchMap(() => this.http.get<number>(this.baseUrl)) // Request ticket count

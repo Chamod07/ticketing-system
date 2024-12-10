@@ -1,5 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {ChartModule} from 'primeng/chart';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChartModule } from 'primeng/chart';
+import { Subscription } from 'rxjs';
+import { LineChartService } from '../../services/line-chart.service';
+import { UIChart } from 'primeng/chart';
 
 @Component({
   selector: 'app-line-chart',
@@ -8,12 +11,20 @@ import {ChartModule} from 'primeng/chart';
     ChartModule
   ],
   templateUrl: './line-chart.component.html',
-  styleUrl: './line-chart.component.css'
+  styleUrls: ['./line-chart.component.css']
 })
-export class LineChartComponent implements OnInit {
-  data: any;
+export class LineChartComponent implements OnInit, OnDestroy {
+  @ViewChild('chart') chart: UIChart | undefined;
 
+  data: any;
   options: any;
+  private dataSubscription: Subscription | undefined;
+
+  private labels: string[] = [];
+  private purchasedData: number[] = [];
+  private releasedData: number[] = [];
+
+  constructor(private lineChartService: LineChartService) {}
 
   ngOnInit() {
     const documentStyle = getComputedStyle(document.documentElement);
@@ -22,26 +33,27 @@ export class LineChartComponent implements OnInit {
     const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
     this.data = {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels: this.labels,
       datasets: [
         {
-          label: 'First Dataset',
-          data: [65, 59, 80, 81, 56, 55, 40],
+          label: 'Tickets Released',
+          data: this.releasedData,
           fill: false,
           borderColor: documentStyle.getPropertyValue('--blue-500'),
           tension: 0.4
         },
         {
-          label: 'Second Dataset',
-          data: [28, 48, 40, 19, 86, 27, 90],
+          label: 'Tickets Purchased',
+          data: this.purchasedData,
           fill: false,
-          borderColor: documentStyle.getPropertyValue('--pink-500'),
+          borderColor: documentStyle.getPropertyValue('--red-500'),
           tension: 0.4
         }
       ]
     };
 
     this.options = {
+      responsive: true,
       maintainAspectRatio: false,
       aspectRatio: 0.6,
       plugins: {
@@ -72,6 +84,39 @@ export class LineChartComponent implements OnInit {
         }
       }
     };
+
+    // Subscribe to the real-time data updates
+    this.dataSubscription = this.lineChartService.pollTicketData().subscribe(
+      ({ purchased, released, time }) => {
+        this.labels.push(time);
+        this.purchasedData.push(purchased);
+        this.releasedData.push(released);
+
+        // Limit data to the last 10 points
+        if (this.labels.length > 10) {
+          this.labels.shift();
+          this.purchasedData.shift();
+          this.releasedData.shift();
+        }
+
+        // Update the data and force re-render
+        this.data.labels = [...this.labels];
+        this.data.datasets[0].data = [...this.releasedData];
+        this.data.datasets[1].data = [...this.purchasedData];
+
+        if (this.chart?.chart) {
+          this.chart.chart.update(); // Force Chart.js to re-render
+        }
+      },
+      (error) => {
+        console.log('Error fetching chart data', error);
+      }
+    );
   }
 
+  ngOnDestroy(): void {
+    if (this.dataSubscription) {
+      this.dataSubscription.unsubscribe();
+    }
+  }
 }

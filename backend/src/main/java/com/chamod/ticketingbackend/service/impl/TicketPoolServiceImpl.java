@@ -13,13 +13,10 @@ import java.util.concurrent.locks.ReentrantLock;
 @Service
 public class TicketPoolServiceImpl implements TicketPoolService {
 
-//    @Autowired
-//    private SimpMessagingTemplate messagingTemplate;
-//
-//    private TicketLogHandler ticketLogHandler;
-
     private final LinkedList<Ticket> tickets = new LinkedList<>();
     private int maxCapacity;
+    private int ticketsPurchased;
+    private int ticketsReleased;
     private final ReentrantLock lock = new ReentrantLock(true);
     private final Condition notFull = lock.newCondition();
     private final Condition notEmpty = lock.newCondition();
@@ -35,6 +32,8 @@ public class TicketPoolServiceImpl implements TicketPoolService {
             for (int i = 0; i < totalTickets; i++) {
                 tickets.add(new Ticket()); // Initialize the tickets
             }
+            ticketsPurchased = 0;
+            ticketsReleased = 0;
             logger.info("Ticket pool configured with max capacity-{} and total tickets-{}", maxCapacity, totalTickets);
         } catch (Exception e) {
             logger.error("Error configuring ticket pool.", e);
@@ -54,10 +53,8 @@ public class TicketPoolServiceImpl implements TicketPoolService {
                 tickets.add(new Ticket());
             }
 
+            ticketsReleased += ticketCount; // the number of tickets added
 
-//            updateTicketAvailability(tickets.size());
-//            String logMessage = "[Vendor-"+vendorId+"] Added "+ticketCount+" tickets. (Pool size-"+tickets.size()+")";
-//            ticketLogHandler.sendLog(logMessage);
             logger.info("[Vendor-{}] Added {} tickets. (Pool size-{})", vendorId, ticketCount, tickets.size());
             notEmpty.signalAll();
         } catch (InterruptedException e) {
@@ -81,9 +78,8 @@ public class TicketPoolServiceImpl implements TicketPoolService {
                 tickets.remove(0);
             }
 
-//            updateTicketAvailability(tickets.size());
-//            String logMessage = "[Customer-"+customerId+"] Purchased "+ticketCount+" tickets. (Pool size-"+tickets.size()+")";
-//            ticketLogHandler.sendLog(logMessage);
+            ticketsPurchased += ticketCount; // update the number of tickets purchased
+
             logger.info("[Customer-{}] Purchased {} tickets. (Pool size-{})", customerId, ticketCount, tickets.size());
             notFull.signalAll();
         } catch (InterruptedException e) {
@@ -99,7 +95,14 @@ public class TicketPoolServiceImpl implements TicketPoolService {
         return tickets.size();
     }
 
-//    public void updateTicketAvailability(int currentTickets) {
-//        messagingTemplate.convertAndSend("/topic/tickets", currentTickets);
-//    }
+    @Override
+    public int getPurchasedTickets() {
+        return ticketsPurchased;
+    }
+
+    @Override
+    public int getReleasedTickets() {
+        return ticketsReleased;
+    }
+
 }

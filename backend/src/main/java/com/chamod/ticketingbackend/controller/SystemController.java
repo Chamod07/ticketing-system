@@ -13,9 +13,6 @@ public class SystemController {
     @Autowired
     private SystemService systemService;
 
-    @Autowired
-    private TicketPoolService ticketPoolService;
-
     @PostMapping(path = "/start")
     public String startSystem() {
         return systemService.startSystem();
@@ -41,8 +38,4 @@ public class SystemController {
         return systemService.getState();
     }
 
-    @GetMapping(path = "/available-tickets")
-    public int availableTickets() {
-        return ticketPoolService.getAvailableTickets();
-    }
 }

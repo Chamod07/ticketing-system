@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import {NgIf} from '@angular/common';
 import {ChipModule} from 'primeng/chip';
 import {CountDisplayService} from '../../services/count-display.service';
+import {TagModule} from 'primeng/tag';
 
 @Component({
   selector: 'app-control-panel',
@@ -17,6 +18,7 @@ import {CountDisplayService} from '../../services/count-display.service';
     ToastModule,
     NgIf,
     ChipModule,
+    TagModule,
   ],
   templateUrl: './control-panel.component.html',
   styleUrl: './control-panel.component.css',

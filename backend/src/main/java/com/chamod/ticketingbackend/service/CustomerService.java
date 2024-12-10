@@ -4,6 +4,8 @@ public interface CustomerService {
 
     void addCustomer();
 
+    void addVipCustomer();
+
     void removeCustomer();
 
     void startCustomers();

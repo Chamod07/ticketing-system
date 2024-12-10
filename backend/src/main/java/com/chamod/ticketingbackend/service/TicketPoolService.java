@@ -9,4 +9,8 @@ public interface TicketPoolService {
     void removeTickets(int ticketCount, int customerId);
 
     int getAvailableTickets();
+
+    int getPurchasedTickets();
+
+    int getReleasedTickets();
 }

@@ -17,23 +17,23 @@
     </p-tag>
 
     <!-- Start Button -->
-    <button *ngIf="systemStatus === 'Stopped'" class="p-button p-component "  (click)="startSystem()">
+    <p-button *ngIf="systemStatus === 'Stopped'" (click)="startSystem()">
       Start
-    </button>
+    </p-button>
 
     <!-- Pause and Stop Buttons -->
     <ng-container *ngIf="systemStatus === 'Running'">
-      <button class="p-button p-component p-button-warning" (click)="pauseSystem()">
+      <p-button styleClass="p-button-warning" (click)="pauseSystem()">
         Pause
-      </button>
-      <button class="p-button p-component p-button-danger" (click)="stopSystem()">
-        Stop
-      </button>
+      </p-button>
+      <p-button styleClass="p-button-danger" (click)="stopSystem()">
+        Stop/Reset
+      </p-button>
     </ng-container>
 
     <!-- Resume Button -->
-    <button *ngIf="systemStatus === 'Paused'" class="p-button p-component p-button-secondary" (click)="resumeSystem()">
+    <p-button *ngIf="systemStatus === 'Paused'" styleClass="p-button-secondary" (click)="resumeSystem()">
       Resume
-    </button>
+    </p-button>
   </div>
 </div>

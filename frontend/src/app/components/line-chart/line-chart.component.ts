@@ -39,7 +39,7 @@ export class LineChartComponent implements OnInit, OnDestroy {
           label: 'Tickets Released',
           data: this.releasedData,
           fill: false,
-          borderColor: documentStyle.getPropertyValue('--blue-500'),
+          borderColor: documentStyle.getPropertyValue('--cyan-500'),
           tension: 0.4
         },
         {
@@ -71,6 +71,14 @@ export class LineChartComponent implements OnInit, OnDestroy {
           grid: {
             color: surfaceBorder,
             drawBorder: false
+          },
+          title: {
+            display: true,
+            text: 'Time',
+            color: textColor,
+            font: {
+              size: 16
+            }
           }
         },
         y: {
@@ -80,12 +88,20 @@ export class LineChartComponent implements OnInit, OnDestroy {
           grid: {
             color: surfaceBorder,
             drawBorder: false
+          },
+          title: {
+            display: true,
+            text: 'Tickets',
+            color: textColor,
+            font: {
+              size: 16
+            }
           }
         }
       }
     };
 
-    // Subscribe to the real-time data updates
+    // Subscribe to the real time data updates
     this.dataSubscription = this.lineChartService.pollTicketData().subscribe(
       ({ purchased, released, time }) => {
         this.labels.push(time);
@@ -93,7 +109,7 @@ export class LineChartComponent implements OnInit, OnDestroy {
         this.releasedData.push(released);
 
         // Limit data to the last 10 points
-        if (this.labels.length > 10) {
+        if (this.labels.length > 6) {
           this.labels.shift();
           this.purchasedData.shift();
           this.releasedData.shift();

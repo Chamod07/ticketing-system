@@ -148,8 +148,8 @@ This system demonstrates it power of handling concurrent requests using multithr
        │         │        └── ticket-availability.component.ts
        │         ├── models
        │         │    └── configuration.ts
-       │         ├── services
-       │         │    └── LogService.java
+       │         └── services
+       │              └── LogService.java
        ├── assets
        ├── index.html
        ├── main.ts
@@ -167,7 +167,7 @@ This system demonstrates it power of handling concurrent requests using multithr
 **npm** 	[![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=fff)](#) : `Version: >= 8.x.x` </br>
 **Angular CLI** [![Angular](https://img.shields.io/badge/Angular-%23DD0031.svg?logo=angular&logoColor=white)](#): `Version: ^18.2.8` </br>
 **Tailwind CSS** [![TailwindCSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?logo=tailwind-css&logoColor=white)](#): `Version: >= 3.x.x` </br>
-**TypeScript** [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff)](#): `Version: >= 4.x.x` </br>'
+**TypeScript** [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff)](#): `Version: >= 4.x.x` </br>
 **Maven**: `Version: 3.9.9` </br>
 
 ### 📦 Installation

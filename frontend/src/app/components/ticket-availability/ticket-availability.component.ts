@@ -3,6 +3,7 @@ import {ProgressBarModule} from 'primeng/progressbar';
 import {CardModule} from 'primeng/card';
 import { TicketAvailabilityService} from '../../services/ticket-availability.service';
 import { Subscription } from 'rxjs';
+import {Button} from 'primeng/button';
 
 @Component({
   selector: 'app-ticket-availability',
@@ -10,7 +11,8 @@ import { Subscription } from 'rxjs';
   templateUrl: './ticket-availability.component.html',
   imports: [
     ProgressBarModule,
-    CardModule
+    CardModule,
+    Button
   ],
   styleUrl: './ticket-availability.component.css'
 })

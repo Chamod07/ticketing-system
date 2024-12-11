@@ -15,6 +15,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { HttpClient } from '@angular/common/http';
 import {Configuration} from '../../models/configuration';
+import {TooltipModule} from 'primeng/tooltip';
 
 // Custom validator to ensure maxCapacity is greater than totalTickets
 export function maxCapacityValidator(): ValidatorFn {
@@ -42,7 +43,8 @@ export function maxCapacityValidator(): ValidatorFn {
     ButtonModule,
     CardModule,
     InputTextModule,
-    ToastModule
+    ToastModule,
+    TooltipModule
   ],
   providers: [MessageService]
 })

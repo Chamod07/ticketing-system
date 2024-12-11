@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -17,13 +19,9 @@ public class Log {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "timestamp")
-    private String timestamp;
-
     @Column(name = "action")
     private String action;
 
-    @Column(name = "user")
-    private String user;
-
+    @Column(name = "timestamp")
+    private LocalDateTime timestamp;
 }

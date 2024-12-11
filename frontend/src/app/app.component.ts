@@ -6,6 +6,7 @@ import {TicketAvailabilityComponent} from './components/ticket-availability/tick
 import {ControlPanelComponent} from './components/control-panel/control-panel.component';
 import {ToastModule} from 'primeng/toast';
 import {LineChartComponent} from './components/line-chart/line-chart.component';
+import {LogDisplayComponent} from './components/log-display/log-display.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import {LineChartComponent} from './components/line-chart/line-chart.component';
     TicketAvailabilityComponent,
     ControlPanelComponent,
     ToastModule,
-    LineChartComponent
+    LineChartComponent,
+    LogDisplayComponent
   ],
   templateUrl: './app.component.html',
   standalone: true,

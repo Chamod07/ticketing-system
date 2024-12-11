@@ -1,6 +1,7 @@
 package com.chamod.ticketingbackend.service.impl;
 
 import com.chamod.ticketingbackend.model.Ticket;
+import com.chamod.ticketingbackend.service.LogService;
 import com.chamod.ticketingbackend.service.TicketPoolService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,6 +23,12 @@ public class TicketPoolServiceImpl implements TicketPoolService {
     private final Condition notEmpty = lock.newCondition();
 
     private final Logger logger = LogManager.getLogger(TicketPoolServiceImpl.class);
+
+    private final LogService logService;
+
+    public TicketPoolServiceImpl(LogService logService) {
+        this.logService = logService;
+    }
 
     @Override
     public void configure(int maxCapacity, int totalTickets) {
@@ -55,6 +62,7 @@ public class TicketPoolServiceImpl implements TicketPoolService {
 
             ticketsReleased += ticketCount; // the number of tickets added
 
+            logService.addLog("[Vendor-"+ vendorId + "] Added " + ticketCount + " tickets. (Pool size-"+tickets.size()+")");
             logger.info("[Vendor-{}] Added {} tickets. (Pool size-{})", vendorId, ticketCount, tickets.size());
             notEmpty.signalAll();
         } catch (InterruptedException e) {
@@ -80,6 +88,7 @@ public class TicketPoolServiceImpl implements TicketPoolService {
 
             ticketsPurchased += ticketCount; // update the number of tickets purchased
 
+            logService.addLog("[Customer-"+customerId+"] Purchased " + ticketCount + " tickets. (Pool size-"+tickets.size()+")");
             logger.info("[Customer-{}] Purchased {} tickets. (Pool size-{})", customerId, ticketCount, tickets.size());
             notFull.signalAll();
         } catch (InterruptedException e) {

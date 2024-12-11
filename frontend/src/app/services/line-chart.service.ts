@@ -24,7 +24,7 @@ export class LineChartService {
 
   // Poll both endpoints
   pollTicketData(): Observable<{ purchased: number; released: number; time: string }> {
-    return interval(500).pipe(
+    return interval(100).pipe(
       switchMap(() =>
         combineLatest([
           this.getTicketsPurchased(),

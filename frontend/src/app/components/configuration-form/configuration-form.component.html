@@ -5,7 +5,7 @@
       <div class="col-12 field h-6rem">
         <label for="totalTickets" class="font-bold">Total Tickets</label>
         <input pInputText id="totalTickets" type="number"
-               formControlName="totalTickets" class="w-full"/>
+               formControlName="totalTickets" class="w-full" pTooltip="Enter the total number of tickets" tooltipPosition="left"/>
         <small *ngIf="!configForm.get('totalTickets')?.touched || !configForm.get('totalTickets')?.invalid"
                class="text-muted">The total number of tickets available</small>
         <small *ngIf="configForm.get('totalTickets')?.errors?.['required'] && configForm.get('totalTickets')?.touched"
@@ -17,7 +17,7 @@
       <div class="col-12 field h-6rem">
         <label for="ticketReleaseRate" class="font-bold">Ticket Release Rate</label>
         <input pInputText id="ticketReleaseRate" type="number"
-               formControlName="ticketReleaseRate" class="w-full"/>
+               formControlName="ticketReleaseRate" class="w-full"pTooltip="Enter the ticket release rates" tooltipPosition="left"/>
         <small *ngIf="!configForm.get('ticketReleaseRate')?.touched || !configForm.get('ticketReleaseRate')?.invalid"
                class="text-muted">Number of tickets each vendor releases per transaction</small>
         <small *ngIf="configForm.get('ticketReleaseRate')?.errors?.['required'] && configForm.get('ticketReleaseRate')?.touched"
@@ -29,7 +29,7 @@
       <div class="col-12 field h-6rem">
         <label for="customerRetrievalRate" class="font-bold">Customer Retrieval Rate</label>
         <input pInputText id="customerRetrievalRate" type="number"
-               formControlName="customerRetrievalRate" class="w-full"/>
+               formControlName="customerRetrievalRate" class="w-full"pTooltip="Enter the customer retrieval rate" tooltipPosition="left"/>
         <small *ngIf="!configForm.get('customerRetrievalRate')?.touched || !configForm.get('customerRetrievalRate')?.invalid"
                class="text-muted">
           Number of tickets each customer purchases per transaction
@@ -43,7 +43,7 @@
       <div class="col-12 field h-6rem">
         <label for="maxCapacity" class="font-bold">Max Capacity</label>
         <input pInputText id="maxCapacity" type="number"
-               formControlName="maxCapacity" class="w-full"/>
+               formControlName="maxCapacity" class="w-full"pTooltip="Enter the max capacity of tickets" tooltipPosition="left"/>
         <small *ngIf="!configForm.get('maxCapacity')?.touched || !configForm.get('maxCapacity')?.invalid"
                class="text-muted">
           Maximum number of tickets that can be in the pool
@@ -56,7 +56,7 @@
                class="p-error block">Max Capacity must be greater than Total Tickets</small>
       </div>
 
-      <div class="button-container" style="display: flex; gap: 1rem; justify-content: flex-start; margin-top: 1.5rem">
+      <div class="button-container" style="display: flex; gap: 1rem; justify-content: flex-start; margin-top: 1rem">
         <div class="col-7">
           <p-button label="Save Configuration" type="submit"
                     [disabled]="!configForm.valid" styleClass="w-full"></p-button>

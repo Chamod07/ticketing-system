@@ -8,6 +8,7 @@ import {NgIf} from '@angular/common';
 import {ChipModule} from 'primeng/chip';
 import {CountDisplayService} from '../../services/count-display.service';
 import {TagModule} from 'primeng/tag';
+import {Button} from 'primeng/button';
 
 @Component({
   selector: 'app-control-panel',
@@ -19,6 +20,7 @@ import {TagModule} from 'primeng/tag';
     NgIf,
     ChipModule,
     TagModule,
+    Button,
   ],
   templateUrl: './control-panel.component.html',
   styleUrl: './control-panel.component.css',

@@ -23,20 +23,21 @@ Event Ticketing System with Producer-Consumer Pattern
 
 ## 📍 Overview
 
-This Real-Time Event Ticketing System is designed to manage concurrent ticket releases by vendors and purchases by customers, leveraging multi-threading and the Producer-Consumer pattern. The system maintains data integrity in a dynamic, real-time environment and provides essential reporting features, making it ideal for handling high-demand events with concurrent ticketing needs.
-This system demonstrates it power of handling concurrent requests using multithreading
+This Real-Time Event Ticketing System employs the Producer-Consumer model along with multi-threading to manage simultaneous vendor ticket releases and customer purchases. It's an ideal solution for overseeing high-demand events where ticketing needs arise concurrently, as it maintains data integrity in a dynamic, real-time environment and provides essential reporting capabilities. 
+
+This system demonstrates its proficiency in utilizing multithreading to address multiple requests simultaneously. The system's real-time updates and basic logging capabilities make it an excellent choice for managing ticket sales and availability. The system's web interface provides a user-friendly experience, allowing users to monitor ticket availability and transactions in real-time. 
 
 ---
 
 ## 👾 Features
 
-- Concurrency Management: Simultaneous handling of ticket releases and purchases.
-- Data Integrity: Thread-safe operations using synchronization for consistent ticket availability.
-- Multi-threaded Environment: Employs producer-consumer threading to manage multiple vendors and customers.
-- Real-Time Updates: Provides a UI with real-time status on ticket availability and transactions.
-- Basic Logging: Tracks and records system activities for audit and troubleshooting.
-- Websocket Usage : using websockets for realtime updates
-- Api Usage : Using api to connect front end and backend
+- \*Concurrency Management\*: Simultaneous handling of ticket releases and purchases.
+- \*Data Integrity\*: Thread-safe operations using synchronization for consistent ticket availability.
+- \*Multi-threaded Environment\*: Employs producer-consumer threading to manage multiple vendors and customers.
+- \*Real-Time Updates\*: Provides a UI with real-time status on ticket availability and transactions.
+- \*Basic Logging\*: Tracks and records system activities for audit and troubleshooting.
+- \*Polling Usage\*: Utilizes Periodic Polling for real-time updates.
+- \*API Usage\*: Connects front end and backend using APIs.
 
 ---
 

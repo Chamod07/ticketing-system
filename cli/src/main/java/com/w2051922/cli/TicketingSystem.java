@@ -10,6 +10,11 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
+/**
+ * The TicketingSystem class manages the configuration and simulation of a ticketing system.
+ * It handles the initialization of system settings, starting and stopping of vendor and customer threads,
+ * and user interactions for configuring and running the system.
+ */
 public class TicketingSystem {
     private static final Logger logger = LogManager.getLogger(TicketingSystem.class.getName());
     private static SystemConfiguration configuration;
@@ -22,23 +27,18 @@ public class TicketingSystem {
      * <p>
      * This method performs the following steps:
      * <ol>
-     * <li>Initializes of the configuration settings.</li>
+     * <li>Initializes the configuration settings.</li>
      * <li>Logs the loaded configuration details.</li>
-     * <li>Prompt the user to <code>start</code> or <code>reset</code> the system</li>
+     * <li>Prompts the user to <code>start</code> or <code>reset</code> the system</li>
      * </ol>
      */
     public void systemConfig() {
-
         initializeConfig();
-
         logger.info("System configured with: {}", configuration);
-
         System.out.print("Enter the number of vendors to simulate: ");
         int numberOfVendors = getValidInput(scanner);
-
         System.out.print("Enter the number of customers to simulate: ");
         int numberOfCustomers = getValidInput(scanner);
-
         System.out.print("Do you want to start or reset the system? (start/reset): ");
         while (true) {
             String start = scanner.nextLine().toLowerCase().trim();
@@ -56,18 +56,16 @@ public class TicketingSystem {
     }
 
     /**
-     * <p>
      * Initializes the system configuration by prompting the user to load
      * a previous configuration or create a new one.
-     * </p>
-     *<p>
+     * <p>
      * The method begins by asking the user if they wish to load a previous
      * system configuration. If the user enters "yes", the method attempts
-     * to load an existing configuration using the {@code  loadConfiguration} method
+     * to load an existing configuration using the {@code loadConfiguration} method
      * of the {@link SystemConfiguration} class. If loading the configuration fails,
      * a new configuration is created by invoking the {@code setNewConfig} method.
      * If the user enters "no", a new configuration is directly set up.
-     *</p>
+     * </p>
      * <p>
      * The configuration process continues in a loop until the user provides
      * a valid response of either "yes" or "no".
@@ -105,47 +103,39 @@ public class TicketingSystem {
      * <p>
      * Intended for internal use within the initialization process of a ticketing
      * system when no configuration is previously loaded.
-     *</p>
+     * </p>
      */
     private void setNewConfig() {
         System.out.println("No previous configuration loaded. Proceeding to new configuration.");
-
         int totalTickets;
         int maxTicketCapacity;
-
         while (true) {
             // Total tickets
             System.out.print("Enter total number of tickets: ");
             totalTickets = getValidInput(scanner);
-
             // Max ticket capacity
             System.out.print("Enter maximum ticket capacity: ");
             maxTicketCapacity = getValidInput(scanner);
-
             if (maxTicketCapacity > totalTickets) {
                 break;
             } else {
                 System.out.println("Maximum ticket capacity must be greater than total tickets. Please try again.");
             }
         }
-
         // Ticket release rate
         System.out.print("Enter ticket release rate (tickets per second): ");
         int ticketReleaseRate = getValidInput(scanner);
-
         // Ticket retrieval rate
         System.out.print("Enter customer retrieval rate (tickets per seconds): ");
         int ticketRetrievalRate = getValidInput(scanner);
-
         // create new configuration
         configuration = new SystemConfiguration(totalTickets, ticketReleaseRate, ticketRetrievalRate, maxTicketCapacity);
-
         // save configuration to a JSON file
         configuration.saveConfiguration();
     }
 
     /**
-     * <p>Starts the simulation of a ticketing system by initializing the specified number of {@linkplain Vendor} and {@linkplain Customer}.</p>
+     * Starts the simulation of a ticketing system by initializing the specified number of {@linkplain Vendor} and {@linkplain Customer}.
      * <ol>
      * <li>Prompts the user to input the number of vendors and customers to simulate.</li>
      * <li>Logs the start of the simulation with the provided number of vendors and customers.</li>
@@ -159,10 +149,8 @@ public class TicketingSystem {
      */
     private void startSystem(int numOfVendors, int numOfCustomers) {
         logger.info("System started with {} vendors and {} customers.", numOfVendors, numOfCustomers);
-
         // Initialize ticket pool
         TicketPool ticketPool = new TicketPool(configuration.getMaxTicketCapacity(), configuration.getTotalTickets());
-
         // Display "Press 'Enter' to stop" message with a delay
         System.out.print("\nPress 'Enter' to stop the system");
         try {
@@ -175,58 +163,49 @@ public class TicketingSystem {
             Thread.currentThread().interrupt();
         }
         System.out.println();
-
         // Create vendor threads and store in an array
         vendorThreads = new ArrayList<>();
         for (int i = 1; i <= numOfVendors; i++) {
             vendorThreads.add(new Thread(new Vendor(ticketPool, String.valueOf(i), configuration.getTicketReleaseRate())));
             logger.info("[Vendor-{}] Thread initialised.", i);
         }
-
         // Create customer threads and store in an array
         customerThreads = new ArrayList<>();
         for (int i = 1; i <= numOfCustomers; i++) {
             customerThreads.add(new Thread(new Customer(ticketPool, String.valueOf(i), configuration.getCustomerRetrievalRate())));
             logger.info("[Customer-{}] Thread initialised.", i);
         }
-
         // Start vendor threads
         for (int i = 0; i < vendorThreads.size(); i++) {
             Thread thread = vendorThreads.get(i);
             thread.start();
             logger.info("[Vendor-{}] Thread started.", (i+1));
         }
-
         // Start customer threads
         for (int i = 0; i < customerThreads.size(); i++) {
             Thread thread = customerThreads.get(i);
             thread.start();
             logger.info("[Customer-{}] Thread started.", (i+1));
         }
-
         // Wait for user input to stop
         scanner.nextLine(); // Wait for Enter key
-
         // Stop all threads
         stopAllThreads();
-
         // Ask if user wants to simulate another event
         simulateAnotherEvent();
     }
 
     /**
-     * Stops all vendor and customer threads
+     * Stops all vendor and customer threads.
      */
     private void stopAllThreads() {
         logger.info("Stopping all threads.");
         for (Thread thread : vendorThreads) {
             thread.interrupt();
         }
-
         for (Thread thread : customerThreads) {
             thread.interrupt();
         }
-
         for (Thread thread : vendorThreads) {
             try {
                 thread.join();
@@ -234,7 +213,6 @@ public class TicketingSystem {
                 Thread.currentThread().interrupt();
             }
         }
-
         for (Thread thread : customerThreads) {
             try {
                 thread.join();
@@ -242,17 +220,15 @@ public class TicketingSystem {
                 Thread.currentThread().interrupt();
             }
         }
-
         logger.info("All threads stopped.");
     }
 
     /**
-     * Asks user if they want to simulate another event
+     * Asks user if they want to simulate another event.
      */
     private void simulateAnotherEvent() {
         System.out.println();
         System.out.print("Do you want to simulate another event? (yes/no): ");
-
         while (true) {
             String response = scanner.nextLine().toLowerCase().trim();
             if (response.equals("yes")) {
@@ -289,13 +265,15 @@ public class TicketingSystem {
         }
     }
 
+    /**
+     * The main method to start the ticketing system.
+     * @param args command line arguments
+     */
     public static void main(String[] args) {
         TicketingSystem ticketingSystem = new TicketingSystem();
-
         System.out.println();
         System.out.println("====== \t Event Ticketing System Configuration \t ======");
         System.out.println();
-
         ticketingSystem.systemConfig();
     }
 }

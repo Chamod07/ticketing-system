@@ -2302,3 +2302,471 @@
 2024-12-08 02:17:27 INFO  - [Customer-1] Customer has been terminated.
 2024-12-08 02:17:27 INFO  - All threads stopped.
 2024-12-08 02:19:04 INFO  - System stopped. Exiting...
+2024-12-08 04:39:48 INFO  - Configuration saved to systemConfiguration.json.
+2024-12-08 04:39:48 INFO  - System configured with: [Total Tickets = 20, Ticket Release Rate = 4, Customer Retrieval Rate = 4, Maximum Ticket Capacity = 100]
+2024-12-08 04:39:57 INFO  - System started with 2 vendors and 2 customers.
+2024-12-08 04:40:00 INFO  - [Vendor-1] Thread initialised.
+2024-12-08 04:40:00 INFO  - [Vendor-2] Thread initialised.
+2024-12-08 04:40:00 INFO  - [Customer-1] Thread initialised.
+2024-12-08 04:40:00 INFO  - [Customer-2] Thread initialised.
+2024-12-08 04:40:00 INFO  - [Vendor-1] Thread started.
+2024-12-08 04:40:00 INFO  - [Vendor-2] Thread started.
+2024-12-08 04:40:00 INFO  - [Customer-1] Thread started.
+2024-12-08 04:40:00 INFO  - [Customer-2] Thread started.
+2024-12-08 04:40:01 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 16)
+2024-12-08 04:40:01 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-08 04:40:01 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 24)
+2024-12-08 04:40:01 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 20)
+2024-12-08 04:40:02 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 24)
+2024-12-08 04:40:02 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 20)
+2024-12-08 04:40:02 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 16)
+2024-12-08 04:40:02 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-08 04:40:03 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 16)
+2024-12-08 04:40:03 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 12)
+2024-12-08 04:40:03 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 16)
+2024-12-08 04:40:03 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-08 04:40:04 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 16)
+2024-12-08 04:40:04 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 12)
+2024-12-08 04:40:04 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 16)
+2024-12-08 04:40:04 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-08 04:40:05 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 16)
+2024-12-08 04:40:05 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-08 04:40:05 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 24)
+2024-12-08 04:40:05 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 20)
+2024-12-08 04:40:06 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 16)
+2024-12-08 04:40:06 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-08 04:40:06 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 24)
+2024-12-08 04:40:06 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 20)
+2024-12-08 04:40:07 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 24)
+2024-12-08 04:40:07 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 20)
+2024-12-08 04:40:07 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 16)
+2024-12-08 04:40:07 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 20)
+2024-12-08 04:40:08 INFO  - [Vendor-2] Added 4 tickets. (Pool size: 24)
+2024-12-08 04:40:08 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 20)
+2024-12-08 04:40:08 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 16)
+2024-12-08 04:40:08 INFO  - [Vendor-1] Added 4 tickets. (Pool size: 20)
+2024-12-08 04:40:08 INFO  - Stopping all threads.
+2024-12-08 04:40:08 ERROR - [Vendor-1] Interrupted.
+2024-12-08 04:40:08 ERROR - [Vendor-2] Interrupted.
+2024-12-08 04:40:08 ERROR - [Customer-2] Interrupted.
+2024-12-08 04:40:08 ERROR - [Customer-1] Interrupted.
+2024-12-08 04:40:08 INFO  - [Vendor-2] Vendor has been terminated.
+2024-12-08 04:40:08 INFO  - [Vendor-1] Vendor has been terminated.
+2024-12-08 04:40:08 INFO  - [Customer-2] Customer has been terminated.
+2024-12-08 04:40:08 INFO  - [Customer-1] Customer has been terminated.
+2024-12-08 04:40:08 INFO  - All threads stopped.
+2024-12-08 04:40:13 INFO  - System stopped. Exiting...
+2024-12-08 13:35:39 INFO  - Configuration saved to systemConfiguration.json.
+2024-12-08 13:35:39 INFO  - System configured with: [Total Tickets = 100, Ticket Release Rate = 5, Customer Retrieval Rate = 4, Maximum Ticket Capacity = 250]
+2024-12-08 13:38:08 INFO  - Request for system configuration reset.
+2024-12-08 13:38:11 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-08 13:38:11 INFO  - System configured with: [Total Tickets = 100, Ticket Release Rate = 5, Customer Retrieval Rate = 4, Maximum Ticket Capacity = 250]
+2024-12-08 13:38:17 INFO  - System started with 2 vendors and 2 customers.
+2024-12-08 13:38:20 INFO  - [Vendor-1] Thread initialised.
+2024-12-08 13:38:20 INFO  - [Vendor-2] Thread initialised.
+2024-12-08 13:38:20 INFO  - [Customer-1] Thread initialised.
+2024-12-08 13:38:20 INFO  - [Customer-2] Thread initialised.
+2024-12-08 13:38:20 INFO  - [Vendor-1] Thread started.
+2024-12-08 13:38:20 INFO  - [Vendor-2] Thread started.
+2024-12-08 13:38:20 INFO  - [Customer-1] Thread started.
+2024-12-08 13:38:20 INFO  - [Customer-2] Thread started.
+2024-12-08 13:38:21 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 96)
+2024-12-08 13:38:21 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 92)
+2024-12-08 13:38:21 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 97)
+2024-12-08 13:38:21 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 102)
+2024-12-08 13:38:22 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 98)
+2024-12-08 13:38:22 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 103)
+2024-12-08 13:38:22 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 99)
+2024-12-08 13:38:22 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 104)
+2024-12-08 13:38:23 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 109)
+2024-12-08 13:38:23 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 105)
+2024-12-08 13:38:23 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 101)
+2024-12-08 13:38:23 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 106)
+2024-12-08 13:38:24 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 111)
+2024-12-08 13:38:24 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 107)
+2024-12-08 13:38:24 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 103)
+2024-12-08 13:38:24 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 108)
+2024-12-08 13:38:25 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 113)
+2024-12-08 13:38:25 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 109)
+2024-12-08 13:38:25 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 114)
+2024-12-08 13:38:25 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 110)
+2024-12-08 13:38:26 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 115)
+2024-12-08 13:38:26 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 111)
+2024-12-08 13:38:26 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 116)
+2024-12-08 13:38:26 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 112)
+2024-12-08 13:38:27 INFO  - Stopping all threads.
+2024-12-08 13:38:27 ERROR - [Vendor-1] Interrupted.
+2024-12-08 13:38:27 ERROR - [Customer-2] Interrupted.
+2024-12-08 13:38:27 ERROR - [Customer-1] Interrupted.
+2024-12-08 13:38:27 ERROR - [Vendor-2] Interrupted.
+2024-12-08 13:38:27 INFO  - [Vendor-1] Vendor has been terminated.
+2024-12-08 13:38:27 INFO  - [Customer-2] Customer has been terminated.
+2024-12-08 13:38:27 INFO  - [Vendor-2] Vendor has been terminated.
+2024-12-08 13:38:27 INFO  - [Customer-1] Customer has been terminated.
+2024-12-08 13:38:27 INFO  - All threads stopped.
+2024-12-08 13:38:33 INFO  - System stopped. Exiting...
+2024-12-09 10:31:52 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-09 10:31:52 INFO  - System configured with: [Total Tickets = 100, Ticket Release Rate = 5, Customer Retrieval Rate = 4, Maximum Ticket Capacity = 250]
+2024-12-09 10:32:08 INFO  - System started with 1 vendors and 1 customers.
+2024-12-09 10:32:11 INFO  - [Vendor-1] Thread initialised.
+2024-12-09 10:32:11 INFO  - [Customer-1] Thread initialised.
+2024-12-09 10:32:11 INFO  - [Vendor-1] Thread started.
+2024-12-09 10:32:11 INFO  - [Customer-1] Thread started.
+2024-12-09 10:32:12 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 105)
+2024-12-09 10:32:12 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 101)
+2024-12-09 10:32:13 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 106)
+2024-12-09 10:32:13 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 102)
+2024-12-09 10:32:14 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 107)
+2024-12-09 10:32:14 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 103)
+2024-12-09 10:32:15 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 108)
+2024-12-09 10:32:15 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 104)
+2024-12-09 10:32:16 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 109)
+2024-12-09 10:32:16 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 105)
+2024-12-09 10:32:17 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 110)
+2024-12-09 10:32:17 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 106)
+2024-12-09 10:32:17 INFO  - Stopping all threads.
+2024-12-09 10:32:17 ERROR - [Vendor-1] Interrupted.
+2024-12-09 10:32:17 ERROR - [Customer-1] Interrupted.
+2024-12-09 10:32:17 INFO  - [Vendor-1] Vendor has been terminated.
+2024-12-09 10:32:17 INFO  - [Customer-1] Customer has been terminated.
+2024-12-09 10:32:17 INFO  - All threads stopped.
+2024-12-09 10:32:20 INFO  - System stopped. Exiting...
+2024-12-09 14:41:26 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-09 14:41:26 INFO  - System configured with: [Total Tickets = 100, Ticket Release Rate = 5, Customer Retrieval Rate = 4, Maximum Ticket Capacity = 250]
+2024-12-09 14:41:35 INFO  - System started with 1 vendors and 1 customers.
+2024-12-09 14:41:38 INFO  - [Vendor-1] Thread initialised.
+2024-12-09 14:41:38 INFO  - [Customer-1] Thread initialised.
+2024-12-09 14:41:38 INFO  - [Vendor-1] Thread started.
+2024-12-09 14:41:38 INFO  - [Customer-1] Thread started.
+2024-12-09 14:41:39 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 96)
+2024-12-09 14:41:39 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 101)
+2024-12-09 14:41:40 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 97)
+2024-12-09 14:41:40 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 102)
+2024-12-09 14:41:41 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 98)
+2024-12-09 14:41:41 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 103)
+2024-12-09 14:41:42 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 99)
+2024-12-09 14:41:42 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 104)
+2024-12-09 14:41:43 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 100)
+2024-12-09 14:41:43 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 105)
+2024-12-09 14:41:44 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 101)
+2024-12-09 14:41:44 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 106)
+2024-12-09 14:41:45 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 102)
+2024-12-09 14:41:45 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 107)
+2024-12-09 14:41:46 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 103)
+2024-12-09 14:41:46 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 108)
+2024-12-09 14:41:47 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 104)
+2024-12-09 14:41:47 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 109)
+2024-12-09 14:41:48 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 105)
+2024-12-09 14:41:48 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 110)
+2024-12-09 14:41:49 INFO  - Stopping all threads.
+2024-12-09 14:41:49 ERROR - [Vendor-1] Interrupted.
+2024-12-09 14:41:49 ERROR - [Customer-1] Interrupted.
+2024-12-09 14:41:49 INFO  - [Vendor-1] Vendor has been terminated.
+2024-12-09 14:41:49 INFO  - [Customer-1] Customer has been terminated.
+2024-12-09 14:41:49 INFO  - All threads stopped.
+2024-12-09 14:41:55 INFO  - System stopped. Exiting...
+2024-12-09 15:46:12 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-09 15:46:12 INFO  - System configured with: [Total Tickets = 100, Ticket Release Rate = 5, Customer Retrieval Rate = 4, Maximum Ticket Capacity = 250]
+2024-12-09 15:46:19 INFO  - System started with 2 vendors and 1 customers.
+2024-12-09 15:46:22 INFO  - [Vendor-1] Thread initialised.
+2024-12-09 15:46:22 INFO  - [Vendor-2] Thread initialised.
+2024-12-09 15:46:22 INFO  - [Customer-1] Thread initialised.
+2024-12-09 15:46:22 INFO  - [Vendor-1] Thread started.
+2024-12-09 15:46:22 INFO  - [Vendor-2] Thread started.
+2024-12-09 15:46:22 INFO  - [Customer-1] Thread started.
+2024-12-09 15:46:23 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 105)
+2024-12-09 15:46:23 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 101)
+2024-12-09 15:46:23 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 106)
+2024-12-09 15:46:24 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 111)
+2024-12-09 15:46:24 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 107)
+2024-12-09 15:46:24 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 112)
+2024-12-09 15:46:25 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 108)
+2024-12-09 15:46:25 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 113)
+2024-12-09 15:46:25 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 118)
+2024-12-09 15:46:26 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 123)
+2024-12-09 15:46:26 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 119)
+2024-12-09 15:46:26 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 124)
+2024-12-09 15:46:27 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 120)
+2024-12-09 15:46:27 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 125)
+2024-12-09 15:46:27 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 130)
+2024-12-09 15:46:28 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 135)
+2024-12-09 15:46:28 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 131)
+2024-12-09 15:46:28 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 136)
+2024-12-09 15:46:29 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 141)
+2024-12-09 15:46:29 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 137)
+2024-12-09 15:46:29 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 142)
+2024-12-09 15:46:30 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 138)
+2024-12-09 15:46:30 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 143)
+2024-12-09 15:46:30 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 148)
+2024-12-09 15:46:31 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 153)
+2024-12-09 15:46:31 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 149)
+2024-12-09 15:46:31 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 154)
+2024-12-09 15:46:32 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 159)
+2024-12-09 15:46:32 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 155)
+2024-12-09 15:46:32 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 160)
+2024-12-09 15:46:33 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 165)
+2024-12-09 15:46:33 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 161)
+2024-12-09 15:46:33 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 166)
+2024-12-09 15:46:33 INFO  - Stopping all threads.
+2024-12-09 15:46:33 ERROR - [Vendor-1] Interrupted.
+2024-12-09 15:46:33 ERROR - [Customer-1] Interrupted.
+2024-12-09 15:46:33 ERROR - [Vendor-2] Interrupted.
+2024-12-09 15:46:33 INFO  - [Vendor-1] Vendor has been terminated.
+2024-12-09 15:46:33 INFO  - [Vendor-2] Vendor has been terminated.
+2024-12-09 15:46:33 INFO  - [Customer-1] Customer has been terminated.
+2024-12-09 15:46:33 INFO  - All threads stopped.
+2024-12-09 15:47:01 INFO  - System stopped. Exiting...
+2024-12-09 21:05:37 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-09 21:05:37 INFO  - System configured with: [Total Tickets = 100, Ticket Release Rate = 5, Customer Retrieval Rate = 4, Maximum Ticket Capacity = 250]
+2024-12-09 21:05:40 INFO  - System started with 1 vendors and 1 customers.
+2024-12-09 21:05:43 INFO  - [Vendor-1] Thread initialised.
+2024-12-09 21:05:43 INFO  - [Customer-1] Thread initialised.
+2024-12-09 21:05:43 INFO  - [Vendor-1] Thread started.
+2024-12-09 21:05:43 INFO  - [Customer-1] Thread started.
+2024-12-09 21:05:44 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 105)
+2024-12-09 21:05:44 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 101)
+2024-12-09 21:05:45 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 106)
+2024-12-09 21:05:45 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 102)
+2024-12-09 21:05:46 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 107)
+2024-12-09 21:05:46 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 103)
+2024-12-09 21:05:47 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 99)
+2024-12-09 21:05:47 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 104)
+2024-12-09 21:05:48 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 100)
+2024-12-09 21:05:48 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 105)
+2024-12-09 21:05:49 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 101)
+2024-12-09 21:05:49 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 106)
+2024-12-09 21:05:50 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 111)
+2024-12-09 21:05:50 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 107)
+2024-12-09 21:05:51 INFO  - Stopping all threads.
+2024-12-09 21:05:51 ERROR - [Vendor-1] Interrupted.
+2024-12-09 21:05:51 ERROR - [Customer-1] Interrupted.
+2024-12-09 21:05:51 INFO  - [Vendor-1] Vendor has been terminated.
+2024-12-09 21:05:51 INFO  - [Customer-1] Customer has been terminated.
+2024-12-09 21:05:51 INFO  - All threads stopped.
+2024-12-09 21:05:54 INFO  - System stopped. Exiting...
+2024-12-09 21:05:58 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-09 21:05:58 INFO  - System configured with: [Total Tickets = 100, Ticket Release Rate = 5, Customer Retrieval Rate = 4, Maximum Ticket Capacity = 250]
+2024-12-09 21:06:02 INFO  - System started with 1 vendors and 1 customers.
+2024-12-09 21:06:05 INFO  - [Vendor-1] Thread initialised.
+2024-12-09 21:06:05 INFO  - [Customer-1] Thread initialised.
+2024-12-09 21:06:05 INFO  - [Vendor-1] Thread started.
+2024-12-09 21:06:05 INFO  - [Customer-1] Thread started.
+2024-12-09 21:06:06 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 105)
+2024-12-09 21:06:06 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 101)
+2024-12-09 21:06:07 INFO  - Stopping all threads.
+2024-12-09 21:06:07 ERROR - [Customer-1] Interrupted.
+2024-12-09 21:06:07 ERROR - [Vendor-1] Interrupted.
+2024-12-09 21:06:07 INFO  - [Customer-1] Customer has been terminated.
+2024-12-09 21:06:07 INFO  - [Vendor-1] Vendor has been terminated.
+2024-12-09 21:06:07 INFO  - All threads stopped.
+2024-12-09 21:06:10 INFO  - Simulating another event.
+2024-12-09 21:06:13 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-09 21:06:13 INFO  - System configured with: [Total Tickets = 100, Ticket Release Rate = 5, Customer Retrieval Rate = 4, Maximum Ticket Capacity = 250]
+2024-12-09 21:06:22 INFO  - Request for system configuration reset.
+2024-12-09 21:06:24 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-09 21:06:24 INFO  - System configured with: [Total Tickets = 100, Ticket Release Rate = 5, Customer Retrieval Rate = 4, Maximum Ticket Capacity = 250]
+2024-12-09 21:06:34 INFO  - System started with 1 vendors and 1 customers.
+2024-12-09 21:06:37 INFO  - [Vendor-1] Thread initialised.
+2024-12-09 21:06:37 INFO  - [Customer-1] Thread initialised.
+2024-12-09 21:06:37 INFO  - [Vendor-1] Thread started.
+2024-12-09 21:06:37 INFO  - [Customer-1] Thread started.
+2024-12-09 21:06:38 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 105)
+2024-12-09 21:06:38 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 101)
+2024-12-09 21:06:39 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 106)
+2024-12-09 21:06:39 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 102)
+2024-12-09 21:06:40 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 98)
+2024-12-09 21:06:40 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 103)
+2024-12-09 21:06:40 INFO  - Stopping all threads.
+2024-12-09 21:06:40 ERROR - [Vendor-1] Interrupted.
+2024-12-09 21:06:40 ERROR - [Customer-1] Interrupted.
+2024-12-09 21:06:40 INFO  - [Vendor-1] Vendor has been terminated.
+2024-12-09 21:06:40 INFO  - [Customer-1] Customer has been terminated.
+2024-12-09 21:06:40 INFO  - All threads stopped.
+2024-12-09 21:06:42 INFO  - System stopped. Exiting...
+2024-12-10 02:35:21 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-10 02:35:21 INFO  - System configured with: [Total Tickets = 100, Ticket Release Rate = 1, Customer Retrieval Rate = 1, Maximum Ticket Capacity = 1000]
+2024-12-10 02:35:30 INFO  - System started with 2 vendors and 2 customers.
+2024-12-10 02:35:33 INFO  - [Vendor-1] Thread initialised.
+2024-12-10 02:35:33 INFO  - [Vendor-2] Thread initialised.
+2024-12-10 02:35:33 INFO  - [Customer-1] Thread initialised.
+2024-12-10 02:35:33 INFO  - [Customer-2] Thread initialised.
+2024-12-10 02:35:33 INFO  - [Vendor-1] Thread started.
+2024-12-10 02:35:33 INFO  - [Vendor-2] Thread started.
+2024-12-10 02:35:33 INFO  - [Customer-1] Thread started.
+2024-12-10 02:35:33 INFO  - [Customer-2] Thread started.
+2024-12-10 02:35:34 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 101)
+2024-12-10 02:35:34 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 100)
+2024-12-10 02:35:34 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 101)
+2024-12-10 02:35:34 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 100)
+2024-12-10 02:35:35 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 99)
+2024-12-10 02:35:35 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 100)
+2024-12-10 02:35:35 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 99)
+2024-12-10 02:35:35 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 100)
+2024-12-10 02:35:36 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 101)
+2024-12-10 02:35:36 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 102)
+2024-12-10 02:35:36 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 101)
+2024-12-10 02:35:36 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 100)
+2024-12-10 02:35:37 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 101)
+2024-12-10 02:35:37 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 102)
+2024-12-10 02:35:37 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 101)
+2024-12-10 02:35:37 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 100)
+2024-12-10 02:35:38 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 101)
+2024-12-10 02:35:38 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 100)
+2024-12-10 02:35:38 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 99)
+2024-12-10 02:35:38 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 100)
+2024-12-10 02:35:39 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 99)
+2024-12-10 02:35:39 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 100)
+2024-12-10 02:35:39 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 101)
+2024-12-10 02:35:39 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 100)
+2024-12-10 02:35:40 INFO  - [Customer-1] Purchased 1 tickets. (Pool size: 99)
+2024-12-10 02:35:40 INFO  - [Vendor-2] Added 1 tickets. (Pool size: 100)
+2024-12-10 02:35:40 INFO  - [Customer-2] Purchased 1 tickets. (Pool size: 99)
+2024-12-10 02:35:40 INFO  - [Vendor-1] Added 1 tickets. (Pool size: 100)
+2024-12-10 02:35:41 INFO  - Stopping all threads.
+2024-12-10 02:35:41 ERROR - [Vendor-2] Interrupted.
+2024-12-10 02:35:41 ERROR - [Vendor-1] Interrupted.
+2024-12-10 02:35:41 ERROR - [Customer-2] Interrupted.
+2024-12-10 02:35:41 ERROR - [Customer-1] Interrupted.
+2024-12-10 02:35:41 INFO  - [Vendor-1] Vendor has been terminated.
+2024-12-10 02:35:41 INFO  - [Vendor-2] Vendor has been terminated.
+2024-12-10 02:35:41 INFO  - [Customer-1] Customer has been terminated.
+2024-12-10 02:35:41 INFO  - [Customer-2] Customer has been terminated.
+2024-12-10 02:35:41 INFO  - All threads stopped.
+2024-12-10 02:35:59 INFO  - Simulating another event.
+2024-12-10 02:36:11 INFO  - Configuration saved to systemConfiguration.json.
+2024-12-10 02:36:11 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 5, Customer Retrieval Rate = 4, Maximum Ticket Capacity = 50]
+2024-12-10 02:36:18 INFO  - System started with 2 vendors and 1 customers.
+2024-12-10 02:36:21 INFO  - [Vendor-1] Thread initialised.
+2024-12-10 02:36:21 INFO  - [Vendor-2] Thread initialised.
+2024-12-10 02:36:21 INFO  - [Customer-1] Thread initialised.
+2024-12-10 02:36:21 INFO  - [Vendor-1] Thread started.
+2024-12-10 02:36:21 INFO  - [Vendor-2] Thread started.
+2024-12-10 02:36:21 INFO  - [Customer-1] Thread started.
+2024-12-10 02:36:22 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 6)
+2024-12-10 02:36:22 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 11)
+2024-12-10 02:36:22 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 16)
+2024-12-10 02:36:23 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 21)
+2024-12-10 02:36:23 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 26)
+2024-12-10 02:36:23 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 22)
+2024-12-10 02:36:24 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 27)
+2024-12-10 02:36:24 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 32)
+2024-12-10 02:36:24 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 28)
+2024-12-10 02:36:25 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 33)
+2024-12-10 02:36:25 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 38)
+2024-12-10 02:36:25 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 34)
+2024-12-10 02:36:26 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 39)
+2024-12-10 02:36:26 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 35)
+2024-12-10 02:36:26 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 40)
+2024-12-10 02:36:28 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 36)
+2024-12-10 02:36:28 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 41)
+2024-12-10 02:36:28 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 46)
+2024-12-10 02:36:29 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-10 02:36:29 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-10 02:36:29 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 42)
+2024-12-10 02:36:29 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 47)
+2024-12-10 02:36:29 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-10 02:36:30 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 43)
+2024-12-10 02:36:30 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 48)
+2024-12-10 02:36:30 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-10 02:36:31 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-10 02:36:31 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 44)
+2024-12-10 02:36:31 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 49)
+2024-12-10 02:36:31 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-10 02:36:32 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 45)
+2024-12-10 02:36:32 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 50)
+2024-12-10 02:36:32 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-10 02:36:33 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 46)
+2024-12-10 02:36:33 WARN  - [Vendor-1] Cannot add tickets. Not enough space.
+2024-12-10 02:36:33 WARN  - [Vendor-2] Cannot add tickets. Not enough space.
+2024-12-10 02:36:33 INFO  - Stopping all threads.
+2024-12-10 02:36:33 ERROR - [Customer-1] Interrupted.
+2024-12-10 02:36:33 INFO  - [Customer-1] Customer has been terminated.
+2024-12-10 02:36:33 ERROR - [Vendor-1] Ticket addition interrupted.
+java.lang.InterruptedException: null
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1727) ~[?:?]
+	at com.w2051922.models.TicketPool.addTicket(TicketPool.java:44) ~[classes/:?]
+	at com.w2051922.models.Vendor.run(Vendor.java:37) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:1575) [?:?]
+2024-12-10 02:36:33 ERROR - [Vendor-1] Interrupted.
+2024-12-10 02:36:33 INFO  - [Vendor-1] Vendor has been terminated.
+2024-12-10 02:36:33 ERROR - [Vendor-2] Ticket addition interrupted.
+java.lang.InterruptedException: null
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1727) ~[?:?]
+	at com.w2051922.models.TicketPool.addTicket(TicketPool.java:44) ~[classes/:?]
+	at com.w2051922.models.Vendor.run(Vendor.java:37) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:1575) [?:?]
+2024-12-10 02:36:33 ERROR - [Vendor-2] Interrupted.
+2024-12-10 02:36:33 INFO  - [Vendor-2] Vendor has been terminated.
+2024-12-10 02:36:33 INFO  - All threads stopped.
+2024-12-10 02:44:48 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-10 02:44:48 INFO  - System configured with: [Total Tickets = 10, Ticket Release Rate = 5, Customer Retrieval Rate = 4, Maximum Ticket Capacity = 50]
+2024-12-10 02:44:52 INFO  - System started with 2 vendors and 2 customers.
+2024-12-10 02:44:55 INFO  - [Vendor-1] Thread initialised.
+2024-12-10 02:44:55 INFO  - [Vendor-2] Thread initialised.
+2024-12-10 02:44:55 INFO  - [Customer-1] Thread initialised.
+2024-12-10 02:44:55 INFO  - [Customer-2] Thread initialised.
+2024-12-10 02:44:55 INFO  - [Vendor-1] Thread started.
+2024-12-10 02:44:55 INFO  - [Vendor-2] Thread started.
+2024-12-10 02:44:55 INFO  - [Customer-1] Thread started.
+2024-12-10 02:44:55 INFO  - [Customer-2] Thread started.
+2024-12-10 02:44:56 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 15)
+2024-12-10 02:44:56 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 20)
+2024-12-10 02:44:56 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 16)
+2024-12-10 02:44:56 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 12)
+2024-12-10 02:44:57 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 8)
+2024-12-10 02:44:57 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 4)
+2024-12-10 02:44:57 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 9)
+2024-12-10 02:44:57 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 14)
+2024-12-10 02:44:58 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 19)
+2024-12-10 02:44:58 INFO  - [Customer-2] Purchased 4 tickets. (Pool size: 15)
+2024-12-10 02:44:58 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 20)
+2024-12-10 02:44:58 INFO  - [Customer-1] Purchased 4 tickets. (Pool size: 16)
+2024-12-10 02:44:59 INFO  - Stopping all threads.
+2024-12-10 02:44:59 ERROR - [Customer-2] Interrupted.
+2024-12-10 02:44:59 ERROR - [Vendor-1] Interrupted.
+2024-12-10 02:44:59 ERROR - [Vendor-2] Interrupted.
+2024-12-10 02:44:59 ERROR - [Customer-1] Interrupted.
+2024-12-10 02:44:59 INFO  - [Customer-2] Customer has been terminated.
+2024-12-10 02:44:59 INFO  - [Vendor-2] Vendor has been terminated.
+2024-12-10 02:44:59 INFO  - [Vendor-1] Vendor has been terminated.
+2024-12-10 02:44:59 INFO  - [Customer-1] Customer has been terminated.
+2024-12-10 02:44:59 INFO  - All threads stopped.
+2024-12-10 02:56:15 INFO  - System stopped. Exiting...
+2024-12-12 02:49:25 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-12 02:49:25 INFO  - System configured with: [Total Tickets = 20, Ticket Release Rate = 5, Customer Retrieval Rate = 6, Maximum Ticket Capacity = 200]
+2024-12-12 02:50:00 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-12 02:50:00 INFO  - System configured with: [Total Tickets = 20, Ticket Release Rate = 5, Customer Retrieval Rate = 6, Maximum Ticket Capacity = 200]
+2024-12-12 02:50:24 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-12 02:50:24 INFO  - System configured with: [Total Tickets = 20, Ticket Release Rate = 5, Customer Retrieval Rate = 6, Maximum Ticket Capacity = 200]
+2024-12-12 02:50:49 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-12 02:50:49 INFO  - System configured with: [Total Tickets = 20, Ticket Release Rate = 5, Customer Retrieval Rate = 6, Maximum Ticket Capacity = 200]
+2024-12-12 02:50:58 INFO  - Loading configuration from systemConfiguration.json.
+2024-12-12 02:50:58 INFO  - System configured with: [Total Tickets = 20, Ticket Release Rate = 5, Customer Retrieval Rate = 6, Maximum Ticket Capacity = 200]
+2024-12-12 02:51:27 INFO  - System started with 2 vendors and 2 customers.
+2024-12-12 02:51:30 INFO  - [Vendor-1] Thread initialised.
+2024-12-12 02:51:30 INFO  - [Vendor-2] Thread initialised.
+2024-12-12 02:51:30 INFO  - [Customer-1] Thread initialised.
+2024-12-12 02:51:30 INFO  - [Customer-2] Thread initialised.
+2024-12-12 02:51:30 INFO  - [Vendor-1] Thread started.
+2024-12-12 02:51:30 INFO  - [Vendor-2] Thread started.
+2024-12-12 02:51:30 INFO  - [Customer-1] Thread started.
+2024-12-12 02:51:30 INFO  - [Customer-2] Thread started.
+2024-12-12 02:51:31 INFO  - [Customer-1] Purchased 6 tickets. (Pool size: 14)
+2024-12-12 02:51:31 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 19)
+2024-12-12 02:51:31 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 24)
+2024-12-12 02:51:31 INFO  - [Customer-2] Purchased 6 tickets. (Pool size: 18)
+2024-12-12 02:51:32 INFO  - [Vendor-1] Added 5 tickets. (Pool size: 23)
+2024-12-12 02:51:32 INFO  - [Vendor-2] Added 5 tickets. (Pool size: 28)
+2024-12-12 02:51:32 INFO  - [Customer-1] Purchased 6 tickets. (Pool size: 22)
+2024-12-12 02:51:32 INFO  - [Customer-2] Purchased 6 tickets. (Pool size: 16)
+2024-12-12 02:51:32 INFO  - Stopping all threads.
+2024-12-12 02:51:32 ERROR - [Vendor-1] Interrupted.
+2024-12-12 02:51:32 ERROR - [Vendor-2] Interrupted.
+2024-12-12 02:51:32 ERROR - [Customer-1] Interrupted.
+2024-12-12 02:51:32 ERROR - [Customer-2] Interrupted.
+2024-12-12 02:51:32 INFO  - [Vendor-1] Vendor has been terminated.
+2024-12-12 02:51:32 INFO  - [Customer-1] Customer has been terminated.
+2024-12-12 02:51:32 INFO  - [Vendor-2] Vendor has been terminated.
+2024-12-12 02:51:32 INFO  - [Customer-2] Customer has been terminated.
+2024-12-12 02:51:32 INFO  - All threads stopped.
+2024-12-12 02:51:40 INFO  - System stopped. Exiting...

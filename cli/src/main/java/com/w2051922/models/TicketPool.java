@@ -7,7 +7,12 @@ import java.util.*;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class TicketPool {
+/**
+ * A thread-safe pool of tickets with a maximum capacity.
+ * This class allows vendors to add tickets and customers to remove tickets
+ * while ensuring thread safety using locks and conditions.
+ */
+public class TicketPool implements TicketPoolInterface{
     private final List<Ticket> tickets;
     private final int maxCapacity;
     private final ReentrantLock lock = new ReentrantLock(true);
@@ -15,6 +20,12 @@ public class TicketPool {
     private final Condition notEmpty;
     private static final Logger logger = LogManager.getLogger(TicketPool.class);
 
+    /**
+     * Constructs a new TicketPool with a specified maximum capacity and total number of tickets.
+     *
+     * @param maxCapacity the maximum capacity of the ticket pool
+     * @param totalTickets the total number of tickets to be added to the pool
+     */
     public TicketPool(int maxCapacity, int totalTickets) {
         this.maxCapacity = maxCapacity;
         this.tickets = Collections.synchronizedList(new LinkedList<>());
@@ -35,6 +46,7 @@ public class TicketPool {
      * @param ticketCount the number of tickets to be added to the ticket pool
      * @param vendorId the ID of the vendor adding the tickets
      */
+    @Override
     public void addTicket(int ticketCount, String vendorId) {
         lock.lock();
         try {
@@ -65,6 +77,7 @@ public class TicketPool {
      * @param ticketCount the number of tickets to be removed from the ticket pool
      * @param customerId the ID of the customer requesting the tickets
      */
+    @Override
     public void removeTicket(int ticketCount, String customerId) {
         lock.lock();
         try {

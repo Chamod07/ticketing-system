@@ -1,3 +1,6 @@
+/**
+ * Service to handle ticket availability operations.
+ */
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -12,13 +15,20 @@ export class TicketAvailabilityService {
 
   constructor(private http: HttpClient) {}
 
-  // Polling every half second
+  /**
+   * Polls the server every half second to get the number of available tickets.
+   * @returns {Observable<number>} An observable that emits the number of available tickets.
+   */
   getAvailableTickets(): Observable<number> {
     return interval(500).pipe( // Polling interval
       switchMap(() => this.http.get<number>(`${this.baseUrl}/availability`)) // Request ticket count
     );
   }
 
+  /**
+   * Gets the maximum ticket capacity from the server.
+   * @returns {Observable<number>} An observable that emits the maximum ticket capacity.
+   */
   getMaxTicketCapacity(): Observable<number> {
     return this.http.get<number>(`${this.baseUrl}/max-capacity`);
   }

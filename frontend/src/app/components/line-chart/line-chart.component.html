@@ -1,5 +1,5 @@
-
 <div class="flex justify-content-center" style="gap: 1rem">
+  <!-- Card to display tickets released-->
   <div style="width: 50%; margin-bottom: 1rem">
     <p-card styleClass="m-1">
       <div class="flex justify-content-between align-items-center">
@@ -8,6 +8,8 @@
       </div>
     </p-card>
   </div>
+
+  <!-- Card to display tickets purchased-->
   <div style="width: 50%; margin-bottom: 1rem;">
     <p-card styleClass="m-1">
       <div class="flex justify-content-between align-items-center">
@@ -17,6 +19,8 @@
     </p-card>
   </div>
 </div>
+
+<!-- Card to display real-time chart analytics-->
 <div class="card">
   <h2><i class="pi pi-chart-line" style="font-size: 1.5rem"></i> Real-Time Analytics</h2>
   <p-chart #chart type="line" [data]="data" [options]="options"/>

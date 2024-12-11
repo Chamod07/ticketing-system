@@ -1,7 +1,12 @@
+<!-- Toast component for displaying messages -->
 <p-toast></p-toast>
 <p-card header="System Configuration" >
+
+  <!--  Form for system configuration -->
   <form [formGroup]="configForm" (ngSubmit)="saveConfiguration()">
     <div class="grid">
+
+      <!-- Input for total tickets -->
       <div class="col-12 field h-6rem">
         <label for="totalTickets" class="font-bold">Total Tickets</label>
         <input pInputText id="totalTickets" type="number"
@@ -14,6 +19,7 @@
                class="p-error block">Total Tickets must be at least 1</small>
       </div>
 
+      <!-- Input for ticket release rate -->
       <div class="col-12 field h-6rem">
         <label for="ticketReleaseRate" class="font-bold">Ticket Release Rate</label>
         <input pInputText id="ticketReleaseRate" type="number"
@@ -28,6 +34,7 @@
                class="p-error block">Release Rate must be less than Max Capacity minus Total Tickets</small>
       </div>
 
+      <!-- Input for customer retrieval rate -->
       <div class="col-12 field h-6rem">
         <label for="customerRetrievalRate" class="font-bold">Customer Retrieval Rate</label>
         <input pInputText id="customerRetrievalRate" type="number"
@@ -44,6 +51,7 @@
                class="p-error block">Retrieval Rate must be less than Max Capacity minus Total Tickets</small>
       </div>
 
+      <!-- Input for max capacity -->
       <div class="col-12 field h-6rem">
         <label for="maxCapacity" class="font-bold">Max Capacity</label>
         <input pInputText id="maxCapacity" type="number"
@@ -60,10 +68,13 @@
                class="p-error block">Max Capacity must be greater than Total Tickets</small>
       </div>
 
+      <!-- Button to save configuration -->
       <div class="col-6">
         <p-button label="Save Configuration" type="submit"
                   [disabled]="!configForm.valid" styleClass="w-full"></p-button>
       </div>
+
+      <!-- Button to load configuration -->
       <div class="col-6">
         <p-button label="Load Configuration" type="button"
                   (click)="loadConfiguration()"

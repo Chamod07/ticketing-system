@@ -145,7 +145,7 @@ This system demonstrates its proficiency in utilizing multithreading to address 
        │         │        ├── ticket-availability.component.spec.ts
        │         │        └── ticket-availability.component.ts
        │         ├── models
-       │         │    └── configuration.ts
+       │         │    └── configuration.model.ts
        │         │── services
        │         │     │── count-display.service.ts
        │         │     │── line-chart.service.ts
@@ -251,9 +251,9 @@ For additional details on using each endpoint, refer to the full API documentati
 
 ---
 
-#### Configuration Controller
+#### ConfigurationModel Controller
 
-1. **Get Configuration**
+1. **Get ConfigurationModel**
     - **Endpoint**: `GET /api/v1/system-config`
     - **Description**: Retrieves current configuration settings.
     - **Response**:
@@ -266,7 +266,7 @@ For additional details on using each endpoint, refer to the full API documentati
       }
       ```
 
-2. **Set Configuration**
+2. **Set ConfigurationModel**
     - **Endpoint**: `POST /api/v1/system-config`
     - **Description**: Updates system configuration.
     - **Request Body**:

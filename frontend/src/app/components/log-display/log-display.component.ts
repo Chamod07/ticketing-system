@@ -1,16 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { interval, Subscription } from 'rxjs';
-import {CardModule} from 'primeng/card';
-import {ScrollPanelModule} from 'primeng/scrollpanel';
-import {DatePipe, NgForOf} from '@angular/common';
+import { CardModule } from 'primeng/card';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { DatePipe, NgForOf } from '@angular/common';
+import { LogEntry } from '../../models/log-entry.model';
 
-interface LogEntry {
-  id: number;
-  action: string;
-  timestamp: string;
-}
-
+/**
+ * Component for displaying logs.
+ */
 @Component({
   selector: 'app-log-display',
   standalone: true,
@@ -25,12 +23,26 @@ interface LogEntry {
 })
 export class LogDisplayComponent implements OnInit, OnDestroy {
 
+  /**
+   * Array to hold log entries.
+   */
   logs: LogEntry[] = [];
 
+  /**
+   * Subscription for periodic polling.
+   */
   private pollingSubscription?: Subscription;
 
+  /**
+   * Constructor to inject HttpClient.
+   * @param http - HttpClient for making HTTP requests.
+   */
   constructor(private http: HttpClient) {}
 
+  /**
+   * Lifecycle hook that is called after data-bound properties are initialized.
+   * Sets up periodic polling to fetch logs.
+   */
   ngOnInit(): void {
     // periodic polling
     this.pollingSubscription = interval(500).subscribe(() => {
@@ -41,6 +53,9 @@ export class LogDisplayComponent implements OnInit, OnDestroy {
     this.fetchLogs();
   }
 
+  /**
+   * Fetches the latest logs from the server.
+   */
   fetchLogs(): void {
     this.http.get<LogEntry[]>('http://localhost:8081/api/v1/log/latest').subscribe({
       next: (data) => {
@@ -52,10 +67,17 @@ export class LogDisplayComponent implements OnInit, OnDestroy {
     });
   }
 
+  /**
+   * Clears the log entries.
+   */
   clearLogs(): void {
     this.logs = [];
   }
 
+  /**
+   * Lifecycle hook that is called when the component is destroyed.
+   * Unsubscribes from the polling subscription.
+   */
   ngOnDestroy(): void {
     // unsubscribe from polling
     this.pollingSubscription?.unsubscribe();

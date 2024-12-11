@@ -11,6 +11,10 @@ import {TagModule} from 'primeng/tag';
 import {Button} from 'primeng/button';
 import {TooltipModule} from 'primeng/tooltip';
 
+/**
+ * ControlPanelComponent is responsible for managing the control panel UI and interacting with the backend
+ * to start, stop, pause, and resume the system. It also handles displaying system status and metrics.
+ */
 @Component({
   selector: 'app-control-panel',
   standalone: true,
@@ -40,6 +44,10 @@ export class ControlPanelComponent implements OnInit {
   private baseUrl = 'http://localhost:8081/api/v1';
   systemStatus: string = 'Stopped';
 
+  /**
+   * Lifecycle hook that is called after data-bound properties of a directive are initialized.
+   * Initializes the system state and subscribes to metrics updates.
+   */
   ngOnInit(): void {
     this.updateSystemState();
     this.metricsService.metrics$.subscribe((updatedMetrics) => {
@@ -47,6 +55,9 @@ export class ControlPanelComponent implements OnInit {
     });
   }
 
+  /**
+   * Fetches the system state from the backend and updates the systemStatus property.
+   */
   updateSystemState(): void {
     this.http.get(`${this.baseUrl}/system/state`, { responseType: 'text' }).subscribe(
       (state: string) => {
@@ -59,6 +70,10 @@ export class ControlPanelComponent implements OnInit {
     );
   }
 
+  /**
+   * Starts the system by sending an HTTP POST request to the backend.
+   * Displays a message if the system cannot be started without vendors or customers.
+   */
   startSystem() {
     if (this.metrics.activeVendors === 0 && this.metrics.activeCustomers === 0) {
       this.messageService.add({
@@ -73,11 +88,14 @@ export class ControlPanelComponent implements OnInit {
         console.log(response);
         this.messageService.add({severity: 'success', summary: 'System Started'});
       }, (error) => {
-        console.error('Failed to start system');
+        console.error('Failed to start system', error);
       });
     }
   }
 
+  /**
+   * Pauses the system by sending an HTTP POST request to the backend.
+   */
   pauseSystem() {
     this.http.post(`${this.baseUrl}/system/pause`, {}, {responseType: 'text'}).subscribe((response) => {
       console.log('API call success: Pause system');
@@ -87,6 +105,9 @@ export class ControlPanelComponent implements OnInit {
     });
   }
 
+  /**
+   * Resumes the system by sending an HTTP POST request to the backend.
+   */
   resumeSystem() {
     this.http.post(`${this.baseUrl}/system/resume`, {}, {responseType: 'text'}).subscribe((response) => {
       console.log('API call success: Resume system');
@@ -96,11 +117,16 @@ export class ControlPanelComponent implements OnInit {
     });
   }
 
+  /**
+   * Stops the system by sending an HTTP POST request to the backend.
+   * Updates the system status and displays a message.
+   */
   stopSystem() {
     this.http.post(`${this.baseUrl}/system/stop`, {}, { responseType: 'text' }).subscribe({
       next: () => {
         console.log('API call success: Stop system');
         this.systemStatus = 'Stopped';
+
         this.messageService.add({ severity: 'warn', summary: 'System Stopped' });
 
         // Update the counts from the backend
@@ -112,6 +138,9 @@ export class ControlPanelComponent implements OnInit {
     });
   }
 
+  /**
+   * Updates the active customer and vendor counts by fetching the counts from the backend.
+   */
   updateCounts() {
     let updatedMetrics = { activeCustomers: 0, activeVendors: 0, vipCustomers: 0 };
 
@@ -133,6 +162,11 @@ export class ControlPanelComponent implements OnInit {
     });
   }
 
+  /**
+   * Returns the severity level based on the system status.
+   * @param systemStatus The system status
+   * @returns The severity level
+   */
   getSeverity(systemStatus: string): "success" | "secondary" | "info" | "warning" | "danger" | "contrast" | undefined {
     switch (systemStatus) {
       case 'Running':

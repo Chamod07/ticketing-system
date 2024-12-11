@@ -1,9 +1,12 @@
+<!-- Card component to display ticket availability -->
 <p-card>
   <div style="text-align: center;">
     <h3>Available Tickets</h3>
+    <!-- Display current and total available tickets -->
     <h2 style="font-weight: bold">{{availableTickets.current}} / {{availableTickets.total}}</h2>
+    <!-- Progress bar showing the percentage of available tickets -->
     <p-progressBar [value]="Math.round((availableTickets.current / availableTickets.total) * 100)"></p-progressBar>
   </div>
+  <!-- Display total tickets available -->
   <p>Total tickets available: {{availableTickets.current}} / {{availableTickets.total}}</p>
 </p-card>
-

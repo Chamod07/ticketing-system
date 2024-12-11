@@ -2,31 +2,45 @@ import { Component, OnInit } from '@angular/core';
 import { Button } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CountDisplayService } from '../../services/count-display.service';
-import {FormsModule} from "@angular/forms";
-import {TooltipModule} from "primeng/tooltip";
+import { FormsModule } from "@angular/forms";
+import { TooltipModule } from "primeng/tooltip";
 
+/**
+ * Component to display various counts such as active vendors, active customers, and VIP customers.
+ */
 @Component({
   selector: 'app-count-display',
   templateUrl: './count-display.component.html',
   standalone: true,
-    imports: [
-        Button,
-        CardModule,
-        FormsModule,
-        TooltipModule,
-    ],
+  imports: [
+    Button,
+    CardModule,
+    FormsModule,
+    TooltipModule,
+  ],
   styleUrls: ['./count-display.component.css']
 })
 export class CountDisplayComponent implements OnInit {
 
+  /**
+   * Metrics object to hold the counts of active vendors, active customers, and VIP customers.
+   */
   metrics = {
     activeVendors: 0,
     activeCustomers: 0,
     vipCustomers: 0
   };
 
+  /**
+   * Constructor to inject CountDisplayService.
+   * @param countDisplayService - Service to fetch and update counts.
+   */
   constructor(private countDisplayService: CountDisplayService) {}
 
+  /**
+   * Lifecycle hook that is called after data-bound properties of a directive are initialized.
+   * Initializes the component by loading counts and subscribing to metrics updates.
+   */
   ngOnInit() {
     this.loadCounts();
     this.countDisplayService.metrics$.subscribe((updatedMetrics) => {
@@ -34,6 +48,9 @@ export class CountDisplayComponent implements OnInit {
     });
   }
 
+  /**
+   * Loads the counts for customers, vendors, and VIP customers from the service.
+   */
   loadCounts() {
     this.countDisplayService.getCustomerCount().subscribe({
       next: (count) => {
@@ -66,6 +83,12 @@ export class CountDisplayComponent implements OnInit {
     });
   }
 
+  /**
+   * Updates the specified metric by incrementing or decrementing its value.
+   * @param metric - The metric to update ('customers', 'vendors', 'vip').
+   * @param increment - Whether to increment the metric.
+   * @param decrement - Whether to decrement the metric.
+   */
   updateMetric(metric: string, increment: boolean, decrement: boolean) {
     switch (metric) {
       case 'customers':
@@ -137,6 +160,9 @@ export class CountDisplayComponent implements OnInit {
     this.updateServiceMetrics();
   }
 
+  /**
+   * Updates the metrics in the service with the current metrics.
+   */
   private updateServiceMetrics() {
     this.countDisplayService.updateMetrics(this.metrics);
   }

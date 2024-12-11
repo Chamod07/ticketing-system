@@ -6,13 +6,18 @@
     left: 0;
     right: 0;
     z-index: 1000;">
+
   <div class="layout-topbar-left" style="display: inline-flex">
+
+    <!-- Logo & heading -->
     <i class="pi pi-ticket" style="font-size: 1.8rem; padding: 2rem; color: #ff9f2e"></i>
     <h2><a href="https://github.com/Chamod07/ticketing-system" target="_blank" style="text-decoration: none; color: inherit;">
       Event Ticketing System</a></h2>
     <p-toast position="bottom-right"></p-toast>
   </div>
   <div class="layout-topbar-right" style="display: flex; align-items: center; gap: 2rem; padding-right: 6rem">
+
+    <!-- System Status -->
     <p-tag [severity]="getSeverity(systemStatus)" value="● {{ systemStatus.toUpperCase() }}" pTooltip="Status" tooltipPosition="bottom">
     </p-tag>
 

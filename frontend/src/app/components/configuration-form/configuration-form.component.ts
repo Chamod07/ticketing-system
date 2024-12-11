@@ -14,10 +14,13 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { HttpClient } from '@angular/common/http';
-import {Configuration} from '../../models/configuration';
+import {Configuration} from '../../models/configuration.model';
 import {TooltipModule} from 'primeng/tooltip';
 
-// Custom validator to ensure maxCapacity is greater than totalTickets
+/**
+ * Custom validator to ensure maxCapacity is greater than totalTickets.
+ * @returns A ValidatorFn that checks if maxCapacity is greater than totalTickets.
+ */
 export function maxCapacityValidator(): ValidatorFn {
   return (control: AbstractControl): {[key: string]: any} | null => {
     const form = control.parent;
@@ -26,13 +29,19 @@ export function maxCapacityValidator(): ValidatorFn {
     const totalTickets = form.get('totalTickets')?.value;
     const maxCapacity = control.value;
 
+    // Check if maxCapacity is less than or equal to totalTickets
     return maxCapacity <= totalTickets
       ? { maxCapacityTooLow: true }
       : null;
   };
 }
 
-// check if the release rate and retrieval rates are within range
+/**
+ * Validator to check if the value is less than the difference between maxCapacity and totalTickets.
+ * @param maxCapacityControlName - The name of the maxCapacity control.
+ * @param totalTicketsControlName - The name of the totalTickets control.
+ * @returns A ValidatorFn that checks if the value is less than the difference between maxCapacity and totalTickets.
+ */
 function lessThanMaxCapacityTotalTickets(maxCapacityControlName: string, totalTicketsControlName: string): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } | null => {
     const form = control.parent;
@@ -42,12 +51,17 @@ function lessThanMaxCapacityTotalTickets(maxCapacityControlName: string, totalTi
     const totalTickets = form.get(totalTicketsControlName)?.value;
     const value = control.value;
 
+    // Check if the value is greater than or equal to the difference between maxCapacity and totalTickets
     return value >= (maxCapacity - totalTickets)
       ? { lessThanMaxCapacityTotalTickets: true }
       : null;
   };
 }
 
+/**
+ * Component for the configuration form.
+ * Provides functionality to load and save system configuration.
+ */
 @Component({
   selector: 'app-configuration-form',
   templateUrl: './configuration-form.component.html',
@@ -66,13 +80,16 @@ function lessThanMaxCapacityTotalTickets(maxCapacityControlName: string, totalTi
 })
 export class ConfigurationFormComponent implements OnInit {
   configForm!: FormGroup;
-  http = inject(HttpClient);
+  http = inject(HttpClient); // Inject directly to avoid circular dependency
 
   constructor(
     private fb: FormBuilder,
     private messageService: MessageService
   ) {}
 
+  /**
+   * Initializes the component by loading the configuration and setting up the form.
+   */
   ngOnInit() {
     this.loadConfiguration();
     this.configForm = this.fb.group({
@@ -103,6 +120,9 @@ export class ConfigurationFormComponent implements OnInit {
     });
   }
 
+  /**
+   * Loads the configuration from the server and updates the form values.
+   */
   loadConfiguration() {
     this.http.get<Configuration>("http://localhost:8081/api/v1/system-config").subscribe({
       next: (config) => {
@@ -134,6 +154,10 @@ export class ConfigurationFormComponent implements OnInit {
     });
   }
 
+  /**
+   * Saves the configuration to the server if the form is valid.
+   * Displays success or error messages based on the result.
+   */
   saveConfiguration() {
     if (this.configForm.valid) {
       const configToSave: Configuration = {

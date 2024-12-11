@@ -1,20 +1,27 @@
+<!-- Main container -->
 <div class="layout-main-container" style="max-width: 1400px; margin: 0 auto;">
+  <!-- Control panel component -->
   <app-control-panel></app-control-panel>
   <div class="grid">
-  <div class="col-8">
-    <app-count-display></app-count-display>
-    <div class="mt-3">
-      <app-ticket-availability></app-ticket-availability>
+    <div class="col-8">
+      <!-- Count display component -->
+      <app-count-display></app-count-display>
+      <div class="mt-3">
+        <!-- Ticket availability component -->
+        <app-ticket-availability></app-ticket-availability>
+      </div>
+      <div class="mt-3">
+        <!-- Line chart component -->
+        <app-line-chart></app-line-chart>
+      </div>
     </div>
-    <div class="mt-3">
-      <app-line-chart></app-line-chart>
+    <div class="col-4">
+      <!-- Configuration form component -->
+      <app-configuration-form></app-configuration-form>
+      <div class="mt-4">
+        <!-- Log display component -->
+        <app-log-display></app-log-display>
+      </div>
     </div>
   </div>
-  <div class="col-4">
-    <app-configuration-form></app-configuration-form>
-    <div class="mt-4">
-      <app-log-display></app-log-display>
-    </div>
-  </div>
-</div>
 </div>

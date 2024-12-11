@@ -5,6 +5,10 @@ import { LineChartService } from '../../services/line-chart.service';
 import { UIChart } from 'primeng/chart';
 import {CardModule} from 'primeng/card';
 
+/**
+ * LineChartComponent is responsible for displaying a line chart
+ * that shows the number of tickets sold and purchased over time.
+ */
 @Component({
   selector: 'app-line-chart',
   standalone: true,
@@ -15,7 +19,13 @@ import {CardModule} from 'primeng/card';
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.css']
 })
+
+/**
+ * LineChartComponent class implements OnInit and OnDestroy interfaces
+ * to handle initialization and cleanup of the component.
+ */
 export class LineChartComponent implements OnInit, OnDestroy {
+  // ViewChild decorator to access the chart component
   @ViewChild('chart') chart: UIChart | undefined;
 
   ticketsSold: number = 0;
@@ -24,14 +34,18 @@ export class LineChartComponent implements OnInit, OnDestroy {
   options: any;
   private dataSubscription: Subscription | undefined;
 
+  // Line chart data
   private labels: string[] = [];
   private purchasedData: number[] = [];
   private releasedData: number[] = [];
 
   constructor(private lineChartService: LineChartService) {}
 
+  /**
+   * Initializes the component, sets up the chart data and options,
+   * and subscribes to the ticket data updates.
+   */
   ngOnInit() {
-
     this.lineChartService.pollTicketData().subscribe({
       next: (data) => {
         this.ticketsSold = data.released;
@@ -145,6 +159,9 @@ export class LineChartComponent implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * Unsubscribes from the data updates when the component is destroyed.
+   */
   ngOnDestroy(): void {
     if (this.dataSubscription) {
       this.dataSubscription.unsubscribe();

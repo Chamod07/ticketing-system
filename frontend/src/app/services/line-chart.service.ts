@@ -1,3 +1,6 @@
+/**
+ * Service to handle line chart data operations.
+ */
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, combineLatest, interval } from 'rxjs';
@@ -12,17 +15,27 @@ export class LineChartService {
 
   constructor(private http: HttpClient) {}
 
-  // tickets purchased count
+  /**
+   * Fetches the count of purchased tickets.
+   * @returns {Observable<number>} An observable containing the count of purchased tickets.
+   */
   getTicketsPurchased(): Observable<number> {
     return this.http.get<number>(this.purchasedUrl);
   }
 
-  // tickets released count
+  /**
+   * Fetches the count of released tickets.
+   * @returns {Observable<number>} An observable containing the count of released tickets.
+   */
   getTicketsReleased(): Observable<number> {
     return this.http.get<number>(this.releasedUrl);
   }
 
-  // Poll both endpoints
+  /**
+   * Polls both endpoints to get the count of purchased and released tickets at regular intervals.
+   * @returns {Observable<{ purchased: number; released: number; time: string }>}
+   * An observable containing the counts of purchased and released tickets along with a timestamp.
+   */
   pollTicketData(): Observable<{ purchased: number; released: number; time: string }> {
     return interval(100).pipe(
       switchMap(() =>

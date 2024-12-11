@@ -1,40 +1,44 @@
 <div class="grid">
-<p-card class="col-4">
-  <div class="flex flex-column align-items-center">
-    <i class="pi pi-shop text-5xl mb-1" style="color: #327bef"></i>
-    <h2>{{metrics.activeVendors}}</h2>
-    <span>Active Vendors</span>
-    <div class="flex gap-2 mt-2">
-      <p-button icon="pi pi-minus" [raised]="true" (click)="updateMetric('vendors', false, true)"
-                [disabled]="metrics.activeVendors <= 0" pTooltip="Remove vendors" tooltipPosition="bottom"></p-button>
-      <p-button icon="pi pi-plus" [raised]="true" (click)="updateMetric('vendors', true, false)" pTooltip="Add vendors" tooltipPosition="bottom"></p-button>
-    </div>
-  </div>
-</p-card>
 
-<p-card class="col-4">
-  <div class="flex flex-column align-items-center">
-    <i class="pi pi-users text-5xl mb-1" style="color: #14bf14"></i>
-    <h2>{{metrics.activeCustomers}}</h2>
-    <span>Active Customers</span>
-    <div class="flex gap-2 mt-2">
-      <p-button icon="pi pi-minus" [raised]="true" (click)="updateMetric('customers', false, true)"
-                [disabled]="metrics.activeCustomers <= 0" pTooltip="Remove customers" tooltipPosition="bottom"></p-button>
-      <p-button icon="pi pi-plus" [raised]="true" (click)="updateMetric('customers', true, false)" pTooltip="Add customers" tooltipPosition="bottom"></p-button>
+<!--  Active Vendors card -->
+  <p-card class="col-4">
+    <div class="flex flex-column align-items-center">
+      <i class="pi pi-shop text-5xl mb-1" style="color: #327bef"></i>
+      <h2>{{metrics.activeVendors}}</h2>
+      <span>Active Vendors</span>
+      <div class="flex gap-2 mt-2">
+        <p-button icon="pi pi-minus" [raised]="true" (click)="updateMetric('vendors', false, true)"
+                  [disabled]="metrics.activeVendors <= 0" pTooltip="Remove vendors" tooltipPosition="bottom"></p-button>
+        <p-button icon="pi pi-plus" [raised]="true" (click)="updateMetric('vendors', true, false)" pTooltip="Add vendors" tooltipPosition="bottom"></p-button>
+      </div>
     </div>
-  </div>
-</p-card>
+  </p-card>
 
-<p-card class="col-4">
-  <div class="flex flex-column align-items-center">
-    <i class="pi pi-star text-5xl mb-1" style="color: orange"></i>
-    <h2>{{metrics.vipCustomers}}</h2>
-    <span>VIP Customers</span>
-    <div class="flex gap-2 mt-2">
-      <p-button icon="pi pi-minus" [raised]="true" (onClick)="updateMetric('vip', false, true)"
-                [disabled]="metrics.vipCustomers <= 0" pTooltip="Remove VIP customers" tooltipPosition="bottom"></p-button>
-      <p-button icon="pi pi-plus" [raised]="true" (onClick)="updateMetric('vip', true, false)" pTooltip="Add VIP customers" tooltipPosition="bottom"></p-button>
+  <!-- Active Customers card -->
+  <p-card class="col-4">
+    <div class="flex flex-column align-items-center">
+      <i class="pi pi-users text-5xl mb-1" style="color: #14bf14"></i>
+      <h2>{{metrics.activeCustomers}}</h2>
+      <span>Active Customers</span>
+      <div class="flex gap-2 mt-2">
+        <p-button icon="pi pi-minus" [raised]="true" (click)="updateMetric('customers', false, true)"
+                  [disabled]="metrics.activeCustomers <= 0" pTooltip="Remove customers" tooltipPosition="bottom"></p-button>
+        <p-button icon="pi pi-plus" [raised]="true" (click)="updateMetric('customers', true, false)" pTooltip="Add customers" tooltipPosition="bottom"></p-button>
+      </div>
     </div>
-  </div>
-</p-card>
+  </p-card>
+
+  <!-- VIP Customers card -->
+  <p-card class="col-4">
+    <div class="flex flex-column align-items-center">
+      <i class="pi pi-star text-5xl mb-1" style="color: orange"></i>
+      <h2>{{metrics.vipCustomers}}</h2>
+      <span>VIP Customers</span>
+      <div class="flex gap-2 mt-2">
+        <p-button icon="pi pi-minus" [raised]="true" (onClick)="updateMetric('vip', false, true)"
+                  [disabled]="metrics.vipCustomers <= 0" pTooltip="Remove VIP customers" tooltipPosition="bottom"></p-button>
+        <p-button icon="pi pi-plus" [raised]="true" (onClick)="updateMetric('vip', true, false)" pTooltip="Add VIP customers" tooltipPosition="bottom"></p-button>
+      </div>
+    </div>
+  </p-card>
 </div>

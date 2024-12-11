@@ -1,7 +1,11 @@
+/**
+ * component for displaying ticket availability.
+ * It polls the ticket availability and maximum capacity from a service.
+ */
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import {ProgressBarModule} from 'primeng/progressbar';
-import {CardModule} from 'primeng/card';
-import { TicketAvailabilityService} from '../../services/ticket-availability.service';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { CardModule } from 'primeng/card';
+import { TicketAvailabilityService } from '../../services/ticket-availability.service';
 import { interval, Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
@@ -24,9 +28,16 @@ export class TicketAvailabilityComponent implements OnInit, OnDestroy {
   private ticketSubscription: Subscription | undefined;
   private maxCapacitySubscription: Subscription | undefined;
 
+  /**
+   * Constructor for TicketAvailabilityComponent.
+   * @param ticketService - Service to fetch ticket availability data.
+   */
   constructor(private ticketService: TicketAvailabilityService) {
   }
 
+  /**
+   * Initializes the component and starts polling for ticket availability and max capacity.
+   */
   ngOnInit(): void {
     this.maxCapacitySubscription = interval(500).pipe( // Polling interval of 5 seconds
       switchMap(() => this.ticketService.getMaxTicketCapacity())
@@ -48,6 +59,10 @@ export class TicketAvailabilityComponent implements OnInit, OnDestroy {
       }
     );
   }
+
+  /**
+   * Cleans up subscriptions when the component is destroyed.
+   */
   ngOnDestroy(): void {
     if (this.ticketSubscription) {
       this.ticketSubscription.unsubscribe(); // Unsubscribe on component destroy
@@ -57,5 +72,8 @@ export class TicketAvailabilityComponent implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * Math object for use in the template.
+   */
   protected readonly Math = Math;
 }

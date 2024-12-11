@@ -39,10 +39,15 @@ public class CustomerServiceImpl implements CustomerService {
     private final List<Thread> customerThreads = new ArrayList<>();
     private final List<Customer> customers = new ArrayList<>();
     private final List<CustomerRunnable> customerRunnables = new ArrayList<>();
+
+    private final List<Thread> vipCustomerThreads = new ArrayList<>();
+    private final List<Customer> vipCustomers = new ArrayList<>();
+    private final List<CustomerRunnable> vipCustomerRunnables = new ArrayList<>();
+
     private final Logger logger = LogManager.getLogger(CustomerServiceImpl.class);
 
     @Override
-    public void addCustomer() {
+    public void addCustomer(boolean isVip) {
         SystemConfiguration systemConfiguration = configService.getConfiguration();
 
         if (systemConfiguration == null) {
@@ -51,106 +56,91 @@ public class CustomerServiceImpl implements CustomerService {
             Customer customer = new Customer();
             customer.setTicketsPerRetrieval(systemConfiguration.getCustomerRetrievalRate());
             customer.setRetrievalInterval(1);
-            customer.setPriority(false);
+            customer.setPriority(isVip);
             customer.setTimestamp(LocalDateTime.now());
 
             customerRepository.save(customer);
 
-            customers.add(customer);
-
-            CustomerRunnable customerRunnable = new CustomerRunnable(customer, ticketPoolService);
+            CustomerRunnable customerRunnable = new CustomerRunnable(customer, ticketPoolService, isVip);
             Thread customerThread = new Thread(customerRunnable);
 
-            customerThreads.add(customerThread);
-            customerRunnables.add(customerRunnable);
+            if (isVip) {
+                customerThread.setPriority(Thread.MAX_PRIORITY); // set maximum priority for the VIP thread
+                vipCustomers.add(customer);
+                vipCustomerThreads.add(customerThread);
+                vipCustomerRunnables.add(customerRunnable);
+                logger.info("[VIP Customer-{}] added.", customerRunnable.getCustomerId());
+            } else {
+                customers.add(customer);
+                customerThreads.add(customerThread);
+                customerRunnables.add(customerRunnable);
+                logger.info("[Customer-{}] added.", customerRunnable.getCustomerId());
+            }
 
             // start thread if system is running
             if (Objects.equals(systemService.getState(), "Running")) {
                 customerThread.start();
-                logger.info("[Customer-{}] started immediately as the system is running.", customerRunnable.getCustomerId());
-            } else logger.info("[Customer-{}] added.", customerRunnable.getCustomerId());
+                logger.info("[{}Customer-{}] started immediately as the system is running.", isVip ? "VIP " : "", customerRunnable.getCustomerId());
+            }
         }
     }
 
     @Override
-    public void addVipCustomer() {
-        SystemConfiguration systemConfiguration = configService.getConfiguration();
-        if (systemConfiguration == null) {
-            logger.warn("System configuration is not initialized. Cannot add new vip customer.");
-        } else {
-            Customer customer = new Customer();
-            customer.setTicketsPerRetrieval(systemConfiguration.getCustomerRetrievalRate());
-            customer.setRetrievalInterval(1);
-            customer.setPriority(true); // set priority to true
-            customer.setTimestamp(LocalDateTime.now());
+    public void removeCustomer(boolean isVip) {
+        List<Customer> customerList = isVip ? vipCustomers : customers;
+        List<Thread> customerThreadList = isVip ? vipCustomerThreads : customerThreads;
+        List<CustomerRunnable> customerRunnableList = isVip ? vipCustomerRunnables : customerRunnables;
 
-            customerRepository.save(customer);
+        if (!customerList.isEmpty() && customerRepository != null) {
+            int lastIndex = customerList.size() - 1;
 
-            customers.add(customer);
-
-            CustomerRunnable customerRunnable = new CustomerRunnable(customer, ticketPoolService);
-            Thread customerThread = new Thread(customerRunnable);
-
-            customerThreads.add(customerThread);
-            customerRunnables.add(customerRunnable);
-
-            // start thread if system is running
-            if (Objects.equals(systemService.getState(), "Running")) {
-                customerThread.start();
-                logger.info("{VIP} [Customer-{}] Started immediately as the system is running.", customerRunnable.getCustomerId());
-            } else logger.info("{VIP} [Customer-{}] Added.", customerRunnable.getCustomerId());
-        }
-    }
-
-    public void removeVipCustomer() {
-        if (!customers.isEmpty() && customerRepository != null) {
-            int lastIndex = customers.size() - 1;
-
-            Thread threadToRemove = customerThreads.get(lastIndex);
+            Thread threadToRemove = customerThreadList.get(lastIndex);
             threadToRemove.interrupt();
 
-            customerThreads.remove(threadToRemove);
-            customerRunnables.remove(customerRunnables.get(lastIndex));
+            customerThreadList.remove(threadToRemove);
+            customerRunnableList.remove(customerRunnableList.get(lastIndex));
+            customerList.remove(lastIndex);
 
             // Remove customer from database
-            customerRepository.delete(customers.get(lastIndex));
-            customers.remove(customers.get(lastIndex));
-            CustomerRunnable.removeCustomerCount();
+            if (isVip) {
+                customerRepository.delete(customerRepository.findFirstByPriorityTrueOrderByTimestampDesc()); // remove VIP customer
+            } else {
+                customerRepository.delete(customerRepository.findFirstByPriorityFalseOrderByTimestampDesc()); // remove normal customer
+            }
 
-            logger.info("Customer-{} removed", customers.size()+1);
+            if (isVip) {
+                CustomerRunnable.removeVipCustomerCount();
+            } else {
+                CustomerRunnable.removeCustomerCount();
+            }
+
+            logger.info("{}Customer-{} removed", isVip ? "VIP " : "", customerList.size() + 1);
         } else {
-            logger.warn("No customers to remove.");
-        }
-    }
-
-    @Override
-    public void removeCustomer() {
-        if (!customers.isEmpty() && customerRepository != null) {
-            int lastIndex = customers.size() - 1;
-
-            Thread threadToRemove = customerThreads.get(lastIndex);
-            threadToRemove.interrupt();
-
-            customerThreads.remove(threadToRemove);
-            customerRunnables.remove(customerRunnables.get(lastIndex));
-
-            // Remove customer from database
-            customerRepository.delete(customers.get(lastIndex));
-            customers.remove(customers.get(lastIndex));
-            CustomerRunnable.removeCustomerCount();
-
-            logger.info("Customer-{} removed", customers.size()+1);
-        } else {
-            logger.warn("No customers to remove.");
+            logger.warn("No {} customers to remove.", isVip ? "VIP" : "regular");
         }
     }
 
     @Override
     public void startCustomers() {
-        if (customerThreads.isEmpty()) {
+        if (customerThreads.isEmpty() && vipCustomerThreads.isEmpty()) {
             logger.warn("No customers to start.");
             return;
         }
+
+        for (int i = 0; i < vipCustomerThreads.size(); i++) {
+            Thread customerThread = vipCustomerThreads.get(i);
+            CustomerRunnable customerRunnable = vipCustomerRunnables.get(i);
+
+            if (!customerThread.isAlive()) {
+                customerThread = new Thread(customerRunnable);
+                vipCustomerThreads.set(i, customerThread);
+                customerThread.start();
+                logger.info("VIP Customer-{} started.", customerRunnable.getCustomerId());
+            } else {
+                logger.warn("VIP Customer-{} already started.", customerRunnable.getCustomerId());
+            }
+        }
+
         for (int i = 0; i < customerThreads.size(); i++) {
             Thread customerThread = customerThreads.get(i);
             CustomerRunnable customerRunnable = customerRunnables.get(i);
@@ -168,9 +158,14 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void pauseCustomers() {
-        if (customerThreads.isEmpty()) {
+        if (customerThreads.isEmpty() && vipCustomerThreads.isEmpty()) {
             logger.warn("No customers to pause.");
             return;
+        }
+
+        for (CustomerRunnable vipCustomerRunnable : vipCustomerRunnables) {
+            vipCustomerRunnable.pause();
+            logger.info("VIP Customer-{} paused.", vipCustomerRunnable.getCustomerId());
         }
 
         for (CustomerRunnable customerRunnable : customerRunnables) {
@@ -181,9 +176,14 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void resumeCustomers() {
-        if (customerThreads.isEmpty()) {
+        if (customerThreads.isEmpty() && vipCustomerThreads.isEmpty()) {
             logger.warn("No customers to resume.");
             return;
+        }
+
+        for (CustomerRunnable vipCustomerRunnable : vipCustomerRunnables) {
+            vipCustomerRunnable.resume();
+            logger.info("VIP Customer-{} resumed.", vipCustomerRunnable.getCustomerId());
         }
 
         for (CustomerRunnable customerRunnable : customerRunnables) {
@@ -192,6 +192,14 @@ public class CustomerServiceImpl implements CustomerService {
         }
 
         // start customers added while paused
+        for (int i = 0; i < vipCustomerThreads.size(); i++) {
+            Thread vipCustomerThread = vipCustomerThreads.get(i);
+            if (!vipCustomerThread.isAlive()) {
+                vipCustomerThread.start();
+                logger.info("VIP Customer-{} started during system resume.", vipCustomerRunnables.get(i).getCustomerId());
+            }
+        }
+
         for (int i = 0; i < customerThreads.size(); i++) {
             Thread customerThread = customerThreads.get(i);
             if (!customerThread.isAlive()) {
@@ -203,25 +211,42 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void stopCustomers() {
-        if (customerThreads.isEmpty()) {
+        if (customerThreads.isEmpty() && vipCustomerThreads.isEmpty()) {
             logger.warn("No customers to stop.");
             return;
         }
 
-        for (int i = 0; i < customerThreads.size(); i++) {
-            new CustomerRunnable(customers.get(i), ticketPoolService).stop();
-            customerThreads.get(i).interrupt();
+        for (Thread customerThread : customerThreads) {
+            customerThread.interrupt();
         }
+
+        for (Thread vipCustomerThread : vipCustomerThreads) {
+            vipCustomerThread.interrupt();
+        }
+
         customers.clear();
         customerThreads.clear();
         customerRunnables.clear();
+
+        vipCustomers.clear();
+        vipCustomerThreads.clear();
+        vipCustomerRunnables.clear();
+
         CustomerRunnable.resetCustomerCount();
+        CustomerRunnable.resetVipCustomerCount();
+
         configService.loadConfiguration();
+
         logger.info("All customers stopped.");
     }
 
     @Override
     public int getCustomerCount() {
         return customers.size();
+    }
+
+    @Override
+    public int getVipCustomerCount() {
+        return vipCustomers.size();
     }
 }

@@ -47,4 +47,18 @@ export class CountDisplayService {
   getVendorCount(): Observable<number> {
     return this.http.get<number>(`${this.baseUrl}/vendor/count`);
   }
+
+  // VIP Customer methods
+  addVipCustomer(): Observable<number> {
+    return this.http.post<number>(`${this.baseUrl}/customer/add-vip`, {});
+  }
+
+  removeVipCustomer(): Observable<number> {
+    return this.http.delete<number>(`${this.baseUrl}/customer/remove-vip`, {});
+  }
+
+  getVipCustomerCount(): Observable<number> {
+    return this.http.get<number>(`${this.baseUrl}/customer/count-vip`);
+  }
+
 }

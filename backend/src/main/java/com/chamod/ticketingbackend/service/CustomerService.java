@@ -2,11 +2,9 @@ package com.chamod.ticketingbackend.service;
 
 public interface CustomerService {
 
-    void addCustomer();
+    void addCustomer(boolean isVip);
 
-    void addVipCustomer();
-
-    void removeCustomer();
+    void removeCustomer(boolean isVip);
 
     void startCustomers();
 
@@ -17,4 +15,6 @@ public interface CustomerService {
     void stopCustomers();
 
     int getCustomerCount();
+
+    int getVipCustomerCount();
 }

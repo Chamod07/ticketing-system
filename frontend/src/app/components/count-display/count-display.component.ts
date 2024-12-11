@@ -25,17 +25,17 @@ export class CountDisplayComponent implements OnInit {
     vipCustomers: 0
   };
 
-  constructor(private metricsService: CountDisplayService) {}
+  constructor(private countDisplayService: CountDisplayService) {}
 
   ngOnInit() {
     this.loadCounts();
-    this.metricsService.metrics$.subscribe((updatedMetrics) => {
+    this.countDisplayService.metrics$.subscribe((updatedMetrics) => {
       this.metrics = updatedMetrics;
     });
   }
 
   loadCounts() {
-    this.metricsService.getCustomerCount().subscribe({
+    this.countDisplayService.getCustomerCount().subscribe({
       next: (count) => {
         this.metrics.activeCustomers = count;
         this.updateServiceMetrics();
@@ -45,7 +45,7 @@ export class CountDisplayComponent implements OnInit {
       }
     });
 
-    this.metricsService.getVendorCount().subscribe({
+    this.countDisplayService.getVendorCount().subscribe({
       next: (count) => {
         this.metrics.activeVendors = count;
         this.updateServiceMetrics();
@@ -54,13 +54,23 @@ export class CountDisplayComponent implements OnInit {
         console.error('Error fetching vendor count', err);
       }
     });
+
+    this.countDisplayService.getVipCustomerCount().subscribe({
+      next: (count) => {
+        this.metrics.vipCustomers = count;
+        this.updateServiceMetrics();
+      },
+      error: (err) => {
+        console.error('Error fetching VIP customer count', err);
+      }
+    });
   }
 
   updateMetric(metric: string, increment: boolean, decrement: boolean) {
     switch (metric) {
       case 'customers':
         if (increment) {
-          this.metricsService.addCustomer().subscribe({
+          this.countDisplayService.addCustomer().subscribe({
             next: (count) => {
               console.log('Received customer count:', count);
               // Ensure count is a valid number
@@ -69,7 +79,7 @@ export class CountDisplayComponent implements OnInit {
             error: (err) => console.error('Error adding customer', err)
           });
         } else if (decrement) {
-          this.metricsService.removeCustomer().subscribe({
+          this.countDisplayService.removeCustomer().subscribe({
             next: (count) => {
               console.log('Received customer count:', count);
               // Ensure count is a valid number
@@ -82,7 +92,7 @@ export class CountDisplayComponent implements OnInit {
 
       case 'vendors':
         if (increment) {
-          this.metricsService.addVendor().subscribe({
+          this.countDisplayService.addVendor().subscribe({
             next: (count) => {
               console.log('Received vendor count:', count);
               // Ensure count is a valid number
@@ -91,7 +101,7 @@ export class CountDisplayComponent implements OnInit {
             error: (err) => console.error('Error adding vendor', err)
           });
         } else if (decrement) {
-          this.metricsService.removeVendor().subscribe({
+          this.countDisplayService.removeVendor().subscribe({
             next: (count) => {
               console.log('Received vendor count:', count);
               // Ensure count is a valid number
@@ -104,9 +114,23 @@ export class CountDisplayComponent implements OnInit {
 
       case 'vip':
         if (increment) {
-          this.metrics.vipCustomers++;
-        } else if (decrement && this.metrics.vipCustomers > 0) {
-          this.metrics.vipCustomers--;
+          this.countDisplayService.addVipCustomer().subscribe({
+            next: (count) => {
+              console.log('Received VIP customer count:', count);
+              // Ensure count is a valid number
+              this.metrics.vipCustomers = count != null ? count : this.metrics.vipCustomers;
+            },
+            error: (err) => console.error('Error adding VIP customer', err)
+          });
+        } else if (decrement) {
+          this.countDisplayService.removeVipCustomer().subscribe({
+            next: (count) => {
+              console.log('Received VIP customer count:', count);
+              // Ensure count is a valid number
+              this.metrics.vipCustomers = count != null ? count : this.metrics.vipCustomers;
+            },
+            error: (err) => console.error('Error removing VIP customer', err)
+          });
         }
         break;
     }
@@ -114,6 +138,6 @@ export class CountDisplayComponent implements OnInit {
   }
 
   private updateServiceMetrics() {
-    this.metricsService.updateMetrics(this.metrics);
+    this.countDisplayService.updateMetrics(this.metrics);
   }
 }

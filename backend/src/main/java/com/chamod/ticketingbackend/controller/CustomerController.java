@@ -14,19 +14,40 @@ public class CustomerController {
 
     @PostMapping(path = "/add")
     public int addCustomer() {
-        customerService.addCustomer();
+        boolean isVip = false;
+        customerService.addCustomer(isVip);
         return customerService.getCustomerCount();
+    }
+
+    @PostMapping(path = "/add-vip")
+    public int addVipCustomer() {
+        boolean isVip = true;
+        customerService.addCustomer(isVip);
+        return customerService.getVipCustomerCount();
     }
 
     @DeleteMapping(path = "/remove")
     public int removeCustomer() {
-        customerService.removeCustomer();
+        boolean isVip = false;
+        customerService.removeCustomer(isVip);
         return customerService.getCustomerCount();
+    }
+
+    @DeleteMapping(path = "/remove-vip")
+    public int removeVipCustomer() {
+        boolean isVip = true;
+        customerService.removeCustomer(isVip);
+        return customerService.getVipCustomerCount();
     }
 
     @GetMapping(path = "/count")
     public int getCustomerCount() {
         return customerService.getCustomerCount();
+    }
+
+    @GetMapping(path = "/count-vip")
+    public int getVipCustomerCount() {
+        return customerService.getVipCustomerCount();
     }
 
     @PostMapping(path = "/start")

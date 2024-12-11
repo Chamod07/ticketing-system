@@ -6,7 +6,7 @@ public interface TicketPoolService {
 
     void addTickets(int ticketCount, int vendorId);
 
-    void removeTickets(int ticketCount, int customerId);
+    void removeTickets(int ticketCount, int customerId, boolean isVip);
 
     int getAvailableTickets();
 

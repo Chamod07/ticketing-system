@@ -29,9 +29,10 @@ public class SystemServiceImpl implements SystemService {
             return "System is already running.";
         }
 
-        if (vendorService.vendorCount() > 0 || customerService.getCustomerCount() > 0) {
+        if (vendorService.vendorCount() > 0 || customerService.getCustomerCount() > 0 || customerService.getVipCustomerCount() > 0) {
             vendorService.startVendors();
             customerService.startCustomers();
+            paused = false;
             running = true;
             logger.info("System started.");
             return "System started.";

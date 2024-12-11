@@ -5,6 +5,7 @@ import com.chamod.ticketingbackend.service.LogService;
 import com.chamod.ticketingbackend.service.TicketPoolService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -24,11 +25,8 @@ public class TicketPoolServiceImpl implements TicketPoolService {
 
     private final Logger logger = LogManager.getLogger(TicketPoolServiceImpl.class);
 
-    private final LogService logService;
-
-    public TicketPoolServiceImpl(LogService logService) {
-        this.logService = logService;
-    }
+    @Autowired
+    private LogService logService;
 
     @Override
     public void configure(int maxCapacity, int totalTickets) {
@@ -75,12 +73,17 @@ public class TicketPoolServiceImpl implements TicketPoolService {
     }
 
     @Override
-    public void removeTickets(int ticketCount, int customerId) {
+    public void removeTickets(int ticketCount, int customerId, boolean isVip) {
         lock.lock();
         try {
             while (tickets.size() < ticketCount) {
-                logService.addLog("[Customer-"+customerId+"] Waiting to purchase tickets (Pool size-"+tickets.size()+")."); // send logs to database and frontend
-                logger.warn("[Customer-{}] Not enough tickets available. Waiting to purchase tickets (Pool size-{}).", customerId, tickets.size());
+                if (isVip) {
+                    logService.addLog("[VIP Customer-"+customerId+"] Waiting to purchase tickets (Pool size-"+tickets.size()+").");
+                } else {
+                    logService.addLog("[Customer-"+customerId+"] Waiting to purchase tickets (Pool size-"+tickets.size()+").");
+                } // send logs to database and frontend
+
+                logger.warn("[{}Customer-{}] Not enough tickets available. Waiting to purchase tickets (Pool size-{}).", isVip ? "VIP " : "", customerId, tickets.size());
                 notEmpty.await();
             }
 
@@ -90,12 +93,17 @@ public class TicketPoolServiceImpl implements TicketPoolService {
 
             ticketsPurchased += ticketCount; // update the number of tickets purchased
 
-            logService.addLog("[Customer-"+customerId+"] Purchased " + ticketCount + " tickets. (Pool size-"+tickets.size()+")");// send logs to database and frontend
-            logger.info("[Customer-{}] Purchased {} tickets. (Pool size-{})", customerId, ticketCount, tickets.size());
+            if (isVip) {
+                logService.addLog("[VIP Customer-" + customerId + "] Purchased " + ticketCount + " tickets. (Pool size-" + tickets.size() + ")");
+            } else {
+                logService.addLog("[Customer-" + customerId + "] Purchased " + ticketCount + " tickets. (Pool size-" + tickets.size() + ")");
+            } // send logs to database and frontend
+
+            logger.info("[{}Customer-{}] Purchased {} tickets. (Pool size-{})", isVip ? "VIP " : "", customerId, ticketCount, tickets.size());
             notFull.signalAll();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            logger.error("[Customer-{}] Ticket purchase interrupted.", customerId);
+            logger.error("[{}Customer-{}] Ticket purchase interrupted.", isVip ? "VIP " : "", customerId);
         } finally {
             lock.unlock();
         }

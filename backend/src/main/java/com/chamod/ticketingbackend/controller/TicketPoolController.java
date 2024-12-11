@@ -20,6 +20,12 @@ public class TicketPoolController {
         return ticketPoolService.getAvailableTickets();
     }
 
+    @GetMapping(path = "/max-capacity")
+    public int maxCapacity() {
+        return ticketPoolService.getMaxCapacity();
+    }
+
+
     @GetMapping(path = "/released")
     public int releasedTickets() {
         return ticketPoolService.getReleasedTickets();

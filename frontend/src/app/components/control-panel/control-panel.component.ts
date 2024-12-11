@@ -9,6 +9,7 @@ import {ChipModule} from 'primeng/chip';
 import {CountDisplayService} from '../../services/count-display.service';
 import {TagModule} from 'primeng/tag';
 import {Button} from 'primeng/button';
+import {TooltipModule} from 'primeng/tooltip';
 
 @Component({
   selector: 'app-control-panel',
@@ -21,6 +22,7 @@ import {Button} from 'primeng/button';
     ChipModule,
     TagModule,
     Button,
+    TooltipModule,
   ],
   templateUrl: './control-panel.component.html',
   styleUrl: './control-panel.component.css',
@@ -129,6 +131,19 @@ export class ControlPanelComponent implements OnInit {
       },
       error: (err) => console.error('Failed to fetch customer count:', err),
     });
+  }
+
+  getSeverity(systemStatus: string): "success" | "secondary" | "info" | "warning" | "danger" | "contrast" | undefined {
+    switch (systemStatus) {
+      case 'Running':
+        return 'success';
+      case 'Stopped':
+        return 'danger';
+      case 'Paused':
+        return 'warning';
+      default:
+        return 'info';
+    }
   }
 
 }

@@ -3,12 +3,14 @@ import { ChartModule } from 'primeng/chart';
 import { Subscription } from 'rxjs';
 import { LineChartService } from '../../services/line-chart.service';
 import { UIChart } from 'primeng/chart';
+import {CardModule} from 'primeng/card';
 
 @Component({
   selector: 'app-line-chart',
   standalone: true,
   imports: [
-    ChartModule
+    ChartModule,
+    CardModule
   ],
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.css']
@@ -16,6 +18,8 @@ import { UIChart } from 'primeng/chart';
 export class LineChartComponent implements OnInit, OnDestroy {
   @ViewChild('chart') chart: UIChart | undefined;
 
+  ticketsSold: number = 0;
+  ticketsPurchased: number = 0;
   data: any;
   options: any;
   private dataSubscription: Subscription | undefined;
@@ -27,6 +31,17 @@ export class LineChartComponent implements OnInit, OnDestroy {
   constructor(private lineChartService: LineChartService) {}
 
   ngOnInit() {
+
+    this.lineChartService.pollTicketData().subscribe({
+      next: (data) => {
+        this.ticketsSold = data.released;
+        this.ticketsPurchased = data.purchased;
+      },
+      error: (error) => {
+        console.error('Error polling ticket data:', error);
+      }
+    });
+
     const documentStyle = getComputedStyle(document.documentElement);
     const textColor = documentStyle.getPropertyValue('--text-color');
     const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');

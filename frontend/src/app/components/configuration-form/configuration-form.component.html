@@ -17,13 +17,15 @@
       <div class="col-12 field h-6rem">
         <label for="ticketReleaseRate" class="font-bold">Ticket Release Rate</label>
         <input pInputText id="ticketReleaseRate" type="number"
-               formControlName="ticketReleaseRate" class="w-full"pTooltip="Enter the ticket release rates" tooltipPosition="left"/>
+               formControlName="ticketReleaseRate" class="w-full" pTooltip="Enter the ticket release rates" tooltipPosition="left"/>
         <small *ngIf="!configForm.get('ticketReleaseRate')?.touched || !configForm.get('ticketReleaseRate')?.invalid"
                class="text-muted">Number of tickets each vendor releases per transaction</small>
         <small *ngIf="configForm.get('ticketReleaseRate')?.errors?.['required'] && configForm.get('ticketReleaseRate')?.touched"
                class="p-error block">Ticket Release Rate is required</small>
         <small *ngIf="configForm.get('ticketReleaseRate')?.errors?.['min'] && configForm.get('ticketReleaseRate')?.touched"
                class="p-error block">Ticket Release Rate must be at least 1</small>
+        <small *ngIf="configForm.get('ticketReleaseRate')?.errors?.['lessThanMaxCapacityTotalTickets'] && configForm.get('ticketReleaseRate')?.touched"
+               class="p-error block">Release Rate must be less than Max Capacity minus Total Tickets</small>
       </div>
 
       <div class="col-12 field h-6rem">
@@ -38,6 +40,8 @@
                class="p-error block">Customer Retrieval Rate is required</small>
         <small *ngIf="configForm.get('customerRetrievalRate')?.errors?.['min'] && configForm.get('customerRetrievalRate')?.touched"
                class="p-error block">Customer Retrieval Rate must be at least 1</small>
+        <small *ngIf="configForm.get('customerRetrievalRate')?.errors?.['lessThanMaxCapacityTotalTickets'] && configForm.get('customerRetrievalRate')?.touched"
+               class="p-error block">Retrieval Rate must be less than Max Capacity minus Total Tickets</small>
       </div>
 
       <div class="col-12 field h-6rem">
@@ -56,16 +60,14 @@
                class="p-error block">Max Capacity must be greater than Total Tickets</small>
       </div>
 
-      <div class="button-container" style="display: flex; gap: 1rem; justify-content: flex-start; margin-top: 1rem">
-        <div class="col-7">
-          <p-button label="Save Configuration" type="submit"
-                    [disabled]="!configForm.valid" styleClass="w-full"></p-button>
-        </div>
-        <div class="col-7">
-          <p-button label="Load Configuration" type="button"
-                    (click)="loadConfiguration()"
-                    styleClass="p-button-contrast w-full"></p-button>
-        </div>
+      <div class="col-6">
+        <p-button label="Save Configuration" type="submit"
+                  [disabled]="!configForm.valid" styleClass="w-full"></p-button>
+      </div>
+      <div class="col-6">
+        <p-button label="Load Configuration" type="button"
+                  (click)="loadConfiguration()"
+                  styleClass="p-button-contrast w-full"></p-button>
       </div>
     </div>
   </form>

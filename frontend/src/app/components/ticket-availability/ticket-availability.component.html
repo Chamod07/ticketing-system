@@ -1,12 +1,9 @@
 <p-card>
-  <h3>Available Tickets</h3>
-  <h2>{{availableTickets.current}} / {{availableTickets.total}}</h2>
-  <p-progressBar [value]="(availableTickets.current / availableTickets.total) * 100"></p-progressBar>
-  <small>Total Released: {{availableTickets.current}} / {{availableTickets.total}}</small>
+  <div style="text-align: center;">
+    <h3>Available Tickets</h3>
+    <h2>{{availableTickets.current}} / {{availableTickets.total}}</h2>
+    <p-progressBar [value]="Math.round((availableTickets.current / availableTickets.total) * 100)"></p-progressBar>
+  </div>
+  <small>Total tickets available: {{availableTickets.current}} / {{availableTickets.total}}</small>
 </p-card>
 
-  <div class="flex justify-content-center align-items-center mb-3 mt-5">
-    <p-card styleClass="mr-5">Tickets Sold: 2223</p-card>
-
-    <p-card>Tickets Purchased: 2223</p-card>
-  </div>

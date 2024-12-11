@@ -2,15 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Button } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CountDisplayService } from '../../services/count-display.service';
+import {FormsModule} from "@angular/forms";
+import {TooltipModule} from "primeng/tooltip";
 
 @Component({
   selector: 'app-count-display',
   templateUrl: './count-display.component.html',
   standalone: true,
-  imports: [
-    Button,
-    CardModule,
-  ],
+    imports: [
+        Button,
+        CardModule,
+        FormsModule,
+        TooltipModule,
+    ],
   styleUrls: ['./count-display.component.css']
 })
 export class CountDisplayComponent implements OnInit {

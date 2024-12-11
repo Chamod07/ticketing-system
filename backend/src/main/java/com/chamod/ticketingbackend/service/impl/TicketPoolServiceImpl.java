@@ -52,6 +52,7 @@ public class TicketPoolServiceImpl implements TicketPoolService {
         lock.lock();
         try {
             while (tickets.size() + ticketCount > maxCapacity) {
+                logService.addLog("[Vendor-"+ vendorId + "] Waiting to add tickets (Pool size-"+tickets.size()+")."); // send logs to database and frontend
                 logger.warn("[Vendor-{}] Pool is full. Waiting to add tickets (Pool size-{}).", vendorId, tickets.size());
                 notFull.await();
             }
@@ -62,7 +63,7 @@ public class TicketPoolServiceImpl implements TicketPoolService {
 
             ticketsReleased += ticketCount; // the number of tickets added
 
-            logService.addLog("[Vendor-"+ vendorId + "] Added " + ticketCount + " tickets. (Pool size-"+tickets.size()+")");
+            logService.addLog("[Vendor-"+ vendorId + "] Added " + ticketCount + " tickets. (Pool size-"+tickets.size()+")");// send logs to database and frontend
             logger.info("[Vendor-{}] Added {} tickets. (Pool size-{})", vendorId, ticketCount, tickets.size());
             notEmpty.signalAll();
         } catch (InterruptedException e) {
@@ -78,6 +79,7 @@ public class TicketPoolServiceImpl implements TicketPoolService {
         lock.lock();
         try {
             while (tickets.size() < ticketCount) {
+                logService.addLog("[Customer-"+customerId+"] Waiting to purchase tickets (Pool size-"+tickets.size()+")."); // send logs to database and frontend
                 logger.warn("[Customer-{}] Not enough tickets available. Waiting to purchase tickets (Pool size-{}).", customerId, tickets.size());
                 notEmpty.await();
             }
@@ -88,7 +90,7 @@ public class TicketPoolServiceImpl implements TicketPoolService {
 
             ticketsPurchased += ticketCount; // update the number of tickets purchased
 
-            logService.addLog("[Customer-"+customerId+"] Purchased " + ticketCount + " tickets. (Pool size-"+tickets.size()+")");
+            logService.addLog("[Customer-"+customerId+"] Purchased " + ticketCount + " tickets. (Pool size-"+tickets.size()+")");// send logs to database and frontend
             logger.info("[Customer-{}] Purchased {} tickets. (Pool size-{})", customerId, ticketCount, tickets.size());
             notFull.signalAll();
         } catch (InterruptedException e) {
@@ -112,6 +114,11 @@ public class TicketPoolServiceImpl implements TicketPoolService {
     @Override
     public int getReleasedTickets() {
         return ticketsReleased;
+    }
+
+    @Override
+    public int getMaxCapacity() {
+        return maxCapacity;
     }
 
 }

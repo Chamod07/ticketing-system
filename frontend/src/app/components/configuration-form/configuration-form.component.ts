@@ -32,6 +32,22 @@ export function maxCapacityValidator(): ValidatorFn {
   };
 }
 
+// check if the release rate and retrieval rates are within range
+function lessThanMaxCapacityTotalTickets(maxCapacityControlName: string, totalTicketsControlName: string): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const form = control.parent;
+    if (!form) return null;
+
+    const maxCapacity = form.get(maxCapacityControlName)?.value;
+    const totalTickets = form.get(totalTicketsControlName)?.value;
+    const value = control.value;
+
+    return value >= (maxCapacity - totalTickets)
+      ? { lessThanMaxCapacityTotalTickets: true }
+      : null;
+  };
+}
+
 @Component({
   selector: 'app-configuration-form',
   templateUrl: './configuration-form.component.html',
@@ -66,11 +82,13 @@ export class ConfigurationFormComponent implements OnInit {
       ]],
       ticketReleaseRate: [0, [
         Validators.required,
-        Validators.min(1)
+        Validators.min(1),
+        lessThanMaxCapacityTotalTickets('maxCapacity', 'totalTickets')
       ]],
       customerRetrievalRate: [0, [
         Validators.required,
-        Validators.min(1)
+        Validators.min(1),
+        lessThanMaxCapacityTotalTickets('maxCapacity', 'totalTickets')
       ]],
       maxCapacity: [0, [
         Validators.required,
@@ -95,6 +113,9 @@ export class ConfigurationFormComponent implements OnInit {
           customerRetrievalRate: config.customerRetrievalRate,
           maxCapacity: config.maxTicketCapacity
         });
+
+        this.configForm.get('ticketReleaseRate')?.updateValueAndValidity();
+        this.configForm.get('customerRetrievalRate')?.updateValueAndValidity();
 
         this.messageService.add({
           severity: 'success',

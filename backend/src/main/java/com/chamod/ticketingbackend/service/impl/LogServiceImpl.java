@@ -27,7 +27,7 @@ public class LogServiceImpl implements LogService {
 
         synchronized (logs) {
             if (logs.size() >= 50) {
-                logs.remove(0);
+                logs.remove(0); // to reduce memory usage
             }
             logs.add(log);
         }

@@ -6,8 +6,8 @@
     <span>Active Vendors</span>
     <div class="flex gap-2 mt-2">
       <p-button icon="pi pi-minus" [raised]="true" (click)="updateMetric('vendors', false, true)"
-                [disabled]="metrics.activeVendors <= 0"></p-button>
-      <p-button icon="pi pi-plus" [raised]="true" (click)="updateMetric('vendors', true, false)"></p-button>
+                [disabled]="metrics.activeVendors <= 0" pTooltip="Remove vendors" tooltipPosition="bottom"></p-button>
+      <p-button icon="pi pi-plus" [raised]="true" (click)="updateMetric('vendors', true, false)" pTooltip="Add vendors" tooltipPosition="bottom"></p-button>
     </div>
   </div>
 </p-card>
@@ -19,8 +19,8 @@
     <span>Active Customers</span>
     <div class="flex gap-2 mt-2">
       <p-button icon="pi pi-minus" [raised]="true" (click)="updateMetric('customers', false, true)"
-                [disabled]="metrics.activeCustomers <= 0"></p-button>
-      <p-button icon="pi pi-plus" [raised]="true" (click)="updateMetric('customers', true, false)"></p-button>
+                [disabled]="metrics.activeCustomers <= 0" pTooltip="Remove customers" tooltipPosition="bottom"></p-button>
+      <p-button icon="pi pi-plus" [raised]="true" (click)="updateMetric('customers', true, false)" pTooltip="Add customers" tooltipPosition="bottom"></p-button>
     </div>
   </div>
 </p-card>
@@ -32,8 +32,8 @@
     <span>VIP Customers</span>
     <div class="flex gap-2 mt-2">
       <p-button icon="pi pi-minus" [raised]="true" (onClick)="updateMetric('vip', false, true)"
-                [disabled]="metrics.vipCustomers <= 0"></p-button>
-      <p-button icon="pi pi-plus" [raised]="true" (onClick)="updateMetric('vip', true, false)"></p-button>
+                [disabled]="metrics.vipCustomers <= 0" pTooltip="Remove VIP customers" tooltipPosition="bottom"></p-button>
+      <p-button icon="pi pi-plus" [raised]="true" (onClick)="updateMetric('vip', true, false)" pTooltip="Add VIP customers" tooltipPosition="bottom"></p-button>
     </div>
   </div>
 </p-card>

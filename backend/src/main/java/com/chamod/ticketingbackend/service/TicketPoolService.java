@@ -13,4 +13,6 @@ public interface TicketPoolService {
     int getPurchasedTickets();
 
     int getReleasedTickets();
+
+    int getMaxCapacity();
 }

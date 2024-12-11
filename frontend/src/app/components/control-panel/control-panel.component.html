@@ -12,8 +12,7 @@
     <p-toast position="bottom-right"></p-toast>
   </div>
   <div class="layout-topbar-right" style="display: flex; align-items: center; gap: 2rem; padding-right: 6rem">
-    <p-tag severity="secondary" value="● {{ systemStatus }}" [rounded]="false">
-
+    <p-tag [severity]="getSeverity(systemStatus)" value="● {{ systemStatus.toUpperCase() }}" pTooltip="Status" tooltipPosition="bottom">
     </p-tag>
 
     <!-- Start Button -->

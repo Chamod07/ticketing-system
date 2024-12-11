@@ -52,6 +52,10 @@ export class LogDisplayComponent implements OnInit, OnDestroy {
     });
   }
 
+  clearLogs(): void {
+    this.logs = [];
+  }
+
   ngOnDestroy(): void {
     // unsubscribe from polling
     this.pollingSubscription?.unsubscribe();

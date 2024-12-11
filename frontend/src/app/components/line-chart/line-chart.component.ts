@@ -54,7 +54,7 @@ export class LineChartComponent implements OnInit, OnDestroy {
           label: 'Tickets Released',
           data: this.releasedData,
           fill: false,
-          borderColor: documentStyle.getPropertyValue('--cyan-500'),
+          borderColor: documentStyle.getPropertyValue('--green-500'),
           tension: 0.4
         },
         {

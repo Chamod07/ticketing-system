@@ -7,9 +7,9 @@
     right: 0;
     z-index: 1000;">
   <div class="layout-topbar-left" style="display: inline-flex">
-    <i class="pi pi-ticket" style="font-size: 2rem; padding: 2rem"></i>
-    <h1><a href="https://github.com/Chamod07/ticketing-system" target="_blank" style="text-decoration: none; color: inherit;">
-      Event Ticketing System</a></h1>
+    <i class="pi pi-ticket" style="font-size: 1.8rem; padding: 2rem; color: #ff9f2e"></i>
+    <h2><a href="https://github.com/Chamod07/ticketing-system" target="_blank" style="text-decoration: none; color: inherit;">
+      Event Ticketing System</a></h2>
     <p-toast position="bottom-right"></p-toast>
   </div>
   <div class="layout-topbar-right" style="display: flex; align-items: center; gap: 2rem; padding-right: 6rem">
@@ -23,16 +23,16 @@
 
     <!-- Pause and Stop Buttons -->
     <ng-container *ngIf="systemStatus === 'Running'">
-      <p-button styleClass="p-button-warning" (click)="pauseSystem()">
+      <p-button styleClass="p-button-secondary" (click)="pauseSystem()">
         Pause
       </p-button>
       <p-button styleClass="p-button-danger" (click)="stopSystem()">
-        Stop/Reset
+        Reset
       </p-button>
     </ng-container>
 
     <!-- Resume Button -->
-    <p-button *ngIf="systemStatus === 'Paused'" styleClass="p-button-secondary" (click)="resumeSystem()">
+    <p-button *ngIf="systemStatus === 'Paused'" styleClass="p-button-warning" (click)="resumeSystem()">
       Resume
     </p-button>
   </div>

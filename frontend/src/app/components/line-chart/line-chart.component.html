@@ -1,24 +1,24 @@
 
-<div class="flex">
-  <div style="width: 50%; margin-bottom: 1rem;">
-    <p-card styleClass="m-2">
+<div class="flex justify-content-center" style="gap: 1rem">
+  <div style="width: 50%; margin-bottom: 1rem">
+    <p-card styleClass="m-1">
       <div class="flex justify-content-between align-items-center">
-        <small>Tickets Sold</small>
-        <h4 class="text-center">{{ticketsSold}}</h4>
+        <small style="font-size: 1.2rem;">Tickets Released</small>
+        <h4 class="text-center" style="font-weight: bold">{{ticketsSold}}</h4>
       </div>
     </p-card>
   </div>
   <div style="width: 50%; margin-bottom: 1rem;">
-    <p-card styleClass="m-2">
+    <p-card styleClass="m-1">
       <div class="flex justify-content-between align-items-center">
-        <small >Tickets Purchased</small>
-        <h4 class="text-center">{{ticketsPurchased}}</h4>
+        <small style="font-size: 1.2rem;">Tickets Purchased</small>
+        <h4 class="text-center" style="font-weight: bold">{{ticketsPurchased}}</h4>
       </div>
     </p-card>
   </div>
 </div>
 <div class="card">
-  <h2>Real-Time Analytics</h2>
+  <h2><i class="pi pi-chart-line" style="font-size: 1.5rem"></i> Real-Time Analytics</h2>
   <p-chart #chart type="line" [data]="data" [options]="options"/>
 </div>
 

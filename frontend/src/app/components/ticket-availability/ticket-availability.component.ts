@@ -18,7 +18,7 @@ import { switchMap } from 'rxjs/operators';
 export class TicketAvailabilityComponent implements OnInit, OnDestroy {
   availableTickets = {
     current: 0,
-    total: 1
+    total: 0
   };
 
   private ticketSubscription: Subscription | undefined;

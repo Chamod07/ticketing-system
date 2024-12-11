@@ -6,7 +6,10 @@ import lombok.Getter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class VendorRunnable implements Runnable{
+/**
+ * Runnable implementation for managing vendor operations.
+ */
+public class VendorRunnable implements Runnable {
     @Getter
     private final Vendor vendor;
     @Getter
@@ -17,28 +20,49 @@ public class VendorRunnable implements Runnable{
 
     private static final Logger logger = LogManager.getLogger(VendorRunnable.class);
 
+    /**
+     * Constructor for VendorRunnable.
+     *
+     * @param vendor the vendor associated with this runnable
+     * @param ticketPool the ticket pool service to manage tickets
+     */
     public VendorRunnable(Vendor vendor, TicketPoolService ticketPool) {
         this.vendor = vendor;
         this.ticketPool = ticketPool;
         this.vendorId = vendorCount++;
     }
 
+    /**
+     * Resets the vendor count to 1.
+     */
     public static void resetVendorCount() {
         vendorCount = 1;
     }
 
+    /**
+     * Decreases the vendor count by 1.
+     */
     public static void removeVendorCount() {
         vendorCount--;
     }
 
+    /**
+     * Stops the vendor runnable.
+     */
     public void stop() {
         this.paused = true;
     }
 
+    /**
+     * Pauses the vendor runnable.
+     */
     public void pause() {
         this.paused = true;
     }
 
+    /**
+     * Resumes the vendor runnable.
+     */
     public void resume() {
         synchronized (this) {
             paused = false;
@@ -46,6 +70,10 @@ public class VendorRunnable implements Runnable{
         }
     }
 
+    /**
+     * The main logic of the vendor runnable.
+     * Adds tickets to the ticket pool at regular intervals.
+     */
     @Override
     public void run() {
         try {
@@ -61,7 +89,7 @@ public class VendorRunnable implements Runnable{
                     return;
                 }
                 ticketPool.addTickets(vendor.getTicketsPerRelease(), vendorId);
-                Thread.sleep(vendor.getReleaseInterval()*1000L);
+                Thread.sleep(vendor.getReleaseInterval() * 1000L);
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

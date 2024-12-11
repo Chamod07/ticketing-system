@@ -12,6 +12,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Entity class representing the system configuration.
+ */
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,7 +23,7 @@ import java.io.IOException;
 public class SystemConfiguration {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -39,7 +42,11 @@ public class SystemConfiguration {
     private static final String configFile = "systemConfiguration.json";
     private static final Logger logger = LogManager.getLogger();
 
-    // Load configuration from JSON file
+    /**
+     * Loads the system configuration from a JSON file.
+     *
+     * @return the loaded SystemConfiguration object, or null if an error occurs
+     */
     public static SystemConfiguration loadFromFile() {
         File file = new File(configFile);
         if (!file.exists()) {
@@ -57,8 +64,12 @@ public class SystemConfiguration {
         }
     }
 
-    // Save configuration to JSON file
-    public void saveToFile() throws IOException{
+    /**
+     * Saves the current system configuration to a JSON file.
+     *
+     * @throws IOException if an error occurs during writing to the file
+     */
+    public void saveToFile() throws IOException {
         synchronized (SystemConfiguration.class) {
             try (FileWriter writer = new FileWriter(configFile)) {
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();

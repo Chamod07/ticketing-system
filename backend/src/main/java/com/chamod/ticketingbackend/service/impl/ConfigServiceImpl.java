@@ -12,6 +12,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 
+/**
+ * Service implementation for managing system configuration.
+ */
 @Service
 public class ConfigServiceImpl implements ConfigService {
 
@@ -25,12 +28,19 @@ public class ConfigServiceImpl implements ConfigService {
 
     private static final Logger logger = LogManager.getLogger(ConfigServiceImpl.class);
 
-    // load the configuration on app launch
+    /**
+     * Initializes the configuration on application launch.
+     */
     @PostConstruct
     public void initializeConfiguration() {
         systemConfiguration = loadConfiguration();
     }
 
+    /**
+     * Loads the system configuration from a file or database.
+     *
+     * @return the loaded SystemConfiguration
+     */
     @Override
     public SystemConfiguration loadConfiguration() {
         // try to load from file first
@@ -54,6 +64,11 @@ public class ConfigServiceImpl implements ConfigService {
         return systemConfiguration;
     }
 
+    /**
+     * Updates the system configuration and saves it to a file and database.
+     *
+     * @param newConfig the new SystemConfiguration to be saved
+     */
     @Override
     public void updateConfiguration(SystemConfiguration newConfig) {
         systemConfiguration = newConfig;
@@ -71,6 +86,9 @@ public class ConfigServiceImpl implements ConfigService {
         configureTicketPool();
     }
 
+    /**
+     * Configures the ticket pool based on the current system configuration.
+     */
     private void configureTicketPool() {
         ticketPoolServiceImpl.configure(
                 systemConfiguration.getMaxTicketCapacity(),
@@ -78,6 +96,11 @@ public class ConfigServiceImpl implements ConfigService {
         );
     }
 
+    /**
+     * Retrieves the current system configuration.
+     *
+     * @return the current SystemConfiguration
+     */
     @Override
     public SystemConfiguration getConfiguration() {
         return systemConfiguration;

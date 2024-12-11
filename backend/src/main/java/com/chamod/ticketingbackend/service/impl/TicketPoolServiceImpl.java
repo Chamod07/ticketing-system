@@ -12,6 +12,9 @@ import java.util.LinkedList;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Service implementation for managing a pool of tickets.
+ */
 @Service
 public class TicketPoolServiceImpl implements TicketPoolService {
 
@@ -28,6 +31,12 @@ public class TicketPoolServiceImpl implements TicketPoolService {
     @Autowired
     private LogService logService;
 
+    /**
+     * Configures the ticket pool with a maximum capacity and total number of tickets.
+     *
+     * @param maxCapacity the maximum capacity of the ticket pool
+     * @param totalTickets the total number of tickets to initialize in the pool
+     */
     @Override
     public void configure(int maxCapacity, int totalTickets) {
         this.maxCapacity = maxCapacity;
@@ -45,6 +54,12 @@ public class TicketPoolServiceImpl implements TicketPoolService {
         }
     }
 
+    /**
+     * Adds tickets to the pool.
+     *
+     * @param ticketCount the number of tickets to add
+     * @param vendorId the ID of the vendor adding the tickets
+     */
     @Override
     public void addTickets(int ticketCount, int vendorId) {
         lock.lock();
@@ -72,6 +87,13 @@ public class TicketPoolServiceImpl implements TicketPoolService {
         }
     }
 
+    /**
+     * Removes tickets from the pool.
+     *
+     * @param ticketCount the number of tickets to remove
+     * @param customerId the ID of the customer removing the tickets
+     * @param isVip whether the customer is a VIP
+     */
     @Override
     public void removeTickets(int ticketCount, int customerId, boolean isVip) {
         lock.lock();
@@ -109,21 +131,41 @@ public class TicketPoolServiceImpl implements TicketPoolService {
         }
     }
 
+    /**
+     * Gets the number of available tickets in the pool.
+     *
+     * @return the number of available tickets
+     */
     @Override
     public int getAvailableTickets() {
         return tickets.size();
     }
 
+    /**
+     * Gets the number of tickets purchased from the pool.
+     *
+     * @return the number of tickets purchased
+     */
     @Override
     public int getPurchasedTickets() {
         return ticketsPurchased;
     }
 
+    /**
+     * Gets the number of tickets released into the pool.
+     *
+     * @return the number of tickets released
+     */
     @Override
     public int getReleasedTickets() {
         return ticketsReleased;
     }
 
+    /**
+     * Gets the maximum capacity of the ticket pool.
+     *
+     * @return the maximum capacity
+     */
     @Override
     public int getMaxCapacity() {
         return maxCapacity;

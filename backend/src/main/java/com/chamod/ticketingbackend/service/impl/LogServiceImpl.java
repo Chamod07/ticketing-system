@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.*;
 
+/**
+ * Service implementation for managing logs.
+ */
 @Service
 public class LogServiceImpl implements LogService {
 
@@ -15,10 +18,20 @@ public class LogServiceImpl implements LogService {
 
     private final LogRepository logRepository;
 
+    /**
+     * Constructs a new LogServiceImpl with the specified LogRepository.
+     *
+     * @param logRepository the repository to use for saving logs
+     */
     public LogServiceImpl(LogRepository logRepository) {
         this.logRepository = logRepository;
     }
 
+    /**
+     * Adds a new log entry with the specified message.
+     *
+     * @param message the message to log
+     */
     @Override
     public void addLog(String message) {
         Log log = new Log();
@@ -34,6 +47,11 @@ public class LogServiceImpl implements LogService {
         logRepository.save(log);
     }
 
+    /**
+     * Retrieves the list of log entries.
+     *
+     * @return a list of log entries
+     */
     @Override
     public List<Log> getLogs() {
         synchronized (logs) {

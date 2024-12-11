@@ -46,6 +46,11 @@ public class CustomerServiceImpl implements CustomerService {
 
     private final Logger logger = LogManager.getLogger(CustomerServiceImpl.class);
 
+    /**
+     * Adds a new customer to the system.
+     *
+     * @param isVip true if the customer is a VIP, false otherwise
+     */
     @Override
     public void addCustomer(boolean isVip) {
         SystemConfiguration systemConfiguration = configService.getConfiguration();
@@ -85,6 +90,11 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
+    /**
+     * Removes the last added customer from the system.
+     *
+     * @param isVip true if the customer is a VIP, false otherwise
+     */
     @Override
     public void removeCustomer(boolean isVip) {
         List<Customer> customerList = isVip ? vipCustomers : customers;
@@ -120,6 +130,9 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
+    /**
+     * Starts all customers' threads.
+     */
     @Override
     public void startCustomers() {
         if (customerThreads.isEmpty() && vipCustomerThreads.isEmpty()) {
@@ -156,6 +169,9 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
+    /**
+     * Pauses all customers' threads.
+     */
     @Override
     public void pauseCustomers() {
         if (customerThreads.isEmpty() && vipCustomerThreads.isEmpty()) {
@@ -174,6 +190,9 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
+    /**
+     * Resumes all customers' threads.
+     */
     @Override
     public void resumeCustomers() {
         if (customerThreads.isEmpty() && vipCustomerThreads.isEmpty()) {
@@ -209,6 +228,9 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
+    /**
+     * Stops all customers' threads and clears the lists.
+     */
     @Override
     public void stopCustomers() {
         if (customerThreads.isEmpty() && vipCustomerThreads.isEmpty()) {
@@ -240,11 +262,21 @@ public class CustomerServiceImpl implements CustomerService {
         logger.info("All customers stopped.");
     }
 
+    /**
+     * Gets the count of regular customers.
+     *
+     * @return the number of regular customers
+     */
     @Override
     public int getCustomerCount() {
         return customers.size();
     }
 
+    /**
+     * Gets the count of VIP customers.
+     *
+     * @return the number of VIP customers
+     */
     @Override
     public int getVipCustomerCount() {
         return vipCustomers.size();

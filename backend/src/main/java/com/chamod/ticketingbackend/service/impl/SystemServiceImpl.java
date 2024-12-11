@@ -22,6 +22,11 @@ public class SystemServiceImpl implements SystemService {
 
     private static final Logger logger = LogManager.getLogger(SystemServiceImpl.class);
 
+    /**
+     * Starts the system if it is not already running and there are enough vendors or customers.
+     *
+     * @return a message indicating whether the system was started or not.
+     */
     @Override
     public synchronized String startSystem() {
         if (running) {
@@ -41,6 +46,11 @@ public class SystemServiceImpl implements SystemService {
         return "System not started.";
     }
 
+    /**
+     * Pauses the system if it is currently running.
+     *
+     * @return a message indicating whether the system was paused or not.
+     */
     @Override
     public synchronized String pauseSystem() {
         if (!running) {
@@ -53,10 +63,13 @@ public class SystemServiceImpl implements SystemService {
         paused = true;
         running = false;
         return "System paused.";
-
-//        logger.info("System paused.");
     }
 
+    /**
+     * Resumes the system if it is currently paused.
+     *
+     * @return a message indicating whether the system was resumed or not.
+     */
     @Override
     public synchronized String resumeSystem() {
         if (!paused) {
@@ -68,9 +81,13 @@ public class SystemServiceImpl implements SystemService {
         customerService.resumeCustomers();
         running = true;
         return "System resumed.";
-//        logger.info("System resumed.");
     }
 
+    /**
+     * Stops the system if it is currently running.
+     *
+     * @return a message indicating whether the system was stopped or not.
+     */
     @Override
     public synchronized String stopSystem() {
         if (!running) {
@@ -83,10 +100,13 @@ public class SystemServiceImpl implements SystemService {
         paused = false;
         running = false;
         return "System stopped.";
-
-//        logger.info("System stopped.");
     }
 
+    /**
+     * Gets the current state of the system.
+     *
+     * @return the current state of the system as a string.
+     */
     @Override
     public synchronized String getState() {
         if (running) {

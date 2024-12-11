@@ -56,8 +56,6 @@ This system demonstrates it power of handling concurrent requests using multithr
     │   ├── pom.xml
     │   ├── src
     │   │     └── main
-    │   │         ├── config
-    │   │         │    └── WebSocketConfig.java
     │   │         ├── controller
     │   │         │    ├── CustomerController.java
     │   │         │    ├── VendorController.java
@@ -109,7 +107,6 @@ This system demonstrates it power of handling concurrent requests using multithr
        ├── postcss.config.js
        ├── public
        ├── src
-       ├── tailwind.config.js
        ├── tsconfig.app.json
        ├── tsconfig.json
        └── tsconfig.spec.json
@@ -148,8 +145,17 @@ This system demonstrates it power of handling concurrent requests using multithr
        │         │        └── ticket-availability.component.ts
        │         ├── models
        │         │    └── configuration.ts
-       │         └── services
-       │              └── LogService.java
+       │         │── services
+       │         │     │── count-display.service.ts
+       │         │     │── line-chart.service.ts
+       │         │     └── ticket-availability.service.ts
+       │         ├── app.component.css
+       │         ├── app.component.html
+       │         ├── app.component.spec.ts
+       │         ├── app.component.ts
+       │         ├── app.module.ts
+       │         │── app.routes.ts
+       │         └── app.config.ts
        ├── assets
        ├── index.html
        ├── main.ts
@@ -166,7 +172,6 @@ This system demonstrates it power of handling concurrent requests using multithr
 **Node.js** [![NodeJS](https://img.shields.io/badge/Node.js-6DA55F?logo=node.js&logoColor=white)](#): `Version: >= 16.x.x` </br>
 **npm** 	[![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=fff)](#) : `Version: >= 8.x.x` </br>
 **Angular CLI** [![Angular](https://img.shields.io/badge/Angular-%23DD0031.svg?logo=angular&logoColor=white)](#): `Version: ^18.2.8` </br>
-**Tailwind CSS** [![TailwindCSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?logo=tailwind-css&logoColor=white)](#): `Version: >= 3.x.x` </br>
 **TypeScript** [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff)](#): `Version: >= 4.x.x` </br>
 **Maven**: `Version: 3.9.9` </br>
 
@@ -236,31 +241,6 @@ To run the project, execute the following command:
 ❯ ng serve
 ```
 
-### 🧪 Tests
-
-Execute the test suite using the following command:
-
-#### Run frontend unit tests:
-```sh
-❯ ng test
-```
-#### Run backend tests:
-```sh
-❯ ./mvnw test
-```
-
----
-
-## 📌 Project Roadmap
-
-- [X] **` Project Setup and Planning`**: Plan project structure, set up folders and files, install prerequisites, review requirements, choose tech stack, initialize Git repository, and draft architecture diagrams
-- [X] **`Configuration Module and Core Classes`**: Build the configuration module, implement TicketPool with synchronization, create Vendor and Customer classes with threading, and test multi-threading with sample threads.
-- [X] **`Multi-threading and Synchronization`**: Enhance thread safety, add vendor ticket release and customer purchase logic, set up logging, and add error handling.
-- [X] **`User Interface (UI) Development`**: Design and implement UI layout and controls, connect UI to backend, and test real-time updates.
-- [X] **`Ticket Management and Logging Enhancements`**: Enhance TicketPool for edge cases, improve logging with timestamps, strengthen error handling, start documentation, and test concurrency.
-- [X] **`Dynamic Vendor/Customer Management`**: Implement functionality to start or stop vendor and customer threads dynamically, and ensure UI support and backend synchronization
-- [X] **`Real-Time Analytics`**: Develop a real-time analytics dashboard to display ticket sales, integrate with data sources, and test live data updates.
-
 ---
 
 ## 🤝 API Documentation
@@ -270,11 +250,11 @@ For additional details on using each endpoint, refer to the full API documentati
 
 ---
 
-#### Configuration
+#### Configuration Controller
 
 1. **Get Configuration**
     - **Endpoint**: `GET /api/v1/system-config`
-    - **Description**: Retrieves the current configuration settings.
+    - **Description**: Retrieves current configuration settings.
     - **Response**:
       ```json
       {
@@ -286,7 +266,7 @@ For additional details on using each endpoint, refer to the full API documentati
       ```
 
 2. **Set Configuration**
-    - **Endpoint**: `POST /api//v1/system-config`
+    - **Endpoint**: `POST /api/v1/system-config`
     - **Description**: Updates system configuration.
     - **Request Body**:
       ```json
@@ -302,9 +282,9 @@ For additional details on using each endpoint, refer to the full API documentati
 
 #### System Controller
 
-1. **Get System Status**
-    - **Endpoint**: `GET /api/v1/system/status`
-    - **Description**: Retrieves the system's current status (e.g., NOT_CONFIGURED, STARTED, STOPPED, PAUSED).
+1. **Get System State**
+    - **Endpoint**: `GET /api/v1/system/state`
+    - **Description**: Retrieves the system's current state (e.g., Started, Stopped, Paused).
 
 2. **Start System**
     - **Endpoint**: `POST /api/v1/system/start`
@@ -312,65 +292,101 @@ For additional details on using each endpoint, refer to the full API documentati
     - **Response**: "System started successfully."
 
 3. **Pause System**
-    - **Endpoint**: `POST /api/v1/system/pause`
-    - **Description**: Pauses the system.
-    - **Response**: "System paused successfully."
+   - **Endpoint**: `POST /api/v1/system/pause`
+   - **Description**: Pauses the system.
+   - **Response**: "System paused successfully."
 
-4. **Stop and Reset System**
-    - **Endpoint**: `POST /api/v1/system/stop-reset`
-    - **Description**: Stops and resets the system, clearing all actions.
-    - **Response**: "System stopped and reset successfully."
+4. **Pause System**
+   - **Endpoint**: `POST /api/v1/system/pause`
+   - **Description**: Pauses the system.
+   - **Response**: "System paused successfully."
+
+5. **Stop and Reset System**
+    - **Endpoint**: `POST /api/v1/system/stop`
+    - **Description**: Stops and resets the system.
+    - **Response**: "System stopped successfully."
 
 ---
 
 #### Customer Controller
 
 1. **Retrieve Customer Count**
-    - **Endpoint**: `GET /api/v1/customers/count`
+    - **Endpoint**: `GET /api/v1/customer/count`
     - **Description**: Gets the count of active customers.
 
-2. **Add Customer**
-    - **Endpoint**: `POST /api/v1/customers/add`
+2. **Retrieve VIP Customer Count**
+   - **Endpoint**: `GET /api/v1/customer/count-vip`
+   - **Description**: Gets the count of active VIP customers.
+
+3. **Add Customer**
+    - **Endpoint**: `POST /api/v1/customer/add`
     - **Description**: Adds a new customer to the system.
 
-3. **Remove Customer**
-    - **Endpoint**: `POST /api/v1/customers/remove`
+4. **Add VIP Customer**
+   - **Endpoint**: `POST /api/v1/customer/add-vip`
+   - **Description**: Adds a new VIP customer to the system.
+
+5. **Remove Customer**
+    - **Endpoint**: `POST /api/v1/customer/remove`
     - **Description**: Removes a customer from the system.
 
-4. **Pause Customer**
-    - **Endpoint**: `POST /api/v1/customers/pause`
-    - **Description**: Pauses actions for a specific customer.
-
-5. **Resume Customer**
-    - **Endpoint**: `POST /api/v1/customers/resume`
-    - **Description**: Resumes actions for a specific customer.
+6. **Remove VIP Customer**
+   - **Endpoint**: `POST /api/v1/customer/remove-vip`
+   - **Description**: Removes a VIP customer from the system.
 
 ---
 
-#### Vendor Controlller
+#### Vendor Controller
 
 1. **Retrieve Vendor Count**
-    - **Endpoint**: `GET /api/v1/vendors/count`
+    - **Endpoint**: `GET /api/v1/vendor/count`
     - **Description**: Retrieves the count of active vendors.
 
 2. **Add Vendor**
-    - **Endpoint**: `POST /api/v1/vendors/add`
+    - **Endpoint**: `POST /api/v1/vendor/add`
     - **Description**: Adds a new vendor to the system.
 
 3. **Remove Vendor**
-    - **Endpoint**: `POST /api/v1/vendors/remove`
+    - **Endpoint**: `POST /api/v1/vendor/remove`
     - **Description**: Removes a vendor from the system.
-
-4. **Pause Vendor**
-    - **Endpoint**: `POST /api/v1/vendors/pause`
-    - **Description**: Pauses actions for a vendor.
-
-5. **Resume Vendor**
-    - **Endpoint**: `POST /api/v1/vendors/resume`
-    - **Description**: Resumes actions for a vendor.
 
 ---
 
+#### Ticket Controller
+
+1. **Retrieve Available Tickets**
+   - **Endpoint**: `GET /api/v1/tickets/availability`
+   - **Description**: Retrieves the number of available tickets.
+
+2. **Retrieve Purchased Tickets**
+   - **Endpoint**: `GET /api/v1/tickets/purchased`
+   - **Description**: Retrieves the total number of tickets purchased.
+
+3. **Retrieve Released Tickets**
+   - **Endpoint**: `GET /api/v1/tickets/released`
+   - **Description**: Retrieves the total number of tickets released.
+
+4. **Retrieve Maximum Capacity of Tickets**
+   - **Endpoint**: `GET /api/v1/tickets/max-capacity`
+   - **Description**: Retrieves the maximum capacity of the system.
+
+---
+
+#### Log Controller
+
+1. **Retrieve System Logs**
+   - **Endpoint**: `GET /api/v1/log/latest`
+   - **Description**: Retrieves the latest logs of the system.
+   - **Response**:
+     ```json
+     {
+        "id": 1110,
+        "action": "[Vendor-1] Added 5 tickets. (Pool size-25)",
+        "timestamp": "2024-12-12T02:00:47.9287035"
+     }
+     ```
+
+---
 
 ## 🎗 License
 
@@ -380,6 +396,7 @@ This project is protected under the [MIT License](#) License.
 
 ## 🙌 Acknowledgments
 
-I would like to express my sincere gratitude to the lecturers at the Institute of Information Technology (IIT) for their invaluable guidance and support throughout this project. Special thanks to the Object-Oriented Programming (OOP) module team, whose insights and teaching laid the foundation for this project. Their dedication to fostering a deep understanding of OOP principles and real-world applications has been instrumental in my development. Thank you for inspiring and empowering me to take on this challenge..
+I'd like to thank the instructors at the Institute of Information Technology (IIT) for their crucial assistance and support throughout this project. Special thanks to the Object-Oriented Programming (OOP) module team for their thoughts and training that laid the groundwork for this effort. Their commitment to promoting a thorough understanding of OOP principles and real-world applications has been extremely beneficial to my progress. Thank you for motivating and empowering me to face this issue.
+
 
 ---

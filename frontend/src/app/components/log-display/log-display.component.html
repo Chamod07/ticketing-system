@@ -4,8 +4,11 @@
       <p style="color: #999; font-size: 0.8rem;">
         {{log.timestamp | date: 'medium'}}
       </p>
+      <p style="color: #ff9f2e; font-size: 0.8rem;">
+        {{log.user}}
+      </p>
       <p style="font-size: 1rem;">
-        {{log.action}}
+        <i class="pi pi-circle-on" style="font-size: 0.5rem; color: #ff9f2e; margin-right: 5px"></i>{{log.action}}
       </p>
     </div>
   </p-scrollPanel>

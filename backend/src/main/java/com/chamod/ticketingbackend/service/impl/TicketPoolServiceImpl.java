@@ -65,7 +65,7 @@ public class TicketPoolServiceImpl implements TicketPoolService {
         lock.lock();
         try {
             while (tickets.size() + ticketCount > maxCapacity) {
-                logService.addLog("[Vendor-"+ vendorId + "] Waiting to add tickets (Pool size-"+tickets.size()+")."); // send logs to database and frontend
+                logService.addLog("Vendor "+ vendorId,"Waiting to add tickets (Pool size-"+tickets.size()+")."); // send logs to database and frontend
                 logger.warn("[Vendor-{}] Pool is full. Waiting to add tickets (Pool size-{}).", vendorId, tickets.size());
                 notFull.await();
             }
@@ -76,7 +76,7 @@ public class TicketPoolServiceImpl implements TicketPoolService {
 
             ticketsReleased += ticketCount; // the number of tickets added
 
-            logService.addLog("[Vendor-"+ vendorId + "] Added " + ticketCount + " tickets. (Pool size-"+tickets.size()+")");// send logs to database and frontend
+            logService.addLog("Vendor "+ vendorId, "Added " + ticketCount + " tickets. (Pool size-"+tickets.size()+")");// send logs to database and frontend
             logger.info("[Vendor-{}] Added {} tickets. (Pool size-{})", vendorId, ticketCount, tickets.size());
             notEmpty.signalAll();
         } catch (InterruptedException e) {
@@ -100,9 +100,9 @@ public class TicketPoolServiceImpl implements TicketPoolService {
         try {
             while (tickets.size() < ticketCount) {
                 if (isVip) {
-                    logService.addLog("[VIP Customer-"+customerId+"] Waiting to purchase tickets (Pool size-"+tickets.size()+").");
+                    logService.addLog("VIP Customer "+customerId,"Waiting to purchase tickets (Pool size-"+tickets.size()+").");
                 } else {
-                    logService.addLog("[Customer-"+customerId+"] Waiting to purchase tickets (Pool size-"+tickets.size()+").");
+                    logService.addLog("Customer "+customerId, "Waiting to purchase tickets (Pool size-"+tickets.size()+").");
                 } // send logs to database and frontend
 
                 logger.warn("[{}Customer-{}] Not enough tickets available. Waiting to purchase tickets (Pool size-{}).", isVip ? "VIP " : "", customerId, tickets.size());
@@ -116,9 +116,9 @@ public class TicketPoolServiceImpl implements TicketPoolService {
             ticketsPurchased += ticketCount; // update the number of tickets purchased
 
             if (isVip) {
-                logService.addLog("[VIP Customer-" + customerId + "] Purchased " + ticketCount + " tickets. (Pool size-" + tickets.size() + ")");
+                logService.addLog("VIP Customer " + customerId, "Purchased " + ticketCount + " tickets. (Pool size-" + tickets.size() + ")");
             } else {
-                logService.addLog("[Customer-" + customerId + "] Purchased " + ticketCount + " tickets. (Pool size-" + tickets.size() + ")");
+                logService.addLog("Customer " + customerId,"Purchased " + ticketCount + " tickets. (Pool size-" + tickets.size() + ")");
             } // send logs to database and frontend
 
             logger.info("[{}Customer-{}] Purchased {} tickets. (Pool size-{})", isVip ? "VIP " : "", customerId, ticketCount, tickets.size());

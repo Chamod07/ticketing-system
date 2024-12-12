@@ -33,8 +33,9 @@ public class LogServiceImpl implements LogService {
      * @param message the message to log
      */
     @Override
-    public void addLog(String message) {
+    public void addLog(String user, String message) {
         Log log = new Log();
+        log.setUser(user);
         log.setAction(message);
         log.setTimestamp(LocalDateTime.now());
 

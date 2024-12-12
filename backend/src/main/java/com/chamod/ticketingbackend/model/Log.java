@@ -26,6 +26,12 @@ public class Log {
     private Long id;
 
     /**
+     * The user who performed the action.
+     */
+    @Column(name = "user")
+    private String user;
+
+    /**
      * The action that was logged.
      */
     @Column(name = "action")

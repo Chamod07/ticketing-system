@@ -14,7 +14,7 @@ public interface LogService {
      *
      * @param message the message to be logged
      */
-    void addLog(String message);
+    void addLog(String user, String message);
 
     /**
      * Retrieves all log entries.

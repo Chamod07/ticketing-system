@@ -68,13 +68,6 @@ export class LogDisplayComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Clears the log entries.
-   */
-  clearLogs(): void {
-    this.logs = [];
-  }
-
-  /**
    * Lifecycle hook that is called when the component is destroyed.
    * Unsubscribes from the polling subscription.
    */

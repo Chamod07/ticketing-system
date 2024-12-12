@@ -22,4 +22,9 @@ public interface LogService {
      * @return a list of log entries
      */
     List<Log> getLogs();
+
+    /**
+     * Resets all log entries.
+     */
+    void resetLogs();
 }

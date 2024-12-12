@@ -1,6 +1,7 @@
 package com.chamod.ticketingbackend.service.impl;
 
 import com.chamod.ticketingbackend.service.CustomerService;
+import com.chamod.ticketingbackend.service.LogService;
 import com.chamod.ticketingbackend.service.SystemService;
 import com.chamod.ticketingbackend.service.VendorService;
 import org.apache.logging.log4j.LogManager;
@@ -16,6 +17,9 @@ public class SystemServiceImpl implements SystemService {
 
     @Autowired
     private CustomerService customerService;
+
+    @Autowired
+    private LogService logService;
 
     private boolean running = false;
     private boolean paused = false;
@@ -97,6 +101,7 @@ public class SystemServiceImpl implements SystemService {
 
         vendorService.stopVendors();
         customerService.stopCustomers();
+        logService.resetLogs();
         paused = false;
         running = false;
         return "System stopped.";

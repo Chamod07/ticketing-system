@@ -59,4 +59,13 @@ public class LogServiceImpl implements LogService {
         }
     }
 
+    /**
+     * Resets the log entries by clearing the log list.
+     */
+    @Override
+    public void resetLogs() {
+        synchronized (logs) {
+            logs.clear();
+        }
+    }
 }

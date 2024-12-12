@@ -18,7 +18,7 @@
 2024-12-07 20:03:41 INFO  - HikariPool-1 - Start completed.
 2024-12-07 20:03:41 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2024-12-07 20:03:41 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-12-07 20:03:41 INFO  - Configuration-[totalTickets:20, ticketReleaseRate:5, customerRetrievalRate:4, maxTicketCapacity=100] loaded from file.
+2024-12-07 20:03:41 INFO  - ConfigurationModel-[totalTickets:20, ticketReleaseRate:5, customerRetrievalRate:4, maxTicketCapacity=100] loaded from file.
 2024-12-07 20:03:41 INFO  - Ticket pool configured with max capacity-100 and total tickets-20
 2024-12-07 20:03:42 INFO  - Exposing 1 endpoint beneath base path '/actuator'
 2024-12-07 20:03:42 INFO  - Starting ProtocolHandler ["http-nio-8081"]
@@ -39,7 +39,7 @@
 2024-12-07 20:04:01 WARN  - No vendors to stop.
 2024-12-07 20:04:01 ERROR - [Customer-1] Interrupted during operation.
 2024-12-07 20:04:01 ERROR - [Customer-2] Interrupted during operation.
-2024-12-07 20:04:01 INFO  - Configuration-[totalTickets:20, ticketReleaseRate:5, customerRetrievalRate:4, maxTicketCapacity=100] loaded from file.
+2024-12-07 20:04:01 INFO  - ConfigurationModel-[totalTickets:20, ticketReleaseRate:5, customerRetrievalRate:4, maxTicketCapacity=100] loaded from file.
 2024-12-07 20:04:01 INFO  - Ticket pool configured with max capacity-100 and total tickets-20
 2024-12-07 20:04:01 INFO  - All customers stopped.
 2024-12-07 20:06:11 INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
@@ -65,7 +65,7 @@
 2024-12-07 20:06:17 INFO  - HikariPool-1 - Start completed.
 2024-12-07 20:06:17 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2024-12-07 20:06:17 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-12-07 20:06:17 INFO  - Configuration-[totalTickets:20, ticketReleaseRate:5, customerRetrievalRate:4, maxTicketCapacity=100] loaded from file.
+2024-12-07 20:06:17 INFO  - ConfigurationModel-[totalTickets:20, ticketReleaseRate:5, customerRetrievalRate:4, maxTicketCapacity=100] loaded from file.
 2024-12-07 20:06:17 INFO  - Ticket pool configured with max capacity-100 and total tickets-20
 2024-12-07 20:06:18 INFO  - Exposing 1 endpoint beneath base path '/actuator'
 2024-12-07 20:06:18 INFO  - Starting ProtocolHandler ["http-nio-8081"]
@@ -97,7 +97,7 @@
 2024-12-10 17:00:21 INFO  - HikariPool-1 - Start completed.
 2024-12-10 17:00:22 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2024-12-10 17:00:22 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-12-10 17:00:22 INFO  - Configuration-[totalTickets:40, ticketReleaseRate:5, customerRetrievalRate:4, maxTicketCapacity=150] loaded from file.
+2024-12-10 17:00:22 INFO  - ConfigurationModel-[totalTickets:40, ticketReleaseRate:5, customerRetrievalRate:4, maxTicketCapacity=150] loaded from file.
 2024-12-10 17:00:22 INFO  - Ticket pool configured with max capacity-150 and total tickets-40
 2024-12-10 17:00:22 INFO  - Exposing 1 endpoint beneath base path '/actuator'
 2024-12-10 17:00:22 INFO  - Starting ProtocolHandler ["http-nio-8081"]

@@ -251,9 +251,9 @@ For additional details on using each endpoint, refer to the full API documentati
 
 ---
 
-#### ConfigurationModel Controller
+#### Configuration Controller
 
-1. **Get ConfigurationModel**
+1. **Get Configuration**
     - **Endpoint**: `GET /api/v1/system-config`
     - **Description**: Retrieves current configuration settings.
     - **Response**:
@@ -266,7 +266,7 @@ For additional details on using each endpoint, refer to the full API documentati
       }
       ```
 
-2. **Set ConfigurationModel**
+2. **Set Configuration**
     - **Endpoint**: `POST /api/v1/system-config`
     - **Description**: Updates system configuration.
     - **Request Body**:
